@@ -1,5 +1,7 @@
 # WAKIT
 
+**English** · [한국어](./README.ko.md)
+
 **Build your UI once in plain web code — ship it as a website, a PWA, and a
 native app, with native-style screen transitions.**
 
