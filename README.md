@@ -124,7 +124,7 @@ npm run dev:app_test       # → http://localhost:5173/app/app.html
 cd templates/app_test/web && npm run dev   # → http://localhost:4321
 ```
 
-Available templates: `app_test`, `app_basic`, `app_hotel`, `app_theme`.
+Available templates: `app_test`, `app_basic`.
 
 ### Build
 

@@ -122,7 +122,7 @@ npm run dev:app_test       # → http://localhost:5173/app/app.html
 cd templates/app_test/web && npm run dev   # → http://localhost:4321
 ```
 
-사용 가능한 템플릿: `app_test`, `app_basic`, `app_hotel`, `app_theme`.
+사용 가능한 템플릿: `app_test`, `app_basic`.
 
 ### 빌드
 
