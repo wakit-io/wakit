@@ -1,4 +1,5 @@
 const path = require('path');
+const net = require('net');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Terser = require('terser');
 const JavaScriptObfuscator = require('javascript-obfuscator');
@@ -15,10 +16,32 @@ class WatchExternalFilesPlugin {
   }
 }
 
-module.exports = (env = {}, argv = {}) => {
+// Find a free TCP port, preferring `start` and incrementing if it is taken.
+function findFreePort(start, maxTries = 50) {
+  return new Promise((resolve, reject) => {
+    const tryPort = (port, triesLeft) => {
+      const srv = net.createServer();
+      srv.once('error', (err) => {
+        srv.close(() => {});
+        if (err.code === 'EADDRINUSE' && triesLeft > 0) tryPort(port + 1, triesLeft - 1);
+        else reject(err);
+      });
+      srv.once('listening', () => srv.close(() => resolve(port)));
+      srv.listen(port, '0.0.0.0');
+    };
+    tryPort(start, maxTries);
+  });
+}
+
+module.exports = async (env = {}, argv = {}) => {
   const template = (env.template || process.env.TEMPLATE || 'blog').toString();
   const templateSrc = path.resolve(__dirname, `templates/${template}`);
   const isServe = process.env.WEBPACK_SERVE === 'true' || process.env.WEBPACK_SERVE === '1' || argv.devServer === true;
+
+  // Prefer PORT env, then 5173; auto-increment to the next free port if busy
+  // so multiple `npm run dev:<template>` servers can run at the same time.
+  const basePort = Number(process.env.PORT) || 5173;
+  const devPort = isServe ? await findFreePort(basePort) : basePort;
 
   return {
     mode: process.env.NODE_ENV || 'production',
@@ -134,12 +157,12 @@ module.exports = (env = {}, argv = {}) => {
         // Serve wakit source directly at /wakit during dev
         { directory: path.resolve(__dirname, 'wakit'), publicPath: '/wakit', watch: true },
         // Serve template source at /app during dev
-        { directory: templateSrc, publicPath: '/app', watch: true },
+        { directory: templateSrc, publicPath: '/', watch: true },
         // Also serve dist as fallback
         { directory: path.resolve(__dirname, 'dist'), watch: true },
       ],
-      port: 5173,
-      open: ['/app/app.html'],
+      port: devPort,
+      open: ['/index.html'],
       compress: true,
       host: '0.0.0.0',
       allowedHosts: 'all',

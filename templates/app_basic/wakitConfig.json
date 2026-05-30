@@ -1,7 +1,7 @@
 {
   "splashDelay": 100,
   "splashForce": false,
-  "tabbar": { "autoHide": false, "hideThreshold": 14, "displayMode": "always" },
+  "tabbar": { "autoHide": false, "hideThreshold": 14, "displayMode": "web" },
   "pullToRefresh": {
     "threshold": 90,
     "startSlop": 18,
@@ -23,7 +23,7 @@
   ],
   "routes": [
     { "path": "home", "file": "../views/home.html", "title": "App Basic" },
-    { "path": "movie-home", "file": "../views/movie-home.html", "title": "영화 홈" },
+    { "path": "movie-home", "file": "../index.html", "title": "영화 홈" },
     { "path": "movie-store", "file": "../views/movie-store.html", "title": "스토어" },
     { "path": "movie-booking", "file": "../views/movie-booking.html", "title": "예매" },
     { "path": "movie-more", "file": "../views/movie-more.html", "title": "My" },

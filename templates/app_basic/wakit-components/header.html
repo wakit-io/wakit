@@ -1,5 +1,207 @@
-<header class="app-basic-header" role="banner">
-  <div class="app-basic-header__inner container">
-    <span class="app-basic-header__logo">App Basic</span>
+<!-- Web Header (wakit-components) — common top navbar: brand · nav menu · actions.
+     Uses foundation color tokens so dark mode ([data-theme="dark"]) works automatically. -->
+<header class="site-header" data-site-header role="banner">
+  <div class="site-header__inner container">
+
+    <!-- Brand / Logo -->
+    <a href="#home" class="site-header__brand">
+      <span class="site-header__logo">✦</span>
+      <span class="site-header__name">App Basic</span>
+    </a>
+
+    <!-- Primary navigation -->
+    <nav class="site-header__nav" id="siteNav" aria-label="주 메뉴">
+      <a href="#home" class="site-header__link is-active">홈</a>
+      <a href="#features" class="site-header__link">기능</a>
+      <a href="#pricing" class="site-header__link">요금</a>
+      <a href="#about" class="site-header__link">소개</a>
+      <a href="#contact" class="site-header__link">문의</a>
+    </nav>
+
+    <!-- Right-side actions -->
+    <div class="site-header__actions">
+      <button class="site-header__icon" data-theme-toggle aria-label="테마 전환">
+        <i class="bi bi-moon-fill"></i>
+      </button>
+      <a href="#login" class="site-header__cta">시작하기</a>
+      <button class="site-header__toggle" data-nav-toggle aria-label="메뉴 열기" aria-expanded="false" aria-controls="siteNav">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+
   </div>
 </header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--color-bg-primary, #fff);
+    border-bottom: 1px solid var(--color-border, #e8eef2);
+    padding-top: env(safe-area-inset-top);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 60px;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Brand */
+  .site-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--color-text-primary, #17191a);
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .site-header__logo { color: var(--logo-color, #2563eb); font-size: 20px; }
+
+  /* Nav */
+  .site-header__nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 8px;
+    flex: 1;
+  }
+  .site-header__link {
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-text-secondary, #464a4d);
+    transition: background .15s ease, color .15s ease;
+  }
+  .site-header__link:hover {
+    color: var(--color-text-primary, #17191a);
+    background: var(--color-bg-secondary, #f2f8fc);
+  }
+  .site-header__link.is-active {
+    color: var(--color-primary, #3b82f6);
+    background: var(--color-primary-light, #eff6ff);
+  }
+
+  /* Actions */
+  .site-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .site-header__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--color-text-primary, #17191a);
+    font-size: 18px;
+    cursor: pointer;
+    transition: background .15s ease;
+  }
+  .site-header__icon:hover { background: var(--color-bg-secondary, #f2f8fc); }
+  .site-header__cta {
+    padding: 9px 16px;
+    border-radius: 8px;
+    background: var(--color-primary, #3b82f6);
+    color: var(--color-text-on-primary, #fff);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background .15s ease;
+  }
+  .site-header__cta:hover { background: var(--color-primary-hover, #2563eb); }
+
+  /* Hamburger (hidden on desktop) */
+  .site-header__toggle {
+    display: none;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--color-text-primary, #17191a);
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  /* Responsive: collapse nav into a dropdown under 768px */
+  @media (max-width: 768px) {
+    .site-header__toggle { display: inline-flex; align-items: center; justify-content: center; }
+    .site-header__cta { display: none; }
+    .site-header__nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 2px;
+      margin: 0;
+      padding: 8px 12px 12px;
+      background: var(--color-bg-primary, #fff);
+      border-bottom: 1px solid var(--color-border, #e8eef2);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, .06);
+      transform: translateY(-8px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .site-header__nav.is-open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .site-header__link { padding: 12px; font-size: 16px; }
+  }
+</style>
+
+<script>
+  // Mobile hamburger toggle + active-link sync. Plain <script> (module scripts are unstable in wakit views).
+  (function () {
+    var header = document.querySelector('[data-site-header]');
+    if (!header || header.dataset.bound === '1') return;
+    header.dataset.bound = '1';
+
+    var nav = header.querySelector('#siteNav');
+    var toggle = header.querySelector('[data-nav-toggle]');
+
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      // Close the menu after choosing an item
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('.site-header__link')) {
+          nav.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Highlight the link matching the current hash route
+    function syncActive() {
+      var hash = (location.hash || '#home').replace('#', '');
+      header.querySelectorAll('.site-header__link').forEach(function (a) {
+        var route = (a.getAttribute('href') || '').replace('#', '');
+        a.classList.toggle('is-active', route === hash);
+      });
+    }
+    window.addEventListener('hashchange', syncActive);
+    syncActive();
+  })();
+</script>
