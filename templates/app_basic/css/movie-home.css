@@ -5,6 +5,20 @@
 @import url('./foundation/spacing.css');
 @import url('./foundation/typography.css');
 
+/* Page container — center the mobile movie layout on wider (web) screens.
+   On mobile it is full-width; above the max-width it centers with side borders. */
+.movie-home {
+  width: 100%;
+  margin-inline: auto;
+  background: var(--color-bg-primary);
+}
+@media (min-width: 481px) {
+  .movie-home {
+    border-inline: 1px solid var(--color-border);
+    min-height: 100vh;
+  }
+}
+
 /* Tabs */
 .movie-tabs {
   display: flex;

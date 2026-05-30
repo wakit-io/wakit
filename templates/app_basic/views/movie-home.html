@@ -20,12 +20,12 @@
 </head>
 <body>
 
-<div data-include="wakit-components/header.html"></div>
+<div data-include="wakit-components/header.html" data-spa-ignore></div>
 
 <!-- 영화예매-홈텝 | Foundation 토큰 사용, 페이지 CSS: css/movie-home.css -->
-<link rel="stylesheet" href="../css/movie-home.css">
+<link rel="stylesheet" href="css/movie-home.css">
 
-<main class="movie-page movie-home" role="main">
+<main class="movie-page movie-home container" role="main">
   <!-- 탭: 박스오피스, 상영예정, 돌비시네마, 단독, 클소, 필름 -->
   <nav class="movie-tabs" role="tablist">
     <button type="button" class="movie-tabs__item is-active" role="tab" aria-selected="true">박스오피스</button>
@@ -121,7 +121,7 @@
 </main>
 
 
-<div data-include="wakit-components/footer.html"></div>
+<div data-include="wakit-components/footer.html" data-spa-ignore></div>
 
 </body>
 <script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
