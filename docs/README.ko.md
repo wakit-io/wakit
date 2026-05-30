@@ -8,13 +8,13 @@
 
 | 문서 | 설명 |
 |------|------|
-| [01-overview.md](./01-overview.md) | WAKIT 개요, 아키텍처, 파일 역할, 실행 흐름 |
-| [02-wakitConfig.md](./02-wakitConfig.md) | `wakitConfig.json` 스키마 및 옵션 |
-| [03-bridge-and-attributes.md](./03-bridge-and-attributes.md) | `wakit-bridge.js`, data 속성, 메타 태그 |
-| [04-wakit-css.md](./04-wakit-css.md) | `wakit.css` 변수, 레이아웃, 클래스 |
-| [05-template-guide.md](./05-template-guide.md) | 새 템플릿 제작 가이드 (폴더 구조, 파일별 역할, 체크리스트) |
-| [06-design-guide.md](./06-design-guide.md) | 디자인 가이드라인 |
-| [07-backend-integration.md](./07-backend-integration.md) | 백엔드 연동 & 에이전트 가이드 (연동 seam, 규칙, 배포 컨텍스트) |
+| [01-overview.ko.md](./01-overview.ko.md) | WAKIT 개요, 아키텍처, 파일 역할, 실행 흐름 |
+| [02-wakitConfig.ko.md](./02-wakitConfig.ko.md) | `wakitConfig.json` 스키마 및 옵션 |
+| [03-bridge-and-attributes.ko.md](./03-bridge-and-attributes.ko.md) | `wakit-bridge.js`, data 속성, 메타 태그 |
+| [04-wakit-css.ko.md](./04-wakit-css.ko.md) | `wakit.css` 변수, 레이아웃, 클래스 |
+| [05-template-guide.ko.md](./05-template-guide.ko.md) | 새 템플릿 제작 가이드 (폴더 구조, 파일별 역할, 체크리스트) |
+| [06-design-guide.ko.md](./06-design-guide.ko.md) | 디자인 가이드라인 |
+| [07-backend-integration.ko.md](./07-backend-integration.ko.md) | 백엔드 연동 & 에이전트 가이드 (연동 seam, 규칙, 배포 컨텍스트) |
 
 ## 빠른 참조
 
