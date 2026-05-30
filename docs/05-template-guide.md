@@ -189,7 +189,15 @@ SPA 기능(탭, 다이나믹 뷰)은 동작하지 않으며, SEO·공유 링크 
     { "path": "home",   "file": "../views/home.html",   "title": "홈" },
     { "path": "my",     "file": "../views/my.html",     "title": "My" },
     { "path": "detail", "file": "../views/detail.html", "title": "상세" }
-  ]
+  ],
+  "webNav": {
+    "brand": { "label": "My App", "logo": "✦", "href": "index.html" },
+    "items": [
+      { "label": "홈",   "href": "index.html" },
+      { "label": "상세", "href": "views/detail.html" }
+    ],
+    "cta": { "label": "시작하기", "href": "views/my.html" }
+  }
 }
 ```
 
@@ -198,6 +206,7 @@ SPA 기능(탭, 다이나믹 뷰)은 동작하지 않으며, SEO·공유 링크 
 - `routes`에만 있는 경로(예: `detail`)는 다이나믹 뷰(오버레이)로 열립니다.
 - `routes[].file` 경로는 `THEME_BASE`(wakitConfig.json이 있는 폴더) 기준 상대 경로입니다.
 - `theme.isMobile: true`로 설정하면 데스크톱에서도 모바일 UI(앱바·탭바·PTR)가 활성화됩니다.
+- `webNav`는 **웹 헤더 메뉴**(`wakit-components/header.html`)를 정의합니다. 모바일 `tabs`/`routes`와 별개이며, `items[].href`는 해시 라우트가 아니라 **파일 경로**(테마 루트 기준)로 직접 링크합니다. 웹/모바일 메뉴 구성을 다르게 가져갈 수 있습니다. 자세한 내용은 [02-wakitConfig.md](./02-wakitConfig.md#35-webnav-웹-헤더-메뉴) 참고.
 
 ---
 

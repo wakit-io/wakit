@@ -48,27 +48,42 @@
     });
   }
 
-  function attachButtonListeners() {
-    document.querySelectorAll('[data-theme-toggle]').forEach(button => {
-      if (button.dataset.listenerAttached === 'true') return;
-      button.addEventListener('click', function(e) {
-        e.preventDefault();
-        const newOption = getCurrentThemeOption() === 'dark' ? 'light' : 'dark';
-        setTheme(newOption);
-        updateButton(getCurrentTheme());
-      });
-      button.dataset.listenerAttached = 'true';
+  function updateButton(theme) {
+    updateThemeButton(theme);
+  }
+
+  // Event delegation: a single listener on the document handles the toggle even
+  // when the button is injected later via data-include (async fetch). Attaching
+  // per-button on load misses buttons that don't exist yet.
+  let delegatedBound = false;
+  function attachDelegatedListener() {
+    if (delegatedBound) return;
+    delegatedBound = true;
+    document.addEventListener('click', function(e) {
+      const button = e.target.closest && e.target.closest('[data-theme-toggle]');
+      if (!button) return;
+      e.preventDefault();
+      const newOption = getCurrentThemeOption() === 'dark' ? 'light' : 'dark';
+      setTheme(newOption);
+      updateButton(getCurrentTheme());
     });
   }
 
-  function updateButton(theme) {
-    updateThemeButton(theme);
+  // Sync the icon whenever new nodes (e.g. the included header) appear.
+  // Observes childList only, so updateButton's attribute changes don't re-trigger it.
+  function observeIncludes() {
+    if (!window.MutationObserver || !document.body) return;
+    const observer = new MutationObserver(function() {
+      updateButton(getCurrentTheme());
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
   }
 
   function init() {
     setTheme(getCurrentThemeOption());
     updateButton(getCurrentTheme());
-    attachButtonListeners();
+    attachDelegatedListener();
+    observeIncludes();
   }
 
   if (document.readyState === 'loading') {
@@ -76,5 +91,5 @@
   } else {
     init();
   }
-  window.addEventListener('load', function() { updateButton(getCurrentTheme()); attachButtonListeners(); });
+  window.addEventListener('load', function() { updateButton(getCurrentTheme()); });
 })();

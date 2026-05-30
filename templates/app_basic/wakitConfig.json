@@ -28,5 +28,16 @@
     { "path": "movie-booking", "file": "../views/movie-booking.html", "title": "예매" },
     { "path": "movie-more", "file": "../views/movie-more.html", "title": "My" },
     { "path": "movie-detail", "file": "../views/movie-detail.html", "title": "영화 상세" }
-  ]
+  ],
+  "webNav": {
+    "brand": { "label": "App Basic", "logo": "✦", "href": "index.html" },
+    "items": [
+      { "label": "홈", "href": "index.html" },
+      { "label": "상세", "href": "views/detail.html" },
+      { "label": "영화 홈", "href": "views/movie-home.html" },
+      { "label": "스토어", "href": "views/movie-store.html" },
+      { "label": "예매", "href": "views/movie-booking.html" }
+    ],
+    "cta": { "label": "시작하기", "href": "views/movie-more.html" }
+  }
 }

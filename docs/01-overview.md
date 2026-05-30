@@ -34,7 +34,7 @@
 |------|------|
 | **wakit.js** | SPA 코어. 설정 로드, 앱 쉘 렌더링, 탭/라우터, 다이나믹 뷰, PTR, 오프캔버스, 링크 가로채기 등 |
 | **wakit-bridge.js** | SSR용 경량 브릿지. `<base>` 주입, `/views/foo` → `/views/foo.html` 정규화, `data-include` 처리 |
-| **wakitConfig.json** | 앱 설정(탭, 라우트, 스플래시, PTR, 테마, 탭바 옵션 등). 기본 경로 `./wakitConfig.json` |
+| **wakitConfig.json** | 앱 설정(탭, 라우트, `webNav`(웹 헤더 메뉴), 스플래시, PTR, 테마, 탭바 옵션 등). 기본 경로 `./wakitConfig.json` |
 | **wakit.css** | 기본 리셋, CSS 변수, 앱바/탭바/뷰/다이나믹 뷰/오프캔버스/PTR/스플래시/다크모드 스타일 |
 
 ## 4. SPA 초기화 흐름 (`Core.initApp`)

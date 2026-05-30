@@ -61,7 +61,7 @@ WAKIT runs in one of two modes, chosen automatically:
 | ------------------- | --------------------------------------------------------------------------------------------- |
 | `js/wakit.js`       | SPA core — config load, app-shell render, tab/router, dynamic views, PTR, off-canvas, link interception |
 | `js/wakit-bridge.js`| SSR bridge — `<base>` injection, `/views/foo` → `/views/foo.html`, `data-include` handling     |
-| `wakitConfig.json`  | App config — tabs, routes, splash, PTR, theme, tab-bar options                                 |
+| `wakitConfig.json`  | App config — tabs, routes, `webNav` (web header menu), splash, PTR, theme, tab-bar options       |
 | `css/wakit.css`     | Base reset, CSS variables, and styles for app bar / tab bar / views / off-canvas / PTR / splash / dark mode |
 
 ### Routing in brief
@@ -73,8 +73,14 @@ WAKIT runs in one of two modes, chosen automatically:
 - **External URLs** — allowed only when the security config opts in
   (`security.allowExternalRoutes` or `security.allowedOrigins`).
 
-> Navigation must use `<a href="#routeName">`. Routes must be registered in
-> `wakitConfig.json` under `tabs` or `routes`.
+> **SPA/mobile** navigation must use `<a href="#routeName">`, with routes
+> registered in `wakitConfig.json` under `tabs` or `routes`.
+>
+> **Web** navigation is different: the top header links **directly to files**
+> (`<a href="views/foo.html">`), driven by the separate `webNav` config — it
+> does *not* go through `routes`. This lets the web menu and the mobile tab bar
+> have independent compositions (e.g. 6 web links vs 4 mobile tabs) while sharing
+> the same view files.
 
 ---
 
@@ -196,6 +202,7 @@ Detailed guides live in [`docs/`](./docs):
 4. `04-wakit-css.md` — styling and CSS variables
 5. `05-template-guide.md` — building a template
 6. `06-design-guide.md` — design guidelines
+7. `07-backend-integration.md` — backend integration & agent guide
 
 ---
 

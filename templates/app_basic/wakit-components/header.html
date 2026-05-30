@@ -1,29 +1,26 @@
 <!-- Web Header (wakit-components) — common top navbar: brand · nav menu · actions.
+     The menu is data-driven: the brand, links and CTA are rendered from
+     wakitConfig.json's `webNav` (web mode uses direct file links, not #routes).
+     Markup below holds fallback defaults shown before the config loads.
      Uses foundation color tokens so dark mode ([data-theme="dark"]) works automatically. -->
 <header class="site-header" data-site-header role="banner">
   <div class="site-header__inner container">
 
-    <!-- Brand / Logo -->
-    <a href="#home" class="site-header__brand">
+    <!-- Brand / Logo (overridden by webNav.brand) -->
+    <a href="index.html" class="site-header__brand">
       <span class="site-header__logo">✦</span>
       <span class="site-header__name">App Basic</span>
     </a>
 
-    <!-- Primary navigation -->
-    <nav class="site-header__nav" id="siteNav" aria-label="주 메뉴">
-      <a href="#home" class="site-header__link is-active">홈</a>
-      <a href="#features" class="site-header__link">기능</a>
-      <a href="#pricing" class="site-header__link">요금</a>
-      <a href="#about" class="site-header__link">소개</a>
-      <a href="#contact" class="site-header__link">문의</a>
-    </nav>
+    <!-- Primary navigation (rendered from webNav.items) -->
+    <nav class="site-header__nav" id="siteNav" aria-label="주 메뉴"></nav>
 
     <!-- Right-side actions -->
     <div class="site-header__actions">
       <button class="site-header__icon" data-theme-toggle aria-label="테마 전환">
         <i class="bi bi-moon-fill"></i>
       </button>
-      <a href="#login" class="site-header__cta">시작하기</a>
+      <a href="index.html" class="site-header__cta" style="display:none">시작하기</a>
       <button class="site-header__toggle" data-nav-toggle aria-label="메뉴 열기" aria-expanded="false" aria-controls="siteNav">
         <i class="bi bi-list"></i>
       </button>
@@ -170,7 +167,8 @@
 </style>
 
 <script>
-  // Mobile hamburger toggle + active-link sync. Plain <script> (module scripts are unstable in wakit views).
+  // Web header: render the menu from wakitConfig.webNav + hamburger toggle.
+  // Plain <script> (module scripts are unstable in wakit views).
   (function () {
     var header = document.querySelector('[data-site-header]');
     if (!header || header.dataset.bound === '1') return;
@@ -179,6 +177,7 @@
     var nav = header.querySelector('#siteNav');
     var toggle = header.querySelector('[data-nav-toggle]');
 
+    // --- Hamburger (works regardless of menu data) ---
     if (toggle && nav) {
       toggle.addEventListener('click', function () {
         var open = nav.classList.toggle('is-open');
@@ -193,15 +192,58 @@
       });
     }
 
-    // Highlight the link matching the current hash route
-    function syncActive() {
-      var hash = (location.hash || '#home').replace('#', '');
-      header.querySelectorAll('.site-header__link').forEach(function (a) {
-        var route = (a.getAttribute('href') || '').replace('#', '');
-        a.classList.toggle('is-active', route === hash);
-      });
+    // --- Single nav data source. Swap this one function to go server-driven later. ---
+    function getNavData() {
+      return fetch('wakitConfig.json', { credentials: 'same-origin' })
+        .then(function (r) { return r.ok ? r.json() : {}; })
+        .then(function (cfg) { return (cfg && cfg.webNav) || {}; })
+        .catch(function () { return {}; });
     }
-    window.addEventListener('hashchange', syncActive);
-    syncActive();
+
+    // Treat "/", "/index.html" as the same page when highlighting the active link.
+    function normPath(p) { return p.replace(/index\.html$/, '').replace(/\/+$/, '') || '/'; }
+    function isCurrent(href) {
+      var a = document.createElement('a'); a.href = href;
+      return normPath(a.pathname) === normPath(location.pathname);
+    }
+    function esc(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function render(webNav) {
+      // Brand (optional override)
+      if (webNav.brand) {
+        var brand = header.querySelector('.site-header__brand');
+        if (brand) {
+          if (webNav.brand.href) brand.setAttribute('href', webNav.brand.href);
+          var logoEl = brand.querySelector('.site-header__logo');
+          var nameEl = brand.querySelector('.site-header__name');
+          if (logoEl && webNav.brand.logo != null) logoEl.textContent = webNav.brand.logo;
+          if (nameEl && webNav.brand.label != null) nameEl.textContent = webNav.brand.label;
+        }
+      }
+      // Menu links from webNav.items (file hrefs in web mode)
+      var items = Array.isArray(webNav.items) ? webNav.items : [];
+      if (nav) {
+        nav.innerHTML = items.map(function (it) {
+          var active = isCurrent(it.href) ? ' is-active' : '';
+          return '<a href="' + esc(it.href) + '" class="site-header__link' + active + '">' + esc(it.label) + '</a>';
+        }).join('');
+      }
+      // CTA (optional; hidden unless configured)
+      var cta = header.querySelector('.site-header__cta');
+      if (cta) {
+        if (webNav.cta && webNav.cta.label) {
+          cta.textContent = webNav.cta.label;
+          cta.setAttribute('href', webNav.cta.href || '#');
+          cta.style.display = '';
+        } else {
+          cta.style.display = 'none';
+        }
+      }
+    }
+
+    getNavData().then(render);
   })();
 </script>

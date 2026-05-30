@@ -60,7 +60,7 @@ WAKIT은 두 가지 모드 중 하나로 자동 동작합니다:
 | ------------------- | --------------------------------------------------------------------------------------------- |
 | `js/wakit.js`       | SPA 코어 — 설정 로드, 앱 셸 렌더링, 탭/라우터, 다이나믹 뷰, PTR, 오프캔버스, 링크 가로채기      |
 | `js/wakit-bridge.js`| SSR 브릿지 — `<base>` 주입, `/views/foo` → `/views/foo.html`, `data-include` 처리             |
-| `wakitConfig.json`  | 앱 설정 — 탭, 라우트, 스플래시, PTR, 테마, 탭바 옵션                                           |
+| `wakitConfig.json`  | 앱 설정 — 탭, 라우트, `webNav`(웹 헤더 메뉴), 스플래시, PTR, 테마, 탭바 옵션                    |
 | `css/wakit.css`     | 기본 리셋, CSS 변수, 앱바 / 탭바 / 뷰 / 오프캔버스 / PTR / 스플래시 / 다크모드 스타일          |
 
 ### 라우팅 요약
@@ -72,8 +72,13 @@ WAKIT은 두 가지 모드 중 하나로 자동 동작합니다:
 - **외부 URL** — 보안 설정이 허용할 때만 (`security.allowExternalRoutes` 또는
   `security.allowedOrigins`).
 
-> 화면 이동은 반드시 `<a href="#routeName">`을 사용해야 합니다. 라우트는
+> **SPA/모바일** 화면 이동은 반드시 `<a href="#routeName">`을 사용하며, 라우트는
 > `wakitConfig.json`의 `tabs` 또는 `routes`에 등록해야 합니다.
+>
+> **웹** 네비게이션은 다릅니다. 상단 헤더는 **파일에 직접 링크**
+> (`<a href="views/foo.html">`)하며, 별도의 `webNav` 설정으로 구동됩니다 —
+> `routes`를 타지 않습니다. 덕분에 웹 메뉴와 모바일 탭바는 같은 뷰 파일을
+> 공유하면서도 구성을 독립적으로 가질 수 있습니다(예: 웹 6개 vs 모바일 탭 4개).
 
 ---
 
@@ -195,6 +200,7 @@ window.sb = supabase.createClient(
 4. `04-wakit-css.md` — 스타일링과 CSS 변수
 5. `05-template-guide.md` — 템플릿 만들기
 6. `06-design-guide.md` — 디자인 가이드라인
+7. `07-backend-integration.md` — 백엔드 연동 & 에이전트 가이드
 
 ---
 
