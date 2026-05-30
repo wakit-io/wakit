@@ -11,7 +11,7 @@ const { execSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const TEMPLATES_DIR = path.join(ROOT, 'templates');
-const BASE_TEMPLATE = path.join(TEMPLATES_DIR, 'app_test'); // 기준 템플릿
+const BASE_TEMPLATE = path.join(TEMPLATES_DIR, 'app_basic'); // 골든 base 템플릿
 
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
@@ -29,8 +29,14 @@ function copyDir(src, dest, replaceName, newName) {
       copyDir(srcPath, destPath, replaceName, newName);
     } else {
       let content = fs.readFileSync(srcPath, 'utf8');
+      // Rebrand identity strings: underscore form (app_basic) and hyphen form
+      // (app-basic-* BEM classes). newName is underscore (e.g. app_shop); its
+      // hyphen form (app-shop) is used for class prefixes.
+      const hyphenFrom = replaceName.replace(/_/g, '-');
+      const hyphenTo = newName.replace(/_/g, '-');
       content = content.replace(new RegExp(replaceName, 'g'), newName);
-      content = content.replace(/app_test-theme/g, `${newName}-theme`);
+      content = content.replace(new RegExp(hyphenFrom + '-', 'g'), `${hyphenTo}-`);
+      content = content.replace(/app_basic-theme/g, `${newName}-theme`);
       fs.writeFileSync(destPath, content);
     }
   }
@@ -99,7 +105,7 @@ async function main() {
   const withDb = (await question('Supabase 스키마 + 버킷 자동 생성? (Y/n): ')).trim().toLowerCase() !== 'n';
 
   console.log('\n📁 템플릿 폴더 생성 중...');
-  copyDir(BASE_TEMPLATE, templateDir, 'app_test', name);
+  copyDir(BASE_TEMPLATE, templateDir, 'app_basic', name);
 
   // wakitConfig.json primaryColor 업데이트
   const configPath = path.join(templateDir, 'wakitConfig.json');
@@ -115,7 +121,7 @@ async function main() {
   const pkgPath = path.join(ROOT, 'package.json');
   const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
   pkg.scripts[`dev:${name}`] = `webpack serve --mode development --env template=${name}`;
-  pkg.scripts[`build:${name}`] = `webpack --mode production --env template=${name} && cd templates/${name}/web && npm run build`;
+  pkg.scripts[`build:${name}`] = `node scripts/build-template.js ${name}`;
   pkg.scripts[`package:${name}`] = `TEMPLATE=${name} node scripts/package-template.js`;
   fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
   console.log(`✅ package.json 스크립트 추가: dev:${name}, build:${name}, package:${name}`);

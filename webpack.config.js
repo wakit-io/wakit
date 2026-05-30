@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const net = require('net');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Terser = require('terser');
@@ -38,6 +39,14 @@ module.exports = async (env = {}, argv = {}) => {
   const templateSrc = path.resolve(__dirname, `templates/${template}`);
   const isServe = process.env.WEBPACK_SERVE === 'true' || process.env.WEBPACK_SERVE === '1' || argv.devServer === true;
 
+  // Web-optional build output:
+  //  - If the template has an Astro web/ layer → output to web/public/ (Astro then builds → dist/)
+  //  - If not → output straight to dist/ (deployable without Astro). Same app/ + wakit/ sub-structure either way.
+  const hasWebLayer = fs.existsSync(path.join(templateSrc, 'web'));
+  const outRoot = hasWebLayer
+    ? path.resolve(__dirname, `templates/${template}/web/public`)
+    : path.resolve(__dirname, `templates/${template}/dist`);
+
   // Prefer PORT env, then 5173; auto-increment to the next free port if busy
   // so multiple `npm run dev:<template>` servers can run at the same time.
   const basePort = Number(process.env.PORT) || 5173;
@@ -70,7 +79,7 @@ module.exports = async (env = {}, argv = {}) => {
                 // Minify + obfuscate wakit JS and place under the selected template's web/public/wakit/
                 {
                   from: 'wakit/js/*.js',
-                  to: path.resolve(__dirname, `templates/${template}/web/public/wakit/js/[name][ext]`),
+                  to: path.join(outRoot, 'wakit/js/[name][ext]'),
                   transform: async (content, absoluteFrom) => {
                     const filename = path.basename(absoluteFrom);
                     const isEsModule = filename === 'wakit.js';
@@ -119,15 +128,15 @@ module.exports = async (env = {}, argv = {}) => {
                 // Copy other wakit assets under the selected template's web/public/wakit/
                 {
                   from: 'wakit',
-                  to: path.resolve(__dirname, `templates/${template}/web/public/wakit`),
+                  to: path.join(outRoot, 'wakit'),
                   globOptions: { ignore: ['**/js/*.js'] },
                   noErrorOnMissing: true,
                 },
                 // Copy template files into web/public/app/ and rewrite wakit paths
                 {
                   from: templateSrc,
-                  to: path.resolve(__dirname, `templates/${template}/web/public/app`),
-                  // Exclude the web/ subfolder itself from being copied into app/
+                  to: path.join(outRoot, 'app'),
+                  // Exclude the web/ and dist/ subfolders from being copied into app/
                   globOptions: { ignore: [`${templateSrc}/web/**`, `${templateSrc}/dist/**`] },
                   transform: (content, absoluteFrom) => {
                     if (/\.html?$/i.test(absoluteFrom)) {
