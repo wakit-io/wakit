@@ -3,7 +3,7 @@
  */
 (function() {
   'use strict';
-  const THEME_STORAGE_KEY = 'app_basic-theme';
+  const THEME_STORAGE_KEY = 'blog-theme'; // must match wakit.js engine key (applyBlogThemeSync)
   const THEME_ATTRIBUTE = 'data-theme';
   const DEFAULT_THEME = 'system';
 
@@ -52,6 +52,22 @@
     updateThemeButton(theme);
   }
 
+  // Highlight the active option in any [data-theme-option] segmented control
+  // (values: system | light | dark).
+  function updateThemeOptions(option) {
+    document.querySelectorAll('[data-theme-option]').forEach(el => {
+      const active = el.getAttribute('data-theme-option') === option;
+      el.classList.toggle('is-active', active);
+      el.setAttribute('aria-checked', active ? 'true' : 'false');
+    });
+  }
+
+  // Sync every theme UI (toggle icon + option segments) to the current state.
+  function syncUI() {
+    updateButton(getCurrentTheme());
+    updateThemeOptions(getCurrentThemeOption());
+  }
+
   // Event delegation: a single listener on the document handles the toggle even
   // when the button is injected later via data-include (async fetch). Attaching
   // per-button on load misses buttons that don't exist yet.
@@ -60,12 +76,22 @@
     if (delegatedBound) return;
     delegatedBound = true;
     document.addEventListener('click', function(e) {
-      const button = e.target.closest && e.target.closest('[data-theme-toggle]');
+      if (!e.target.closest) return;
+      // Segmented control: pick a specific option (system | light | dark)
+      const opt = e.target.closest('[data-theme-option]');
+      if (opt) {
+        e.preventDefault();
+        setTheme(opt.getAttribute('data-theme-option'));
+        syncUI();
+        return;
+      }
+      // Icon toggle: flip dark <-> light
+      const button = e.target.closest('[data-theme-toggle]');
       if (!button) return;
       e.preventDefault();
       const newOption = getCurrentThemeOption() === 'dark' ? 'light' : 'dark';
       setTheme(newOption);
-      updateButton(getCurrentTheme());
+      syncUI();
     });
   }
 
@@ -74,14 +100,14 @@
   function observeIncludes() {
     if (!window.MutationObserver || !document.body) return;
     const observer = new MutationObserver(function() {
-      updateButton(getCurrentTheme());
+      syncUI();
     });
     observer.observe(document.body, { childList: true, subtree: true });
   }
 
   function init() {
     setTheme(getCurrentThemeOption());
-    updateButton(getCurrentTheme());
+    syncUI();
     attachDelegatedListener();
     observeIncludes();
   }
@@ -91,5 +117,5 @@
   } else {
     init();
   }
-  window.addEventListener('load', function() { updateButton(getCurrentTheme()); });
+  window.addEventListener('load', function() { syncUI(); });
 })();

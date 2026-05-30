@@ -6,7 +6,7 @@
   'use strict';
   
   try {
-    const THEME_STORAGE_KEY = 'app_basic-theme';
+    const THEME_STORAGE_KEY = 'blog-theme'; // must match wakit.js engine key (applyBlogThemeSync)
     const THEME_ATTRIBUTE = 'data-theme';
     
     let themeOption = null;

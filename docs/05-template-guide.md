@@ -404,6 +404,46 @@ A screen (view)-specific CSS `<link>` must be declared **inside `<body>`, not in
 
 ---
 
+### ⚠️ 6.3 Web Page Structure — Full Document · Shared Components · Container
+
+A view accessed directly by URL (a web-mode page) is written as a **full HTML document**, not a fragment. (Only `home.html`, the default view embedded into `index.html`, is a fragment exception.)
+
+```html
+<!doctype html><html lang="ko">
+<head>
+  <!-- Shared resources: data-spa-ignore (app.html already loads them → avoid SPA duplicates) -->
+  <link rel="stylesheet" href="css/foundation/index.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  <script src="js/theme-init.js" data-spa-ignore></script>
+</head>
+<body>
+  <!-- Shared component includes: data-spa-ignore (the engine renders the app bar/tab bar in SPA) -->
+  <div data-include="wakit-components/header.html" data-spa-ignore></div>
+
+  <!-- Screen-specific CSS: inside body, no data-spa-ignore (6.2) -->
+  <link rel="stylesheet" href="css/{screen}.css">
+
+  <main class="{screen} container">…</main>
+
+  <div data-include="wakit-components/footer.html" data-spa-ignore></div>
+</body>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+</html>
+```
+
+**Rules**
+- **Shared component includes (header/footer) get `data-spa-ignore`** — in SPA the engine renders the app bar/tab bar, so the web header/footer are excluded.
+- **Add the `container` class to `<main>`** — to constrain and center the width on web (desktop).
+
+**Sticky header** — the header is injected inside its `data-include` wrapper `<div>`. `position: sticky` would only stick within that wrapper's box (= header height) and scroll away immediately. Remove the wrapper's box so it sticks relative to the page:
+
+```css
+[data-include="wakit-components/header.html"] { display: contents; }
+.site-header { position: sticky; top: 0; z-index: 50; }
+```
+
+---
+
 ## 7. css/foundation/ — Design Tokens
 
 Manages Figma design tokens as CSS variables. `index.css` bundles and imports them all.
@@ -450,7 +490,12 @@ wakit.js calls `applyBlogThemeSync()` inside `initApp()`. This function reads th
 
 As a result, if your custom template stores the theme only under its own localStorage key (e.g. `'app_test-theme'`), wakit will overwrite it on app restart and dark mode will be cleared.
 
-**Solution principle: whenever you change the theme value, always save both the custom key and the `'blog-theme'` key together.**
+**Solution principle: store the theme under the same `'blog-theme'` key the engine uses.**
+
+- **Recommended (single key)**: use `'blog-theme'` as your **only** theme key. This is what `app_basic` does — `THEME_STORAGE_KEY = 'blog-theme'` in `theme-init.js`/`theme-toggle.js`. No sync code needed, and it never conflicts with the engine's `themechange` re-apply.
+- **Alternative (dual key)**: if you want an isolated template-specific key, save both that key and `'blog-theme'` together on every change (examples 8.1/8.2 below).
+
+> ⚠️ Common bug: if you use only a custom key (e.g. `'app_basic-theme'`), then on toggle a `themechange` fires, the engine reads the empty `'blog-theme'`, and **immediately reverts your change to light** (the "toggle does nothing" symptom). Unifying on `'blog-theme'` fixes it.
 
 > Never modify the core code (`wakit.js`). Handle everything in custom JS only.
 
@@ -521,6 +566,29 @@ Load it at the end of the `app.html` `<body>`.
 ```html
 <script src="./js/theme-toggle.js"></script>
 ```
+
+#### System / Light / Dark — 3 Options (optional)
+
+Besides a simple toggle, a settings view can offer **system / light / dark** options using the same delegation. Add `[data-theme-option]` buttons and `theme-toggle.js` handles the clicks via delegation.
+
+```html
+<div role="radiogroup" aria-label="Theme">
+  <button data-theme-option="system">System</button>
+  <button data-theme-option="light">Light</button>
+  <button data-theme-option="dark">Dark</button>
+</div>
+```
+
+```js
+document.addEventListener('click', function(e) {
+  var opt = e.target.closest('[data-theme-option]');
+  if (!opt) return;
+  setTheme(opt.getAttribute('data-theme-option')); // 'system'|'light'|'dark' → data-theme + 'blog-theme'
+  // sync the active option (.is-active) UI
+});
+```
+
+> ⚠️ **For this to work in the SPA (app.html), `app.html` must load `theme-toggle.js`.** A view's bottom `<script>` is ignored via `data-spa-ignore`, so controls in dynamically injected views are handled by the delegation listener from the `theme-toggle.js` loaded in the **shell (app.html)**.
 
 ### 8.3 Initializing the Switch UI in Profile/Settings Views
 

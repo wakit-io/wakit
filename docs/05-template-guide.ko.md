@@ -404,6 +404,46 @@ templates/my-template/
 
 ---
 
+### ⚠️ 6.3 웹 페이지 구조 — 풀 문서 · 공통 컴포넌트 · 컨테이너
+
+URL로 직접 접근하는 뷰(웹 모드 페이지)는 조각이 아니라 **풀 HTML 문서**로 작성합니다. (`index.html`에 임베드되는 기본 뷰 `home.html`만 조각 예외.)
+
+```html
+<!doctype html><html lang="ko">
+<head>
+  <!-- 공용 리소스: data-spa-ignore (app.html이 이미 로드 → SPA 중복 방지) -->
+  <link rel="stylesheet" href="css/foundation/index.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  <script src="js/theme-init.js" data-spa-ignore></script>
+</head>
+<body>
+  <!-- 공통 컴포넌트 include: data-spa-ignore (SPA에선 엔진이 앱바/탭바 렌더) -->
+  <div data-include="wakit-components/header.html" data-spa-ignore></div>
+
+  <!-- 화면 전용 CSS: body 안, data-spa-ignore 없음 (6.2) -->
+  <link rel="stylesheet" href="css/{화면}.css">
+
+  <main class="{화면} container">…</main>
+
+  <div data-include="wakit-components/footer.html" data-spa-ignore></div>
+</body>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+</html>
+```
+
+**규칙**
+- **공통 컴포넌트 include(header/footer)에는 `data-spa-ignore`** — SPA에선 엔진이 앱바·탭바를 렌더하므로 웹 헤더/푸터는 제외합니다.
+- **`<main>`에 `container` 클래스** — 웹(데스크톱)에서 가로폭을 가운데로 제한합니다.
+
+**sticky 헤더** — 헤더는 `data-include` 래퍼 `<div>` 안에 주입됩니다. `position: sticky`는 그 래퍼 박스(= 헤더 높이) 안에서만 작동해 스크롤 시 바로 사라집니다. 래퍼 박스를 제거해야 페이지 기준으로 고정됩니다:
+
+```css
+[data-include="wakit-components/header.html"] { display: contents; }
+.site-header { position: sticky; top: 0; z-index: 50; }
+```
+
+---
+
 ## 7. css/foundation/ — 디자인 토큰
 
 Figma 디자인 토큰을 CSS 변수로 관리합니다. `index.css`가 전체를 묶어서 import합니다.
@@ -450,7 +490,12 @@ wakit.js는 `initApp()` 내부에서 `applyBlogThemeSync()`를 호출합니다. 
 
 결과적으로, 커스텀 템플릿에서 자체 localStorage 키(예: `'app_test-theme'`)로만 테마를 저장하면 앱 재시작 시 wakit이 덮어써서 다크 모드가 풀립니다.
 
-**해결 원칙: 테마 값을 변경할 때마다 커스텀 키와 `'blog-theme'` 키를 항상 함께 저장합니다.**
+**해결 원칙: 테마를 엔진과 동일한 `'blog-theme'` 키에 저장합니다.**
+
+- **권장(단일 키)**: `'blog-theme'`를 **유일한 테마 키로 그대로 사용**합니다. `app_basic`이 이 방식입니다 — `theme-init.js`·`theme-toggle.js`의 `THEME_STORAGE_KEY = 'blog-theme'`. 별도 동기화 코드가 필요 없어 가장 단순하고, 엔진의 `themechange` 재적용과 충돌하지 않습니다.
+- **대안(이중 키)**: 템플릿 고유 키로 격리하고 싶다면, 값을 바꿀 때마다 그 키와 `'blog-theme'`를 **함께** 저장합니다(아래 8.1·8.2 예시).
+
+> ⚠️ 흔한 버그: 고유 키(예: `'app_basic-theme'`)만 쓰면 → 토글 시 `themechange`가 발생하고 엔진이 빈 `'blog-theme'`를 읽어 **방금 한 변경을 즉시 라이트로 되돌립니다**(토글이 "안 먹는" 증상). 키를 `'blog-theme'`로 통일하면 해결됩니다.
 
 > 코어 코드(`wakit.js`)는 절대 수정하지 않습니다. 커스텀 JS에서만 처리합니다.
 
@@ -521,6 +566,29 @@ SPA 환경에서는 뷰가 동적으로 마운트되므로 직접 `addEventListe
 ```html
 <script src="./js/theme-toggle.js"></script>
 ```
+
+#### 시스템 / 라이트 / 다크 3-옵션 (선택)
+
+단순 토글 외에, 설정 뷰에서 **시스템·라이트·다크 3-옵션**도 같은 위임 방식으로 추가할 수 있습니다. `[data-theme-option]` 버튼을 두면 `theme-toggle.js`가 클릭을 위임 처리합니다.
+
+```html
+<div role="radiogroup" aria-label="화면 테마">
+  <button data-theme-option="system">시스템</button>
+  <button data-theme-option="light">라이트</button>
+  <button data-theme-option="dark">다크</button>
+</div>
+```
+
+```js
+document.addEventListener('click', function(e) {
+  var opt = e.target.closest('[data-theme-option]');
+  if (!opt) return;
+  setTheme(opt.getAttribute('data-theme-option')); // 'system'|'light'|'dark' → data-theme + 'blog-theme' 저장
+  // 활성 옵션(.is-active) UI 동기화
+});
+```
+
+> ⚠️ **SPA(app.html)에서 동작하려면 `app.html`이 `theme-toggle.js`를 로드해야 합니다.** 뷰 하단의 `<script>`는 `data-spa-ignore`로 무시되므로, 동적 주입 뷰의 컨트롤은 **셸(app.html)에서 로드한** theme-toggle.js의 위임 리스너가 처리합니다.
 
 ### 8.3 프로필/설정 뷰 스위치 UI 초기화
 

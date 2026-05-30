@@ -4,6 +4,12 @@
  * Loaded globally via @import in css/style.css.
  */
 
+/* The header is injected inside its data-include <div> wrapper. Without this,
+   position:sticky would only stick within that wrapper's box (= header height)
+   and scroll away immediately. display:contents removes the wrapper's box so the
+   header sticks relative to the page instead. */
+[data-include="wakit-components/header.html"] { display: contents; }
+
 .site-header {
   position: sticky;
   top: 0;
