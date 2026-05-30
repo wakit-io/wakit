@@ -1,0 +1,14 @@
+{
+  "name": "hotel_app",
+  "brandLabel": "Hotel App",
+  "primaryColor": "#c8a25a",
+  "pages": [
+    { "id": "home", "title": "홈", "icon": "bi bi-house" },
+    { "id": "search", "title": "검색", "icon": "bi bi-search" },
+    { "id": "detail", "title": "상세", "icon": "bi bi-card-text" },
+    { "id": "booking", "title": "예약", "icon": "bi bi-calendar-check" },
+    { "id": "mypage", "title": "마이", "icon": "bi bi-person" }
+  ],
+  "tabs": ["home", "search", "booking", "mypage"],
+  "webNav": ["home", "search", "detail", "booking"]
+}

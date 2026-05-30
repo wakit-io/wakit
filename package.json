@@ -21,6 +21,7 @@
     "create:custom": "node scripts/create-customization-project.js",
     "create:cms": "node scripts/create-cms-project.js",
     "create:template": "node scripts/create-template.js",
+    "scaffold:template": "node scripts/scaffold-template.js",
     "delete:template": "node scripts/delete-template.js"
   },
   "devDependencies": {
