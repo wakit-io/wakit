@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
-const templateRoot = path.resolve(__dirname, '..'); // templates/app_test/
+const templateRoot = path.resolve(__dirname, '..'); // templates/app_astro/
 const wakitRoot   = path.resolve(__dirname, '../../../wakit'); // wakit/
 
 const MIME = {

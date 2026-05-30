@@ -108,7 +108,8 @@ scripts/                ← template create / delete / package automation
 docs/                   ← detailed documentation (01–06)
 ```
 
-`app_test` is the reference template — new templates are copied from it.
+`app_basic` is the golden base — `create:template`/`scaffold:template` copy it.
+`app_astro` is a reference template that includes the Astro web layer.
 
 ---
 
@@ -118,18 +119,18 @@ docs/                   ← detailed documentation (01–06)
 npm install
 
 # Run a template in the webpack dev server
-npm run dev:app_test       # → http://localhost:5173/app/app.html
+npm run dev:app_astro       # → http://localhost:5173/app/app.html
 
 # Run the Astro web layer for that template
-cd templates/app_test/web && npm run dev   # → http://localhost:4321
+cd templates/app_astro/web && npm run dev   # → http://localhost:4321
 ```
 
-Available templates: `app_test`, `app_basic`.
+Available templates: `app_astro`, `app_basic`.
 
 ### Build
 
 ```bash
-npm run build:app_test     # webpack (obfuscate + copy) → astro build → dist/
+npm run build:app_astro     # webpack (obfuscate + copy) → astro build → dist/
 npm run preview            # serve the built dist/ for verification
 ```
 
@@ -145,8 +146,8 @@ npm run build:{name}
 ### Package (for distribution)
 
 ```bash
-npm run package:app_test
-# → packages/hybrid-ui-template-app_test-v1.0.0.zip
+npm run package:app_astro
+# → packages/hybrid-ui-template-app_astro-v1.0.0.zip
 #    ├── dist/             ← built files to host on a web server
 #    └── supabase/setup.sql ← DB schema (template-scoped migrations)
 ```
@@ -178,7 +179,7 @@ window.sb = supabase.createClient(
 ```
 
 - Auth via `window.sb.auth.signUp()` / `signInWithPassword()`.
-- Each template uses its own schema (e.g. `app_test.profiles`).
+- Each template uses its own schema (e.g. `app_astro.profiles`).
 - Use `app_metadata` (not `raw_user_meta_data`) for RLS.
 
 ---

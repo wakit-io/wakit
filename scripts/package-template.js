@@ -4,15 +4,15 @@
  * 빌드 결과물 + Supabase 마이그레이션 포함하여 패키징
  *
  * 사용법:
- *   TEMPLATE=app_test node scripts/package-template.js
- *   npm run package:app_test
+ *   TEMPLATE=app_astro node scripts/package-template.js
+ *   npm run package:app_astro
  */
 
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const TEMPLATE_NAME = process.env.TEMPLATE || 'app_test';
+const TEMPLATE_NAME = process.env.TEMPLATE || 'app_astro';
 const ROOT = path.resolve(__dirname, '..');
 const OUTPUT_DIR = path.join(ROOT, 'packages');
 const TEMPLATE_SRC = path.join(ROOT, 'templates', TEMPLATE_NAME);

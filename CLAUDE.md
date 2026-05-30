@@ -29,7 +29,7 @@ templates/{name}/
     └── dist/             ← 최종 빌드 결과물
 ```
 
-**기준 템플릿:** `app_test` — 모든 새 템플릿은 이 기준으로 복사됨
+**골든 base 템플릿:** `app_basic` — `create:template`/`scaffold:template`이 이 템플릿을 복사함 (`app_astro`는 Astro 웹 레이어 포함 참고 템플릿)
 
 ---
 

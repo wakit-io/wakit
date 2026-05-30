@@ -28,7 +28,7 @@
   <script>
     (function() {
       try {
-        var v = localStorage.getItem('app_test-theme');
+        var v = localStorage.getItem('app_astro-theme');
         var dark = v === 'dark' || (!v && matchMedia('(prefers-color-scheme: dark)').matches);
         // wakit initApp이 'blog-theme' 키로 applyBlogThemeSync()를 호출하므로 동기화 필수
         localStorage.setItem('blog-theme', dark ? 'dark' : 'light');

@@ -1,5 +1,5 @@
 (function() {
-  var KEY = 'app_test-theme';
+  var KEY = 'app_astro-theme';
   var WAKIT_KEY = 'blog-theme'; // wakit이 initApp 시 읽는 키 — 반드시 동기화 필요
 
   function isDark() {

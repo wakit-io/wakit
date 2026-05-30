@@ -488,7 +488,7 @@ Light and dark modes are defined together in `color.css`.
 
 wakit.js calls `applyBlogThemeSync()` inside `initApp()`. This function reads the **`'blog-theme'`** key from localStorage to determine the theme. If the key is missing or its value is `'light'`, it runs `removeAttribute('data-theme')`, which **forcibly clears the previously set dark mode**.
 
-As a result, if your custom template stores the theme only under its own localStorage key (e.g. `'app_test-theme'`), wakit will overwrite it on app restart and dark mode will be cleared.
+As a result, if your custom template stores the theme only under its own localStorage key (e.g. `'app_astro-theme'`), wakit will overwrite it on app restart and dark mode will be cleared.
 
 **Solution principle: store the theme under the same `'blog-theme'` key the engine uses.**
 
@@ -648,7 +648,7 @@ templates/{template}/
 
 ### 9.2 Build Command
 ```bash
-npm run build:app_test
+npm run build:app_astro
 ```
 
 Build order:
@@ -686,12 +686,12 @@ npm run create:template
 
 ```bash
 # wakit app development (webpack dev server)
-npm run dev:app_test        # http://localhost:5173/app/app.html
+npm run dev:app_astro        # http://localhost:5173/app/app.html
 
 # Astro web layer development
 npm run web:dev             # http://localhost:4321
 # or directly
-cd templates/app_test/web && npm run dev
+cd templates/app_astro/web && npm run dev
 ```
 
 ---
@@ -708,10 +708,10 @@ cd templates/app_test/web && npm run dev
 ### Packaging Command
 
 ```bash
-npm run package:app_test   # build + auto-generate a ZIP including the schema
+npm run package:app_astro   # build + auto-generate a ZIP including the schema
 ```
 
-Output: `packages/hybrid-ui-template-app_test-v1.0.0.zip`
+Output: `packages/hybrid-ui-template-app_astro-v1.0.0.zip`
 
 ```
 Package internal structure

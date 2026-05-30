@@ -106,7 +106,8 @@ scripts/                ← 템플릿 생성 / 삭제 / 패키징 자동화
 docs/                   ← 상세 문서 (01–06)
 ```
 
-`app_test`가 기준 템플릿입니다 — 새 템플릿은 여기서 복사됩니다.
+`app_basic`이 골든 base입니다 — `create:template`/`scaffold:template`이 이 템플릿을 복사합니다.
+`app_astro`는 Astro 웹 레이어를 포함한 참고 템플릿입니다.
 
 ---
 
@@ -116,18 +117,18 @@ docs/                   ← 상세 문서 (01–06)
 npm install
 
 # webpack 개발 서버에서 템플릿 실행
-npm run dev:app_test       # → http://localhost:5173/app/app.html
+npm run dev:app_astro       # → http://localhost:5173/app/app.html
 
 # 해당 템플릿의 Astro 웹 레이어 실행
-cd templates/app_test/web && npm run dev   # → http://localhost:4321
+cd templates/app_astro/web && npm run dev   # → http://localhost:4321
 ```
 
-사용 가능한 템플릿: `app_test`, `app_basic`.
+사용 가능한 템플릿: `app_astro`, `app_basic`.
 
 ### 빌드
 
 ```bash
-npm run build:app_test     # webpack (난독화 + 복사) → astro build → dist/
+npm run build:app_astro     # webpack (난독화 + 복사) → astro build → dist/
 npm run preview            # 빌드된 dist/를 서빙해 확인
 ```
 
@@ -143,8 +144,8 @@ npm run build:{name}
 ### 패키징 (배포용)
 
 ```bash
-npm run package:app_test
-# → packages/hybrid-ui-template-app_test-v1.0.0.zip
+npm run package:app_astro
+# → packages/hybrid-ui-template-app_astro-v1.0.0.zip
 #    ├── dist/             ← 웹 서버에 올릴 빌드 파일
 #    └── supabase/setup.sql ← DB 스키마 (템플릿 범위 마이그레이션)
 ```
@@ -176,7 +177,7 @@ window.sb = supabase.createClient(
 ```
 
 - 인증은 `window.sb.auth.signUp()` / `signInWithPassword()`로.
-- 각 템플릿은 자체 스키마를 사용합니다 (예: `app_test.profiles`).
+- 각 템플릿은 자체 스키마를 사용합니다 (예: `app_astro.profiles`).
 - RLS에는 `raw_user_meta_data`가 아닌 `app_metadata`를 사용하세요.
 
 ---

@@ -1,0 +1,1 @@
+!function(){try{var e=localStorage.getItem("app_astro-theme")||"system";("dark"===e||"system"===e&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.documentElement.setAttribute("data-theme","dark")}catch(e){}}();
