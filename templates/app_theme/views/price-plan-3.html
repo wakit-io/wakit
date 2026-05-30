@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Price Plan 3</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+<!-- Blog Styles -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/price-plan-3.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="price-plan-3">
+  <!-- Page Header Section -->
+  <section class="page-header-section">
+    <div class="page-header-section__container container">
+      <!-- Breadcrumbs -->
+      <nav class="page-header-section__breadcrumbs" aria-label="Breadcrumb">
+        <ol class="page-header-section__breadcrumb-list">
+          <li class="page-header-section__breadcrumb-item">
+            <a href="#" class="page-header-section__breadcrumb-link">
+              <i class="bi bi-house"></i>
+              <span class="page-header-section__breadcrumb-text">홈</span>
+            </a>
+          </li>
+          <li class="page-header-section__breadcrumb-item">
+            <i class="bi bi-chevron-right page-header-section__breadcrumb-separator"></i>
+            <a href="#" class="page-header-section__breadcrumb-link">
+              <span class="page-header-section__breadcrumb-text">가격</span>
+            </a>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Content -->
+      <div class="page-header-section__content">
+        <h1 class="page-header-section__title">가격</h1>
+        <p class="page-header-section__description">끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Segmented Controls Section -->
+  <section class="segmented-controls-section">
+    <div class="segmented-controls-section__container container">
+      <div class="segmented-controls">
+        <button class="segmented-controls__item segmented-controls__item--active" data-type="personal">
+          <span class="segmented-controls__label">개인</span>
+        </button>
+        <div class="segmented-controls__separator"></div>
+        <button class="segmented-controls__item" data-type="business">
+          <span class="segmented-controls__label">비즈니스</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Plan Cards Section -->
+  <section class="pricing-plan-cards-section">
+    <div class="pricing-plan-cards-section__container container">
+      <div class="pricing-plan-cards-section__cards">
+        <!-- Basic Card -->
+        <div class="pricing-plan-card">
+          <div class="pricing-plan-card__header">
+            <h3 class="pricing-plan-card__title">베이직</h3>
+            <div class="pricing-plan-card__toggle-wrapper">
+              <span class="pricing-plan-card__toggle-label">연 결제</span>
+              <button class="pricing-plan-card__toggle" aria-label="연 결제 토글">
+                <span class="pricing-plan-card__toggle-knob"></span>
+              </button>
+            </div>
+          </div>
+          <div class="pricing-plan-card__price-wrapper">
+            <span class="pricing-plan-card__price">19,900원</span>
+            <span class="pricing-plan-card__period">/월</span>
+          </div>
+          <div class="pricing-plan-card__features">
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">체계적인 분석</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">효과적인 전략</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">안정적인 운영</span>
+            </div>
+          </div>
+          <button type="button" class="btn btn--secondary btn--m btn--block pricing-plan-card__button">
+            <span class="pricing-plan-card__button-text">구독하기</span>
+          </button>
+        </div>
+
+        <!-- Pro Card -->
+        <div class="pricing-plan-card">
+          <div class="pricing-plan-card__header">
+            <h3 class="pricing-plan-card__title">프로</h3>
+            <div class="pricing-plan-card__toggle-wrapper">
+              <span class="pricing-plan-card__toggle-label">연 결제</span>
+              <button class="pricing-plan-card__toggle" aria-label="연 결제 토글">
+                <span class="pricing-plan-card__toggle-knob"></span>
+              </button>
+            </div>
+          </div>
+          <div class="pricing-plan-card__price-wrapper">
+            <span class="pricing-plan-card__price">29,900원</span>
+            <span class="pricing-plan-card__period">/월</span>
+          </div>
+          <div class="pricing-plan-card__features">
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">효율적인 관리</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">체계적인 접근</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">전문적인 지원</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">혁신적인 방법</span>
+            </div>
+          </div>
+          <button type="button" class="btn btn--secondary btn--m btn--block pricing-plan-card__button">
+            <span class="pricing-plan-card__button-text">구독하기</span>
+          </button>
+        </div>
+
+        <!-- Enterprise Card -->
+        <div class="pricing-plan-card">
+          <div class="pricing-plan-card__header">
+            <h3 class="pricing-plan-card__title">엔터프라이즈</h3>
+            <div class="pricing-plan-card__toggle-wrapper">
+              <span class="pricing-plan-card__toggle-label">연 결제</span>
+              <button class="pricing-plan-card__toggle" aria-label="연 결제 토글">
+                <span class="pricing-plan-card__toggle-knob"></span>
+              </button>
+            </div>
+          </div>
+          <div class="pricing-plan-card__price-wrapper">
+            <span class="pricing-plan-card__price">39,900원</span>
+            <span class="pricing-plan-card__period">/월</span>
+          </div>
+          <div class="pricing-plan-card__features">
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">지속 가능한 성장</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">맞춤형 솔루션</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">검증된 결과</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">신속한 대응</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">세심한 관리</span>
+            </div>
+          </div>
+          <button type="button" class="btn btn--primary btn--m btn--block pricing-plan-card__button">
+            <span class="pricing-plan-card__button-text">문의하기</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plan Table Section -->
+  <section class="plan-table-section">
+    <div class="plan-table-section__container container">
+      <!-- Pages and Content Section -->
+      <div class="plan-table-group">
+        <h3 class="plan-table-group__header">꿈을 향한 첫걸음</h3>
+        <div class="plan-table-group__rows">
+          <div class="plan-table-row">
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">전문적인 컨설팅</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">체계적인 분석</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">효과적인 전략</span>
+            </div>
+          </div>
+          <div class="plan-table-row">
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">안정적인 운영</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">혁신적인 도구</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">효율적인 관리</span>
+            </div>
+          </div>
+          <div class="plan-table-row">
+            <div class="plan-table-row__cell">
+              <div class="plan-table-row__disabled-icon"></div>
+              <span class="plan-table-row__text plan-table-row__text--disabled">체계적인 접근</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">전문적인 지원</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">혁신적인 방법</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hosting and Storage Section -->
+      <div class="plan-table-group">
+        <h3 class="plan-table-group__header">혁신적인 접근</h3>
+        <div class="plan-table-group__rows">
+          <div class="plan-table-row">
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">고객 중심 서비스</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">지속 가능한 성장</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">맞춤형 솔루션</span>
+            </div>
+          </div>
+          <div class="plan-table-row">
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">10GB</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">50GB</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">검증된 결과</span>
+            </div>
+          </div>
+          <div class="plan-table-row">
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">신속한 대응</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">세심한 관리</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">전문적인 컨설팅</span>
+            </div>
+          </div>
+          <div class="plan-table-row">
+            <div class="plan-table-row__cell">
+              <div class="plan-table-row__disabled-icon"></div>
+              <span class="plan-table-row__text plan-table-row__text--disabled">체계적인 분석</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">효과적인 전략</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">안정적인 운영</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Features and Support Section -->
+      <div class="plan-table-group">
+        <h3 class="plan-table-group__header">창의적인 해결책</h3>
+        <div class="plan-table-group__rows">
+          <div class="plan-table-row">
+            <div class="plan-table-row__cell">
+              <div class="plan-table-row__disabled-icon"></div>
+              <span class="plan-table-row__text plan-table-row__text--disabled">혁신적인 도구</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">효율적인 관리</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">체계적인 접근</span>
+            </div>
+          </div>
+          <div class="plan-table-row">
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">전문적인 지원</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">혁신적인 방법</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">고객 중심 서비스</span>
+            </div>
+          </div>
+          <div class="plan-table-row">
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">지속 가능한 성장</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">맞춤형 솔루션</span>
+            </div>
+            <div class="plan-table-row__cell">
+              <i class="bi bi-check-circle-fill plan-table-row__icon"></i>
+              <span class="plan-table-row__text">검증된 결과</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="faq-section__container container">
+      <h2 class="faq-section__title">자주 묻는 질문</h2>
+      <div class="faq-section__list">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+          <h3 class="faq-item__question">신뢰할 수 있는 동반자</h3>
+          <p class="faq-item__answer">효율적인 프로세스와 체계적인 관리로 성공을 지원합니다.</p>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <h3 class="faq-item__question">미래를 향한 도전</h3>
+          <p class="faq-item__answer">창의적인 아이디어와 실행력으로 차별화된 가치를 제공합니다.</p>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <h3 class="faq-item__question">성공을 위한 파트너</h3>
+          <p class="faq-item__answer">협업과 소통을 통해 최상의 결과물을 만들어갑니다.</p>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <h3 class="faq-item__question">가치 있는 선택</h3>
+          <p class="faq-item__answer">지속적인 개선과 혁신으로 발전하는 파트너가 되겠습니다.</p>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+          <h3 class="faq-item__question">새로운 시작을 함께해요</h3>
+          <p class="faq-item__answer">단순한 서비스를 넘어 성장의 동반자가 되겠습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script>
+  // Initialize segmented controls, pricing toggles and other features for price-plan-3 page
+  // Works in both static page and Wakit dynamic view
+  function initPricePlan3(container) {
+    if (!container) {
+      // Try to find container: dynamic view active page or document body
+      container = document.querySelector('.dynamic-view.active .page') || document.body;
+    }
+
+    // Initialize Popup (only once)
+    if (typeof Popup !== 'undefined' && Popup.init) {
+      Popup.init();
+    }
+
+    // Segmented Controls Toggle
+    (function() {
+      const segmentedControls = container.querySelectorAll('.segmented-controls__item');
+      if (!segmentedControls.length) return;
+
+      segmentedControls.forEach(control => {
+        control.addEventListener('click', function() {
+          // Find all controls within the same container
+          const container = this.closest('.price-plan-3') || document.body;
+          const allControls = container.querySelectorAll('.segmented-controls__item');
+          allControls.forEach(c => c.classList.remove('segmented-controls__item--active'));
+          this.classList.add('segmented-controls__item--active');
+        });
+      });
+    })();
+
+    // Pricing Plan Card Toggle
+    (function() {
+      const toggles = container.querySelectorAll('.pricing-plan-card__toggle');
+      if (!toggles.length) return;
+
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+          const isActive = this.classList.contains('pricing-plan-card__toggle--active');
+          this.classList.toggle('pricing-plan-card__toggle--active', !isActive);
+        });
+      });
+    })();
+  }
+
+  // Run immediately - works for both static page and dynamic view
+  // When script executes in dynamic view, it's already inside the .page container
+  (function() {
+    // Find the appropriate container
+    // Priority: 1) Active dynamic view page, 2) .price-plan-3 element, 3) document.body
+    let container = document.querySelector('.dynamic-view.active .page');
+    
+    if (!container) {
+      // Try to find .price-plan-3 element
+      const pricePlan3 = document.querySelector('.price-plan-3');
+      if (pricePlan3) {
+        container = pricePlan3;
+      } else {
+        container = document.body;
+      }
+    }
+    
+    initPricePlan3(container);
+  })();
+</script>
+
+</html>

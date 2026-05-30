@@ -1,0 +1,693 @@
+/* Base reset & variables */
+:root{
+  --primary-color:#ffffff;
+  --bg:#ffffff;
+  --text:#111111;
+  --appbar-height:56px;
+  --tabbar-height:62px;
+  --transition:220ms ease;
+  /* font-family: system-ui, -apple-system, Segoe UI, Roboto, Pretendard, sans-serif; */
+}
+*{box-sizing:border-box}
+html,body{
+  height:100vh;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  /* Consider iOS safe area */
+  padding-left:env(safe-area-inset-left);
+  padding-right:env(safe-area-inset-right);
+}
+/* Remove default design when selecting a tag */
+a{text-decoration:none;color:inherit}
+/* Remove default design when selecting a tag */
+a:focus{outline:none;}
+a:focus, a:active, a:hover{
+  outline:none;background:none;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* Hide scrollbar when browser is mobile */
+@media (max-width:768px){
+  ::-webkit-scrollbar{display:none}
+}
+
+/* Appbar / Tabbar */
+.appbar{
+  background:rgba(255, 255, 255);
+  height:calc(var(--appbar-height) + env(safe-area-inset-top));
+  display:flex; align-items:center; gap:8px;
+  padding:calc(env(safe-area-inset-top) + 0px) calc(10px + env(safe-area-inset-right)) 0 calc(10px + env(safe-area-inset-left));
+  position:fixed; top:0; left:0; width:100%;
+  z-index:10;
+  transition:left 0.3s ease-in-out;
+}
+.appbar-left{left:10px}
+.appbar-right{position:absolute; top:calc(env(safe-area-inset-top) + 8px); right:15px; display:flex; gap:10px; font-size:22px}
+.appbar.appheader{z-index:201}
+.appbar-button {
+  padding:6px;
+}
+.appbar .title{font-weight:700;font-size:20px}
+.appbar button{
+  background:none; border:none; padding:0; margin:0; cursor:pointer;
+  color:#060505; font-size:20px;
+}
+.brand-name{font-size:20px;font-weight:700}
+
+.tabbar{
+  line-height:1.3;
+  position:fixed; bottom:0; left:0; width:100%;
+  height:calc(var(--tabbar-height) + env(safe-area-inset-bottom));
+  display:flex; justify-content:space-around;
+  border-top:1px solid #e9e9e9;
+  z-index:10; 
+  background:rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  /* transition:left 0.3s ease-in-out; */
+}
+
+.ios .tabbar{
+  position:fixed; bottom:0; left:0; width:100%;
+  bottom:10px;
+  width:calc(100% - 30px);
+  height:calc(var(--tabbar-height));
+  display:flex; justify-content:space-around;
+  border-top:1px solid #e9e9e9;
+  z-index:10;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.12);
+  border-radius: 100px;
+  margin:15px;
+  padding:5px;
+  /* transition:left 0.3s ease-in-out; */
+}
+
+/* When .tabbar a is selected, hide highlight and background */
+.tabbar a:focus, .tabbar a:active, .tabbar a:hover{
+  outline:none;background:none;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.tabbar a{
+  height:59px;
+  flex:1; 
+  display:flex; 
+  flex-direction:column; 
+  align-items:center; 
+  justify-content:center; 
+  gap:0; 
+  text-align:center; 
+  text-decoration:none; 
+  color:#060505; 
+  padding:8px 0;
+}
+.ios .tabbar a{height:55px; padding:0 0px;}
+.tabbar a.active{color:var(--primary-color); font-weight:600}
+
+/* iOS 26 스타일: 글래스 배경 슬라이더 */
+.ios .tabbar::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: calc(100% - 10px);
+  width: calc((100% - 10px) / var(--tab-count, 4));
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border-radius: 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transform: translateX(var(--glass-slider-x, 0px));
+  transition: transform 0.35s cubic-bezier(0.4, 0.0, 0.2, 1);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ios .tabbar a {
+  position: relative;
+  z-index: 1;
+}
+
+.ios .tabbar a.active{
+  color:var(--primary-color); 
+  font-weight:600; 
+  background: transparent;
+  border-radius: 50px;
+  transition: color 0.2s ease;
+}
+
+.tabbar a .icon span{font-size:18px}
+.tabbar a span{font-size:10px}
+.tabbar.hide{transform:translateY(100%)}
+
+/* iOS 탭 클릭 시 아이콘 확대 애니메이션 */
+.ios .tabbar a .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ios .tabbar a .icon.tab-click-animate {
+  animation: tabIconBounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes tabIconBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* iOS 탭 선택 시 탭바 살짝 확대 후 원래 크기로 */
+.ios .tabbar.tabbar-active-pop {
+  animation: tabbarActivePop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes tabbarActivePop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.view{height:100dvh}
+
+/* Views (absolute slide transition) */
+.desktop-mode .views{
+  position:relative; min-height:100dvh; overflow:auto;
+  padding:0px !important;
+}
+.mobile-mode .views{
+  position:relative;
+  /* min-height:calc(100dvh - var(--appbar-height) - var(--tabbar-height)); */
+  overflow:auto; padding:0px !important;
+}
+
+/* Height adjustment when tabbar is not present */
+.mobile-mode .no-tabbar .views{min-height:calc(100dvh - var(--appbar-height))}
+
+/* Padding to prevent overlap with appbar/tabbar in mobile mode */
+.mobile-mode .views{
+  padding-top:calc(var(--appbar-height) + env(safe-area-inset-top));
+  padding-bottom:calc(var(--tabbar-height) + env(safe-area-inset-bottom));
+  min-height:100vh;
+}
+
+.view{
+  position:absolute; inset:0; opacity:0; pointer-events:none;
+}
+.view.active{
+  opacity:1; transform:translateX(0);
+  pointer-events:auto; z-index:2;
+}
+
+.mobile-mode .view .page{
+  padding-top:calc(env(safe-area-inset-top) + var(--appbar-height));
+  padding-bottom:calc(env(safe-area-inset-bottom) + var(--tabbar-height));
+}
+.dynamic-view .page{
+  /* Consider overlap only with its own header inside dynamic view */
+  padding-top:calc(var(--appbar-height) + env(safe-area-inset-top));
+  height:100vh; overflow:auto;
+}
+
+/* no-appbar: remove appbar-height from all padding-top values */
+html.no-appbar.mobile-mode .views{
+  padding-top:env(safe-area-inset-top);
+}
+html.no-appbar.mobile-mode .view .page{
+  padding-top:0px;
+}
+html.no-appbar .dynamic-view .page{
+  padding-top:0px;
+}
+html.no-appbar.mobile-mode .no-tabbar .views{
+  min-height:100dvh;
+}
+
+/* Direction transition classes */
+.view.anim-in-right  {transform:translateX(24px)}
+.view.anim-in-left   {transform:translateX(-24px)}
+.view.anim-out-right {transform:translateX(24px);  opacity:0}
+.view.anim-out-left  {transform:translateX(-24px); opacity:0}
+
+/* Offcanvas */
+.offcanvas{
+  position:fixed; top:0; bottom:0; width:min(80%,320px);
+  background:#fff; transition:transform var(--transition); z-index:200;
+  padding-top:calc(env(safe-area-inset-top));
+  padding-bottom:calc(env(safe-area-inset-bottom));
+}
+.offcanvas.right{inset:0 0 0 auto; border-left:1px solid #eee; transform:translateX(100%)}
+.offcanvas.left {inset:0 auto 0 0; border-right:1px solid #eee; transform:translateX(-100%)}
+.offcanvas.open{transform:translateX(0)}
+.offcanvas-backdrop{
+  position:fixed; inset:0; background:rgba(0,0,0,.3);
+  opacity:0; pointer-events:none; transition:opacity var(--transition); z-index:199;
+}
+.offcanvas-backdrop.show{opacity:1; pointer-events:auto}
+
+/* Desktop mode: hide app UI, center content */
+.desktop-mode .appbar,
+.desktop-mode .tabbar{display:none !important}
+.desktop-mode .views{
+  /* min-height:auto; */
+  max-width:100%; margin:0 auto; padding:24px 16px; /* Margin on desktop */
+}
+
+.ios .dynamic-view{
+  transform:translateX(100%);
+  transition:transform 680ms cubic-bezier(0.32, 0.72, 0, 1),
+             opacity   680ms cubic-bezier(0.32, 0.72, 0, 1);
+  will-change:transform, opacity;
+}
+.ios .dynamic-view.active{transform:translateX(0)}
+.ios .dynamic-view.closing{transform:translateX(100%)}
+
+/* .android .dynamic-view{
+  transform:translateY(40%);
+  opacity:0;
+  transition: transform 280ms cubic-bezier(0.0, 0, 0.2, 1), opacity 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  will-change: transform, opacity;
+}
+.android .dynamic-view.active{ transform:translateY(0); opacity:1; }
+.android .dynamic-view.closing{ transform:translateY(60%); opacity:0; } */
+
+/* Android animation type-specific styles */
+.android .dynamic-view.android-animation-scale{
+  transform:scale(0.9) !important; opacity:0 !important;
+  transition:transform 350ms cubic-bezier(0.4, 0.0, 0.2, 1),
+             opacity   350ms cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+  will-change:transform, opacity;
+  transform-origin:50% 50% !important;
+}
+.android .dynamic-view.android-animation-scale.active {transform:scale(1) !important; opacity:1 !important}
+.android .dynamic-view.android-animation-scale.closing{transform:scale(0.9) !important; opacity:0 !important}
+
+.android .dynamic-view.android-animation-slide{
+  transform:translateY(40%); opacity:0;
+  transition:transform 280ms cubic-bezier(0.0, 0, 0.2, 1),
+             opacity   300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  will-change:transform, opacity;
+}
+.android .dynamic-view.android-animation-slide.active {transform:translateY(0);  opacity:1}
+.android .dynamic-view.android-animation-slide.closing{transform:translateY(60%); opacity:0}
+
+/* Android slide2: iOS slide와 동일 — 오른쪽에서 슬라이드 인, 뒤로가기 시 오른쪽으로 슬라이드 아웃 */
+.android .dynamic-view.android-animation-slide2{
+  transform:translateX(100%); opacity:1;
+  transition:transform 300ms cubic-bezier(0.32, 0.72, 0, 1);
+  will-change:transform;
+}
+.android .dynamic-view.android-animation-slide2.active {transform:translateX(0)}
+.android .dynamic-view.android-animation-slide2.closing{transform:translateX(100%)}
+
+/* iOS animation type-specific styles */
+.ios .dynamic-view.ios-animation-slide{
+  transform:translateX(100%); opacity:1;
+  transition:transform 300ms cubic-bezier(0.32, 0.72, 0, 1);
+  will-change:transform;
+}
+.ios .dynamic-view.ios-animation-slide.active {transform:translateX(0)}
+.ios .dynamic-view.ios-animation-slide.closing{transform:translateX(100%)}
+
+.ios .dynamic-view.ios-animation-scale{
+  transform:scale(0.9); opacity:0;
+  transition:transform 350ms cubic-bezier(0.4, 0.0, 0.2, 1),
+             opacity   350ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  will-change:transform, opacity;
+  transform-origin:center center;
+}
+.ios .dynamic-view.ios-animation-scale.active {transform:scale(1); opacity:1}
+.ios .dynamic-view.ios-animation-scale.closing{transform:scale(0.9); opacity:0}
+
+.ios .dynamic-view.ios-animation-fade{
+  transform:none; opacity:0;
+  transition:opacity 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  will-change:opacity;
+}
+.ios .dynamic-view.ios-animation-fade.active {opacity:1}
+.ios .dynamic-view.ios-animation-fade.closing{opacity:0}
+
+.dynamic-view{
+  position:fixed; overflow:auto; background:#fff;
+  width:100%; min-height:100vh; transform:translateX(100%); opacity:1;
+  z-index:150; transition:transform 0.3s ease-in-out;
+}
+
+.ios.mobile-mode .dynamic-view .appbar.appheader{
+  /* Dynamic view internal header is also subject to left-right movement animation */
+  transition:left 340ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+.ios.mobile-mode .dynamic-view .appbar.appheader.dv-shift-left{
+  left:-90px;
+}
+
+/* Dynamic view internal page left-right movement animation */
+.ios.mobile-mode .dynamic-view .page{
+  position:relative; left:0;
+  transition:left 340ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+.ios.mobile-mode .dynamic-view .page.dv-shift-left{
+  left:-90px;
+}
+
+.dynamic-view-backdrop{
+  position:fixed; inset:0; background:rgba(0,0,0,.08);
+  opacity:0; pointer-events:none; transition:opacity var(--transition); z-index:149;
+}
+.dynamic-view-backdrop.show{opacity:1; pointer-events:auto}
+
+.dynamic-loading{
+  position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+  background:rgba(255,255,255,0.6); opacity:0; pointer-events:none; transition:opacity var(--transition); z-index:202;
+}
+.dynamic-loading.show{opacity:1; pointer-events:auto}
+.dynamic-loading .spinner{
+  width:36px; height:36px; border-radius:50%;
+  border:3px solid rgba(0,0,0,.15); border-top-color:rgba(0,0,0,.6);
+  animation:spin 0.8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* pull-to-refresh indicator */
+.pull-to-refresh{
+  position:absolute; top:calc(var(--appbar-height) + env(safe-area-inset-top));
+  left:0; right:0; height:0; overflow:hidden; z-index:201;
+}
+.pull-to-refresh .ptr-indicator{
+  height:48px; display:flex; align-items:center; justify-content:center;
+}
+.pull-to-refresh .spinner{
+  width:20px; height:20px; border-radius:50%;
+  border:2px solid rgba(0,0,0,.2); border-top-color:rgba(0,0,0,.7);
+  animation:spin 0.8s linear infinite;
+}
+
+/* splash overlay (mobile only) */
+.splash-overlay{
+  position:fixed; inset:0; background:#fff; opacity:0; pointer-events:none;
+  z-index:300;
+}
+.splash-overlay.show{opacity:1; pointer-events:auto}
+.splash-overlay.hide{opacity:0; pointer-events:none}
+
+/* onboarding / intro overlays */
+.onboarding-overlay,
+.intro-overlay{
+  position:fixed; inset:0; background:#fff; opacity:0; pointer-events:none;
+  transition:opacity 280ms ease;
+}
+.intro-overlay{z-index:301}
+.onboarding-overlay{z-index:302}
+.onboarding-overlay.show,
+.intro-overlay.show{opacity:1; pointer-events:auto}
+.onboarding-overlay.hide,
+.intro-overlay.hide{opacity:0; pointer-events:none}
+
+/* .desktop-mode .dynamic-view{
+  transform:translateX(100%);
+} */
+
+/* Body animation only on mobile */
+.mobile-mode body{position:relative; transition:left 0.3s ease-in-out}
+
+/* Refine transition curve/time per iOS/Android */
+.ios.mobile-mode body{transition:left 340ms cubic-bezier(0.32, 0.72, 0, 1)}
+.android.mobile-mode body{transition:left 200ms cubic-bezier(0.0, 0, 0.2, 1)}
+.ios.mobile-mode .appbar{transition:left 340ms cubic-bezier(0.32, 0.72, 0, 1)}
+.android.mobile-mode .appbar{transition:left 200ms cubic-bezier(0.0, 0, 0.2, 1)}
+.ios.mobile-mode .tabbar{transition:left 340ms cubic-bezier(0.32, 0.72, 0, 1)}
+.android.mobile-mode .tabbar{transition:left 200ms cubic-bezier(0.0, 0, 0.2, 1)}
+
+/* Body animation only on iOS when dynamic-view is active */
+.ios.mobile-mode body.dynamic-active{left:-90px /* left:-90px; */}
+.ios.mobile-mode body.dynamic-inactive{left:0}
+.ios.mobile-mode .appbar.dynamic-active{left:-90px /* left:-90px; */}
+.ios.mobile-mode .appbar.dynamic-inactive{left:0}
+.ios.mobile-mode .tabbar.dynamic-active{left:-90px !important /* left:-90px !important; */}
+.ios.mobile-mode .tabbar.dynamic-inactive{left:0 !important}
+
+/* Android slide2: 탭 뒤 크롬(iOS slide와 동일 패럴랙스) */
+.android.mobile-mode body.dynamic-active{left:-90px}
+.android.mobile-mode body.dynamic-inactive{left:0}
+.android.mobile-mode .appbar.dynamic-active{left:-90px}
+.android.mobile-mode .appbar.dynamic-inactive{left:0}
+.android.mobile-mode .tabbar.dynamic-active{left:-90px !important}
+.android.mobile-mode .tabbar.dynamic-inactive{left:0 !important}
+
+.android.mobile-mode .dynamic-view .appbar.appheader{
+  transition:left 200ms cubic-bezier(0.0, 0, 0.2, 1);
+}
+.android.mobile-mode .dynamic-view .appbar.appheader.dv-shift-left{
+  left:-90px;
+}
+.android.mobile-mode .dynamic-view .page{
+  position:relative; left:0;
+  transition:left 200ms cubic-bezier(0.0, 0, 0.2, 1);
+}
+.android.mobile-mode .dynamic-view .page.dv-shift-left{
+  left:-90px;
+}
+
+/* iOS scale animation: slightly enlarge when dynamic view is active */
+.ios.mobile-mode body.dynamic-active-scale{
+  transform:scale(1.06); transform-origin:center center;
+  transition:transform 340ms cubic-bezier(0.32, 0.72, 0, 1);
+  left:0 !important; /* Suppress left movement when scale animation */
+}
+
+/* iOS scale animation: original size when dynamic view is inactive */
+.ios.mobile-mode body.dynamic-inactive-scale{
+  transform:scale(1); transform-origin:center center;
+  transition:transform 340ms cubic-bezier(0.32, 0.72, 0, 1);
+  left:0 !important; /* Suppress left movement when scale animation */
+}
+
+/* Suppress appbar, tabbar movement when iOS scale animation */
+.ios.mobile-mode body.dynamic-active-scale ~ .appbar,
+.ios.mobile-mode body.dynamic-active-scale .appbar{
+  left:0 !important; transition:none !important;
+}
+
+/* Suppress all left movement when iOS scale animation */
+.ios.mobile-mode body.dynamic-active-scale .appbar.dynamic-active,
+.ios.mobile-mode body.dynamic-active-scale .appbar.dynamic-inactive{
+  left:0 !important; transition:none !important;
+}
+
+/* suppress transition during gesture period on iOS swipe back */
+html.no-gesture-anim.mobile-mode body{transition:none !important}
+html.no-gesture-anim.mobile-mode .appbar{transition:none !important}
+/* html.no-gesture-anim.mobile-mode .tabbar{transition:none !important} */
+
+html.no-gesture-anim .dynamic-view,
+html.no-gesture-anim .dynamic-view .appbar.appheader,
+html.no-gesture-anim .dynamic-view .page{
+  transition: none !important;
+}
+
+/* ================================
+   WAKIT iOS Stabilization CSS Override
+   ================================ */
+
+/* 1) layer isolation & 3D correction */
+.dynamic-view,
+.appbar,
+.tabbar{
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  contain: layout paint style;
+  isolation: isolate;
+}
+
+/* 2) iOS: relaxed curve/time + zFix variable */
+:root{
+  --ios-ease: cubic-bezier(.25,.8,.25,1);
+  --ios-dur: 520ms;
+  --ios-dur-fast: 300ms;
+  --ios-zfix: 0.1px;
+  /* optional: variable to reduce parallax intensity (applied when JS references variable) */
+  --parallax-shift: -60px;
+}
+
+/* 3) redefine iOS slide transition with unified curve/time using zFix */
+.ios .dynamic-view{
+  transform: translate3d(100%,0,var(--ios-zfix));
+  transition:
+    transform var(--ios-dur) var(--ios-ease),
+    opacity   var(--ios-dur) var(--ios-ease);
+  will-change: transform, opacity;
+}
+.ios .dynamic-view.active{
+  transform: translate3d(0,0,var(--ios-zfix));
+}
+.ios .dynamic-view.closing{
+  transform: translate3d(100%,0,var(--ios-zfix));
+}
+
+/* override type-specific rules with same philosophy (more specific selectors) */
+.ios .dynamic-view.ios-animation-slide{
+  transform: translate3d(100%,0,var(--ios-zfix));
+  transition: transform var(--ios-dur) var(--ios-ease);
+}
+.ios .dynamic-view.ios-animation-slide.active{
+  transform: translate3d(0,0,var(--ios-zfix));
+}
+.ios .dynamic-view.ios-animation-slide.closing{
+  transform: translate3d(100%,0,var(--ios-zfix));
+}
+.ios .dynamic-view.ios-animation-scale{
+  transition:
+    transform var(--ios-dur) var(--ios-ease),
+    opacity   var(--ios-dur) var(--ios-ease);
+}
+.ios .dynamic-view.ios-animation-fade{
+  transition: opacity var(--ios-dur-fast) var(--ios-ease);
+}
+
+/* 4) align body/appbar/tabbar movement with same curve/time (end frame stability) */
+/* .ios.mobile-mode body{
+  transition: left var(--ios-dur) var(--ios-ease);
+}
+.ios.mobile-mode .appbar{
+  transition: left var(--ios-dur) var(--ios-ease);
+}
+.ios.mobile-mode .tabbar{
+  transition: left var(--ios-dur) var(--ios-ease);
+} */
+
+/* 5) maintain zFix even in animation-off (no-gesture-anim) state during gesture */
+html.no-gesture-anim .dynamic-view{
+  transform: translate3d(100%,0,var(--ios-zfix)) !important;
+}
+html.no-gesture-anim .dynamic-view.active{
+  transform: translate3d(0,0,var(--ios-zfix)) !important;
+}
+
+html.no-gesture-anim, html.no-gesture-anim * {
+  transition: none !important;
+  animation: none !important;
+}
+
+
+/* Tabbar animation classes */
+/* .tabbar {
+  transition: transform var(--ios-dur) var(--ios-ease),opacity   var(--ios-dur) var(--ios-ease);
+  will-change: transform, opacity;
+}
+
+.tabbar-hide {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tabbar-show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+} */
+
+/* hide tabbar in regular mobile web when PWA-only mode */
+.tabbar-pwa-only:not(.pwa-mode) .tabbar {
+  display: none !important;
+}
+
+/* show tabbar only when PWA mode */
+.tabbar-pwa-only.pwa-mode .tabbar {
+  display: flex !important;
+}
+
+/* ================================
+   Dark mode (웹 템플릿 data-theme="dark" 연동)
+   ================================ */
+[data-theme="dark"] {
+  --primary-color: #4a9eff;
+  --bg: #1a1a1a;
+  --text: #e5e5e5;
+}
+
+[data-theme="dark"] .appbar {
+  background: var(--bg);
+}
+[data-theme="dark"] .appbar button {
+  color: var(--text);
+}
+[data-theme="dark"] .appbar .title {
+  color: var(--text);
+}
+[data-theme="dark"] .brand-name {
+  color: var(--text);
+}
+
+[data-theme="dark"] .tabbar {
+  background: rgba(26, 26, 26, 0.85);
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+[data-theme="dark"] .tabbar a {
+  color: var(--text);
+}
+.ios [data-theme="dark"] .tabbar {
+  background: rgba(26, 26, 26, 0.5);
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+.ios [data-theme="dark"] .tabbar::before {
+  background: rgba(40, 40, 40, 0.6);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .offcanvas {
+  background: var(--bg);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+[data-theme="dark"] .offcanvas.right { border-left-color: rgba(255, 255, 255, 0.1); }
+[data-theme="dark"] .offcanvas.left { border-right-color: rgba(255, 255, 255, 0.1); }
+
+[data-theme="dark"] .dynamic-view {
+  background: var(--bg);
+}
+
+[data-theme="dark"] .dynamic-view-backdrop.show {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .dynamic-loading {
+  background: rgba(26, 26, 26, 0.85);
+}
+[data-theme="dark"] .dynamic-loading .spinner {
+  border-color: rgba(255, 255, 255, 0.2);
+  border-top-color: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="dark"] .pull-to-refresh .spinner {
+  border-color: rgba(255, 255, 255, 0.2);
+  border-top-color: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="dark"] .splash-overlay,
+[data-theme="dark"] .onboarding-overlay,
+[data-theme="dark"] .intro-overlay {
+  background: var(--bg);
+}
+

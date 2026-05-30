@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Detail</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  <!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+  <link rel="stylesheet" href="css/foundation/color.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/foundation/buttons.css">
+  <link rel="stylesheet" href="css/foundation/badge.css">
+  <link rel="stylesheet" href="css/foundation/spacing.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/foundation/typography.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/foundation/effect.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/foundation/layout.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/foundation/icons.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/foundation/graphic.css" data-spa-ignore>
+  <!-- Blog Styles -->
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+</head>
+<body>
+    <div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+    <!-- 기존 내용 주석 처리
+    <h1>성장하는 이야기</h1>
+    <a href="#" data-open-offcanvas="left">왼쪽 메뉴</a>
+    <button class="open-offcanvas-right">오른쪽 열기</button>
+    <a href="views/board/list.html">홈으로</a>
+    <ul><li>1</li></ul>
+    -->
+
+    <main class="post-detail">
+        <section class="post-hero">
+            <div class="post-hero__banner">
+                <div class="post-hero__placeholder" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <section class="container">
+            <header class="post-header">
+                <h1>함께하는 여정</h1>
+                <div class="post-meta">
+                    <div class="avatar" aria-hidden="true"></div>
+                    <span class="author">신속한 대응</span>
+                    <span class="dot">·</span>
+                    <time datetime="2025-03-12">2025.03.12</time>
+                    <span class="dot">·</span>
+                    <span>세심한 관리</span>
+                </div>
+            </header>
+
+            <article class="post-content">
+                <h2>도전과 성취의 기록</h2>
+                <p>체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p>
+
+                <div class="image-grid">
+                    <div class="image-tile" aria-label="placeholder image"></div>
+                    <div class="image-tile" aria-label="placeholder image"></div>
+                </div>
+
+                <section class="post-section">
+                    <h3>무한한 가능성의 시작</h3>
+                    <ul class="checklist">
+                        <li>오버나이트 오트밀: 귀리 + 요거트 + 과일 + 견과류를 전날 밤에 준비</li>
+                        <li>스크램블 에그와 아보카도 토스트: 단백질과 건강한 지방의 균형</li>
+                        <li>그릭 요거트 볼: 베리, 그래놀라, 꿀을 곁들여 간편하게</li>
+                        <li>스무디: 바나나, 시금치, 땅콩버터, 우유(또는 식물성 우유)</li>
+                        <li>토르티야 롤업: 닭가슴살과 채소를 넣어 말아 휴대성 ↑</li>
+                    </ul>
+                </section>
+
+                <div class="full-image" aria-label="placeholder large image"></div>
+
+                <figure class="quote-block">
+                    <blockquote>건강한 아침 식사는 몸과 마음의 활력을 불어넣는 최고의 투자입니다.</blockquote>
+                    <figcaption>— editor</figcaption>
+                </figure>
+
+                <section class="post-section">
+                    <h3>꿈을 향한 첫걸음</h3>
+                    <p>전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+                </section>
+
+                <div class="post-tags" aria-label="태그">
+                    <a href="#" class="tag">#아침식사</a>
+                    <a href="#" class="tag">#웰니스</a>
+                    <a href="#" class="tag">#라이프스타일</a>
+                </div>
+            </article>
+
+            <section class="comments">
+                <h3 class="comments__title">댓글</h3>
+                <div class="comment-editor">
+                    <input type="text" placeholder="의견을 남겨보세요" aria-label="댓글 입력">
+                    <button class="btn-primary" type="button">등록</button>
+                </div>
+                <ul class="comment-list">
+                    <li class="comment-item">
+                        <div class="avatar" aria-hidden="true"></div>
+                        <div class="comment-body">
+                            <div class="comment-meta"><strong>guest</strong> · 방금</div>
+                            <div class="comment-text">좋은 팁이네요! 오버나이트 오트밀 바로 시도해볼게요.</div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="related">
+                <div class="section__header"><h3>혁신적인 접근</h3></div>
+                <div class="related-grid card-grid">
+                    <article class="card"><div class="card__thumb"></div><div class="card__body"><h4 class="card__title"><a href="views/board/list.html">집에서 즐기는 브런치 메뉴</a></h4><div class="card__meta"><span>mood</span><span>전문적인 컨설팅</span></div></div></article>
+                    <article class="card"><div class="card__thumb"></div><div class="card__body"><h4 class="card__title"><a href="views/detail.html">출근길 10분, 간편 도시락</a></h4><div class="card__meta"><span>체계적인 분석</span><span>효과적인 전략</span></div></div></article>
+                    <article class="card"><div class="card__thumb"></div><div class="card__body"><h4 class="card__title"><a href="views/detail.html">좋은 습관을 만드는 방법</a></h4><div class="card__meta"><span>안정적인 운영</span><span>혁신적인 도구</span></div></div></article>
+                </div>
+            </section>
+        </section>
+
+    </main>
+
+    <div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+
+    <script data-spa-ignore>
+      console.log('detail page script executed');
+    </script>
+
+    </body>
+</html>

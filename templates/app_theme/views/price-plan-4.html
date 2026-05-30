@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Price Plan 4</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+<!-- Blog Styles -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/price-plan-4.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="price-plan-4">
+
+  <!-- Page Header Section -->
+  <section class="page-header-section">
+    <div class="page-header-section__background">
+      <div class="page-header-section__image-wrapper">
+        <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지" class="page-header-section__image" loading="lazy" />
+        <div class="page-header-section__placeholder">
+          <div class="page-header-section__placeholder-icon"></div>
+        </div>
+      </div>
+      <div class="page-header-section__overlay"></div>
+    </div>
+    <div class="page-header-section__container container">
+      <!-- Breadcrumbs -->
+      <nav class="page-header-section__breadcrumbs" aria-label="Breadcrumb">
+        <ol class="page-header-section__breadcrumb-list">
+          <li class="page-header-section__breadcrumb-item">
+            <a href="#" class="page-header-section__breadcrumb-link">
+              <i class="bi bi-house"></i>
+              <span class="page-header-section__breadcrumb-text">홈</span>
+            </a>
+          </li>
+          <li class="page-header-section__breadcrumb-item">
+            <i class="bi bi-chevron-right page-header-section__breadcrumb-separator"></i>
+            <a href="#" class="page-header-section__breadcrumb-link">
+              <span class="page-header-section__breadcrumb-text">가격</span>
+            </a>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Content -->
+      <div class="page-header-section__content">
+        <h1 class="page-header-section__title pt-30">무한한 가능성의 시작</h1>
+        <p class="page-header-section__description">체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Toggle & Plans Section -->
+  <section class="pricing-plans-section">
+    <div class="pricing-plans-section__container container">
+      <!-- Pricing Toggle -->
+      <div class="pricing-toggle">
+        <div class="pricing-toggle__wrapper">
+          <span class="pricing-toggle__label">월 단위 결제</span>
+          <button class="pricing-toggle__switch" aria-label="월간/연간 요금 토글">
+            <span class="pricing-toggle__knob"></span>
+          </button>
+          <span class="pricing-toggle__label">연 단위 결제</span>
+          <div class="pricing-toggle__badge">
+            <span class="badge badge--primary">연 결제 시 10% 할인</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div class="pricing-plans-section__cards">
+        <!-- Basic Plan Card -->
+        <div class="pricing-plan-card">
+          <div class="pricing-plan-card__header">
+            <h3>스타터 플랜</h3>
+            <div class="pricing-plan-card__price-wrapper">
+              <span class="pricing-plan-card__price">12,000원</span>
+              <span class="pricing-plan-card__period">/월</span>
+            </div>
+            <button type="button" class="btn btn--tertiary btn--m btn--block">현재 이용 중인 플랜</button>
+          </div>
+          <div class="pricing-plan-card__features">
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">동시 이용 5명까지</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">호스팅·도메인 5개 무료</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">전용 인프라 구성</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">회의실 전체 이용</span>
+            </div>
+            <div class="pricing-plan-card__feature pricing-plan-card__feature--excluded">
+              <i class="bi bi-x-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">24시간 전담 지원 없음</span>
+            </div>
+            <div class="pricing-plan-card__feature pricing-plan-card__feature--excluded">
+              <i class="bi bi-x-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">무제한 업데이트 불포함</span>
+            </div>
+            <div class="pricing-plan-card__feature pricing-plan-card__feature--excluded">
+              <i class="bi bi-x-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">랜딩·웹 위젯 미제공</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pro Plan Card -->
+        <div class="pricing-plan-card pricing-plan-card--featured">
+          <div class="pricing-plan-card__header">
+            <div class="pricing-plan-card__title-wrapper">
+              <h3>비즈니스 플랜</h3>
+              <span class="badge badge--primary"><i class="bi bi-check-circle-fill"></i>인기</span>
+            </div>
+            <div class="pricing-plan-card__price-wrapper">
+              <span class="pricing-plan-card__price">35,000원</span>
+              <span class="pricing-plan-card__period">/월</span>
+            </div>
+            <button type="button" class="btn btn--primary btn--m btn--block">시작하기</button>
+          </div>
+          <div class="pricing-plan-card__features">
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">동시 이용 10명까지</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">호스팅·도메인 10개 무료</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">전용 인프라 구성</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">회의실 전체 이용</span>
+            </div>
+            <div class="pricing-plan-card__feature pricing-plan-card__feature--excluded">
+              <i class="bi bi-x-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">24시간 전담 지원 없음</span>
+            </div>
+            <div class="pricing-plan-card__feature pricing-plan-card__feature--excluded">
+              <i class="bi bi-x-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">무제한 업데이트 불포함</span>
+            </div>
+            <div class="pricing-plan-card__feature pricing-plan-card__feature--excluded">
+              <i class="bi bi-x-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">랜딩·웹 위젯 미제공</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Premium Plan Card -->
+        <div class="pricing-plan-card">
+          <div class="pricing-plan-card__header">
+            <h3>엔터프라이즈 플랜</h3>
+            <div class="pricing-plan-card__price-wrapper">
+              <span class="pricing-plan-card__price">79,000원</span>
+              <span class="pricing-plan-card__period">/월</span>
+            </div>
+            <button type="button" class="btn btn--secondary btn--m btn--block">시작하기</button>
+          </div>
+          <div class="pricing-plan-card__features">
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">동시 이용 20명까지</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">호스팅·도메인 15개 무료</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">전용 인프라 구성</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">회의실 전체 이용</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">24시간 전담 지원</span>
+            </div>
+            <div class="pricing-plan-card__feature pricing-plan-card__feature--excluded">
+              <i class="bi bi-x-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">무제한 업데이트 불포함</span>
+            </div>
+            <div class="pricing-plan-card__feature">
+              <i class="bi bi-check-circle-fill pricing-plan-card__feature-icon"></i>
+              <span class="pricing-plan-card__feature-text">랜딩·웹 위젯 제공</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos Section -->
+  <section class="client-logos-section">
+    <div class="client-logos-section__container container">
+      <!-- Header -->
+        <div class="client-logos-section__header">
+          <h2 class="client-logos-section__title">전문적인 파트너십</h2>
+          <p class="client-logos-section__description">전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+        </div>
+
+      <!-- Logo Cloud -->
+      <div class="client-logos-section__logos">
+        <!-- Desktop: 6 logos per row, 2 rows (12 total) -->
+        <!-- Mobile: 2 logos per row, 6 rows (12 total) -->
+        <div class="client-logos-section__logo">
+          <img src="img/brands/Company-logo-1.svg" alt="Company Logo 1" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo">
+          <img src="img/brands/Company-logo-2.svg" alt="Company Logo 2" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo">
+          <img src="img/brands/Company-logo-3.svg" alt="Company Logo 3" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo">
+          <img src="img/brands/Company-logo-4.svg" alt="Company Logo 4" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo">
+          <img src="img/brands/Company-logo-5.svg" alt="Company Logo 5" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo">
+          <img src="img/brands/Company-logo-6.svg" alt="Company Logo 6" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo">
+          <img src="img/brands/Company-logo-7.svg" alt="Company Logo 7" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo">
+          <img src="img/brands/Company-logo-8.svg" alt="Company Logo 8" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo">
+          <img src="img/brands/Company-logo-9.svg" alt="Company Logo 9" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo">
+          <img src="img/brands/Company-logo-10.svg" alt="Company Logo 10" class="client-logos-section__logo-image"> 
+        </div>
+        <div class="client-logos-section__logo">
+          <img src="img/brands/Company-logo-11.svg" alt="Company Logo 11" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo">
+          <img src="img/brands/Company-logo-1.svg" alt="Company Logo 1" class="client-logos-section__logo-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Banner Section -->
+  <section class="support-banner-section">
+    <div class="support-banner-section__container container">
+      <div class="support-banner-section__background">
+        <div class="support-banner-section__image-wrapper">
+          <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지" class="support-banner-section__image" loading="lazy" />
+          <div class="support-banner-section__placeholder">
+            <div class="support-banner-section__placeholder-icon"></div>
+          </div>
+        </div>
+      </div>
+      <div class="support-banner-section__container container">
+        <div class="support-banner-section__content">
+          <div class="support-banner-section__text">
+            <h2 class="support-banner-section__title">신뢰할 수 있는 동반자</h2>
+          </div>
+          <div class="support-banner-section__button-wrapper">
+            <button class="btn btn--primary btn--l">
+              <span>질문하기</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script>
+  // Initialize image load checks, pricing toggle and other features for price-plan-4 page
+  // Works in both static page and Wakit dynamic view
+  function initPricePlan4(container) {
+    if (!container) {
+      // Try to find container: dynamic view active page or document body
+      container = document.querySelector('.dynamic-view.active .page') || document.body;
+    }
+
+    // Initialize Popup (only once)
+    if (typeof Popup !== 'undefined' && Popup.init) {
+      Popup.init();
+    }
+
+    // Page Header Section Image Loading Check
+    (function() {
+      const image = container.querySelector('.page-header-section__image');
+      const placeholder = container.querySelector('.page-header-section__placeholder');
+      
+      if (!image || !placeholder) return;
+
+      function checkImageLoad() {
+        if (image.complete && image.naturalHeight !== 0) {
+          placeholder.classList.add('hidden');
+        } else {
+          image.addEventListener('load', () => {
+            placeholder.classList.add('hidden');
+          });
+          image.addEventListener('error', () => {
+            placeholder.classList.add('hidden');
+          });
+        }
+      }
+
+      checkImageLoad();
+    })();
+
+    // Pricing Toggle Switch
+    (function() {
+      const toggleSwitch = container.querySelector('.pricing-toggle__switch');
+      const toggleKnob = container.querySelector('.pricing-toggle__knob');
+      
+      if (!toggleSwitch || !toggleKnob) return;
+
+      let isActive = false;
+
+      toggleSwitch.addEventListener('click', function() {
+        isActive = !isActive;
+        
+        if (isActive) {
+          toggleSwitch.classList.add('pricing-toggle__switch--active');
+        } else {
+          toggleSwitch.classList.remove('pricing-toggle__switch--active');
+        }
+      });
+    })();
+
+    // Support Banner Section Image Loading Check
+    (function() {
+      const image = container.querySelector('.support-banner-section__image');
+      const placeholder = container.querySelector('.support-banner-section__placeholder');
+      
+      if (!image || !placeholder) return;
+
+      function checkImageLoad() {
+        if (image.complete && image.naturalHeight !== 0) {
+          placeholder.classList.add('hidden');
+        } else {
+          image.addEventListener('load', () => {
+            placeholder.classList.add('hidden');
+          });
+          image.addEventListener('error', () => {
+            placeholder.classList.add('hidden');
+          });
+        }
+      }
+
+      checkImageLoad();
+    })();
+  }
+
+  // Run immediately - works for both static page and dynamic view
+  // When script executes in dynamic view, it's already inside the .page container
+  (function() {
+    // Find the appropriate container
+    // Priority: 1) Active dynamic view page, 2) .price-plan-4 element, 3) document.body
+    let container = document.querySelector('.dynamic-view.active .page');
+    
+    if (!container) {
+      // Try to find .price-plan-4 element
+      const pricePlan4 = document.querySelector('.price-plan-4');
+      if (pricePlan4) {
+        container = pricePlan4;
+      } else {
+        container = document.body;
+      }
+    }
+    
+    initPricePlan4(container);
+  })();
+  </script>
+
+</html>

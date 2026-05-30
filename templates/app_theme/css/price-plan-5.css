@@ -1,0 +1,376 @@
+/* ============================================
+   Price Plan 5 Styles
+   ============================================ */
+
+/* ============================================
+   Pricing Plans Section
+   ============================================ */
+
+/* Pricing Plans Section - 테마/다크 모드, 배경 이미지 제거·그레이 배경 */
+:root {
+  --pricing-plans-bg: var(--color-bg-secondary);
+  --pricing-plans-subtitle: var(--color-text-secondary);
+  --pricing-plans-title: var(--color-text-primary);
+  --pricing-plans-description: var(--color-text-secondary);
+  --pricing-card-bg: var(--color-bg-primary);
+  --pricing-card-border: var(--color-border);
+  --pricing-card-featured-bg: var(--color-primary-light);
+  --pricing-card-featured-border: var(--color-primary);
+  --pricing-card-title: var(--color-text-primary);
+  --pricing-card-price: var(--color-text-primary);
+  --pricing-card-period: var(--color-text-tertiary);
+  --pricing-card-divider: var(--color-border);
+  --pricing-card-feature-text: var(--color-text-secondary);
+  --pricing-card-feature-icon: var(--color-primary);
+  --pricing-cta-text: var(--color-text-primary);
+}
+
+[data-theme="dark"] {
+  --pricing-plans-bg: var(--color-bg-primary);
+  --pricing-plans-subtitle: var(--color-text-secondary);
+  --pricing-plans-title: var(--color-text-primary);
+  --pricing-plans-description: var(--color-text-secondary);
+  --pricing-card-bg: var(--color-bg-primary);
+  --pricing-card-border: var(--color-border-dark);
+  --pricing-card-featured-bg: var(--color-primary-light);
+  --pricing-card-featured-border: var(--color-primary);
+  --pricing-card-title: var(--color-text-primary);
+  --pricing-card-price: var(--color-text-primary);
+  --pricing-card-period: var(--color-text-tertiary);
+  --pricing-card-divider: var(--color-border-dark);
+  --pricing-card-feature-text: var(--color-text-primary);
+  --pricing-card-feature-icon: var(--color-primary);
+  --pricing-cta-text: var(--color-text-primary);
+}
+
+.pricing-plans-section {
+  background-color: var(--pricing-plans-bg);
+  padding: var(--spacing-3xl) 0;
+}
+
+.pricing-plans-section__container {
+  position: relative;
+}
+
+/* Header */
+.pricing-plans-section__header {
+  margin-bottom: var(--spacing-3xl);
+}
+
+.pricing-plans-section__header .badge {
+  margin-bottom: var(--spacing-md);
+}
+
+.pricing-plans-section__subtitle {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 20px; /* Mobile default */
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: var(--pricing-plans-subtitle);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.pricing-plans-section__title {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 28px; /* Mobile default */
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 0;
+  color: var(--pricing-plans-title);
+  margin: 0 0 var(--spacing-md) 0;
+  white-space: pre-line;
+}
+
+.pricing-plans-section__description {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 16px; /* Mobile default */
+  font-weight: 400;
+  line-height: 28.8px;
+  letter-spacing: 0;
+  color: var(--pricing-plans-description);
+  margin: 0;
+  white-space: pre-line;
+}
+
+/* Pricing Cards */
+.pricing-plans-section__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.pricing-plan-card {
+  background-color: var(--pricing-card-bg);
+  border: 1px solid var(--pricing-card-border);
+  border-radius: 12px; /* Mobile default */
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-plan-card--featured {
+  background-color: var(--pricing-card-featured-bg);
+  border-color: var(--pricing-card-featured-border);
+}
+
+.pricing-plan-card__header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.pricing-plan-card__title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.pricing-plan-card__title {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 20px; /* Mobile default */
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: var(--pricing-card-title);
+  margin: 0;
+}
+
+.pricing-plan-card__title-wrapper .badge i {
+  font-size: var(--size-icon-sm);
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+}
+
+.pricing-plan-card__price-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-xs);
+}
+
+.pricing-plan-card__price {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 24px; /* Mobile default */
+  font-weight: 700;
+  line-height: 33.6px;
+  letter-spacing: 0;
+  color: var(--pricing-card-price);
+}
+
+.pricing-plan-card__period {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 12px; /* Mobile default */
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--pricing-card-period);
+}
+
+.pricing-plan-card__divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--pricing-card-divider);
+  margin: var(--spacing-lg) 0;
+}
+
+.pricing-plan-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  flex: 1;
+  margin-bottom: var(--spacing-lg);
+}
+
+.pricing-plan-card__feature {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.pricing-plan-card__feature-icon {
+  font-size: var(--size-icon-md);
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+  color: var(--pricing-card-feature-icon);
+  flex-shrink: 0;
+}
+
+.pricing-plan-card__feature-text {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 12px; /* Mobile default */
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--pricing-card-feature-text);
+}
+
+.pricing-plan-card .btn {
+  /* Foundation .btn (테마·다크 모드) 사용 */
+}
+
+/* Bottom CTA */
+.pricing-plans-section__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-align: center;
+}
+
+.pricing-plans-section__cta-text {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 16px; /* Mobile default */
+  font-weight: 400;
+  line-height: 28.8px;
+  letter-spacing: 0;
+  color: var(--pricing-cta-text);
+  margin: 0;
+}
+
+.pricing-plans-section__cta-text--desktop {
+  display: none;
+}
+
+.pricing-plans-section__cta .btn {
+  /* Foundation .btn (테마·다크 모드) 사용 */
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .pricing-plans-section__subtitle {
+    font-size: 22px;
+    line-height: 30.8px;
+  }
+
+  .pricing-plans-section__title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .pricing-plans-section__description {
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  .pricing-plans-section__cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+
+  .pricing-plan-card {
+    border-radius: 16px;
+  }
+
+  .pricing-plan-card__title {
+    font-size: 24px;
+    line-height: 33.6px;
+  }
+
+  .pricing-plan-card__price {
+    font-size: 36px;
+    line-height: 50.4px;
+  }
+
+  .pricing-plan-card__period {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .pricing-plan-card__feature-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .pricing-plans-section__cta {
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .pricing-plans-section__cta-text {
+    font-size: 17px;
+    line-height: 30px;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  .pricing-plans-section {
+    padding: calc(var(--spacing-3xl) + var(--spacing-3xl)) 0;
+  }
+
+  .pricing-plans-section__subtitle {
+    font-size: 24px;
+    line-height: 33.6px;
+  }
+
+  .pricing-plans-section__title {
+    font-size: 48px;
+    line-height: 60px;
+  }
+
+  .pricing-plans-section__description {
+    font-size: 18px;
+    line-height: 32.4px;
+  }
+
+  .pricing-plans-section__cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+
+  .pricing-plan-card {
+    border-radius: 16px;
+  }
+
+  .pricing-plan-card__title {
+    font-size: 24px;
+    line-height: 33.6px;
+  }
+
+  .pricing-plan-card__price {
+    font-size: 36px;
+    line-height: 50.4px;
+  }
+
+  .pricing-plan-card__period {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .pricing-plan-card__feature-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .pricing-plans-section__cta {
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .pricing-plans-section__cta-text {
+    font-size: 18px;
+    line-height: 32.4px;
+  }
+
+  .pricing-plans-section__cta-text--desktop {
+    display: inline;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .pricing-plan-card .btn,
+  .pricing-plans-section__cta .btn {
+    transition: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .pricing-plan-card .btn,
+  .pricing-plans-section__cta .btn {
+    display: none;
+  }
+}

@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Home</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+<!-- Blog Styles -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/service-1.css">
+
+<main class="blog-landing-1">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-section__container container">
+      <div class="hero-section__content">
+        <div class="hero-section__text">
+          <h1 class="hero-section__title">새로운 시작을<br>함께 만들어가요</h1>
+          <p class="hero-section__description">
+            간단한 아이디어부터 완성된 결과물까지, 창작 과정의 모든 순간을 지원합니다.<br>
+            더 나은 결과를 위한 여정, 지금 시작핵보세요.
+          </p>
+          <div class="hero-section__actions">
+            <a href="#" class="btn btn--primary btn--l">
+              <span>바로 가기</span>
+            </a>
+            <a href="#" class="btn btn--secondary btn--l">
+              <span>데모 보기</span>
+              <i class="bi bi-play-circle" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero-section__image-wrapper">
+          <img src="https://demo.wakit.org/img/samples/photo-1661772661721-b16346fe5b0f.png" alt="이미지" class="hero-section__image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Section -->
+  <section class="feature-section">
+    <div class="feature-section__container container">
+      <div class="feature-section__header">
+        <div class="feature-section__badge">
+          <span class="badge badge--primary">혁신적인 도구</span>
+        </div>
+        <!-- <h2>꿈을 향한 첫걸음</h2> -->
+        <h3 class="feature-section__title">창작 과정이<br>더욱 즐거워집니다</h3>
+      </div>
+
+      <div class="feature-section__grid">
+        <article class="feature-card">
+          <div class="icon-theme feature-card__icon" aria-hidden="true">
+            <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+          </div>
+          <h4 class="feature-card__title">비즈니스 분석</h4>
+          <p>전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+          <a href="#" class="btn btn--ghost btn--m feature-card__link">
+            <span>효율적인 관리</span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+
+        <article class="feature-card">
+          <div class="icon-theme feature-card__icon" aria-hidden="true">
+            <i class="bi bi-diagram-3" aria-hidden="true"></i>
+          </div>
+          <h4 class="feature-card__title">전략 계획</h4>
+          <p>새로운 아이디어와 혁신적인 방법으로 당신의 목표를 달성하는 데 도움을 드립니다.</p>
+          <a href="#" class="btn btn--ghost btn--m feature-card__link">
+            <span>체계적인 접근</span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+
+        <article class="feature-card">
+          <div class="icon-theme feature-card__icon" aria-hidden="true">
+            <i class="bi bi-megaphone" aria-hidden="true"></i>
+          </div>
+          <h4 class="feature-card__title">마케팅 전략</h4>
+          <p>전문적인 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.</p>
+          <a href="#" class="btn btn--ghost btn--m feature-card__link">
+            <span>전문적인 지원</span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+
+        <article class="feature-card">
+          <div class="icon-theme feature-card__icon" aria-hidden="true">
+            <i class="bi bi-palette" aria-hidden="true"></i>
+          </div>
+          <h4 class="feature-card__title">경험 디자인</h4>
+          <p>고객 중심의 접근 방식으로 꼭 맞는 서비스를 제안합니다.</p>
+          <a href="#" class="btn btn--ghost btn--m feature-card__link">
+            <span>혁신적인 방법</span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+
+        <article class="feature-card">
+          <div class="icon-theme feature-card__icon" aria-hidden="true">
+            <i class="bi bi-briefcase" aria-hidden="true"></i>
+          </div>
+          <h4 class="feature-card__title">비즈니스 컨설팅</h4>
+          <p>끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.</p>
+          <a href="#" class="btn btn--ghost btn--m feature-card__link">
+            <span>고객 중심 서비스</span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+
+        <article class="feature-card">
+          <div class="icon-theme feature-card__icon" aria-hidden="true">
+            <i class="bi bi-calculator" aria-hidden="true"></i>
+          </div>
+          <h4 class="feature-card__title">세무 컨설턴트</h4>
+          <p>효율적인 프로세스와 체계적인 관리로 성공을 지원합니다.</p>
+          <a href="#" class="btn btn--ghost btn--m feature-card__link">
+            <span>지속 가능한 성장</span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integration Section -->
+  <section class="integration-section">
+    <div class="integration-section__container container">
+      <div class="integration-section__header">
+        <div class="integration-section__badge">
+          <span class="badge badge--primary">맞춤형 솔루션</span>
+        </div>
+        <h1>혁신적인 접근</h1>
+        <p class="integration-section__description">
+          여러 플랫폼과 쉽게 연동하여 기존 업무 환경을 개선하세요.<br>
+          기본적인 연결부터 고급 설정까지 다양한 옵션을 제공합니다.
+        </p>
+        <div class="integration-section__actions">
+          <a href="#" class="btn btn--primary btn--l">
+            <span>인터그레이션 보기</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="integration-section__logos">
+        <div class="integration-section__logos-row">
+          <div class="integration-logo">
+            <i class="bi bi-file-earmark-spreadsheet" aria-hidden="true"></i>
+            <span>신속한 대응</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-calendar3" aria-hidden="true"></i>
+            <span>세심한 관리</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-kanban" aria-hidden="true"></i>
+            <span>Jira</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-chat-dots" aria-hidden="true"></i>
+            <span>메신저</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-reddit" aria-hidden="true"></i>
+            <span>커뮤니티</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-cloud-arrow-down" aria-hidden="true"></i>
+            <span>전문적인 컨설팅</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-globe" aria-hidden="true"></i>
+            <span>웹빌더</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-briefcase" aria-hidden="true"></i>
+            <span>체계적인 분석</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-camera-video" aria-hidden="true"></i>
+            <span>화상회의</span>
+          </div>
+        </div>
+        <div class="integration-section__logos-row">
+          <div class="integration-logo">
+            <i class="bi bi-people" aria-hidden="true"></i>
+            <span>협업도구</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-graph-up" aria-hidden="true"></i>
+            <span>효과적인 전략</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-cloud" aria-hidden="true"></i>
+            <span>안정적인 운영</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-github" aria-hidden="true"></i>
+            <span>혁신적인 도구</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            <span>효율적인 관리</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-hdd-stack" aria-hidden="true"></i>
+            <span>체계적인 접근</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-send" aria-hidden="true"></i>
+            <span>전문적인 지원</span>
+          </div>
+          <div class="integration-logo">
+            <i class="bi bi-google" aria-hidden="true"></i>
+            <span>검색엔진</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="testimonial-section">
+    <div class="testimonial-section__container container">
+      <div class="testimonial-section__content">
+        <div class="testimonial-section__header">
+          <h2>전문적인 파트너십</h2>
+          <h3 class="testimonial-section__title">실제 사용<br>경험<br>공유합니다</h3>
+          <div class="testimonial-section__navigation">
+            <button type="button" class="btn btn--ghost btn--m testimonial-section__nav-btn" aria-label="이전">
+              <i class="bi bi-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="btn btn--ghost btn--m testimonial-section__nav-btn" aria-label="다음">
+              <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="testimonial-section__cards">
+          <article class="testimonial-card">
+            <div class="testimonial-card__logo">
+              <img src="img/brands/Company-logo.svg" alt="Company Logo 1" class="testimonial-card__logo-image">
+            </div>
+            <p>창의적인 아이디어와 실행력으로 차별화된 가치를 제공합니다.</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <img src="https://demo.wakit.org/img/samples/photo-1438761681033-6461ffad8d80.png" alt="정수진" class="testimonial-card__avatar-img">
+                <span class="testimonial-card__avatar-badge"></span>
+              </div>
+              <div class="testimonial-card__author-info">
+                <p class="testimonial-card__author-name">정수진</p>
+                <p class="testimonial-card__author-role">프로젝트 매니저</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__logo">
+              <img src="img/brands/Company-logo-1.svg" alt="Company Logo 1" class="testimonial-card__logo-image">
+            </div>
+            <p>협업과 소통을 통해 최상의 결과물을 만들어갑니다.</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <img src="https://demo.wakit.org/img/samples/photo-1494790108377-be9c29b29330.png" alt="정수진" class="testimonial-card__avatar-img">
+                <span class="testimonial-card__avatar-badge"></span>
+              </div>
+              <div class="testimonial-card__author-info">
+                <p class="testimonial-card__author-name">정수진</p>
+                <p class="testimonial-card__author-role">프로젝트 매니저</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__logo">
+              <img src="img/brands/Company-logo-2.svg" alt="Company Logo 1" class="testimonial-card__logo-image">
+            </div>
+            <p>지속적인 개선과 혁신으로 발전하는 파트너가 되겠습니다.</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <img src="https://demo.wakit.org/img/samples/photo-1507003211169-0a1dd7228f2d.png" alt="정수진" class="testimonial-card__avatar-img">
+                <span class="testimonial-card__avatar-badge"></span>
+              </div>
+              <div class="testimonial-card__author-info">
+                <p class="testimonial-card__author-name">정수진</p>
+                <p class="testimonial-card__author-role">프로젝트 매니저</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos Section -->
+  <section class="client-logos-section">
+    <div class="client-logos-section__container container">
+      <div class="client-logos-section__header">
+        <h2>신뢰할 수 있는 동반자</h2>
+        <p class="client-logos-section__description">
+          많은 팀과 조직이 샘플 서비스를 통해<br>
+          업무 효율을 개선하고 새로운 가능성을 발견하고 있습니다.
+        </p>
+      </div>
+
+      <div class="client-logos-section__grid">
+        <div class="client-logo">
+          <img src="img/brands/Company-logo.svg" alt="Company Logo 1" class="client-logo__image">
+        </div>
+        <div class="client-logo">
+          <img src="img/brands/Company-logo-1.svg" alt="Company Logo 1" class="client-logo__image">
+        </div>
+        <div class="client-logo">
+          <img src="img/brands/Company-logo-2.svg" alt="Company Logo 1" class="client-logo__image">
+        </div>
+        <div class="client-logo">
+          <img src="img/brands/Company-logo-3.svg" alt="Company Logo 1" class="client-logo__image">
+        </div>
+        <div class="client-logo">
+          <img src="img/brands/Company-logo-4.svg" alt="Company Logo 1" class="client-logo__image">
+        </div>
+        <div class="client-logo">
+          <img src="img/brands/Company-logo-5.svg" alt="Company Logo 1" class="client-logo__image">
+        </div>
+        <div class="client-logo">
+          <img src="img/brands/Company-logo-6.svg" alt="Company Logo 1" class="client-logo__image">
+        </div>
+        <div class="client-logo">
+          <img src="img/brands/Company-logo-7.svg" alt="Company Logo 1" class="client-logo__image">
+        </div>
+        <div class="client-logo">
+          <img src="img/brands/Company-logo-8.svg" alt="Company Logo 1" class="client-logo__image">
+        </div>
+        <div class="client-logo">
+          <img src="img/brands/Company-logo-9.svg" alt="Company Logo 1" class="client-logo__image">
+        </div>
+        <div class="client-logo">
+          <img src="img/brands/Company-logo-10.svg" alt="Company Logo 1" class="client-logo__image">
+        </div>
+        <div class="client-logo">
+          <img src="img/brands/Company-logo-11.svg" alt="Company Logo 1" class="client-logo__image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="faq-section__container container">
+      <div class="faq-section__header">
+        <h2 class="faq-section__title">자주 묻는 질문</h2>
+        <p class="faq-section__description pb-30">
+          많은 팀과 조직이 샘플 서비스를 통해<br>
+          업무 효율을 개선하고 새로운 가능성을 발견하고 있습니다.
+        </p>
+        <button type="button" class="btn btn--primary btn--l">
+          <span>질문하기</span>
+        </button>
+      </div>
+
+      <div class="faq-section__list">
+        <div class="faq-item">
+          <button type="button" class="btn faq-item__button" aria-expanded="false">
+            <div class="faq-item__content">
+              <span class="faq-item__category">혁신적인 방법</span>
+              <h3 class="faq-item__question">성공을 위한 파트너</h3>
+            </div>
+            <i class="bi bi-chevron-down faq-item__icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-item__answer">
+            <p>단순한 서비스를 넘어 성장의 동반자가 되겠습니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="btn faq-item__button" aria-expanded="false">
+            <div class="faq-item__content">
+              <span class="faq-item__category">고객 중심 서비스</span>
+              <h3 class="faq-item__question">가치 있는 선택</h3>
+            </div>
+            <i class="bi bi-chevron-down faq-item__icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-item__answer">
+            <p>데이터 기반의 통찰력으로 현명한 결정을 돕습니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="btn faq-item__button" aria-expanded="false">
+            <div class="faq-item__content">
+              <span class="faq-item__category">지속 가능한 성장</span>
+              <h3 class="faq-item__question">새로운 시작을 함께해요</h3>
+            </div>
+            <i class="bi bi-chevron-down faq-item__icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-item__answer">
+            <p>체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="btn faq-item__button" aria-expanded="false">
+            <div class="faq-item__content">
+              <span class="faq-item__category">맞춤형 솔루션</span>
+              <h3 class="faq-item__question">더 나은 내일을 향해</h3>
+            </div>
+            <i class="bi bi-chevron-down faq-item__icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-item__answer">
+            <p>전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="btn faq-item__button" aria-expanded="false">
+            <div class="faq-item__content">
+              <span class="faq-item__category">호환성</span>
+              <h3 class="faq-item__question">변화를 만드는 순간</h3>
+            </div>
+            <i class="bi bi-chevron-down faq-item__icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-item__answer">
+            <p>새로운 아이디어와 혁신적인 방법으로 당신의 목표를 달성하는 데 도움을 드립니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="btn faq-item__button" aria-expanded="false">
+            <div class="faq-item__content">
+              <span class="faq-item__category">호환성</span>
+              <h3 class="faq-item__question">성장하는 이야기</h3>
+            </div>
+            <i class="bi bi-chevron-down faq-item__icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-item__answer">
+            <p>전문적인 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="btn faq-item__button" aria-expanded="false">
+            <div class="faq-item__content">
+              <span class="faq-item__category">검증된 결과</span>
+              <h3 class="faq-item__question">함께하는 여정</h3>
+            </div>
+            <i class="bi bi-chevron-down faq-item__icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-item__answer">
+            <p>고객 중심의 접근 방식으로 꼭 맞는 서비스를 제안합니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="btn faq-item__button" aria-expanded="false">
+            <div class="faq-item__content">
+              <span class="faq-item__category">신속한 대응</span>
+              <h3 class="faq-item__question">도전과 성취의 기록</h3>
+            </div>
+            <i class="bi bi-chevron-down faq-item__icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-item__answer">
+            <p>끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Banner Section -->
+  <section class="support-banner-section">
+    <div class="support-banner-section__container container">
+      <div class="support-banner">
+        <div class="support-banner__content">
+          <div class="support-banner__badge">
+            <span class="badge badge--primary">세심한 관리</span>
+          </div>
+          <div class="support-banner__text">
+            <h2 class="support-banner__title">무한한 가능성의 시작</h2>
+            <div class="support-banner__avatars">
+              <div class="support-banner__avatar">
+                <div class="support-banner__avatar-initial support-banner__avatar-initial--orange">H</div>
+                <span class="support-banner__avatar-badge"></span>
+              </div>
+              <div class="support-banner__avatar">
+                <div class="support-banner__avatar-initial support-banner__avatar-initial--orange">H</div>
+                <span class="support-banner__avatar-badge"></span>
+              </div>
+              <div class="support-banner__avatar">
+                <div class="support-banner__avatar-initial support-banner__avatar-initial--blue">D</div>
+                <span class="support-banner__avatar-badge"></span>
+              </div>
+              <div class="support-banner__avatar">
+                <div class="support-banner__avatar-initial support-banner__avatar-initial--orange">H</div>
+                <span class="support-banner__avatar-badge"></span>
+              </div>
+              <div class="support-banner__avatar">
+                <div class="support-banner__avatar-initial support-banner__avatar-initial--blue">D</div>
+                <span class="support-banner__avatar-badge"></span>
+              </div>
+            </div>
+            <p>효율적인 프로세스와 체계적인 관리로 성공을 지원합니다.</p>
+          </div>
+        </div>
+        <div class="support-banner__actions">
+          <a href="#" class="btn btn--primary btn--l">
+            <span>질문하기</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script data-spa-ignore>
+  Popup.init();
+  console.log('home page script executed');
+</script>
+<script>
+  // FAQ Accordion Functionality - 이벤트 위임 방식으로 wakit.js 환경 대응
+  (function() {
+    function handleFAQClick(e) {
+      const button = e.target.closest('.faq-item__button');
+      if (!button) return;
+      
+      e.preventDefault();
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      const answer = button.nextElementSibling;
+      
+      if (!answer || !answer.classList.contains('faq-item__answer')) return;
+      
+      // Close all other FAQ items
+      const allButtons = document.querySelectorAll('.faq-item__button');
+      allButtons.forEach(otherButton => {
+        if (otherButton !== button) {
+          otherButton.setAttribute('aria-expanded', 'false');
+          const otherAnswer = otherButton.nextElementSibling;
+          if (otherAnswer && otherAnswer.classList.contains('faq-item__answer')) {
+            otherAnswer.style.maxHeight = null;
+            otherAnswer.style.paddingBottom = null;
+          }
+        }
+      });
+      
+      // Toggle current FAQ item
+      if (isExpanded) {
+        button.setAttribute('aria-expanded', 'false');
+        answer.style.maxHeight = null;
+        answer.style.paddingBottom = null;
+      } else {
+        button.setAttribute('aria-expanded', 'true');
+        // Set max-height to actual scroll height for smooth animation
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        const paddingBottom = window.innerWidth <= 768 ? '24px' : '36px';
+        answer.style.paddingBottom = paddingBottom;
+      }
+    }
+    
+    function initFAQ() {
+      // 이벤트 위임: body에 이벤트 리스너를 등록하여 동적으로 추가된 요소에도 작동
+      const body = document.body;
+      if (body) {
+        body.addEventListener('click', handleFAQClick);
+        return true;
+      }
+      return false;
+    }
+    
+    // 즉시 실행 시도
+    if (initFAQ()) {
+      console.log('FAQ accordion initialized');
+    } else {
+      // DOM이 준비되지 않은 경우 재시도
+      const tryInit = function() {
+        if (initFAQ()) {
+          console.log('FAQ accordion initialized (delayed)');
+        } else {
+          setTimeout(tryInit, 50);
+        }
+      };
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', tryInit);
+      } else {
+        setTimeout(tryInit, 50);
+      }
+    }
+  })();
+</script>
+
+</html>

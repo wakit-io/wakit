@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>자주 묻는 질문</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+<!-- Blog Styles -->
+<link rel="stylesheet" href="css/style.css">
+<!-- FAQ Page Styles -->
+<link rel="stylesheet" href="css/faq.css">
+
+<!-- 데스크톱 헤더 -->
+<div data-include="../wakit-components/header.html" data-include-when="web"></div>
+
+<main class="faq-page">
+  <!-- Page Header Section -->
+  <section class="faq-header-section">
+    <div class="faq-header-container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item">
+            <a href="index.html" class="breadcrumb-link">
+              <i class="bi bi-house" aria-hidden="true"></i>
+              <span>홈</span>
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            <span class="breadcrumb-current">고객지원</span>
+          </li>
+          <li class="breadcrumb-item">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            <span class="breadcrumb-current">자주 묻는 질문</span>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Header Content -->
+      <div class="faq-header-content">
+        <h1 class="faq-main-title">자주 묻는 질문</h1>
+        <h2 class="faq-subtitle">자주 묻는 질문에 대한 답변을 확인해주세요</h2>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="faq-search-container">
+        <div class="faq-search-bar">
+          <i class="bi bi-search" aria-hidden="true"></i>
+          <input type="text" class="faq-search-input" placeholder="검색어를 입력해주세요" aria-label="질문 검색">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section class="faq-accordion-section">
+    <div class="faq-accordion-container">
+      <div class="faq-accordion-list">
+        <!-- FAQ Item 1 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header" aria-expanded="false" aria-controls="faq-content-1">
+            <div class="faq-accordion-header-content">
+              <span class="faq-question">체계적인 분석</span>
+              <span class="faq-badge-item">New</span>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-accordion-content" id="faq-content-1" aria-hidden="true">
+            <div class="faq-answer">
+              <p>창의적인 아이디어와 실행력으로 차별화된 가치를 제공합니다.</p>
+              <p>협업과 소통을 통해 최상의 결과물을 만들어갑니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header" aria-expanded="false" aria-controls="faq-content-2">
+            <div class="faq-accordion-header-content">
+              <span class="faq-question">효과적인 전략</span>
+              <span class="faq-badge-item">New</span>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-accordion-content" id="faq-content-2" aria-hidden="true">
+            <div class="faq-answer">
+              <p>지속적인 개선과 혁신으로 발전하는 파트너가 되겠습니다.</p>
+              <p>단순한 서비스를 넘어 성장의 동반자가 되겠습니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header" aria-expanded="false" aria-controls="faq-content-3">
+            <div class="faq-accordion-header-content">
+              <span class="faq-question">월간 구독을 어떻게 취소하나요?</span>
+              <span class="faq-badge-item">New</span>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-accordion-content" id="faq-content-3" aria-hidden="true">
+            <div class="faq-answer">
+              <p>월간 구독을 취소하시려면 먼저 [웹사이트/앱 이름]에 로그인한 뒤, 화면 우측 상단의 프로필 아이콘을 클릭하고 "계정 설정" 또는 "구독 관리" 메뉴로 이동하세요. 구독 관리 페이지에서 활성화된 구독 항목을 선택한 후 "구독 취소" 버튼을 클릭하시면 됩니다.</p>
+              <p>데이터 기반의 통찰력으로 현명한 결정을 돕습니다.</p>
+              <p>체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header" aria-expanded="false" aria-controls="faq-content-4">
+            <div class="faq-accordion-header-content">
+              <span class="faq-question">안정적인 운영</span>
+              <span class="faq-badge-item">New</span>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-accordion-content" id="faq-content-4" aria-hidden="true">
+            <div class="faq-answer">
+              <p>전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+              <p>새로운 아이디어와 혁신적인 방법으로 당신의 목표를 달성하는 데 도움을 드립니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header" aria-expanded="false" aria-controls="faq-content-5">
+            <div class="faq-accordion-header-content">
+              <span class="faq-question">혁신적인 도구</span>
+              <span class="faq-badge-item">New</span>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-accordion-content" id="faq-content-5" aria-hidden="true">
+            <div class="faq-answer">
+              <p>전문적인 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.</p>
+              <ul>
+                <li>이메일 지원: 24시간 이내 응답</li>
+                <li>라이브 채팅: 평일 오전 9시부터 오후 6시까지</li>
+                <li>자주 묻는 질문(FAQ): 즉시 확인 가능한 답변</li>
+                <li>비디오 튜토리얼: 단계별 가이드</li>
+                <li>커뮤니티 포럼: 다른 사용자들과의 소통</li>
+              </ul>
+              <p>고객 중심의 접근 방식으로 꼭 맞는 서비스를 제안합니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header" aria-expanded="false" aria-controls="faq-content-6">
+            <div class="faq-accordion-header-content">
+              <span class="faq-question">효율적인 관리</span>
+              <span class="faq-badge-item">New</span>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-accordion-content" id="faq-content-6" aria-hidden="true">
+            <div class="faq-answer">
+              <p>끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.</p>
+              <ol>
+                <li>페이지를 새로고침하거나 브라우저 캐시를 삭제해 보세요.</li>
+                <li>다른 브라우저나 기기에서 접속해 보세요.</li>
+                <li>인터넷 연결 상태를 확인해 주세요.</li>
+                <li>문제가 지속되면 오류 메시지와 함께 스크린샷을 찍어 고객 지원팀에 문의해 주세요.</li>
+              </ol>
+              <p>효율적인 프로세스와 체계적인 관리로 성공을 지원합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section class="faq-cta-section">
+    <div class="faq-cta-container">
+      <div class="faq-cta-content">
+        <h2 class="faq-cta-title">무한한 가능성의 시작</h2>
+        <p class="faq-cta-subtitle">어떤걸 찾으시나요? (서브 카피)</p>
+        <p class="faq-cta-description">창의적인 아이디어와 실행력으로 차별화된 가치를 제공합니다.</p>
+        <a href="#" class="faq-cta-button">
+          <span>지원 문의하기</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<div data-include="../wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/header.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script src="js/faq.js"></script>
+<script data-spa-ignore>
+  Popup.init();
+  console.log('faq page script executed');
+</script>
+</html>

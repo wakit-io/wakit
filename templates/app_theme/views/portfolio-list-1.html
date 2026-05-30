@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Portfolio list 1</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- Blog Styles -->
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/portfolio-list-1.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="portfolio-list-1">
+  <!-- Section Header -->
+  <section class="portfolio-list-1__header">
+    <div class="container">
+      <div class="portfolio-list-1__header-content">
+        <div class="portfolio-list-1__header-text">
+          <h1 class="portfolio-list-1__title">포트폴리오</h1>
+          <!-- <p>데이터 기반의 통찰력으로 현명한 결정을 돕습니다.</p> -->
+        </div>
+        <div class="portfolio-list-1__tabs-placeholder" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 탭 + 그리드: 한 래퍼로 감싸서 sticky의 containing block이 페이지 전체 높이가 되도록 함 -->
+  <div class="portfolio-list-1__tabs-and-content">
+    <nav class="portfolio-list-1__tabs" aria-label="Portfolio categories">
+      <div class="portfolio-list-1__tabs-inner container">
+        <button type="button" class="portfolio-list-1__tab portfolio-list-1__tab--active" aria-label="All Works" aria-current="page">전체</button>
+        <button type="button" class="portfolio-list-1__tab" aria-label="UX/UI">UX/UI</button>
+        <button type="button" class="portfolio-list-1__tab" aria-label="Graphic Design">그래픽 디자인</button>
+        <button type="button" class="portfolio-list-1__tab" aria-label="Brading">브랜딩</button>
+        <button type="button" class="portfolio-list-1__tab" aria-label="Motion Design">모션 디자인</button>
+      </div>
+    </nav>
+
+    <!-- Portfolio Grid Section -->
+    <section class="portfolio-list-1__grid-section">
+    <div class="container">
+      <div class="portfolio-list-1__grid">
+        <!-- Portfolio Item 1 -->
+        <article class="portfolio-list-1__item portfolio-list-1__item--small">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-1__item-link">
+            <figure class="portfolio-list-1__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1558655146-364adaf1fcc9.png" alt="이미지" class="portfolio-list-1__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-1__item-image-placeholder" style="display: none;"></div>
+            </figure>
+            <div class="portfolio-list-1__item-info">
+              <h3 class="portfolio-list-1__item-title">미래를 향한 도전</h3>
+              <p class="portfolio-list-1__item-category">모션</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Portfolio Item 2 -->
+        <article class="portfolio-list-1__item portfolio-list-1__item--large">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-1__item-link">
+            <figure class="portfolio-list-1__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1558655146-364adaf1fcc9.png" alt="이미지" class="portfolio-list-1__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-1__item-image-placeholder" style="display: none;"></div>
+            </figure>
+            <div class="portfolio-list-1__item-info">
+              <h3 class="portfolio-list-1__item-title">성공을 위한 파트너</h3>
+              <p class="portfolio-list-1__item-category">모션</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Portfolio Item 3 -->
+        <article class="portfolio-list-1__item portfolio-list-1__item--large">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-1__item-link">
+            <figure class="portfolio-list-1__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1558655146-364adaf1fcc9.png" alt="이미지" class="portfolio-list-1__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-1__item-image-placeholder" style="display: none;"></div>
+            </figure>
+            <div class="portfolio-list-1__item-info">
+              <h3 class="portfolio-list-1__item-title">가치 있는 선택</h3>
+              <p class="portfolio-list-1__item-category">모션</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Portfolio Item 4 -->
+        <article class="portfolio-list-1__item portfolio-list-1__item--small">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-1__item-link">
+            <figure class="portfolio-list-1__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1558655146-364adaf1fcc9.png" alt="이미지" class="portfolio-list-1__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-1__item-image-placeholder" style="display: none;"></div>
+            </figure>
+            <div class="portfolio-list-1__item-info">
+              <h3 class="portfolio-list-1__item-title">새로운 시작을 함께해요</h3>
+              <p class="portfolio-list-1__item-category">모션</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Portfolio Item 5 -->
+        <article class="portfolio-list-1__item portfolio-list-1__item--small">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-1__item-link">
+            <figure class="portfolio-list-1__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1558655146-364adaf1fcc9.png" alt="이미지" class="portfolio-list-1__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-1__item-image-placeholder" style="display: none;"></div>
+            </figure>
+            <div class="portfolio-list-1__item-info">
+              <h3 class="portfolio-list-1__item-title">더 나은 내일을 향해</h3>
+              <p class="portfolio-list-1__item-category">모션</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Portfolio Item 6 -->
+        <article class="portfolio-list-1__item portfolio-list-1__item--large">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-1__item-link">
+            <figure class="portfolio-list-1__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1558655146-364adaf1fcc9.png" alt="이미지" class="portfolio-list-1__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-1__item-image-placeholder" style="display: none;"></div>
+            </figure>
+            <div class="portfolio-list-1__item-info">
+              <h3 class="portfolio-list-1__item-title">변화를 만드는 순간</h3>
+              <p class="portfolio-list-1__item-category">모션</p>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <!-- Pagination -->
+      <nav class="portfolio-list-1__pagination" aria-label="페이지 네비게이션">
+        <button type="button" class="portfolio-list-1__pagination-button" aria-label="이전 페이지">
+          <i class="bi bi-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="portfolio-list-1__pagination-button portfolio-list-1__pagination-button--active" aria-label="페이지 1" aria-current="page">1</button>
+        <button type="button" class="portfolio-list-1__pagination-button" aria-label="페이지 2">2</button>
+        <button type="button" class="portfolio-list-1__pagination-button" aria-label="페이지 3">3</button>
+        <button type="button" class="portfolio-list-1__pagination-button" aria-label="페이지 생략">..</button>
+        <button type="button" class="portfolio-list-1__pagination-button" aria-label="페이지 7">7</button>
+        <button type="button" class="portfolio-list-1__pagination-button" aria-label="다음 페이지">
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </button>
+      </nav>
+    </div>
+  </section>
+
+  </div><!-- /.portfolio-list-1__tabs-and-content -->
+
+  <!-- CTA Banner Section -->
+  <section class="portfolio-list-1__cta">
+    <div class="container">
+      <div class="portfolio-list-1__cta-content">
+        <div class="portfolio-list-1__cta-background">
+          <img src="https://demo.wakit.org/img/samples/photo-1506905925346-21bda4d32df4.png" alt="이미지" class="portfolio-list-1__cta-background-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <div class="portfolio-list-1__cta-background-placeholder" style="display: none;"></div>
+        </div>
+        <div class="portfolio-list-1__cta-text">
+          <!-- <p class="portfolio-list-1__cta-subtitle">의뢰하기</p> -->
+          <h2 class="portfolio-list-1__cta-title">당신의 꿈을<br>현실로 만드세요!</h2>
+          <p class="portfolio-list-1__cta-description">전문가와 함께 당신의 아이디어를 실현해 보세요.<br>맞춤형 솔루션을 제공합니다.</p>
+          <a href="#" class="btn btn--primary btn--m portfolio-list-1__cta-button">
+            <span>체계적인 접근</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script data-spa-ignore>
+  Popup.init();
+  console.log('home page script executed');
+</script>
+
+</html>

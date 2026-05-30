@@ -1,0 +1,432 @@
+<!-- 숙박 홈 | Figma: 숙박-홈 (7324:40616) -->
+<link rel="stylesheet" href="css/hotel-home.css">
+
+<main class="hotel-home" role="main">
+
+  <!-- 검색 바 -->
+  <div class="hotel-search-bar">
+    <div class="hotel-search-bar__inner">
+      <i class="bi bi-search hotel-search-bar__icon"></i>
+      <div class="hotel-search-bar__text">
+        <span class="hotel-search-bar__placeholder">어디로 떠나실 건가요?</span>
+        <span class="hotel-search-bar__meta">날짜 선택 · 인원 선택</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 국내 / 해외 탭 -->
+  <nav class="hotel-type-tabs" role="tablist">
+    <button type="button" class="hotel-type-tabs__item is-active" role="tab" aria-selected="true">국내</button>
+    <button type="button" class="hotel-type-tabs__item" role="tab" aria-selected="false">해외</button>
+  </nav>
+
+  <!-- 숙소 유형 카테고리 -->
+  <section class="hotel-section" style="padding-bottom: var(--spacing-lg);">
+    <div class="hotel-category-grid">
+      <a class="hotel-category-item">
+        <div class="hotel-category-item__icon">🏨</div>
+        <span class="hotel-category-item__label">호텔·리조트</span>
+      </a>
+      <a class="hotel-category-item">
+        <div class="hotel-category-item__icon">🏡</div>
+        <span class="hotel-category-item__label">펜션</span>
+      </a>
+      <a class="hotel-category-item">
+        <div class="hotel-category-item__icon">🏠</div>
+        <span class="hotel-category-item__label">홈&빌라</span>
+      </a>
+      <a class="hotel-category-item">
+        <div class="hotel-category-item__icon">⛺</div>
+        <span class="hotel-category-item__label">캠핑</span>
+      </a>
+      <a class="hotel-category-item">
+        <div class="hotel-category-item__icon">🏯</div>
+        <span class="hotel-category-item__label">게하·한옥</span>
+      </a>
+      <a class="hotel-category-item">
+        <div class="hotel-category-item__icon">🌊</div>
+        <span class="hotel-category-item__label">글램핑</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 기획전 배너 -->
+  <section class="hotel-deals">
+    <div class="hotel-section__head">
+      <h2 class="hotel-section__title">🔥 지금 가장 핫한 기획전</h2>
+      <a href="#" class="hotel-section__more">더보기 <i class="bi bi-chevron-right"></i></a>
+    </div>
+    <div class="hotel-deals__scroll">
+      <a href="#" class="hotel-deal-card">
+        <span class="hotel-deal-card__badge">카테고리/숙소 10만원 대비</span>
+        <p class="hotel-deal-card__title">디스카버 부산<br><span class="hotel-deal-card__discount">10만원 대박</span></p>
+      </a>
+      <a href="#" class="hotel-deal-card hotel-deal-card--green">
+        <span class="hotel-deal-card__badge">주말 특가</span>
+        <p class="hotel-deal-card__title">강원도 감성숙소<br><span class="hotel-deal-card__discount">최대 40% 할인</span></p>
+      </a>
+      <a href="#" class="hotel-deal-card hotel-deal-card--purple">
+        <span class="hotel-deal-card__badge">오늘의 특가</span>
+        <p class="hotel-deal-card__title">제주 프리미엄 호텔<br><span class="hotel-deal-card__discount">최대 30% 할인</span></p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 지역별 초특가 -->
+  <section class="hotel-section">
+    <div class="hotel-section__head">
+      <h2 class="hotel-section__title">지역별 초특가</h2>
+      <a href="#" class="hotel-section__more">더보기 <i class="bi bi-chevron-right"></i></a>
+    </div>
+    <div class="hotel-region-tabs" role="tablist">
+      <button type="button" class="hotel-region-tabs__item is-active" role="tab">강원</button>
+      <button type="button" class="hotel-region-tabs__item" role="tab">전라</button>
+      <button type="button" class="hotel-region-tabs__item" role="tab">경상</button>
+      <button type="button" class="hotel-region-tabs__item" role="tab">충청</button>
+      <button type="button" class="hotel-region-tabs__item" role="tab">서울</button>
+    </div>
+    <div class="hotel-card-grid">
+      <a href="#hotel-detail" class="hotel-card">
+        <div class="hotel-card__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+            <span>Placeholder</span>
+          </div>
+          <button class="hotel-card__wish" aria-label="찜하기"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="hotel-card__body">
+          <p class="hotel-card__name">강릉 파인힐 펜션</p>
+          <p class="hotel-card__meta"><span>리조트</span></p>
+          <div class="hotel-card__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.8</span>
+          </div>
+          <p class="hotel-card__price">209,900<span class="hotel-card__price-unit">원</span></p>
+        </div>
+      </a>
+      <a href="#hotel-detail" class="hotel-card">
+        <div class="hotel-card__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+            <span>Placeholder</span>
+          </div>
+          <button class="hotel-card__wish" aria-label="찜하기"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="hotel-card__body">
+          <p class="hotel-card__name">양양 낙산월드하우스펜션</p>
+          <p class="hotel-card__meta"><span>리조트</span></p>
+          <div class="hotel-card__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.8</span>
+          </div>
+          <p class="hotel-card__price">209,900<span class="hotel-card__price-unit">원</span></p>
+        </div>
+      </a>
+      <a href="#hotel-detail" class="hotel-card">
+        <div class="hotel-card__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+            <span>Placeholder</span>
+          </div>
+          <button class="hotel-card__wish" aria-label="찜하기"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="hotel-card__body">
+          <p class="hotel-card__name">강릉 오션뷰애견펜션코스테</p>
+          <p class="hotel-card__meta"><span>리조트</span></p>
+          <div class="hotel-card__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.8</span>
+          </div>
+          <p class="hotel-card__price">209,900<span class="hotel-card__price-unit">원</span></p>
+        </div>
+      </a>
+      <a href="#hotel-detail" class="hotel-card">
+        <div class="hotel-card__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+            <span>Placeholder</span>
+          </div>
+          <button class="hotel-card__wish" aria-label="찜하기"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="hotel-card__body">
+          <p class="hotel-card__name">강릉 오션뷰애견펜션코스테</p>
+          <p class="hotel-card__meta"><span>리조트</span></p>
+          <div class="hotel-card__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.8</span>
+          </div>
+          <p class="hotel-card__price">209,900<span class="hotel-card__price-unit">원</span></p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 숙소 타입별 추천 (호텔·리조트) -->
+  <section class="hotel-section">
+    <div class="hotel-section__head">
+      <h2 class="hotel-section__title">호텔·리조트 추천</h2>
+      <a href="#" class="hotel-section__more">더보기 <i class="bi bi-chevron-right"></i></a>
+    </div>
+    <div class="hotel-region-tabs" role="tablist">
+      <button type="button" class="hotel-region-tabs__item is-active" role="tab">전체</button>
+      <button type="button" class="hotel-region-tabs__item" role="tab">서울</button>
+      <button type="button" class="hotel-region-tabs__item" role="tab">제주</button>
+      <button type="button" class="hotel-region-tabs__item" role="tab">부산</button>
+      <button type="button" class="hotel-region-tabs__item" role="tab">강원</button>
+    </div>
+    <div class="hotel-card-grid">
+      <a href="#hotel-detail" class="hotel-card">
+        <div class="hotel-card__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+            <span>Placeholder</span>
+          </div>
+          <button class="hotel-card__wish" aria-label="찜하기"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="hotel-card__body">
+          <p class="hotel-card__name">더 플라자 호텔 서울</p>
+          <p class="hotel-card__meta"><span>서울 · 5성급 · 호텔</span></p>
+          <div class="hotel-card__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.9</span>
+          </div>
+          <span class="hotel-card__coupon">최대 15% 쿠폰</span>
+          <p class="hotel-card__price">320,000<span class="hotel-card__price-unit">원</span></p>
+        </div>
+      </a>
+      <a href="#hotel-detail" class="hotel-card">
+        <div class="hotel-card__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+            <span>Placeholder</span>
+          </div>
+          <button class="hotel-card__wish" aria-label="찜하기"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="hotel-card__body">
+          <p class="hotel-card__name">신라스테이 서울 역삼</p>
+          <p class="hotel-card__meta"><span>서울 · 4성급 · 호텔</span></p>
+          <div class="hotel-card__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.7</span>
+          </div>
+          <span class="hotel-card__coupon">최대 10% 쿠폰</span>
+          <p class="hotel-card__price">195,000<span class="hotel-card__price-unit">원</span></p>
+        </div>
+      </a>
+      <a href="#hotel-detail" class="hotel-card">
+        <div class="hotel-card__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+            <span>Placeholder</span>
+          </div>
+          <button class="hotel-card__wish" aria-label="찜하기"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="hotel-card__body">
+          <p class="hotel-card__name">롯데호텔 제주</p>
+          <p class="hotel-card__meta"><span>제주 · 5성급 · 호텔</span></p>
+          <div class="hotel-card__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.8</span>
+          </div>
+          <p class="hotel-card__price">278,000<span class="hotel-card__price-unit">원</span></p>
+        </div>
+      </a>
+      <a href="#hotel-detail" class="hotel-card">
+        <div class="hotel-card__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+            <span>Placeholder</span>
+          </div>
+          <button class="hotel-card__wish" aria-label="찜하기"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="hotel-card__body">
+          <p class="hotel-card__name">파라다이스 호텔 부산</p>
+          <p class="hotel-card__meta"><span>부산 · 5성급 · 호텔</span></p>
+          <div class="hotel-card__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.8</span>
+          </div>
+          <span class="hotel-card__coupon">최대 15% 쿠폰</span>
+          <p class="hotel-card__price">258,000<span class="hotel-card__price-unit">원</span></p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 인기 랭킹 -->
+  <section class="hotel-section">
+    <div class="hotel-section__head">
+      <h2 class="hotel-section__title">🏆 지금 가장 인기 있는 숙소</h2>
+      <a href="#" class="hotel-section__more">더보기 <i class="bi bi-chevron-right"></i></a>
+    </div>
+    <div class="hotel-rank-list">
+      <a href="#hotel-detail" class="hotel-rank-item">
+        <span class="hotel-rank-item__num">1</span>
+        <div class="hotel-rank-item__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+          </div>
+        </div>
+        <div class="hotel-rank-item__info">
+          <p class="hotel-rank-item__name">강릉 씨마크 호텔</p>
+          <p class="hotel-rank-item__sub">강원 · 리조트</p>
+          <div class="hotel-rank-item__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.9 · 1,204개</span>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <p class="hotel-rank-item__price">218,000<span class="hotel-rank-item__price-unit">원</span></p>
+        </div>
+      </a>
+      <a href="#hotel-detail" class="hotel-rank-item">
+        <span class="hotel-rank-item__num">2</span>
+        <div class="hotel-rank-item__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+          </div>
+        </div>
+        <div class="hotel-rank-item__info">
+          <p class="hotel-rank-item__name">제주 롯데호텔 앤 리조트</p>
+          <p class="hotel-rank-item__sub">제주 · 호텔</p>
+          <div class="hotel-rank-item__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.8 · 988개</span>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <p class="hotel-rank-item__price">304,600<span class="hotel-rank-item__price-unit">원</span></p>
+        </div>
+      </a>
+      <a href="#hotel-detail" class="hotel-rank-item">
+        <span class="hotel-rank-item__num">3</span>
+        <div class="hotel-rank-item__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+          </div>
+        </div>
+        <div class="hotel-rank-item__info">
+          <p class="hotel-rank-item__name">설악 한화리조트</p>
+          <p class="hotel-rank-item__sub">강원 · 리조트</p>
+          <div class="hotel-rank-item__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.7 · 756개</span>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <p class="hotel-rank-item__price">156,000<span class="hotel-rank-item__price-unit">원</span></p>
+        </div>
+      </a>
+      <a href="#hotel-detail" class="hotel-rank-item">
+        <span class="hotel-rank-item__num">4</span>
+        <div class="hotel-rank-item__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+          </div>
+        </div>
+        <div class="hotel-rank-item__info">
+          <p class="hotel-rank-item__name">부산 파라다이스 호텔</p>
+          <p class="hotel-rank-item__sub">부산 · 호텔</p>
+          <div class="hotel-rank-item__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.8 · 622개</span>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <p class="hotel-rank-item__price">258,000<span class="hotel-rank-item__price-unit">원</span></p>
+        </div>
+      </a>
+      <a href="#hotel-detail" class="hotel-rank-item">
+        <span class="hotel-rank-item__num">5</span>
+        <div class="hotel-rank-item__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+          </div>
+        </div>
+        <div class="hotel-rank-item__info">
+          <p class="hotel-rank-item__name">경주 힐튼 호텔</p>
+          <p class="hotel-rank-item__sub">경상 · 호텔</p>
+          <div class="hotel-rank-item__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.7 · 514개</span>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <p class="hotel-rank-item__price">174,900<span class="hotel-rank-item__price-unit">원</span></p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 이번 주말 추천 -->
+  <section class="hotel-section">
+    <div class="hotel-section__head">
+      <h2 class="hotel-section__title">이번 주말 추천 숙소</h2>
+      <a href="#" class="hotel-section__more">더보기 <i class="bi bi-chevron-right"></i></a>
+    </div>
+    <div class="hotel-card-grid">
+      <a href="#hotel-detail" class="hotel-card">
+        <div class="hotel-card__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+            <span>Placeholder</span>
+          </div>
+          <button class="hotel-card__wish" aria-label="찜하기"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="hotel-card__body">
+          <p class="hotel-card__name">소노캄 거제</p>
+          <p class="hotel-card__meta"><span>경상 · 리조트</span></p>
+          <div class="hotel-card__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.6</span>
+          </div>
+          <p class="hotel-card__price">209,000<span class="hotel-card__price-unit">원</span></p>
+        </div>
+      </a>
+      <a href="#hotel-detail" class="hotel-card">
+        <div class="hotel-card__img">
+          <div class="img-placeholder">
+            <i class="bi bi-image"></i>
+            <span>Placeholder</span>
+          </div>
+          <button class="hotel-card__wish" aria-label="찜하기"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="hotel-card__body">
+          <p class="hotel-card__name">더케이호텔 경주</p>
+          <p class="hotel-card__meta"><span>경상 · 호텔</span></p>
+          <div class="hotel-card__rating">
+            <i class="bi bi-star-fill"></i>
+            <span>4.5</span>
+          </div>
+          <span class="hotel-card__coupon">최대 10% 쿠폰</span>
+          <p class="hotel-card__price">149,000<span class="hotel-card__price-unit">원</span></p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // 탭 활성화 토글 (국내/해외)
+  document.querySelectorAll('.hotel-type-tabs__item').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.hotel-type-tabs__item').forEach(b => {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      this.classList.add('is-active');
+      this.setAttribute('aria-selected', 'true');
+    });
+  });
+
+  // 지역 탭 활성화 토글
+  document.querySelectorAll('.hotel-region-tabs').forEach(nav => {
+    nav.querySelectorAll('.hotel-region-tabs__item').forEach(btn => {
+      btn.addEventListener('click', function() {
+        nav.querySelectorAll('.hotel-region-tabs__item').forEach(b => b.classList.remove('is-active'));
+        this.classList.add('is-active');
+      });
+    });
+  });
+</script>

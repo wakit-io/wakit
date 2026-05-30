@@ -1,0 +1,105 @@
+<!-- 영화예매-영화상세 | Foundation 토큰 사용 -->
+<link rel="stylesheet" href="css/movie-detail.css">
+
+<main class="movie-page movie-detail" role="main">
+  <!-- 포스터 영역 -->
+  <div class="movie-detail__poster">
+    <img src="https://i.namu.wiki/i/yfePnhmTqkZ90DhoLH2tFQzmsCcLj5dKSLJjVqMCUQe9st40pTo9vcoGqumCGzl0_947PlnuUgNEP7tvX5M1Hg.webp" alt="심해의 기억">
+  </div>
+
+  <!-- 영화 기본 정보 -->
+  <section class="movie-detail__head">
+    <div class="movie-detail__title-row">
+      <h1 class="movie-detail__title">심해의 기억</h1>
+      <span class="movie-detail__age">15</span>
+    </div>
+    <p class="movie-detail__rank">1위 (60.7%)</p>
+    <p class="movie-detail__rating">4.7 (5,312명)</p>
+    <div class="movie-detail__tags">
+      <span class="movie-detail__tag">#메가토크</span>
+      <span class="movie-detail__tag">#프리미어</span>
+      <span class="movie-detail__tag">#무대인사</span>
+    </div>
+    <p class="movie-detail__desc-short">잃어버린 과거를 찾기 위해 심해 탐사를 떠난 한 해양학자의 이야기</p>
+    <p class="movie-detail__desc-long">해양 깊숙한 곳에서 발견한 신비로운 유물은 그의 인생을 바꿔놓고, 정체불명의 생물과의 전투를 통해 과거의 비밀을 파헤친다. 두려움과 호기심이 얽힌 이 모험은 그를 어디로 이끌 것인가?</p>
+  </section>
+
+  <!-- 예고편 -->
+  <section class="movie-detail__section">
+    <h2 class="movie-detail__section-title">예고편</h2>
+    <div class="movie-detail__trailer-row">
+      <a href="#" class="movie-detail__trailer-item">
+        <span class="movie-detail__trailer-thumb"><i class="bi bi-play-circle-fill"></i></span>
+        <span>메인 예고편</span>
+      </a>
+      <a href="#" class="movie-detail__trailer-item">
+        <span class="movie-detail__trailer-thumb"><i class="bi bi-play-circle-fill"></i></span>
+        <span>런칭 예고편</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 관객 통계 -->
+  <section class="movie-detail__section movie-detail__stats">
+    <p class="movie-detail__stat-line">개봉 4일차 · 전일대비 99.6%</p>
+    <div class="movie-detail__stat-grid">
+      <div class="movie-detail__stat-item">
+        <span class="movie-detail__stat-label">일별 관객 수</span>
+        <span class="movie-detail__stat-value">1,162,598 명</span>
+      </div>
+      <div class="movie-detail__stat-item">
+        <span class="movie-detail__stat-label">누적 관객 수</span>
+        <span class="movie-detail__stat-value">3,440,000 명</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 탭: 영화정보 / 실관람평 / 무비포스트 / 무대인사 -->
+  <nav class="movie-detail__tabs" role="tablist">
+    <button type="button" class="movie-detail__tab is-active" role="tab" aria-selected="true">영화정보</button>
+    <button type="button" class="movie-detail__tab" role="tab">실관람평</button>
+    <button type="button" class="movie-detail__tab" role="tab">무비포스트</button>
+    <button type="button" class="movie-detail__tab" role="tab">무대인사</button>
+  </nav>
+
+  <!-- 영화정보 패널 -->
+  <section class="movie-detail__panel">
+    <dl class="movie-detail__info-list">
+      <div class="movie-detail__info-row"><dt>개봉</dt><dd>2023.05.31</dd></div>
+      <div class="movie-detail__info-row"><dt>타입</dt><dd>2D</dd></div>
+      <div class="movie-detail__info-row"><dt>장르</dt><dd>액션 / 125분</dd></div>
+      <div class="movie-detail__info-row"><dt>등급</dt><dd>15세이상관람가</dd></div>
+      <div class="movie-detail__info-row"><dt>감독</dt><dd>이재훈</dd></div>
+      <div class="movie-detail__info-row"><dt>출현</dt><dd>박서준, 이준혁, 이병헌, 이범수, 김민재, 전석호, 김태리</dd></div>
+    </dl>
+  </section>
+
+  <!-- 실관람평 요약 -->
+  <section class="movie-detail__section movie-detail__reviews">
+    <div class="movie-detail__review-summary">
+      <h3 class="movie-detail__review-title">실관람평 <span>54,301건</span></h3>
+      <p class="movie-detail__review-score">9.2 <span>/ 10점</span></p>
+    </div>
+    <article class="movie-detail__review-card">
+      <div class="movie-detail__review-meta">
+        <span class="movie-detail__review-author">leechunsik</span>
+        <span class="movie-detail__review-date">2023.04.11</span>
+      </div>
+      <p class="movie-detail__review-text">시각적으로 놀라운 영화! 심해의 신비로운 세계를 생생하게 보여줍니다. 박서준의 연기가 인상적이었어요</p>
+      <p class="movie-detail__review-help">1,602명이 이 리뷰에 도움됐습니다.</p>
+    </article>
+    <article class="movie-detail__review-card">
+      <div class="movie-detail__review-meta">
+        <span class="movie-detail__review-author">crimsonsky</span>
+        <span class="movie-detail__review-date">2023.05.11</span>
+      </div>
+      <p class="movie-detail__review-text">스토리가 조금 예측 가능하지만, 긴장감 넘치는 전개와 화려한 비주얼 덕분에 충분히 즐길 수 있었습니다.</p>
+      <p class="movie-detail__review-help">1,260명이 이 리뷰에 도움됐습니다.</p>
+    </article>
+  </section>
+
+  <!-- 하단 고정 예매 버튼 -->
+  <div class="movie-detail__footer">
+    <a href="#movie-booking" class="movie-detail__cta">바로 예매</a>
+  </div>
+</main>

@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Price Plan 1</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+<!-- Blog Styles -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/price-plan-1.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="price-plan-1">
+  <!-- Pricing Plan Section -->
+  <section class="pricing-plan-section">
+    <div class="pricing-plan-section__container container">
+      <!-- Header -->
+      <div class="pricing-plan-section__header">
+        <div>
+          <span class="badge badge--primary">가격</span>
+        </div>
+        <p class="pricing-plan-section__description">새로운 아이디어와 혁신적인 방법으로 당신의 목표를 달성하는 데 도움을 드립니다.</p>
+        <h2 class="pricing-plan-section__title">패키지 플랜</h2>
+        <!-- <p>전문적인 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.</p> -->
+      </div>
+
+      <!-- Billing Toggle (테마 컬러: active=Primary, inactive=Tertiary) -->
+      <div class="pricing-plan-section__billing-toggle">
+        <button type="button" class="btn btn--s pricing-plan-section__toggle-button pricing-plan-section__toggle-button--active" data-billing="monthly">
+          <span class="pricing-plan-section__toggle-text">월간</span>
+        </button>
+        <button type="button" class="btn btn--s pricing-plan-section__toggle-button" data-billing="yearly">
+          <span class="pricing-plan-section__toggle-text">연간</span>
+        </button>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div class="pricing-plan-section__cards">
+        <!-- Standard Card -->
+        <div class="pricing-card">
+          <div class="pricing-card__badge">
+            <span class="pricing-card__badge-text">스탠다드</span>
+          </div>
+          <div class="pricing-card__price-wrapper">
+            <span class="pricing-card__price">9,900원</span>
+            <span class="pricing-card__period">/ 월</span>
+          </div>
+          <p class="pricing-card__description">고객 중심의 접근 방식으로 꼭 맞는 서비스를 제안합니다.</p>
+          <ul class="pricing-card__features">
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">신속한 대응</span>
+            </li>
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">세심한 관리</span>
+            </li>
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">전문적인 컨설팅</span>
+            </li>
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">체계적인 분석</span>
+            </li>
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">효과적인 전략</span>
+            </li>
+          </ul>
+          <button type="button" class="btn btn--secondary btn--m btn--block pricing-card__button">
+            <span class="pricing-card__button-text">시작하기</span>
+          </button>
+        </div>
+
+        <!-- Premium Card -->
+        <div class="pricing-card pricing-card--featured">
+          <div class="pricing-card__badge">
+            <span class="pricing-card__badge-text">프리미엄</span>
+          </div>
+          <div class="pricing-card__price-wrapper">
+            <span class="pricing-card__price">19,900원</span>
+            <span class="pricing-card__period">/ 월</span>
+          </div>
+          <p class="pricing-card__description">끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.</p>
+          <ul class="pricing-card__features">
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">혁신적인 도구</span>
+            </li>
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">효율적인 관리</span>
+            </li>
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">체계적인 접근</span>
+            </li>
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">전문적인 지원</span>
+            </li>
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">혁신적인 방법</span>
+            </li>
+          </ul>
+          <button type="button" class="btn btn--primary btn--m btn--block pricing-card__button">
+            <span class="pricing-card__button-text">시작하기</span>
+          </button>
+        </div>
+
+        <!-- Enterprise Card -->
+        <div class="pricing-card">
+          <div class="pricing-card__badge">
+            <span class="pricing-card__badge-text">엔터프라이즈</span>
+          </div>
+          <div class="pricing-card__price-wrapper">
+            <span class="pricing-card__price">29,900원</span>
+            <span class="pricing-card__period">/ 월</span>
+          </div>
+          <p class="pricing-card__description">효율적인 프로세스와 체계적인 관리로 성공을 지원합니다.</p>
+          <ul class="pricing-card__features">
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">맞춤형 솔루션</span>
+            </li>
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">검증된 결과</span>
+            </li>
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">신속한 대응</span>
+            </li>
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">세심한 관리</span>
+            </li>
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="pricing-card__feature-text">전문적인 컨설팅</span>
+            </li>
+          </ul>
+          <button type="button" class="btn btn--secondary btn--m btn--block pricing-card__button">
+            <span class="pricing-card__button-text">시작하기</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos Section -->
+  <section class="client-logos-section">
+    <div class="client-logos-section__container container">
+      <div class="client-logos-section__content">
+        <p>창의적인 아이디어와 실행력으로 차별화된 가치를 제공합니다.</p>
+        <div class="client-logos-section__logos">
+          <div class="client-logos-section__logo">
+              <img src="img/brands/Company-logo.svg" alt="Company Logo 1" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo">
+              <img src="img/brands/Company-logo-1.svg" alt="Company Logo 2" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo">
+              <img src="img/brands/Company-logo-2.svg" alt="Company Logo 3" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo">
+              <img src="img/brands/Company-logo-3.svg" alt="Company Logo 4" class="client-logos-section__logo-image">
+          </div>
+          <!-- Mobile Additional Logos -->
+          <div class="client-logos-section__logo client-logos-section__logo--mobile-only">
+              <img src="img/brands/Company-logo-4.svg" alt="Company Logo 5" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo client-logos-section__logo--mobile-only">
+              <img src="img/brands/Company-logo-5.svg" alt="Company Logo 6" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo client-logos-section__logo--mobile-only">
+              <img src="img/brands/Company-logo-6.svg" alt="Company Logo 7" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo client-logos-section__logo--mobile-only">
+              <img src="img/brands/Company-logo-7.svg" alt="Company Logo 8" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo client-logos-section__logo--mobile-only">
+              <img src="img/brands/Company-logo-8.svg" alt="Company Logo 9" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo client-logos-section__logo--mobile-only">
+              <img src="img/brands/Company-logo-9.svg" alt="Company Logo 10" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo client-logos-section__logo--mobile-only">
+              <img src="img/brands/Company-logo-10.svg" alt="Company Logo 11" class="client-logos-section__logo-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="faq-section__container container">
+      <!-- Header -->
+      <div class="faq-section__header">
+        <div>
+          <span class="badge badge--primary">FAQ</span>
+        </div>
+        <p class="faq-section__subtitle">질문에 대한 답을 찾을 수 없나요?</p>
+        <h2 class="faq-section__title">자주 묻는 질문</h2>
+      </div>
+
+      <!-- FAQ Accordion -->
+      <div class="faq-section__accordions">
+        <!-- FAQ Item 1 (Open by default) -->
+        <div class="faq-accordion faq-accordion--open">
+          <button class="faq-accordion__header" aria-expanded="true">
+            <div class="faq-accordion__header-content">
+              <span class="faq-accordion__question">체계적인 분석</span>
+            </div>
+            <i class="bi bi-chevron-up faq-accordion__icon"></i>
+          </button>
+          <div class="faq-accordion__content">
+            <p class="faq-accordion__answer">네, 가능합니다! 샘플서비스는 모든 사용자에게 14일 무료 체험 기간을 제공합니다.<br>무료 체험 기간 동안 모든 주요 기능을 제한 없이 사용해 보실 수 있으며, 체험 후에 적합한 요금제를 선택하시면 됩니다.<br><br>무료 체험 중에는 결제 정보가 필요하지 않으며, 언제든지 취소할 수 있습니다.<br>지금 바로 시작해 보세요!</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-accordion">
+          <button class="faq-accordion__header" aria-expanded="false">
+            <div class="faq-accordion__header-content">
+              <span class="faq-accordion__question">효과적인 전략</span>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion__icon"></i>
+          </button>
+          <div class="faq-accordion__content">
+            <p>지속적인 개선과 혁신으로 발전하는 파트너가 되겠습니다.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-accordion">
+          <button class="faq-accordion__header" aria-expanded="false">
+            <div class="faq-accordion__header-content">
+              <span class="faq-accordion__question">안정적인 운영</span>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion__icon"></i>
+          </button>
+          <div class="faq-accordion__content">
+            <p>단순한 서비스를 넘어 성장의 동반자가 되겠습니다.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-accordion">
+          <button class="faq-accordion__header" aria-expanded="false">
+            <div class="faq-accordion__header-content">
+              <span class="faq-accordion__question">혁신적인 도구</span>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion__icon"></i>
+          </button>
+          <div class="faq-accordion__content">
+            <p>데이터 기반의 통찰력으로 현명한 결정을 돕습니다.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-accordion">
+          <button class="faq-accordion__header" aria-expanded="false">
+            <div class="faq-accordion__header-content">
+              <span class="faq-accordion__question">효율적인 관리</span>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion__icon"></i>
+          </button>
+          <div class="faq-accordion__content">
+            <p class="faq-accordion__answer">30일 이내 환불이 가능합니다.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-accordion">
+          <button class="faq-accordion__header" aria-expanded="false">
+            <div class="faq-accordion__header-content">
+              <span class="faq-accordion__question">체계적인 접근</span>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion__icon"></i>
+          </button>
+          <div class="faq-accordion__content">
+            <p>체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section class="cta-banner-section">
+    <div class="cta-banner-section__container container">
+      <div class="cta-banner-section__banner">
+        <div class="cta-banner-section__image-wrapper">
+          <img src="https://demo.wakit.org/img/samples/photo-1661772661721-b16346fe5b0f.png" alt="이미지" class="cta-banner-section__image">
+        </div>
+        <div class="cta-banner-section__overlay"></div>
+        <div class="cta-banner-section__content">
+          <p class="cta-banner-section__description">전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+          <h2 class="cta-banner-section__title">디자이너가 선택한<br>1위 디자이너 자동 앱 솔루션</h2>
+          <button class="btn btn--primary btn--l">
+            <span>전문적인 지원</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script>
+  // Initialize FAQ accordion and other features for price-plan-1 page
+  // Works in both static page and Wakit dynamic view
+  function initPricePlan1(container) {
+    if (!container) {
+      // Try to find container: dynamic view active page or document body
+      container = document.querySelector('.dynamic-view.active .page') || document.body;
+    }
+
+    // Initialize Popup (only once)
+    if (typeof Popup !== 'undefined' && Popup.init) {
+      Popup.init();
+    }
+
+    // FAQ Accordion Toggle
+    (function() {
+      const accordionHeaders = container.querySelectorAll('.faq-accordion__header');
+      if (!accordionHeaders.length) return;
+
+      accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+          const accordion = this.closest('.faq-accordion');
+          const isOpen = accordion.classList.contains('faq-accordion--open');
+          const icon = this.querySelector('.faq-accordion__icon');
+          const content = accordion.querySelector('.faq-accordion__content');
+
+          // Close all accordions within the container
+          container.querySelectorAll('.faq-accordion').forEach(acc => {
+            acc.classList.remove('faq-accordion--open');
+            const accIcon = acc.querySelector('.faq-accordion__icon');
+            const accContent = acc.querySelector('.faq-accordion__content');
+            if (accIcon) {
+              accIcon.classList.remove('bi-chevron-up');
+              accIcon.classList.add('bi-chevron-down');
+            }
+            if (accContent) {
+              accContent.style.maxHeight = null;
+            }
+            acc.querySelector('.faq-accordion__header')?.setAttribute('aria-expanded', 'false');
+          });
+
+          // Toggle clicked accordion
+          if (!isOpen) {
+            accordion.classList.add('faq-accordion--open');
+            if (icon) {
+              icon.classList.remove('bi-chevron-down');
+              icon.classList.add('bi-chevron-up');
+            }
+            if (content) {
+              content.style.maxHeight = content.scrollHeight + 'px';
+            }
+            this.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // Initialize open accordion
+      const openAccordion = container.querySelector('.faq-accordion--open');
+      if (openAccordion) {
+        const content = openAccordion.querySelector('.faq-accordion__content');
+        if (content) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      }
+    })();
+  }
+
+  // Run immediately - works for both static page and dynamic view
+  // When script executes in dynamic view, it's already inside the .page container
+  (function() {
+    // Find the appropriate container
+    // Priority: 1) Active dynamic view page, 2) .price-plan-1 element, 3) document.body
+    let container = document.querySelector('.dynamic-view.active .page');
+    
+    if (!container) {
+      // Try to find .price-plan-1 element
+      const pricePlan1 = document.querySelector('.price-plan-1');
+      if (pricePlan1) {
+        container = pricePlan1;
+      } else {
+        container = document.body;
+      }
+    }
+    
+    initPricePlan1(container);
+  })();
+</script>
+
+</html>

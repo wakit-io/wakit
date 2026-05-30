@@ -1,0 +1,32 @@
+{
+  "splashDelay": 100,
+  "splashForce": false,
+  "tabbar": { "autoHide": false, "hideThreshold": 14, "displayMode": "always" },
+  "pullToRefresh": {
+    "threshold": 90,
+    "startSlop": 18,
+    "damping": 0.35,
+    "maxPull": 200
+  },
+  "appbarView": true,
+  "theme": {
+    "primaryColor": "#006fff",
+    "font": "Pretendard, system-ui",
+    "isMobile": true
+  },
+  "defaultTab": "movie-home",
+  "tabs": [
+    { "id": "movie-home", "label": "홈", "icon": "fi fi-sr-home", "page": "movie-home" },
+    { "id": "movie-store", "label": "스토어", "icon": "fi fi-sr-shopping-bag", "page": "movie-store" },
+    { "id": "movie-booking", "label": "예매", "icon": "fi fi-sr-ticket", "page": "movie-booking" },
+    { "id": "movie-more", "label": "My", "icon": "fi fi-sr-user", "page": "movie-more" }
+  ],
+  "routes": [
+    { "path": "home", "file": "../views/home.html", "title": "App Basic" },
+    { "path": "movie-home", "file": "../views/movie-home.html", "title": "영화 홈" },
+    { "path": "movie-store", "file": "../views/movie-store.html", "title": "스토어" },
+    { "path": "movie-booking", "file": "../views/movie-booking.html", "title": "예매" },
+    { "path": "movie-more", "file": "../views/movie-more.html", "title": "My" },
+    { "path": "movie-detail", "file": "../views/movie-detail.html", "title": "영화 상세" }
+  ]
+}

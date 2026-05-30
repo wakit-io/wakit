@@ -1,0 +1,380 @@
+/* ============================================
+   My Received - Base Styles
+   ============================================ */
+
+.my-received {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+}
+
+/* ============================================
+   My Received - Alert Box
+   ============================================ */
+
+.my-received__alert {
+  background-color: var(--color-primary-lighter);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.my-received__alert-title {
+  font-family: var(--font-family-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.my-received__alert-text {
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-primary-dark);
+  margin: 0;
+}
+
+/* ============================================
+   My Received - Table
+   ============================================ */
+
+.my-received__table-wrapper {
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.my-received__table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+}
+
+.my-received__table-header {
+  background-color: var(--color-bg-secondary);
+}
+
+.my-received__table-header-cell {
+  padding: 10px 12px;
+  text-align: left;
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+}
+
+.my-received__table-header-cell:last-child {
+  border-right: none;
+}
+
+.my-received__table-header-cell:first-child {
+  width: 110px;
+  min-width: 110px;
+}
+
+.my-received__table-header-cell:nth-child(2) {
+  width: 100px;
+  min-width: 100px;
+}
+
+.my-received__table-header-cell:nth-child(3) {
+  width: 90px;
+  min-width: 90px;
+}
+
+.my-received__table-header-cell:nth-child(4) {
+  width: 80px;
+  min-width: 80px;
+}
+
+.my-received__table-header-cell:nth-child(5) {
+  width: 100px;
+  min-width: 100px;
+}
+
+.my-received__table-sort-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: none;
+  border: none;
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.my-received__table-sort-btn:hover {
+  color: var(--color-primary);
+}
+
+.my-received__table-sort-btn:hover i {
+  color: var(--color-primary);
+}
+
+.my-received__table-sort-btn i {
+  font-size: 20px;
+  color: var(--color-text-secondary);
+}
+
+.my-received__table-body {
+  background-color: var(--color-bg-primary);
+}
+
+.my-received__table-row {
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s;
+}
+
+.my-received__table-row:last-child {
+  border-bottom: none;
+}
+
+.my-received__table-row:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.my-received__table-cell {
+  padding: 8px 12px;
+  vertical-align: middle;
+  border-right: 1px solid var(--color-border);
+}
+
+.my-received__table-cell:last-child {
+  border-right: none;
+}
+
+.my-received__table-cell:first-child {
+  width: 110px;
+  min-width: 110px;
+}
+
+.my-received__table-cell:nth-child(2) {
+  width: 100px;
+  min-width: 100px;
+}
+
+.my-received__table-cell:nth-child(3) {
+  width: 90px;
+  min-width: 90px;
+}
+
+.my-received__table-cell:nth-child(4) {
+  width: 80px;
+  min-width: 80px;
+}
+
+.my-received__table-cell:nth-child(5) {
+  width: 100px;
+  min-width: 100px;
+}
+
+/* Date */
+.my-received__date {
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+/* Amount */
+.my-received__amount {
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--color-primary);
+  text-align: right;
+  display: block;
+  width: 100%;
+}
+
+/* Payment Method */
+.my-received__payment-method {
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+/* Status Badge */
+.my-received__status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 999px;
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+/* Completed Status - Success Green */
+.my-received__status-badge--completed {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+[data-theme="dark"] .my-received__status-badge--completed {
+  background-color: #064e3b;
+  color: #34d399;
+}
+
+/* Processing Status - Warning Yellow/Orange */
+.my-received__status-badge--processing {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+[data-theme="dark"] .my-received__status-badge--processing {
+  background-color: #78350f;
+  color: #fbbf24;
+}
+
+/* Pending Status - Primary Red */
+.my-received__status-badge--pending {
+  background-color: var(--color-primary-lighter);
+  color: var(--color-primary);
+}
+
+.my-received__status-badge i {
+  font-size: 16px;
+}
+
+/* Export Link */
+.my-received__export-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.my-received__export-link:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.my-received__export-link:hover i {
+  color: var(--color-primary);
+}
+
+.my-received__export-link i {
+  font-size: 20px;
+  color: var(--color-text-secondary);
+  transition: all 0.2s;
+}
+
+/* ============================================
+   My Received - Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Alert Box */
+  .my-received__alert {
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .my-received__alert-title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .my-received__alert-text {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  /* Table - 모바일에서 가로 스크롤 유지 */
+  .my-received__table-wrapper {
+    border-radius: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .my-received__table {
+    min-width: 480px;
+    width: auto;
+  }
+
+  .my-received__table-header {
+    display: table-header-group;
+  }
+
+  .my-received__table-body {
+    display: table-row-group;
+  }
+
+  .my-received__table-row {
+    display: table-row;
+  }
+
+  .my-received__table-cell {
+    display: table-cell;
+    white-space: nowrap;
+    padding: 8px 12px;
+  }
+
+  .my-received__date {
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--color-text-primary);
+  }
+
+  .my-received__amount {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: right;
+    color: var(--color-primary);
+  }
+
+  .my-received__payment-method {
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--color-text-primary);
+  }
+
+  .my-received__status-badge {
+    font-size: 11px;
+    line-height: 16px;
+    padding: var(--spacing-xs) var(--spacing-xs);
+  }
+
+  .my-received__status-badge i {
+    font-size: 16px;
+  }
+
+  .my-received__export-link {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .my-received__export-link i {
+    font-size: 20px;
+  }
+}

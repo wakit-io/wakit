@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>이벤트 상세 1</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+<!-- Blog Styles -->
+<link rel="stylesheet" href="css/style.css">
+<!-- Event List 1 Page Styles -->
+<link rel="stylesheet" href="css/event-detail-1.css">
+
+
+<!-- 데스크톱 헤더 -->
+<div data-include="../wakit-components/header.html" data-include-when="web"></div>
+
+<main class="event-detail-1">
+  <!-- Page Header Section -->
+  <section class="event-detail-1__header-section">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <nav class="event-detail-1__breadcrumbs" aria-label="Breadcrumb">
+        <ol class="event-detail-1__breadcrumbs-list">
+          <li class="event-detail-1__breadcrumbs-item">
+            <a href="index.html" class="event-detail-1__breadcrumbs-link">
+              <i class="bi bi-house" aria-hidden="true"></i>
+              <span class="event-detail-1__breadcrumbs-text">홈</span>
+            </a>
+          </li>
+          <li class="event-detail-1__breadcrumbs-item">
+            <i class="bi bi-chevron-right event-detail-1__breadcrumbs-separator" aria-hidden="true"></i>
+            <a href="event-list-1.html" class="event-detail-1__breadcrumbs-link">
+              <span class="event-detail-1__breadcrumbs-text">이벤트</span>
+            </a>
+          </li>
+          <li class="event-detail-1__breadcrumbs-item event-detail-1__breadcrumbs-item--current">
+            <i class="bi bi-chevron-right event-detail-1__breadcrumbs-separator" aria-hidden="true"></i>
+            <span class="event-detail-1__breadcrumbs-text">혁신적인 도구</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Event Details Section -->
+  <section class="event-detail-1__content-section">
+    <div class="container">
+      <div class="event-detail-1__layout">
+        <!-- Left Column: Event Image and Description -->
+        <div class="event-detail-1__main-content">
+          <!-- Event Image -->
+          <div class="event-detail-1__image">
+            <img src="https://demo.wakit.org/img/samples/photo-1460925895917-afdab827c52f.png" alt="이미지">
+          </div>
+
+          <!-- Event Description -->
+          <div class="event-detail-1__description">
+            <h2 class="event-detail-1__description-title">소개</h2>
+            <p class="event-detail-1__description-text">
+              프레임워크와 샘플 CMS를 활용하여 효율적이고 강력한 웹 애플리케이션을 구축하는 방법을 배워보세요. 이번 밋업에서는 프레임워크의 기능과 샘플 CMS의 통합을 통해 어떻게 빠르고 확장 가능한 웹사이트를 개발할 수 있는지 살펴봅니다.<br>
+              실제 데모와 사례를 통해 바로 적용 가능한 팁과 노하우를 얻어가실 수 있습니다.
+            </p>
+          </div>
+
+          <!-- Event Schedule -->
+          <div class="event-detail-1__schedule">
+            <h2 class="event-detail-1__schedule-title">창의적인 해결책</h2>
+            <div class="event-detail-1__schedule-list">
+              <!-- Schedule Item 1 -->
+              <div class="event-detail-1__schedule-item">
+                <div class="event-detail-1__schedule-time">PM 5시</div>
+                <div class="event-detail-1__schedule-details">
+                  <h3 class="event-detail-1__schedule-item-title">전문적인 파트너십</h3>
+                  <p>효율적인 프로세스와 체계적인 관리로 성공을 지원합니다.</p>
+                </div>
+              </div>
+
+              <!-- Schedule Item 2 -->
+              <div class="event-detail-1__schedule-item">
+                <div class="event-detail-1__schedule-time">PM 5시 30분 ~ 6시</div>
+                <div class="event-detail-1__schedule-details">
+                  <h3 class="event-detail-1__schedule-item-title">신뢰할 수 있는 동반자</h3>
+                  <p>창의적인 아이디어와 실행력으로 차별화된 가치를 제공합니다.</p>
+                </div>
+              </div>
+
+              <!-- Schedule Item 3 -->
+              <div class="event-detail-1__schedule-item">
+                <div class="event-detail-1__schedule-time">PM 6 ~ 7시</div>
+                <div class="event-detail-1__schedule-details">
+                  <h3 class="event-detail-1__schedule-item-title">미래를 향한 도전</h3>
+                  <p>협업과 소통을 통해 최상의 결과물을 만들어갑니다.</p>
+                </div>
+              </div>
+
+              <!-- Schedule Item 4 -->
+              <div class="event-detail-1__schedule-item">
+                <div class="event-detail-1__schedule-time">PM 7시 ~ 종료</div>
+                <div class="event-detail-1__schedule-details">
+                  <h3 class="event-detail-1__schedule-item-title">성공을 위한 파트너</h3>
+                  <p>지속적인 개선과 혁신으로 발전하는 파트너가 되겠습니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Sidebar -->
+        <aside class="event-detail-1__sidebar">
+          <!-- Event Info Box -->
+          <div class="event-detail-1__info-box">
+            <div class="event-detail-1__info-header">
+              <div>
+                <span class="badge badge--primary">밋업</span>
+              </div>
+              <h1 class="event-detail-1__info-title">가치 있는 선택</h1>
+            </div>
+
+            <div class="event-detail-1__info-details">
+              <!-- Location -->
+              <div class="event-detail-1__info-item">
+                <i class="bi bi-geo-alt-fill event-detail-1__info-icon" aria-hidden="true"></i>
+                <div class="event-detail-1__info-content">
+                  <h3 class="event-detail-1__info-label">위치</h3>
+                  <p>단순한 서비스를 넘어 성장의 동반자가 되겠습니다.</p>
+                </div>
+              </div>
+
+              <!-- Date and Time -->
+              <div class="event-detail-1__info-item">
+                <i class="bi bi-calendar-event event-detail-1__info-icon" aria-hidden="true"></i>
+                <div class="event-detail-1__info-content">
+                  <h3 class="event-detail-1__info-label">새로운 시작을 함께해요</h3>
+                  <p>데이터 기반의 통찰력으로 현명한 결정을 돕습니다.</p>
+                </div>
+              </div>
+
+              <!-- Fee -->
+              <div class="event-detail-1__info-item">
+                <i class="bi bi-ticket-perforated event-detail-1__info-icon" aria-hidden="true"></i>
+                <div class="event-detail-1__info-content">
+                  <h3 class="event-detail-1__info-label">입장료</h3>
+                  <p class="event-detail-1__info-value">1인당 29,000원</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Registration Buttons -->
+            <div class="event-detail-1__registration-buttons">
+              <button type="button" class="event-detail-1__register-btn event-detail-1__register-btn--primary">
+                <span>신청하기</span>
+              </button>
+              <button type="button" class="event-detail-1__register-btn event-detail-1__register-btn--icon">
+                <i class="bi bi-share" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <p>체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p>
+          </div>
+
+          <!-- Registration Form Box -->
+          <div class="event-detail-1__form-box">
+            <h2 class="event-detail-1__form-title">더 나은 내일을 향해</h2>
+            
+            <form class="event-detail-1__form">
+              <!-- Email Field -->
+              <div class="event-detail-1__form-field">
+                <label for="email" class="event-detail-1__form-label">이메일</label>
+                <div class="event-detail-1__input-wrapper">
+                  <input type="email" id="email" class="event-detail-1__input" placeholder="입력해주세요.">
+                </div>
+                <!-- <p class="event-detail-1__form-helper">헬퍼 텍스트 영역</p> -->
+              </div>
+
+              <!-- Name Field -->
+              <div class="event-detail-1__form-field">
+                <label for="name" class="event-detail-1__form-label">성함</label>
+                <div class="event-detail-1__input-wrapper">
+                  <input type="text" id="name" class="event-detail-1__input" placeholder="입력해주세요.">
+                </div>
+                <!-- <p class="event-detail-1__form-helper">헬퍼 텍스트 영역</p> -->
+              </div>
+
+              <!-- Contact Field -->
+              <div class="event-detail-1__form-field">
+                <label for="contact" class="event-detail-1__form-label">연락처</label>
+                <div class="event-detail-1__input-wrapper">
+                  <input type="tel" id="contact" class="event-detail-1__input" placeholder="입력해주세요.">
+                </div>
+                <!-- <p class="event-detail-1__form-helper">헬퍼 텍스트 영역</p> -->
+              </div>
+
+              <!-- Title Field -->
+              <div class="event-detail-1__form-field">
+                <label for="title" class="event-detail-1__form-label">직함</label>
+                <div class="event-detail-1__input-wrapper">
+                  <input type="text" id="title" class="event-detail-1__input" placeholder="입력해주세요.">
+                </div>
+                <!-- <p class="event-detail-1__form-helper">헬퍼 텍스트 영역</p> -->
+              </div>
+
+              <!-- Company Field -->
+              <div class="event-detail-1__form-field">
+                <label for="company" class="event-detail-1__form-label">회사</label>
+                <div class="event-detail-1__input-wrapper">
+                  <input type="text" id="company" class="event-detail-1__input" placeholder="입력해주세요.">
+                </div>
+                <!-- <p class="event-detail-1__form-helper">헬퍼 텍스트 영역</p> -->
+              </div>
+
+              <!-- Checkboxes -->
+              <div class="event-detail-1__form-checkboxes">
+                <label class="event-detail-1__checkbox-label">
+                  <input type="checkbox" class="event-detail-1__checkbox" checked>
+                  <span class="event-detail-1__checkbox-text">서비스 이용약관에 동의합니다. (필수)</span>
+                </label>
+                <label class="event-detail-1__checkbox-label">
+                  <input type="checkbox" class="event-detail-1__checkbox" checked>
+                  <span class="event-detail-1__checkbox-text">개인정보 수집/이용에 동의합니다. (필수)</span>
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn--secondary btn--m">
+                <span>제출</span>
+              </button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- On-Demand Webinars Section -->
+  <section class="event-detail-1__webinar-section">
+    <div class="container">
+      <h2 class="event-detail-1__webinar-title">변화를 만드는 순간</h2>
+      
+      <div class="event-detail-1__webinar-grid">
+        <!-- Webinar Card 1 -->
+        <article class="event-detail-1__webinar-card">
+          <a href="views/event-detail-1.html" class="event-detail-1__webinar-link">
+            <div class="event-detail-1__webinar-image-wrapper">
+              <div class="event-detail-1__webinar-image">
+                <img src="https://demo.wakit.org/img/samples/photo-1511578314322-379afb476865.png" alt="이미지">
+                <div class="event-detail-1__webinar-overlay"></div>
+              </div>
+              <span class="badge badge--primary">웨비나</span>
+              <div class="event-detail-1__webinar-speakers">
+                <div class="event-detail-1__webinar-speaker">
+                  <div class="event-detail-1__webinar-speaker-avatar">
+                    <img src="https://demo.wakit.org/img/samples/photo-1494790108377-be9c29b29330.png" alt="김철수">
+                    <div class="event-detail-1__webinar-speaker-badge"></div>
+                  </div>
+                  <div class="event-detail-1__webinar-speaker-info">
+                    <div class="event-detail-1__webinar-speaker-name">김철수</div>
+                    <div class="event-detail-1__webinar-speaker-title">마케팅부장</div>
+                  </div>
+                </div>
+                <div class="event-detail-1__webinar-speaker">
+                  <div class="event-detail-1__webinar-speaker-avatar">
+                    <img src="https://demo.wakit.org/img/samples/photo-1500648767791-00dcc994a43e.png" alt="이영희">
+                    <div class="event-detail-1__webinar-speaker-badge"></div>
+                  </div>
+                  <div class="event-detail-1__webinar-speaker-info">
+                    <div class="event-detail-1__webinar-speaker-name">이영희</div>
+                    <div class="event-detail-1__webinar-speaker-title">프로젝트 매니저</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="event-detail-1__webinar-content">
+              <h3 class="event-detail-1__webinar-card-title">성장하는 이야기</h3>
+              <div class="event-detail-1__webinar-date">
+                <span class="event-detail-1__webinar-date-text">전문적인 지원</span>
+                <span class="event-detail-1__webinar-time-text">혁신적인 방법</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Webinar Card 2 -->
+        <article class="event-detail-1__webinar-card">
+          <a href="views/event-detail-2.html" class="event-detail-1__webinar-link">
+            <div class="event-detail-1__webinar-image-wrapper">
+              <div class="event-detail-1__webinar-image">
+                <img src="https://demo.wakit.org/img/samples/photo-1540575467063-178a50c2df87.png" alt="이미지">
+                <div class="event-detail-1__webinar-overlay"></div>
+              </div>
+              <span class="badge badge--primary">웨비나</span>
+              <div class="event-detail-1__webinar-speakers">
+                <div class="event-detail-1__webinar-speaker">
+                  <div class="event-detail-1__webinar-speaker-avatar">
+                    <img src="https://demo.wakit.org/img/samples/photo-1507003211169-0a1dd7228f2d.png" alt="박민수">
+                    <div class="event-detail-1__webinar-speaker-badge"></div>
+                  </div>
+                  <div class="event-detail-1__webinar-speaker-info">
+                    <div class="event-detail-1__webinar-speaker-name">박민수</div>
+                    <div class="event-detail-1__webinar-speaker-title">파트장</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="event-detail-1__webinar-content">
+              <h3 class="event-detail-1__webinar-card-title">함께하는 여정</h3>
+              <div class="event-detail-1__webinar-date">
+                <span class="event-detail-1__webinar-date-text">고객 중심 서비스</span>
+                <span class="event-detail-1__webinar-time-text">지속 가능한 성장</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Webinar Card 3 -->
+        <article class="event-detail-1__webinar-card">
+          <a href="views/event-detail-3.html" class="event-detail-1__webinar-link">
+            <div class="event-detail-1__webinar-image-wrapper">
+              <div class="event-detail-1__webinar-image">
+                <img src="https://demo.wakit.org/img/samples/photo-1460925895917-afdab827c52f.png" alt="이미지">
+                <div class="event-detail-1__webinar-overlay"></div>
+              </div>
+              <span class="badge badge--primary">밋업</span>
+              <div class="event-detail-1__webinar-speakers">
+                <div class="event-detail-1__webinar-speaker">
+                  <div class="event-detail-1__webinar-speaker-avatar">
+                    <img src="https://demo.wakit.org/img/samples/photo-1438761681033-6461ffad8d80.png" alt="정수진">
+                    <div class="event-detail-1__webinar-speaker-badge"></div>
+                  </div>
+                  <div class="event-detail-1__webinar-speaker-info">
+                    <div class="event-detail-1__webinar-speaker-name">정수진</div>
+                    <div class="event-detail-1__webinar-speaker-title">영업부장</div>
+                  </div>
+                </div>
+                <div class="event-detail-1__webinar-speaker">
+                  <div class="event-detail-1__webinar-speaker-avatar">
+                    <img src="https://demo.wakit.org/img/samples/photo-1472099645785-5658abf4ff4e.png" alt="홍길동">
+                    <div class="event-detail-1__webinar-speaker-badge"></div>
+                  </div>
+                  <div class="event-detail-1__webinar-speaker-info">
+                    <div class="event-detail-1__webinar-speaker-name">홍길동</div>
+                    <div class="event-detail-1__webinar-speaker-title">품질관리부장</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="event-detail-1__webinar-content">
+              <h3 class="event-detail-1__webinar-card-title">도전과 성취의 기록</h3>
+              <div class="event-detail-1__webinar-date">
+                <span class="event-detail-1__webinar-date-text">맞춤형 솔루션</span>
+                <span class="event-detail-1__webinar-time-text">검증된 결과</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<div data-include="../wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/header.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script data-spa-ignore>
+  Popup.init();
+  console.log('faq page script executed');
+</script>
+</html>

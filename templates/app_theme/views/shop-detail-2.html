@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Shop detail 2</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- Blog Styles -->
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/shop-detail-2.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="shop-detail-2">
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs">
+    <div class="container">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item">
+          <i class="bi bi-house" aria-hidden="true"></i>
+          <a href="#" class="breadcrumbs__link">홈</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <i class="bi bi-chevron-right breadcrumbs__separator" aria-hidden="true"></i>
+          <a href="#" class="breadcrumbs__link">여성</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <i class="bi bi-chevron-right breadcrumbs__separator" aria-hidden="true"></i>
+          <a href="#" class="breadcrumbs__link">의류</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <i class="bi bi-chevron-right breadcrumbs__separator" aria-hidden="true"></i>
+          <span class="breadcrumbs__text">코드</span>
+        </li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Product Info Section -->
+  <section class="product-info">
+    <div class="container">
+      <div class="product-info__wrapper">
+        <!-- Product Images Column (Left) -->
+        <div class="product-images-column">
+          <div class="product-images-wrapper">
+            <!-- Thumbnails (Left) -->
+            <div class="product-thumbnails">
+              <button class="product-thumbnail active" aria-label="이미지 1" data-image="img/samples/photo-1551028719-00167b16eac5.png">
+                <img src="https://demo.wakit.org/img/samples/photo-1551028719-00167b16eac5.png" alt="이미지">
+              </button>
+              <button class="product-thumbnail" aria-label="이미지 2" data-image="img/samples/photo-1591047139829-d91aecb6caea.png">
+                <img src="https://demo.wakit.org/img/samples/photo-1591047139829-d91aecb6caea.png" alt="이미지">
+              </button>
+              <button class="product-thumbnail" aria-label="이미지 3" data-image="img/samples/photo-1576566588028-4147f3842f27.png">
+                <img src="https://demo.wakit.org/img/samples/photo-1576566588028-4147f3842f27.png" alt="이미지">
+              </button>
+              <button class="product-thumbnail" aria-label="이미지 4" data-image="img/samples/photo-1673125287084-e90996bad505.png">
+                <img src="https://demo.wakit.org/img/samples/photo-1673125287084-e90996bad505.png" alt="이미지">
+              </button>
+              <button class="product-thumbnail" aria-label="이미지 5" data-image="img/samples/photo-1571945153237-4929e783af4a.png">
+                <img src="https://demo.wakit.org/img/samples/photo-1571945153237-4929e783af4a.png" alt="이미지">
+              </button>
+            </div>
+
+            <!-- Product Image (Right) -->
+            <div class="product-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1551028719-00167b16eac5.png" alt="이미지" class="product-image__main" id="mainProductImage">
+            </div>
+          </div>
+
+          <!-- Product Images List -->
+          <div class="product-images-list">
+            <img src="https://demo.wakit.org/img/samples/photo-1551028719-00167b16eac5.png" alt="이미지" class="product-images-list__item">
+            <img src="https://demo.wakit.org/img/samples/photo-1591047139829-d91aecb6caea.png" alt="이미지" class="product-images-list__item">
+            <img src="https://demo.wakit.org/img/samples/photo-1576566588028-4147f3842f27.png" alt="이미지" class="product-images-list__item">
+            <img src="https://demo.wakit.org/img/samples/photo-1673125287084-e90996bad505.png" alt="이미지" class="product-images-list__item">
+          </div>
+        </div>
+
+        <!-- Product Details (Right) -->
+        <div class="product-details">
+          <form class="product-form">
+            <!-- Product Header -->
+            <div class="product-header">
+              <div class="product-header__title-group">
+                <h1 class="product-title">성장하는 이야기</h1>
+                <span class="badge badge--primary">단독</span>
+              </div>
+              <div class="product-header__actions">
+                <button type="button" class="icon-button" aria-label="공유">
+                  <i class="bi bi-share"></i>
+                </button>
+                <button type="button" class="icon-button" aria-label="찜하기">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+
+            <p class="product-subtitle">지속적인 개선과 혁신으로 발전하는 파트너가 되겠습니다.</p>
+
+            <!-- Rating -->
+            <div class="product-rating">
+              <div class="product-rating__stars">
+                <i class="fi fi-sr-star"></i>
+                <i class="fi fi-sr-star"></i>
+                <i class="fi fi-sr-star"></i>
+                <i class="fi fi-sr-star"></i>
+                <i class="fi fi-rr-star"></i>
+              </div>
+              <span class="product-rating__score">4.8</span>
+              <span class="product-rating__count">(96)</span>
+            </div>
+
+            <!-- Price Info -->
+            <div class="product-prices">
+              <div class="price-row">
+                <span class="price-label">정상가</span>
+                <div class="price-value">
+                  <span class="price-original">129,000</span>
+                  <span class="price-unit">원</span>
+                </div>
+              </div>
+              <div class="price-row">
+                <span class="price-label">할인가</span>
+                <div class="price-value">
+                  <span class="price-coupon">83,850</span>
+                  <span class="price-unit">원</span>
+                  <span class="price-discount">35%</span>
+                </div>
+                <button type="button" class="btn btn--secondary btn--s">쿠폰받기</button>
+              </div>
+            </div>
+
+            <!-- Separator -->
+            <hr class="separator">
+
+            <!-- Additional Info -->
+            <div class="product-additional-info">
+              <div class="info-row">
+                <span class="info-label">신규회원</span>
+                <span class="info-value">10% 할인</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">카드할인</span>
+                <div class="info-value">
+                  <span>5%</span>
+                  <button type="button" class="text-button">추가혜택 더보기</button>
+                </div>
+              </div>
+              <div class="info-row">
+                <span class="info-label">포인트</span>
+                <span class="info-value">최대 1,200P</span>
+                <button type="button" class="text-button">카드안내</button>
+              </div>
+              <div class="info-row">
+                <span class="info-label">포인트 적립</span>
+                <span class="info-value">1,200P 적립</span>
+                <button type="button" class="text-button">포인트안내</button>
+              </div>
+            </div>
+
+            <!-- Separator -->
+            <hr class="separator">
+
+            <!-- Shipping Info -->
+            <div class="product-shipping-info">
+              <div class="info-row">
+                <span class="info-label">배송비</span>
+                <span class="info-value">고객 중심 서비스</span>
+                <span class="info-additional">지속 가능한 성장</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">배송정보</span>
+                <span class="info-value">맞춤형 솔루션</span>
+              </div>
+            </div>
+
+            <!-- Separator -->
+            <hr class="separator">
+
+            <!-- Size Selection -->
+            <div class="product-size">
+              <div class="size-header">
+                <span class="size-label">사이즈</span>
+                <button type="button" class="text-button">사이즈 가이드</button>
+              </div>
+              <div class="size-options">
+                <button type="button" class="size-option">S</button>
+                <button type="button" class="size-option active">M</button>
+                <button type="button" class="size-option">L</button>
+                <button type="button" class="size-option">XL</button>
+                <button type="button" class="size-option">XXL</button>
+              </div>
+            </div>
+
+            <!-- Color Selection -->
+            <div class="product-color">
+              <span class="color-label">컬러</span>
+              <select class="color-select">
+                <option>라이트 베이지</option>
+              </select>
+            </div>
+
+            <!-- Separator -->
+            <hr class="separator">
+
+            <!-- Action Buttons -->
+            <div class="product-actions">
+              <button type="button" class="btn btn--secondary btn--m">바로 구매</button>
+              <button type="button" class="btn btn--primary btn--m">장바구니 담기</button>
+              <button type="button" class="icon-button icon-button--large">
+                <i class="bi bi-heart"></i>
+              </button>
+              <button type="button" class="icon-button icon-button--large">
+                <i class="bi bi-share"></i>
+              </button>
+            </div>
+
+            <!-- Product Description Tabs -->
+            <div class="product-description-tabs">
+              <div class="tabs">
+                <button type="button" class="tab-item active" data-tab="description">상품 설명</button>
+                <button type="button" class="tab-item" data-tab="shipping">배송 & 반품</button>
+                <button type="button" class="tab-item" data-tab="detail">상세 정보</button>
+              </div>
+              
+              <!-- 상품 설명 탭 콘텐츠 -->
+              <div class="tab-content active" data-content="description">
+                <p>단순한 서비스를 넘어 성장의 동반자가 되겠습니다.</p>
+                
+                <div class="tab-content__section">
+                  <h3>함께하는 여정</h3>
+                  <p>데이터 기반의 통찰력으로 현명한 결정을 돕습니다.</p>
+                </div>
+                
+                <div class="tab-content__section">
+                  <h3>도전과 성취의 기록</h3>
+                  <p>체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p>
+                </div>
+                
+                <p>전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+              </div>
+              
+              <!-- 배송 & 반품 탭 콘텐츠 -->
+              <div class="tab-content" data-content="shipping">
+                <div class="tab-content__section">
+                  <h3>무한한 가능성의 시작</h3>
+                  <p class="tab-content__text">
+                    <strong>배송비:</strong> 무료 (제주 및 도서산간 지역은 추가 배송비 3,000원 발생)<br>
+                    <strong>배송 기간:</strong> 결제완료 후 평균 3일 이내 배송 (공휴일 제외)<br>
+                    <strong>배송 방법:</strong> 택배 배송
+                  </p>
+                </div>
+                
+                <div class="tab-content__section">
+                  <h3>꿈을 향한 첫걸음</h3>
+                  <p class="tab-content__text">
+                    <strong>반품 기간:</strong> 상품 수령 후 7일 이내<br>
+                    <strong>반품 배송비:</strong> 단순 변심의 경우 왕복 배송비 6,000원 (최초 배송비 무료인 경우)<br>
+                    <strong>교환:</strong> 상품 하자 또는 오배송 시 무료 교환 가능<br>
+                    <strong>반품 불가 사유:</strong> 고객의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우, 시간이 지나 재판매가 곤란할 정도로 상품의 가치가 현저히 감소한 경우
+                  </p>
+                </div>
+                
+                <div class="tab-content__section">
+                  <h3>혁신적인 접근</h3>
+                  <p>새로운 아이디어와 혁신적인 방법으로 당신의 목표를 달성하는 데 도움을 드립니다.</p>
+                </div>
+              </div>
+              
+              <!-- 상세 정보 탭 콘텐츠 -->
+              <div class="tab-content" data-content="detail">
+                <div class="tab-content__section">
+                  <h3>창의적인 해결책</h3>
+                  <p class="tab-content__text">
+                    <strong>소재:</strong> 프리미엄 울 100%<br>
+                    <strong>컬러:</strong> 블랙 / 차콜그레이 / 네이비 / 카멜<br>
+                    <strong>사이즈:</strong> S / M / L / XL<br>
+                    <strong>세탁 방법:</strong> 드라이클리닝 권장
+                  </p>
+                </div>
+                
+                <div class="tab-content__section">
+                  <h3>전문적인 파트너십</h3>
+                  <p class="tab-content__text">
+                    <strong>제조자:</strong> WAKIT Inc.<br>
+                    <strong>제조국:</strong> 상세설명에 표시<br>
+                    <strong>제조연월:</strong> 2025.03<br>
+                    <strong>품질보증기준:</strong> 관련법 및 소비자분쟁해결 규정에 따름
+                  </p>
+                </div>
+                
+                <div class="tab-content__section">
+                  <h3>신뢰할 수 있는 동반자</h3>
+                  <p class="tab-content__text">
+                    - 울 소재 특성상 세탁 시 수축이 발생할 수 있으니 드라이클리닝을 권장합니다.<br>
+                    - 직사광선을 피해 보관하시기 바랍니다.<br>
+                    - 세탁 시 표시된 세탁 방법을 반드시 확인하시기 바랍니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Info Table Section -->
+  <section class="product-info-table">
+    <div class="container">
+      <div class="section-header">
+        <h2>미래를 향한 도전</h2>
+      </div>
+      <table class="info-table">
+        <tr>
+          <th>상품번호</th>
+          <td>20250110-001</td>
+          <th>상품상태</th>
+          <td>신상품</td>
+        </tr>
+        <tr>
+          <th>제조사</th>
+          <td>WAKIT Inc.</td>
+          <th>브랜드</th>
+          <td>WAKIT</td>
+        </tr>
+        <tr>
+          <th>모델명</th>
+          <td>SPM-2025-WR</td>
+          <th>원산지</th>
+          <td>상세설명에 표시</td>
+        </tr>
+        <tr>
+          <th>핏</th>
+          <td>기본핏</td>
+          <th>주요소재</th>
+          <td>울 70%, 폴리에스터 30% / 안감: 폴리에스터 100%</td>
+        </tr>
+        <tr>
+          <th>종류</th>
+          <td>울코트</td>
+          <th>칼라종류</th>
+          <td>블랙, 네이비, 그레이</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- Product Notice Section -->
+  <section class="product-notice">
+    <div class="container">
+      <div class="section-header">
+        <h2>성공을 위한 파트너</h2>
+      </div>
+      <table class="info-table">
+        <tr>
+          <th>제품소재</th>
+          <td>울 70%, 폴리에스터 30% / 안감: 폴리에스터 100%</td>
+        </tr>
+        <tr>
+          <th>색상</th>
+          <td>상세페이지 참조</td>
+        </tr>
+        <tr>
+          <th>치수</th>
+          <td>상세페이지 참조</td>
+        </tr>
+        <tr>
+          <th>제조자(사)</th>
+          <td>제조자: WAKIT Inc.</td>
+        </tr>
+        <tr>
+          <th>제조국</th>
+          <td>상세설명에 표시</td>
+        </tr>
+        <tr>
+          <th>세탁방법 및 취급시 주의사항</th>
+          <td>세탁방법 및 취급시 주의사항:상품상세페이지 참고</td>
+        </tr>
+        <tr>
+          <th>제조연월</th>
+          <td>2025.03</td>
+        </tr>
+        <tr>
+          <th>품질보증기준</th>
+          <td>관련법 및 소비자분쟁해결 규정에 따름</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- Transaction Terms Section -->
+  <section class="transaction-terms">
+    <div class="container">
+      <div class="section-header">
+        <h2>가치 있는 선택</h2>
+      </div>
+      <table class="info-table">
+        <tr>
+          <th>재화등의 배송방법에 관한 정보</th>
+          <td>택배 배송</td>
+        </tr>
+        <tr>
+          <th>주문 이후 예상되는 배송기간</th>
+          <td>결제일로부터 3영업일 이내 발송</td>
+        </tr>
+        <tr>
+          <th>제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보</th>
+          <td>전자상거래법에 따라 제품의 하자 또는 오배송이 발생한 경우, 상품 수령 후 3개월 이내 또는 그 사실을 알게 된 날로부터 30일 이내 청약철회가 가능합니다. 이 경우 반품 비용은 판매자가 부담합니다.</td>
+        </tr>
+        <tr>
+          <th>제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보</th>
+          <td>단순변심으로 인한 반품은 상품 수령 후 7일 이내에 가능합니다. 편도 3,000원의 반품비가 발생하며, 최초 배송비가 무료인 경우 왕복 배송비 6,000원이 부과됩니다.</td>
+        </tr>
+        <tr>
+          <th>제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거</th>
+          <td>전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.</td>
+        </tr>
+        <tr>
+          <th>재화등의 교환·반품·보증 조건 및 품질보증기준</th>
+          <td>소비자분쟁해결기준(공정거래위원회 고시) 및 관련 법령을 준수합니다.</td>
+        </tr>
+        <tr>
+          <th>대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차</th>
+          <td>환불 요청은 My Page(마이페이지)에서 신청 가능하며, 청약철회 승인 후 판매자가 상품을 반환받은 날로부터 3영업일 이내에 환불 처리됩니다. 환불 지연 시, 연 20%의 지연배상금을 청구할 수 있습니다.</td>
+        </tr>
+        <tr>
+          <th>소비자 피해보상 및 불만 처리</th>
+          <td>소비자분쟁해결기준(공정거래위원회 고시) 및 관련 법령에 따라 처리됩니다.</td>
+        </tr>
+        <tr>
+          <th>거래에 관한 약관의 내용 또는 확인할 수 있는 방법</th>
+          <td>상품 상세 페이지 및 하단 이용약관 링크에서 확인 가능합니다.</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- Product Tabs Section -->
+  <section class="product-tabs-section">
+    <div class="container">
+      <!-- Q&A Section -->
+      <div class="qa-section">
+        <h2 class="qa-title">Q&A</h2>
+        <p>전문적인 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.</p>
+        <div class="qa-actions">
+          <button type="button" class="btn btn--primary btn--m">상품 Q&A 작성하기</button>
+          <button type="button" class="btn btn--secondary btn--m">나의 Q&A 조회</button>
+          <label class="checkbox">
+            <input type="checkbox">
+            <span>검증된 결과</span>
+          </label>
+        </div>
+        <table class="qa-table">
+          <thead>
+            <tr>
+              <th>답변상태</th>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>작성일</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge--pending">답변대기</span></td>
+              <td>오늘 주문해도 30ml가 바로 도착하나요?</td>
+              <td>lucky****</td>
+              <td>2024.12.24.</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge--completed">답변완료</span></td>
+              <td>리뷰 내용입니다.</td>
+              <td>lucky****</td>
+              <td>2024.12.24.</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge--completed">답변완료</span></td>
+              <td>
+                <span class="qa-secret">
+                  <i class="bi bi-lock"></i>
+                  비밀글입니다.
+                </span>
+              </td>
+              <td>sarang****</td>
+              <td>2024.12.24.</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge--completed">답변완료</span></td>
+              <td>클렌징 폼으로 지울 수 있나요? 2차 세안이 필수인가요?</td>
+              <td>lucky****</td>
+              <td>2024.12.24.</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge--completed">답변완료</span></td>
+              <td>
+                <span class="qa-secret">
+                  <i class="bi bi-lock"></i>
+                  비밀글입니다.
+                </span>
+              </td>
+              <td>sarang****</td>
+              <td>2024.12.24.</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge--completed">답변완료</span></td>
+              <td>이 선크림을 사용하면 피부가 번들거리지 않나요?</td>
+              <td>lucky****</td>
+              <td>2024.12.24.</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge--completed">답변완료</span></td>
+              <td>
+                <span class="qa-secret">
+                  <i class="bi bi-lock"></i>
+                  비밀글입니다.
+                </span>
+              </td>
+              <td>sarang****</td>
+              <td>2024.12.24.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Reviews Section -->
+      <div class="reviews-section">
+        <div class="section-header">
+          <div class="section-header__title-group">
+            <h2>새로운 시작을 함께해요</h2>
+          </div>
+          <div class="reviews-sort-tabs">
+            <button class="sort-tab active">랭킹순</button>
+            <button class="sort-tab">최신순</button>
+            <button class="sort-tab">평점 높은순</button>
+            <button class="sort-tab">평점 낮은순</button>
+          </div>
+          <select class="sort-select">
+            <option>전체</option>
+          </select>
+        </div>
+        <div class="reviews-list">
+          <!-- Review Item 1 -->
+          <article class="review-item">
+            <div class="review-item__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1591047139829-d91aecb6caea.png" alt="이미지">
+            </div>
+            <div class="review-item__content">
+              <div class="review-item__header">
+                <div class="review-item__rating">
+                  <i class="fi fi-sr-star"></i>
+                  <span class="review-item__score">4.6</span>
+                  <span class="review-item__count">104</span>
+                </div>
+                <p>고객 중심의 접근 방식으로 꼭 맞는 서비스를 제안합니다.</p>
+              </div>
+              <p>끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.</p>
+              <div class="review-item__details">
+                <button class="review-item__helpful">
+                  <i class="fi fi-br-thumbs-up"></i>
+                  <span>0</span>
+                </button>
+                <div class="review-item__tags">
+                  <span class="review-tag">사이즈</span>
+                  <span class="review-tag__detail">신속한 대응</span>
+                  <span class="review-tag">핏</span>
+                  <span class="review-tag__detail">세심한 관리</span>
+                  <span class="review-tag">두께</span>
+                  <span class="review-tag__detail">두꺼워요</span>
+                </div>
+              </div>
+              <div class="review-item__author">
+                <div class="review-item__avatar">
+                  <img src="https://demo.wakit.org/img/samples/photo-1535713875002-d1d0cf377fde.png" alt="사용자">
+                </div>
+                <div class="review-item__author-info">
+                  <span class="review-item__author-name">전문적인 컨설팅</span>
+                  <span class="review-item__divider">•</span>
+                  <span class="review-item__date">체계적인 분석</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review Item 2 -->
+          <article class="review-item">
+            <div class="review-item__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1551028719-00167b16eac5.png" alt="이미지">
+            </div>
+            <div class="review-item__content">
+              <div class="review-item__header">
+                <div class="review-item__rating">
+                  <i class="fi fi-sr-star"></i>
+                  <span class="review-item__score">4.6</span>
+                  <span class="review-item__count">104</span>
+                </div>
+                <p>효율적인 프로세스와 체계적인 관리로 성공을 지원합니다.</p>
+              </div>
+              <p>창의적인 아이디어와 실행력으로 차별화된 가치를 제공합니다.</p>
+              <div class="review-item__details">
+                <button class="review-item__helpful">
+                  <i class="fi fi-br-thumbs-up"></i>
+                  <span>0</span>
+                </button>
+                <div class="review-item__tags">
+                  <span class="review-tag">사이즈</span>
+                  <span class="review-tag__detail">효과적인 전략</span>
+                  <span class="review-tag">핏</span>
+                  <span class="review-tag__detail">안정적인 운영</span>
+                  <span class="review-tag">두께</span>
+                  <span class="review-tag__detail">두꺼워요</span>
+                </div>
+              </div>
+              <div class="review-item__author">
+                <div class="review-item__avatar">
+                  <img src="https://demo.wakit.org/img/samples/photo-1535713875002-d1d0cf377fde.png" alt="사용자">
+                </div>
+                <div class="review-item__author-info">
+                  <span class="review-item__author-name">혁신적인 도구</span>
+                  <span class="review-item__divider">•</span>
+                  <span class="review-item__date">효율적인 관리</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review Item 3 -->
+          <article class="review-item">
+            <div class="review-item__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1576566588028-4147f3842f27.png" alt="이미지">
+            </div>
+            <div class="review-item__content">
+              <div class="review-item__header">
+                <div class="review-item__rating">
+                  <i class="fi fi-sr-star"></i>
+                  <span class="review-item__score">4.6</span>
+                  <span class="review-item__count">104</span>
+                </div>
+                <p>협업과 소통을 통해 최상의 결과물을 만들어갑니다.</p>
+              </div>
+              <p>지속적인 개선과 혁신으로 발전하는 파트너가 되겠습니다.</p>
+              <div class="review-item__details">
+                <button class="review-item__helpful">
+                  <i class="fi fi-br-thumbs-up"></i>
+                  <span>0</span>
+                </button>
+                <div class="review-item__tags">
+                  <span class="review-tag">사이즈</span>
+                  <span class="review-tag__detail">체계적인 접근</span>
+                  <span class="review-tag">핏</span>
+                  <span class="review-tag__detail">전문적인 지원</span>
+                  <span class="review-tag">두께</span>
+                  <span class="review-tag__detail">두꺼워요</span>
+                </div>
+              </div>
+              <div class="review-item__author">
+                <div class="review-item__avatar">
+                  <img src="https://demo.wakit.org/img/samples/photo-1535713875002-d1d0cf377fde.png" alt="사용자">
+                </div>
+                <div class="review-item__author-info">
+                  <span class="review-item__author-name">혁신적인 방법</span>
+                  <span class="review-item__divider">•</span>
+                  <span class="review-item__date">고객 중심 서비스</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review Item 4 -->
+          <article class="review-item">
+            <div class="review-item__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1576566588028-4147f3842f27.png" alt="이미지">
+            </div>
+            <div class="review-item__content">
+              <div class="review-item__header">
+                <div class="review-item__rating">
+                  <i class="fi fi-sr-star"></i>
+                  <span class="review-item__score">4.6</span>
+                  <span class="review-item__count">104</span>
+                </div>
+                <p>단순한 서비스를 넘어 성장의 동반자가 되겠습니다.</p>
+              </div>
+              <p>데이터 기반의 통찰력으로 현명한 결정을 돕습니다.</p>
+              <div class="review-item__details">
+                <button class="review-item__helpful">
+                  <i class="fi fi-br-thumbs-up"></i>
+                  <span>0</span>
+                </button>
+                <div class="review-item__tags">
+                  <span class="review-tag">사이즈</span>
+                  <span class="review-tag__detail">지속 가능한 성장</span>
+                  <span class="review-tag">핏</span>
+                  <span class="review-tag__detail">맞춤형 솔루션</span>
+                  <span class="review-tag">두께</span>
+                  <span class="review-tag__detail">두꺼워요</span>
+                </div>
+              </div>
+              <div class="review-item__author">
+                <div class="review-item__avatar">
+                  <img src="https://demo.wakit.org/img/samples/photo-1535713875002-d1d0cf377fde.png" alt="사용자">
+                </div>
+                <div class="review-item__author-info">
+                  <span class="review-item__author-name">검증된 결과</span>
+                  <span class="review-item__divider">•</span>
+                  <span class="review-item__date">신속한 대응</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review Item 5 -->
+          <article class="review-item">
+            <div class="review-item__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1576566588028-4147f3842f27.png" alt="이미지">
+            </div>
+            <div class="review-item__content">
+              <div class="review-item__header">
+                <div class="review-item__rating">
+                  <i class="fi fi-sr-star"></i>
+                  <span class="review-item__score">4.6</span>
+                  <span class="review-item__count">104</span>
+                </div>
+                <p>체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p>
+              </div>
+              <p>전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+              <div class="review-item__details">
+                <button class="review-item__helpful">
+                  <i class="fi fi-br-thumbs-up"></i>
+                  <span>0</span>
+                </button>
+                <div class="review-item__tags">
+                  <span class="review-tag">사이즈</span>
+                  <span class="review-tag__detail">세심한 관리</span>
+                  <span class="review-tag">핏</span>
+                  <span class="review-tag__detail">전문적인 컨설팅</span>
+                  <span class="review-tag">두께</span>
+                  <span class="review-tag__detail">두꺼워요</span>
+                </div>
+              </div>
+              <div class="review-item__author">
+                <div class="review-item__avatar">
+                  <img src="https://demo.wakit.org/img/samples/photo-1535713875002-d1d0cf377fde.png" alt="사용자">
+                </div>
+                <div class="review-item__author-info">
+                  <span class="review-item__author-name">체계적인 분석</span>
+                  <span class="review-item__divider">•</span>
+                  <span class="review-item__date">효과적인 전략</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="pagination">
+          <button class="pagination__button" aria-label="이전 페이지">
+            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="pagination__button pagination__button--active">1</button>
+          <button class="pagination__button">2</button>
+          <button class="pagination__button">3</button>
+          <button class="pagination__button">..</button>
+          <button class="pagination__button">7</button>
+          <button class="pagination__button" aria-label="다음 페이지">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Related Products Section -->
+      <div class="related-products-section">
+        <div class="section-header">
+          <div class="section-header__title-group">
+            <h2>더 나은 내일을 향해</h2>
+          </div>
+          <div class="carousel-controls">
+            <button type="button" class="icon-button carousel-btn carousel-btn--prev" aria-label="이전" data-carousel="related-products-2">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button type="button" class="icon-button carousel-btn carousel-btn--next" aria-label="다음" data-carousel="related-products-2">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="related-products-scroll" id="related-products-2">
+          <div class="related-products-list">
+            <!-- Product Item 1 -->
+            <a href="shop-detail-1.html" class="related-product-item">
+              <div class="related-product-item__image">
+                <img src="https://demo.wakit.org/img/samples/photo-1551028719-00167b16eac5.png" alt="이미지">
+              </div>
+              <div class="related-product-item__info">
+                <p class="related-product-item__brand">프리미에르</p>
+                <h3>변화를 만드는 순간</h3>
+                <div class="related-product-item__price">
+                  <span class="related-product-item__discount">18%</span>
+                  <span class="related-product-item__amount">45,600</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Product Item 2 -->
+            <a href="shop-detail-1.html" class="related-product-item">
+              <div class="related-product-item__image">
+                <img src="https://demo.wakit.org/img/samples/photo-1591047139829-d91aecb6caea.png" alt="모던워크 Hairy Button Wool Short Coat Oreo Ivory">
+              </div>
+              <div class="related-product-item__info">
+                <p class="related-product-item__brand">모던워크</p>
+                <h3 class="related-product-item__name">Hairy Button Wool Short Coat Oreo Ivory</h3>
+                <div class="related-product-item__price">
+                  <span class="related-product-item__discount">18%</span>
+                  <span class="related-product-item__amount">53,200</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Product Item 3 -->
+            <a href="shop-detail-1.html" class="related-product-item">
+              <div class="related-product-item__image">
+                <img src="https://demo.wakit.org/img/samples/photo-1576566588028-4147f3842f27.png" alt="이미지">
+              </div>
+              <div class="related-product-item__info">
+                <p class="related-product-item__brand">액티브</p>
+                <h3>성장하는 이야기</h3>
+                <div class="related-product-item__price">
+                  <span class="related-product-item__discount">18%</span>
+                  <span class="related-product-item__amount">62,400</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Product Item 4 -->
+            <a href="shop-detail-1.html" class="related-product-item">
+              <div class="related-product-item__image">
+                <img src="https://demo.wakit.org/img/samples/photo-1673125287084-e90996bad505.png" alt="이미지">
+              </div>
+              <div class="related-product-item__info">
+                <p class="related-product-item__brand">스타일리시</p>
+                <h3>함께하는 여정</h3>
+                <div class="related-product-item__price">
+                  <span class="related-product-item__discount">18%</span>
+                  <span class="related-product-item__amount">49,500</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script data-spa-ignore>
+  Popup.init();
+</script>
+<script src="js/shop-detail-2.js"></script>
+
+</html>

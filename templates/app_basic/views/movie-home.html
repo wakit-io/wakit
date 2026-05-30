@@ -1,0 +1,97 @@
+<!-- 영화예매-홈텝 | Foundation 토큰 사용, 페이지 CSS: css/movie-home.css -->
+<link rel="stylesheet" href="css/movie-home.css">
+
+<main class="movie-page movie-home" role="main">
+  <!-- 탭: 박스오피스, 상영예정, 돌비시네마, 단독, 클소, 필름 -->
+  <nav class="movie-tabs" role="tablist">
+    <button type="button" class="movie-tabs__item is-active" role="tab" aria-selected="true">박스오피스</button>
+    <button type="button" class="movie-tabs__item" role="tab">상영예정</button>
+    <button type="button" class="movie-tabs__item" role="tab">돌비시네마</button>
+    <button type="button" class="movie-tabs__item" role="tab">단독</button>
+    <button type="button" class="movie-tabs__item" role="tab">클소</button>
+    <button type="button" class="movie-tabs__item" role="tab">필름</button>
+  </nav>
+
+  <!-- 더 많은 영화 -->
+  <section class="movie-section movie-more">
+    <div class="movie-more__row">
+      <a href="#movie-detail" class="movie-card" data-movie-id="1">
+        <span class="movie-card__rank">1</span>
+        <div class="movie-card__img"><img src="https://i.namu.wiki/i/Ua9KynMgNILi8VEqd-BfB4puy7bRSdSE99RugGUZYVbIkyNbp46_u74V1J07dcUM5pBK_59Lu71eciu3diU-Fw.webp" alt="황야"></div>
+        <div class="movie-card__body">
+          <h3 class="movie-card__title">황야</h3>
+          <p class="movie-card__meta">예매율 50.7 · ★ 9.2</p>
+          <span class="movie-card__badge">ALL</span>
+          <span class="movie-card__btn">바로예매</span>
+        </div>
+      </a>
+      <a href="#movie-detail" class="movie-card" data-movie-id="2">
+        <span class="movie-card__rank">2</span>
+        <div class="movie-card__img"><img src="https://upload.wikimedia.org/wikipedia/ko/a/a0/%EA%B3%A0%EC%96%91%EC%9D%B4%EC%9D%98%EB%B3%B4%EC%9D%80_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg" alt="고양이의 보은"></div>
+        <div class="movie-card__body">
+          <h3 class="movie-card__title">고양이의 보은</h3>
+          <p class="movie-card__meta">예매율 9.2 · ★ 8.5</p>
+          <span class="movie-card__badge">ALL</span>
+          <span class="movie-card__btn">바로예매</span>
+        </div>
+      </a>
+      <a href="#movie-detail" class="movie-card" data-movie-id="3">
+        <span class="movie-card__rank">3</span>
+        <div class="movie-card__img"><img src="https://i.namu.wiki/i/yfePnhmTqkZ90DhoLH2tFQzmsCcLj5dKSLJjVqMCUQe9st40pTo9vcoGqumCGzl0_947PlnuUgNEP7tvX5M1Hg.webp" alt="플래시"></div>
+        <div class="movie-card__body">
+          <h3 class="movie-card__title">플래시</h3>
+          <p class="movie-card__meta">예매율 50.7 · ★ 9.2</p>
+          <span class="movie-card__badge">ALL</span>
+          <span class="movie-card__btn">바로예매</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 무비피드 -->
+  <section class="movie-section movie-feed">
+    <div class="movie-section__head">
+      <h2 class="movie-section__title">무비피드</h2>
+      <a href="#" class="movie-section__more">더보기 <i class="bi bi-chevron-right"></i></a>
+    </div>
+    <div class="movie-feed__banner">
+      <img class="movie-feed__banner-img" src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=780&h=292&fit=crop" alt="">
+      <div class="movie-feed__banner-bg"></div>
+      <p class="movie-feed__banner-title">이번주<br>박스오피스</p>
+      <p class="movie-feed__banner-desc">영화 "원더월드"</p>
+    </div>
+  </section>
+
+  <!-- 진행 중인 이벤트 -->
+  <section class="movie-section movie-events">
+    <div class="movie-section__head">
+      <h2 class="movie-section__title">진행 중인 이벤트</h2>
+      <a href="#" class="movie-section__more">더보기 <i class="bi bi-chevron-right"></i></a>
+    </div>
+    <nav class="movie-tabs movie-tabs--sub" role="tablist">
+      <button type="button" class="movie-tabs__item is-active" role="tab">인기</button>
+      <button type="button" class="movie-tabs__item" role="tab">영화</button>
+      <button type="button" class="movie-tabs__item" role="tab">제휴/할인</button>
+      <button type="button" class="movie-tabs__item" role="tab">시사회</button>
+      <button type="button" class="movie-tabs__item" role="tab">무대인사</button>
+    </nav>
+    <div class="movie-events__row">
+      <article class="movie-event-card">
+        <div class="movie-event-card__info">
+          <span class="movie-event-card__label">믿을 수 없는 비밀</span>
+          <p class="movie-event-card__name">오리지널 티켓<br>No.153</p>
+        </div>
+        <div class="movie-event-card__img"><img src="https://images.unsplash.com/photo-1594908900069-6e4bd72403e6?w=400&h=266&fit=crop" alt="이벤트"></div>
+        <p class="movie-event-card__date">25.05.30 - 25.05.21</p>
+      </article>
+      <article class="movie-event-card">
+        <div class="movie-event-card__info">
+          <span class="movie-event-card__label">팝콘 반값+영화 4천원 할인</span>
+          <p class="movie-event-card__name">앱 첫 구매 이벤트<br>1+1 쿠폰 증정</p>
+        </div>
+        <div class="movie-event-card__img"><img src="https://images.unsplash.com/photo-1517604931442-7e0b8ed368ec?w=400&h=266&fit=crop" alt="이벤트"></div>
+        <p class="movie-event-card__date">25.04.10 - 24.04.23</p>
+      </article>
+    </div>
+  </section>
+</main>

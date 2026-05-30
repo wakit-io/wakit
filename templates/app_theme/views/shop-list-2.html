@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Shop list 2</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- Blog Styles -->
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/shop-list-2.css">
+<link rel="stylesheet" href="css/shop-list-items.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="shop-list-2">
+  <!-- Page Header Section -->
+  <section class="shop-list-2__header-section">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <nav class="shop-list-2__breadcrumbs" aria-label="Breadcrumb">
+        <ol class="shop-list-2__breadcrumbs-list">
+          <li class="shop-list-2__breadcrumbs-item">
+            <a href="#" class="shop-list-2__breadcrumbs-link">
+              <i class="bi bi-house" aria-hidden="true"></i>
+              <span class="shop-list-2__breadcrumbs-text">홈</span>
+            </a>
+          </li>
+          <li class="shop-list-2__breadcrumbs-item">
+            <i class="bi bi-chevron-right shop-list-2__breadcrumbs-separator" aria-hidden="true"></i>
+            <a href="#" class="shop-list-2__breadcrumbs-link">
+              <span class="shop-list-2__breadcrumbs-text">카테고리</span>
+            </a>
+          </li>
+          <li class="shop-list-2__breadcrumbs-item">
+            <i class="bi bi-chevron-right shop-list-2__breadcrumbs-separator" aria-hidden="true"></i>
+            <a href="#" class="shop-list-2__breadcrumbs-link">
+              <span class="shop-list-2__breadcrumbs-text">모션</span>
+            </a>
+          </li>
+          <li class="shop-list-2__breadcrumbs-item shop-list-2__breadcrumbs-item--current">
+            <i class="bi bi-chevron-right shop-list-2__breadcrumbs-separator" aria-hidden="true"></i>
+            <span class="shop-list-2__breadcrumbs-text">콘텐츠</span>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Header Content -->
+      <div class="shop-list-2__header-content mt-50 mb-20">
+
+        <!-- Page Title -->
+        <h1 class="shop-list-2__page-title">상의</h1>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tabs -->
+  <section class="shop-list-2__tabs-section mb-20">
+    <div class="container">
+      <div class="shop-list-2__tabs">
+        <button type="button" class="shop-list-2__tab shop-list-2__tab--active">
+          <span class="shop-list-2__tab-text">온라인</span>
+          <span class="shop-list-2__tab-indicator"></span>
+        </button>
+        <button type="button" class="shop-list-2__tab">
+          <span class="shop-list-2__tab-text">오프라인</span>
+        </button>
+        <button type="button" class="shop-list-2__tab">
+          <span class="shop-list-2__tab-text">브랜드</span>
+        </button>
+        <button type="button" class="shop-list-2__tab">
+          <span class="shop-list-2__tab-text">콘텐츠</span>
+        </button>
+        <button type="button" class="shop-list-2__tab">
+          <span class="shop-list-2__tab-text">콘텐츠</span>
+        </button>
+        <button type="button" class="shop-list-2__tab">
+          <span class="shop-list-2__tab-text">콘텐츠</span>
+        </button>
+        <button type="button" class="shop-list-2__tab">
+          <span class="shop-list-2__tab-text">콘텐츠</span>
+        </button>
+        <button type="button" class="shop-list-2__tab">
+          <span class="shop-list-2__tab-text">콘텐츠</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Form Section -->
+  <section class="shop-list-2__filter-section">
+    <div class="container">
+      <!-- Category Filter -->
+      <div class="shop-list-2__filter">
+        <label class="shop-list-2__filter-label">카테고리</label>
+        <div class="shop-list-2__filter-list">
+          <button type="button" class="shop-list-2__filter-item shop-list-2__filter-item--active">상의</button>
+          <button type="button" class="shop-list-2__filter-item">하의</button>
+          <button type="button" class="shop-list-2__filter-item">아우터</button>
+          <button type="button" class="shop-list-2__filter-item">이너웨어</button>
+          <button type="button" class="shop-list-2__filter-item">스포츠/레저</button>
+          <button type="button" class="shop-list-2__filter-item">신발</button>
+          <button type="button" class="shop-list-2__filter-item">모자</button>
+          <button type="button" class="shop-list-2__filter-item">가방</button>
+          <button type="button" class="shop-list-2__filter-item">액세서리</button>
+        </div>
+      </div>
+
+      <!-- Size Filter -->
+      <div class="shop-list-2__filter">
+        <label class="shop-list-2__filter-label">상의 사이즈</label>
+        <div class="shop-list-2__filter-list">
+          <button type="button" class="shop-list-2__filter-item">FREE</button>
+          <button type="button" class="shop-list-2__filter-item">M</button>
+          <button type="button" class="shop-list-2__filter-item">L</button>
+          <button type="button" class="shop-list-2__filter-item">XL</button>
+          <button type="button" class="shop-list-2__filter-item">2XL</button>
+          <button type="button" class="shop-list-2__filter-item">3XL</button>
+          <button type="button" class="shop-list-2__filter-item">4XL</button>
+          <button type="button" class="shop-list-2__filter-item">5XL</button>
+          <button type="button" class="shop-list-2__filter-item">6XL</button>
+          <button type="button" class="shop-list-2__filter-item">7XL</button>
+          <button type="button" class="shop-list-2__filter-item">8XL</button>
+        </div>
+      </div>
+
+      <!-- Color Filter -->
+      <div class="shop-list-2__filter">
+        <label class="shop-list-2__filter-label">색상</label>
+        <div class="shop-list-2__filter-list shop-list-2__filter-list--colors">
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #000000;" aria-label="검정색"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #ffffff; border: 1px solid rgba(0, 0, 0, 0.1);" aria-label="흰색"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #ffd5a5;" aria-label="베이지색"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #ff6b0a;" aria-label="오렌지색"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #82270c;" aria-label="갈색"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #fee2e2;" aria-label="연한 빨강"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #fca5a5;" aria-label="빨강"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #7f1d1d;" aria-label="진한 빨강"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #85b9d9;" aria-label="연한 파랑"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #2870ab;" aria-label="파랑"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #006fff;" aria-label="진한 파랑"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #0d4b9b;" aria-label="더 진한 파랑"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #7830f7;" aria-label="보라색"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #bbf7d1;" aria-label="연한 초록"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #4ade80;" aria-label="초록"></button>
+          <button type="button" class="shop-list-2__color-chip" style="background-color: #166533;" aria-label="진한 초록"></button>
+        </div>
+      </div>
+
+      <!-- Price Filter -->
+      <div class="shop-list-2__filter">
+        <label class="shop-list-2__filter-label">가격</label>
+        <div class="shop-list-2__filter-list">
+          <button type="button" class="shop-list-2__filter-item">5만원 이하</button>
+          <button type="button" class="shop-list-2__filter-item">5만원 이상~10만원 이하</button>
+          <button type="button" class="shop-list-2__filter-item">10만원 이상~20만원 이하</button>
+          <button type="button" class="shop-list-2__filter-item">20만원 이상~30만원 이하</button>
+          <button type="button" class="shop-list-2__filter-item">30만원 이상~</button>
+        </div>
+      </div>
+
+      <!-- Hashtag Filter -->
+      <div class="shop-list-2__filter">
+        <label class="shop-list-2__filter-label">해시태그</label>
+        <div class="shop-list-2__filter-list">
+          <button type="button" class="shop-list-2__filter-item">남성바지</button>
+          <button type="button" class="shop-list-2__filter-item">남성빅사이즈</button>
+          <button type="button" class="shop-list-2__filter-item">남성셔츠</button>
+          <button type="button" class="shop-list-2__filter-item">남성티셔츠</button>
+          <button type="button" class="shop-list-2__filter-item">남자맨투맨</button>
+          <button type="button" class="shop-list-2__filter-item">남자빅사이즈</button>
+          <button type="button" class="shop-list-2__filter-item">남자빅사이즈쇼핑몰</button>
+          <button type="button" class="shop-list-2__filter-item">남자셔츠</button>
+          <button type="button" class="shop-list-2__filter-item">남자슬랙스</button>
+          <button type="button" class="shop-list-2__filter-item">남자자켓</button>
+          <button type="button" class="shop-list-2__filter-item">네이비</button>
+          <button type="button" class="shop-list-2__filter-item">맨투맨</button>
+          <button type="button" class="shop-list-2__filter-item">반팔티</button>
+          <button type="button" class="shop-list-2__filter-item">빅사이즈</button>
+          <button type="button" class="shop-list-2__filter-item">빅사이즈자켓</button>
+          <button type="button" class="shop-list-2__filter-item">빅사이즈팬츠</button>
+          <button type="button" class="shop-list-2__filter-item">셔츠</button>
+          <button type="button" class="shop-list-2__filter-item">아이보리</button>
+          <button type="button" class="shop-list-2__filter-item">오버핏반팔</button>
+          <button type="button" class="shop-list-2__filter-item">오버핏자켓</button>
+          <button type="button" class="shop-list-2__filter-item">자켓</button>
+          <button type="button" class="shop-list-2__filter-item">진청</button>
+          <button type="button" class="shop-list-2__filter-item">큰옷</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="shop-list-items__section">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="shop-list-items__header">
+        <div class="shop-list-items__header-content">
+          <h2 class="shop-list-items__title">더 나은 내일을 향해</h2>
+        </div>
+        <!-- Tabs -->
+        <div class="shop-list-items__tabs">
+          <button type="button" class="shop-list-items__tab shop-list-items__tab--active">추천순</button>
+          <button type="button" class="shop-list-items__tab">신상순</button>
+          <button type="button" class="shop-list-items__tab">낮은가격순</button>
+          <button type="button" class="shop-list-items__tab">높은가격순</button>
+          <button type="button" class="shop-list-items__tab">평점높은순</button>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="shop-list-items__grid">
+        <!-- Product 1 -->
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-1.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="이미지" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+              <div class="shop-list-items__discount-badge"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name">플리스 자켓</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">53,200</span>
+                <span class="shop-list-items__original-price">70,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Product 2 -->
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-2.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="이미지" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name">스니커즈</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">60,800</span>
+                <span class="shop-list-items__original-price">80,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Product 3 -->
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-3.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1553062407-98eeb64c6a62.png" alt="블레이저" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name">원피스</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">57,000</span>
+                <span class="shop-list-items__original-price">75,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Product 4 -->
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-1.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1467232004584-a241de8bcf5d.png" alt="이미지" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name">미니멀 레더 백</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">91,200</span>
+                <span class="shop-list-items__original-price">120,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Product 5 -->
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-2.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1586023492125-27b2c045efd7.png" alt="이미지" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name">클린 컷 데님</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">41,800</span>
+                <span class="shop-list-items__original-price">55,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Product 6 -->
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-3.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="이미지" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name"> 린넨 셔츠</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">34,200</span>
+                <span class="shop-list-items__original-price">45,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Product 7 -->
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-1.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="이미지" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name">와이드 슬랙스</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">49,400</span>
+                <span class="shop-list-items__original-price">65,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Product 8 -->
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-2.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1553062407-98eeb64c6a62.png" alt="이미지" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name">니트 베스트</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">36,480</span>
+                <span class="shop-list-items__original-price">48,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Product 9 -->
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-3.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1467232004584-a241de8bcf5d.png" alt="이미지" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name">크로스 백</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">68,400</span>
+                <span class="shop-list-items__original-price">90,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Product 10 -->
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-1.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1586023492125-27b2c045efd7.png" alt="스니커즈" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name">블레이저</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">83,600</span>
+                <span class="shop-list-items__original-price">110,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-3.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="원피스" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name">오버사이즈 울 코트</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">114,000</span>
+                <span class="shop-list-items__original-price">150,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Product 7 -->
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-1.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="이미지" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name">캐시미어 니트</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">121,600</span>
+                <span class="shop-list-items__original-price">160,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Product 8 -->
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-2.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1553062407-98eeb64c6a62.png" alt="이미지" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name">클로그 샌들</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">45,600</span>
+                <span class="shop-list-items__original-price">60,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Product 9 -->
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-3.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1467232004584-a241de8bcf5d.png" alt="이미지" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name">퍼프 슬리브 블라우스</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">53,200</span>
+                <span class="shop-list-items__original-price">70,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Product 10 -->
+        <article class="shop-list-items__item">
+          <a href="views/shop-detail-1.html" class="shop-list-items__link">
+            <div class="shop-list-items__image">
+              <img src="https://demo.wakit.org/img/samples/photo-1586023492125-27b2c045efd7.png" alt="이미지" class="shop-list-items__image-img">
+              <div class="shop-list-items__image-placeholder"></div>
+            </div>
+            <div class="shop-list-items__info">
+              <p class="shop-list-items__name">트렌치 코트</p>
+              <div class="shop-list-items__price-container">
+                <span class="shop-list-items__discount">24%</span>
+                <span class="shop-list-items__price">114,000</span>
+                <span class="shop-list-items__original-price">150,000</span>
+              </div>
+              <div class="shop-list-items__actions">
+                <button type="button" class="shop-list-items__action" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="shop-list-items__action" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script data-spa-ignore>
+  Popup.init();
+  console.log('home page script executed');
+</script>
+
+</html>

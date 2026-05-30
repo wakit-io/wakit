@@ -1,0 +1,10 @@
+{
+  "name": "App Basic",
+  "short_name": "App Basic",
+  "start_url": "app.html",
+  "lang": "ko-KR",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait"
+}

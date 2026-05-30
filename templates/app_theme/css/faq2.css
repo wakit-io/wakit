@@ -1,0 +1,278 @@
+/* ============================================
+   FAQ 2 Page - Additional Styles
+   ============================================ */
+
+/* Header Content - Badge, Description, Tabs */
+.faq-header-content {
+  text-align: left;
+  margin-bottom: var(--spacing-xl);
+}
+
+.faq-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: var(--color-badge-bg);
+  color: var(--color-info);
+  border-radius: 24px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.faq-badge i {
+  font-size: 16px;
+}
+
+.faq-main-title {
+  font-family: var(--font-family-primary);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 60px;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-md);
+}
+
+.faq-subtitle {
+  font-family: var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33.6px;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-md);
+}
+
+.faq-description {
+  font-family: var(--font-family-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32.4px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* faq-2: 탭이 section 밖으로 나가서 섹션 하단 보더 제거 (sticky 래퍼에만 보더) */
+.faq-page .faq-header-section {
+  border-bottom: none;
+}
+
+/* Sticky 탭 래퍼: main 직계 자식이라 .page 스크롤 컨테이너와 조상 최소화 */
+.faq-tabs-sticky {
+  position: sticky;
+  top: calc(68px + env(safe-area-inset-top, 0px));
+  z-index: 10;
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* 다이나믹 뷰: 헤더가 뷰 내부라 top 0 + 세이프에리어만 */
+.dynamic-view .faq-tabs-sticky {
+  top: env(safe-area-inset-top, 0px);
+}
+
+/* Tabs (내부는 스크롤·레이아웃만) */
+.faq-tabs {
+  display: flex;
+  border-bottom: none;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.faq-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.faq-tab {
+  padding: var(--spacing-md) var(--spacing-sm);
+  background: none;
+  border: none;
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.faq-tab:hover {
+  color: var(--color-text-primary);
+}
+
+.faq-tab--active {
+  color: var(--color-text-primary);
+}
+
+.faq-tab-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-text-primary);
+}
+
+.faq-tab:not(.faq-tab--active) .faq-tab-indicator {
+  opacity: 0;
+}
+
+/* FAQ Grid Section */
+.faq-grid-section {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-bg-primary);
+}
+
+.faq-grid-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-container-md);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+}
+
+/* FAQ Card */
+.faq-card {
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--color-card-hover-shadow);
+}
+
+.faq-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background-color: var(--color-bg-secondary);
+  border-radius: 24px;
+  padding: 4px 12px;
+  width: fit-content;
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--color-text-secondary);
+}
+
+.faq-card-badge i {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+}
+
+.faq-card-title {
+  font-family: var(--font-family-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.faq-card-answer {
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28.8px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* 모바일: 브레드크럼·헤더 텍스트 영역 숨김 */
+  .faq-header-section .breadcrumb,
+  .faq-header-section .faq-header-content {
+    display: none;
+  }
+
+  /* 모바일 sticky: 56px + 아이폰 세이프에리어 */
+  .faq-tabs-sticky {
+    top: calc(56px + env(safe-area-inset-top, 0px));
+  }
+
+  .faq-header-content {
+    text-align: left;
+  }
+
+  .faq-badge {
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 16px;
+  }
+
+  .faq-badge i {
+    font-size: 16px;
+  }
+
+  .faq-main-title {
+    font-size: 28px;
+    line-height: 35px;
+  }
+
+  .faq-subtitle {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .faq-description {
+    font-size: 16px;
+    line-height: 28.8px;
+  }
+
+  .faq-tab {
+    font-size: 14px;
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .faq-card {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+  }
+
+  .faq-card-badge {
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 16px;
+  }
+
+  .faq-card-badge i {
+    font-size: 16px;
+  }
+
+  .faq-card-title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .faq-card-answer {
+    font-size: 14px;
+    line-height: 25.2px;
+  }
+}

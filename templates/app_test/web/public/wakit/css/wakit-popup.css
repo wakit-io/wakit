@@ -1,0 +1,131 @@
+/* Popup styles (standalone)
+   Classes use hy- prefix to avoid collisions */
+
+/* Scroll lock when popup is open */
+.hy-scroll-lock { overflow: hidden !important; }
+
+/* Backdrop */
+#hy-popup-backdrop.hy-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.10);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  /* cover full dynamic viewport and safe areas */
+  height: 100dvh;
+  width: 100vw;
+  z-index: 99;
+}
+#hy-popup-backdrop.hy-popup-backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Root */
+.hy-popup {
+  position: fixed;
+  inset: 0;
+  height: 100dvh; /* freeze dynamic viewport height on iOS to avoid resize during animation */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0; /* start hidden to fade-in */
+  transition: transform 360ms ease-in-out, opacity 360ms ease-in-out;
+}
+.hy-popup.active { opacity: 1; }
+.hy-popup.closing { opacity: 0; }
+
+/* Surface */
+.hy-popup__surface {
+  background: var(--popup-bg, #fff);
+  color: var(--popup-fg, #111);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.35);
+  width: min(92vw, 720px);
+  max-height: calc(100% - 24px);
+  display: flex;
+  flex-direction: column;
+  /* default: subtle center modal animation (desktop) */
+  transform: translateY(40px);
+  transition: transform 360ms ease-in-out, opacity 360ms ease-in-out;
+}
+.hy-popup.active .hy-popup__surface { transform: translateY(0); }
+.hy-popup.closing .hy-popup__surface { transform: translateY(40px); }
+
+.hy-popup__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  font-weight: 600;
+}
+.hy-popup__title { font-size: 18px; }
+.hy-popup__close {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+  line-height: 1;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.hy-popup__body {
+  padding: 0px;
+  overflow: auto;
+}
+
+/* Sizes */
+.hy-size-sm .hy-popup__surface { width: min(92vw, 560px); }
+.hy-size-md .hy-popup__surface { width: min(92vw, 720px); }
+.hy-size-lg .hy-popup__surface { width: min(92vw, 960px); }
+.hy-size-full .hy-popup__surface { width: 100vw; height: 100vh; padding-top: env(safe-area-inset-top); max-height: 100vh; border-radius: 0; }
+
+/* Sheet variant for small screens */
+.hy-popup--sheet {
+  align-items: flex-end;
+}
+.hy-popup--sheet .hy-popup__surface {
+  width: 100vw;
+  /* fill container height; account for bottom safe-area */
+  max-height: calc(100% - env(safe-area-inset-bottom));
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding-bottom: env(safe-area-inset-bottom);
+  transform: translateY(100%);
+}
+.hy-popup--sheet.active .hy-popup__surface { transform: translateY(0); }
+.hy-popup--sheet.closing .hy-popup__surface { transform: translateY(100%); }
+
+/* Ensure hardware-composited on iOS to avoid painting issues */
+.hy-popup,
+#hy-popup-backdrop.hy-popup-backdrop,
+.hy-popup__surface { will-change: transform, opacity; transform: translateZ(0); -webkit-transform: translateZ(0); }
+
+/* Mobile-only: modal also slides up from bottom on first show */
+@media (max-width: 767px) {
+  .hy-popup--modal .hy-popup__surface { transform: translateY(100dvh); }
+  .hy-popup--modal.active .hy-popup__surface { transform: translateY(0); }
+  .hy-popup--modal.closing .hy-popup__surface { transform: translateY(100dvh); }
+}
+
+/* Responsive: on desktop, sheet behaves like modal unless full specified */
+@media (min-width: 768px) {
+  .hy-popup--sheet .hy-popup__surface {
+    width: min(92vw, 720px);
+    max-height: 90vh;
+    border-radius: 16px;
+  }
+}
+
+/* Error placeholder */
+.hy-popup__error {
+  color: #b00020;
+}
+
+

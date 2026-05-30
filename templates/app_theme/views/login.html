@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <!-- <meta name="wakit:no-dv-title" content="1"> -->
+  <title>로그인</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+ 
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+<!-- Blog Styles -->
+<link rel="stylesheet" href="css/style.css">
+<!-- Login Page Styles -->
+<link rel="stylesheet" href="css/login.css">
+
+<!-- 데스크톱 헤더 -->
+<div data-include="../wakit-components/header.html" data-include-when="web"></div>
+
+<main class="login-page">
+  <div class="login-container">
+    <!-- Header Section -->
+    <div class="login-header">
+      <h1 class="login-title">로그인</h1>
+      <!-- <div class="login-subtitle">
+        <span>검증된 결과</span>
+        <a href="#" class="login-subtitle__link">자세히</a>
+      </div> -->
+    </div>
+
+    <!-- Login Form -->
+    <form class="login-form" action="#" method="post">
+      <!-- Email Input -->
+      <div class="input-field">
+        <label for="email" class="input-label">이메일</label>
+        <div class="input-wrapper">
+          <i class="bi bi-person input-icon" aria-hidden="true"></i>
+          <input type="email" id="email" name="email" placeholder="user@sample.com" required>
+        </div>
+        <!-- <span class="input-helper">신속한 대응</span> -->
+      </div>
+
+      <!-- Password Input -->
+      <div class="input-field">
+        <label for="password" class="input-label">패스워드</label>
+        <div class="input-wrapper">
+          <i class="bi bi-lock input-icon" aria-hidden="true"></i>
+          <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요." required>
+          <button type="button" class="input-toggle" aria-label="비밀번호 표시/숨기기">
+            <i class="bi bi-eye" aria-hidden="true"></i>
+          </button>
+        </div>
+        <!-- <span class="input-helper">세심한 관리</span> -->
+      </div>
+
+      <!-- Options Row -->
+      <div class="login-options">
+        <label class="checkbox-wrapper">
+          <input type="checkbox" id="remember" name="remember" class="checkbox-input">
+          <span class="checkbox-label">로그인 상태 유지</span>
+        </label>
+        <a href="views/password.html" class="forgot-password">비밀번호 찾기</a>
+      </div>
+
+      <!-- Login Button -->
+      <button type="submit" class="login-button">
+        <span class="login-button__text">로그인</span>
+      </button>
+    </form>
+
+    <!-- Divider -->
+    <div class="login-divider">
+      <div class="divider-line"></div>
+      <span class="divider-text">or</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Social Login (디자인툴: icon left 16px, title centered) -->
+    <div class="social-login">
+      <button type="button" class="social-button social-button--kakao">
+        <span class="social-button__icon" aria-hidden="true">
+          <img src="img/sns/kakao-login-icon.svg" alt="" />
+        </span>
+        <span class="social-button__text">카카오로 시작하기</span>
+        <span aria-hidden="true"></span>
+      </button>
+      <button type="button" class="social-button social-button--google">
+        <span class="social-button__icon" aria-hidden="true">
+          <img src="img/sns/google-login-icon.svg" alt="" />
+        </span>
+        <span class="social-button__text">구글로 시작하기</span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <!-- Sign Up Link -->
+    <a href="views/join.html" class="signup-button">
+      <span>회원가입</span>
+      <i class="bi bi-chevron-right" aria-hidden="true"></i>
+    </a>
+  </div>
+</main>
+
+<!-- Footer -->
+<div data-include="../wakit-components/footer.html" data-include-when="web"></div>
+
+<script src="js/login.js"></script>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="../js/header.js" data-spa-ignore></script>
+<script data-spa-ignore>
+  Popup.init();
+</script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+
+</html>

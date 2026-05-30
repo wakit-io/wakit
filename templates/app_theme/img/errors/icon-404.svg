@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="404 globe illustration">
+  <defs>
+    <clipPath id="globeClip">
+      <circle cx="240" cy="220" r="200"/>
+    </clipPath>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- globe -->
+  <g clip-path="url(#globeClip)">
+    <circle cx="240" cy="220" r="200" fill="#cfe0f5"/>
+
+    <!-- grid lines (light) -->
+    <g fill="none" stroke="#eef6ff" stroke-width="18" stroke-linecap="round" opacity="0.95">
+      <!-- latitude -->
+      <path d="M60 220 C120 180, 360 180, 420 220"/>
+      <path d="M55 280 C130 245, 350 245, 425 280"/>
+      <path d="M75 165 C150 125, 330 125, 405 165"/>
+
+      <!-- longitude -->
+      <path d="M240 30 C185 95, 185 345, 240 410"/>
+      <path d="M240 30 C295 95, 295 345, 240 410"/>
+
+      <!-- outer meridian hint -->
+      <path d="M135 55 C105 135, 105 305, 135 385"/>
+      <path d="M345 55 C375 135, 375 305, 345 385"/>
+    </g>
+  </g>
+
+  <!-- subtle rim -->
+  <circle cx="240" cy="220" r="200" fill="none" stroke="#d7e6fb" stroke-width="2"/>
+
+  <!-- 404 badge -->
+  <g filter="url(#softShadow)">
+    <rect x="190" y="315" width="290" height="140" rx="34" fill="#0b6bff"/>
+    <text x="335" y="415"
+          text-anchor="middle"
+          font-family="Pretendard, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
+          font-size="96"
+          font-weight="800"
+          fill="#ffffff"
+          letter-spacing="2">404</text>
+  </g>
+</svg>

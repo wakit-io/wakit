@@ -1,0 +1,127 @@
+{
+  "splashDelay": 100,
+  "splashForce": false,
+  "tabbar": { "autoHide": false, "hideThreshold": 14, "displayMode": "always" },
+  "pullToRefresh": {
+    "threshold": 90,
+    "startSlop": 18,
+    "damping": 0.35,
+    "maxPull": 200
+  },
+  "theme": {
+    "primaryColor": "#232323",
+    "font": "Pretendard, system-ui",
+    "isMobile": false
+  },
+  "animations": {
+    "android": "slide2",
+    "ios": "slide"
+  },
+  "defaultTab": "home",
+  "tabs": [
+    {
+      "id": "home",
+      "label": "홈",
+      "icon": "🏠",
+      "page": "home"
+    },
+    {
+      "id": "category",
+      "label": "카테고리",
+      "icon": "📝",
+      "page": "category"
+    },
+    {
+      "id": "blog-list-1",
+      "label": "블로그",
+      "icon": "📝",
+      "page": "blog-list-1"
+    },
+    {
+      "id": "community",
+      "label": "커뮤니티",
+      "icon": "💬",
+      "page": "community"
+    },
+    {
+      "id": "shop-main-1",
+      "label": "쇼핑몰",
+      "icon": "🛍️",
+      "page": "shop-main-1"
+    },
+    {
+      "id": "page-map",
+      "label": "페이지",
+      "icon": "🛍️",
+      "page": "page-map"
+    },
+    {
+      "id": "profile",
+      "label": "마이",
+      "icon": "👤",
+      "page": "profile"
+    }
+  ],
+  "routes": [
+    {
+      "path": "home",
+      "file": "../views/service-3.html",
+      "title": "WAKIT Template"
+    },
+    {
+      "path": "posts",
+      "file": "../views/posts.html",
+      "title": "글목록"
+    },
+    {
+      "path": "blog-list-1",
+      "file": "../views/blog-list-6.html",
+      "title": "블로그"
+    },
+    {
+      "path": "category",
+      "file": "../views/category.html",
+      "title": "카테고리"
+    },
+    {
+      "path": "profile",
+      "file": "../views/profile.html",
+      "title": "마이페이지"
+    },
+    {
+      "path": "shop-main-1",
+      "file": "../views/shop-main-3.html",
+      "title": "쇼핑몰"
+    },
+    {
+      "path": "community",
+      "file": "../views/community.html",
+      "title": "커뮤니티"
+    },
+    {
+      "path": "board/list",
+      "file": "board/list.html",
+      "title": "게시판 목록"
+    },
+    {
+      "path": "board/view",
+      "file": "board/view.html",
+      "title": "게시판 상세"
+    },
+    {
+      "path": "board/view2",
+      "file": "board/view2.html",
+      "title": "게시판 상세2"
+    },
+    {
+      "path": "page-map",
+      "file": "../views/page-map.html",
+      "title": "페이지"
+    },
+    {
+      "path": "naver",
+      "file": "http://127.0.0.1:51146/templates/app_theme/views/category.html",
+      "title": "네이버"
+    }
+  ]
+}

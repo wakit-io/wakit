@@ -1,0 +1,944 @@
+/* ============================================
+   Blog List 1 Page
+   ============================================ */
+
+/* 메인 컨테이너 */
+.blog-list-1 {
+  width: 100%;
+  background-color: var(--blog-list-1-bg);
+  /* padding: var(--spacing-2xl) var(--spacing-lg); */
+}
+
+/* 섹션 변수 정의 - Light Mode (기본) */
+:root {
+  --blog-list-1-bg: var(--color-bg-primary);
+  
+  /* Banner Variables */
+  --banner-bg: var(--color-bg-primary);
+  --banner-overlay: rgba(0, 0, 0, 0.3);
+  --banner-badge-bg: #f2f8fc;
+  --banner-badge-text: var(--color-text-secondary);
+  --banner-badge-icon: var(--color-info);
+  --banner-title-text: var(--color-white);
+  --banner-meta-text: var(--color-white);
+  --banner-meta-icon: var(--color-white);
+  --banner-button-bg: rgba(0, 0, 0, 0.5);
+  --banner-button-icon: var(--color-white);
+  --banner-indicator-active: var(--color-primary);
+  --banner-indicator-inactive: color-mix(in srgb, var(--color-primary) 40%, transparent);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --blog-list-1-bg: var(--color-bg-dark);
+  
+  /* Banner Variables - Dark Mode */
+  --banner-bg: var(--color-bg-dark);
+  --banner-overlay: rgba(0, 0, 0, 0.5);
+  --banner-badge-bg: #2f3133;
+  --banner-badge-text: #e8eef2;
+  --banner-badge-icon: var(--color-info);
+  --banner-title-text: var(--color-white);
+  --banner-meta-text: var(--color-white);
+  --banner-meta-icon: var(--color-white);
+  --banner-button-bg: rgba(0, 0, 0, 0.6);
+  --banner-button-icon: var(--color-white);
+  --banner-indicator-active: var(--color-primary);
+  --banner-indicator-inactive: color-mix(in srgb, var(--color-primary) 40%, transparent);
+}
+
+/* ============================================
+   Banner Section
+   ============================================ */
+
+/* 배너 섹션 */
+.blog-banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--banner-bg);
+}
+
+/* 슬라이드 컨테이너 */
+.blog-banner__slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 슬라이드 */
+.blog-banner__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.blog-banner__slide--active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.blog-banner__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.blog-banner__image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f2f8fc;
+  z-index: 0;
+}
+
+.blog-banner__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--banner-overlay);
+  z-index: 1;
+}
+
+.blog-banner__container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 배지 */
+.blog-banner__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--banner-badge-bg);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--spacing-lg);
+}
+
+.blog-banner__badge-icon {
+  font-size: 16px;
+  color: var(--banner-badge-icon);
+  flex-shrink: 0;
+}
+
+.blog-banner__badge-text {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: var(--body-xs-font-size);
+  font-weight: var(--body-xs-font-weight);
+  line-height: var(--body-xs-line-height);
+  letter-spacing: var(--body-xs-letter-spacing);
+  color: var(--banner-badge-text);
+}
+
+/* 제목 */
+.blog-banner__title {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 0;
+  color: var(--banner-title-text);
+  text-align: center;
+  margin: 0 0 var(--spacing-lg) 0;
+  white-space: pre-line;
+}
+
+/* 메타 정보 리스트 */
+.blog-banner__meta-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.blog-banner__meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.blog-banner__meta-icon {
+  font-size: 20px;
+  color: var(--banner-meta-icon);
+  flex-shrink: 0;
+}
+
+.blog-banner__meta-text {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: var(--body-s-font-size);
+  font-weight: var(--body-s-font-weight);
+  line-height: var(--body-s-line-height);
+  letter-spacing: var(--body-s-letter-spacing);
+  color: var(--banner-meta-text);
+}
+
+/* 네비게이션 버튼 */
+.blog-banner__nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--banner-button-bg);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 3;
+}
+
+.blog-banner__nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.blog-banner__nav-button--prev {
+  left: var(--spacing-lg);
+}
+
+.blog-banner__nav-button--next {
+  right: var(--spacing-lg);
+}
+
+.blog-banner__nav-icon {
+  font-size: 24px;
+  color: var(--banner-button-icon);
+}
+
+/* 캐러셀 인디케이터 */
+.blog-banner__indicators {
+  position: absolute;
+  bottom: var(--spacing-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  z-index: 3;
+}
+
+.blog-banner__indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--banner-indicator-inactive);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.blog-banner__indicator--active {
+  width: 32px;
+  background-color: var(--banner-indicator-active);
+}
+
+.blog-banner__indicator:hover {
+  background-color: var(--banner-indicator-active);
+}
+
+/* 모바일 스타일 */
+@media (max-width: 767px) {
+  .blog-banner {
+    height: 500px;
+    border-radius: var(--radius-md);
+  }
+
+  .blog-banner__container {
+    padding: var(--spacing-lg);
+  }
+
+  .blog-banner__badge {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .blog-banner__badge-icon {
+    font-size: 14px;
+  }
+
+  .blog-banner__badge-text {
+    font-size: 11px;
+  }
+
+  .blog-banner__title {
+    font-size: 28px;
+    line-height: 35px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .blog-banner__meta-list {
+    gap: var(--spacing-md);
+  }
+
+  .blog-banner__meta-icon {
+    font-size: 18px;
+  }
+
+  .blog-banner__meta-text {
+    font-size: var(--body-xs-font-size);
+    line-height: var(--body-xs-line-height);
+  }
+
+  .blog-banner__nav-button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .blog-banner__nav-button--prev {
+    left: var(--spacing-md);
+  }
+
+  .blog-banner__nav-button--next {
+    right: var(--spacing-md);
+  }
+
+  .blog-banner__nav-icon {
+    font-size: 20px;
+  }
+
+  .blog-banner__indicators {
+    bottom: var(--spacing-md);
+  }
+}
+
+/* 태블릿 스타일 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .blog-banner {
+    height: 500px;
+  }
+
+  .blog-banner__title {
+    font-size: 36px;
+    line-height: 45px;
+  }
+}
+
+/* 데스크톱 스타일 */
+@media (min-width: 1024px) {
+  .blog-list-1 {
+    padding: var(--spacing-2xl);
+  }
+
+  .blog-banner {
+    height: 500px;
+  }
+
+  .blog-banner__title {
+    font-size: 48px;
+    line-height: 60px;
+  }
+}
+
+/* 접근성 - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .blog-banner__nav-button,
+  .blog-banner__indicator {
+    transition: none;
+  }
+}
+
+/* ============================================
+   Blog Container Section
+   ============================================ */
+
+/* 섹션 변수 정의 - Light Mode (기본) */
+:root {
+  /* Blog Container Variables */
+  --blog-container-bg: var(--color-bg-primary);
+  --blog-container-title-text: var(--color-text-primary);
+  --blog-container-description-text: var(--color-text-secondary);
+  --blog-container-tab-bg: transparent;
+  --blog-container-tab-bg-active: var(--color-primary-light);
+  --blog-container-tab-text: var(--color-text-primary);
+  --blog-container-tab-text-active: var(--color-primary);
+  --blog-card-bg: var(--color-bg-primary);
+  --blog-card-border: var(--color-border);
+  --blog-card-badge-bg: var(--color-bg-secondary);
+  --blog-card-badge-text: var(--color-text-secondary);
+  --blog-card-badge-icon: var(--color-info);
+  --blog-card-title-text: var(--color-text-primary);
+  --blog-card-description-text: var(--color-text-secondary);
+  --blog-card-author-text: var(--color-text-secondary);
+  --blog-card-read-more-bg: var(--color-bg-primary);
+  --blog-card-read-more-border: var(--color-border);
+  --blog-card-read-more-text: var(--color-text-secondary);
+  --blog-card-dark-overlay: rgba(0, 0, 0, 0.7);
+  --blog-card-dark-badge-bg: var(--color-text-primary);
+  --blog-card-dark-badge-text: var(--color-bg-secondary);
+  --blog-card-dark-title-text: var(--color-white);
+  --blog-card-dark-description-text: var(--color-bg-secondary);
+  --blog-card-dark-author-text: var(--color-bg-secondary);
+  --blog-card-dark-read-more-bg: var(--color-text-primary);
+  --blog-card-dark-read-more-border: var(--color-text-secondary);
+  --blog-card-dark-read-more-text: var(--color-bg-secondary);
+  --blog-card-ad-bg: var(--color-info);
+  --blog-card-ad-text: var(--color-white);
+  --blog-card-ad-badge-bg: var(--color-text-primary);
+  --blog-card-ad-badge-text: var(--color-bg-secondary);
+  --blog-card-ad-sponsor-text: var(--color-white);
+  --blog-card-ad-author-text: var(--color-bg-secondary);
+  --blog-card-ad-read-more-bg: var(--color-text-primary);
+  --blog-card-ad-read-more-border: var(--color-text-secondary);
+  --blog-card-ad-read-more-text: var(--color-bg-secondary);
+  --blog-load-more-bg: var(--color-primary-lighter);
+  --blog-load-more-text: var(--color-info);
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --blog-container-bg: var(--color-bg-primary);
+  --blog-container-title-text: var(--color-text-primary);
+  --blog-container-description-text: var(--color-text-secondary);
+  --blog-container-tab-bg: transparent;
+  --blog-container-tab-bg-active: var(--color-primary-light);
+  --blog-container-tab-text: var(--color-text-primary);
+  --blog-container-tab-text-active: var(--color-primary);
+  --blog-card-bg: var(--color-bg-primary);
+  --blog-card-border: var(--color-border);
+  --blog-card-badge-bg: var(--color-bg-secondary);
+  --blog-card-badge-text: var(--color-text-secondary);
+  --blog-card-badge-icon: var(--color-info);
+  --blog-card-title-text: var(--color-text-primary);
+  --blog-card-description-text: var(--color-text-secondary);
+  --blog-card-author-text: var(--color-text-secondary);
+  --blog-card-read-more-bg: var(--color-bg-primary);
+  --blog-card-read-more-border: var(--color-border);
+  --blog-card-read-more-text: var(--color-text-secondary);
+  --blog-card-dark-overlay: rgba(0, 0, 0, 0.7);
+  --blog-card-dark-badge-bg: var(--color-text-primary);
+  --blog-card-dark-badge-text: var(--color-bg-secondary);
+  --blog-card-dark-title-text: var(--color-white);
+  --blog-card-dark-description-text: var(--color-bg-secondary);
+  --blog-card-dark-author-text: var(--color-bg-secondary);
+  --blog-card-dark-read-more-bg: var(--color-text-primary);
+  --blog-card-dark-read-more-border: var(--color-text-secondary);
+  --blog-card-dark-read-more-text: var(--color-bg-secondary);
+  --blog-card-ad-bg: var(--color-info);
+  --blog-card-ad-text: var(--color-white);
+  --blog-card-ad-badge-bg: var(--color-text-primary);
+  --blog-card-ad-badge-text: var(--color-bg-secondary);
+  --blog-card-ad-sponsor-text: var(--color-white);
+  --blog-card-ad-author-text: var(--color-bg-secondary);
+  --blog-card-ad-read-more-bg: var(--color-text-primary);
+  --blog-card-ad-read-more-border: var(--color-text-secondary);
+  --blog-card-ad-read-more-text: var(--color-bg-secondary);
+  --blog-load-more-bg: var(--color-primary-lighter);
+  --blog-load-more-text: var(--color-info);
+}
+
+/* 블로그 컨테이너 섹션 */
+.blog-container {
+  width: 100%;
+  background-color: var(--blog-container-bg);
+  padding: var(--spacing-3xl) 0;
+}
+
+/* 섹션 헤더 */
+.blog-container__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.blog-container__header-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.blog-container__title {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 50.4px;
+  color: var(--blog-container-title-text);
+  margin: 0;
+}
+
+.blog-container__description {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--blog-container-description-text);
+  margin: 0;
+}
+
+/* 탭 + 포스트 래퍼 (sticky containing block) */
+.blog-container__tabs-and-posts {
+  /* wrapper only */
+}
+
+/* 탭 메뉴 (스티키) */
+.blog-container__tabs {
+  position: sticky;
+  top: 68px;
+  z-index: 10;
+  background-color: var(--blog-container-bg);
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* Wakit 다이나믹 뷰: 헤더 숨김 시 탭이 상단에 붙도록 */
+.dynamic-view .blog-container__tabs {
+  top: 0px;
+}
+
+.blog-container__tab {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--blog-container-tab-text);
+  background-color: var(--blog-container-tab-bg);
+  border: none;
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.blog-container__tab:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.blog-container__tab--active {
+  background-color: var(--blog-container-tab-bg-active);
+  color: var(--blog-container-tab-text-active);
+}
+
+/* 블로그 포스트 리스트 */
+.blog-container__posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-2xl);
+  margin-bottom: var(--spacing-3xl);
+}
+
+/* 블로그 카드 */
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blog-card-bg);
+  border: 1px solid var(--blog-card-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2);
+}
+
+/* 이미지 래퍼 */
+.blog-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 244px;
+  overflow: hidden;
+}
+
+.blog-card--dark .blog-card__image-wrapper {
+  height: 400px;
+}
+
+.blog-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-card__image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-secondary);
+}
+
+.blog-card__image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--blog-card-dark-overlay);
+  z-index: 1;
+}
+
+/* 배지 */
+.blog-card__image-wrapper > .badge {
+  position: absolute;
+  top: var(--spacing-sm);
+  left: var(--spacing-sm);
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--color-text-primary);
+  border-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.blog-card__image-wrapper > .badge--primary {
+  background-color: var(--color-badge-primary-bg);
+  color: var(--color-badge-primary-text);
+  border-color: transparent;
+}
+
+.blog-card__ad-header .badge {
+  /* Foundation .badge--primary (테마·다크 모드) 사용 */
+}
+
+/* 카드 콘텐츠 */
+.blog-card__content {
+  padding: var(--spacing-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  flex: 1;
+}
+
+.blog-card--dark .blog-card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-2xl);
+  z-index: 2;
+}
+
+.blog-card__title {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  color: var(--blog-card-title-text);
+  margin: 0;
+}
+
+.blog-card__title--dark {
+  color: var(--blog-card-dark-title-text);
+  font-size: 24px;
+  line-height: 33.6px;
+}
+
+.blog-card__description {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--blog-card-description-text);
+  margin: 0;
+}
+
+.blog-card__description--dark {
+  color: var(--blog-card-dark-description-text);
+}
+
+/* 카드 푸터 */
+.blog-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.blog-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.blog-card__avatar {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.blog-card__avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.blog-card__avatar-placeholder img,
+.blog-card__avatar-placeholder .blog-card__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-card__avatar-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-white);
+  border-radius: var(--radius-full);
+}
+
+.blog-card--dark .blog-card__avatar-badge {
+  background-color: var(--color-text-primary);
+  border-color: var(--color-white);
+}
+
+.blog-card__author-name {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--blog-card-author-text);
+}
+
+.blog-card__author-name--dark {
+  color: var(--blog-card-dark-author-text);
+}
+
+.blog-card__author-name--ad {
+  color: var(--blog-card-ad-author-text);
+}
+
+.blog-card__footer .btn {
+  /* Foundation .btn--outline, .btn--primary (테마·다크 모드) 사용 */
+}
+
+/* 광고 카드 */
+.blog-card--ad {
+  background-color: var(--blog-card-ad-bg);
+  border: none;
+}
+
+.blog-card__ad-content {
+  padding: var(--spacing-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+  min-height: 400px;
+  justify-content: space-between;
+}
+
+.blog-card__ad-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blog-card__sponsor {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--blog-card-ad-sponsor-text);
+}
+
+.blog-card__sponsor-icon {
+  font-size: 24px;
+}
+
+.blog-card__ad-text {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  color: var(--blog-card-ad-text);
+  margin: 0;
+  flex: 1;
+}
+
+/* 더 불러오기 버튼 */
+.blog-container__load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-3xl);
+}
+
+.blog-container__load-more-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background-color: var(--blog-load-more-bg);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--blog-load-more-text);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.blog-container__load-more-button:hover {
+  background-color: var(--color-primary-lighter);
+}
+
+.blog-container__load-more-icon {
+  font-size: 24px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+  .blog-container__posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-container {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .blog-container__header {
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .blog-container__title {
+    font-size: 24px;
+    line-height: 33.6px;
+  }
+
+  .blog-container__description {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .blog-container__tabs {
+    top: calc(56px + env(safe-area-inset-top, 0px));
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .blog-container__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .blog-container__tab {
+    flex-shrink: 0;
+    font-size: 14px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    white-space: nowrap;
+  }
+
+  .dynamic-view .blog-container__tabs {
+    top: 0px;
+  }
+
+  .blog-container__posts {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .blog-card__image-wrapper {
+    height: 227px;
+  }
+
+  .blog-card--dark .blog-card__image-wrapper {
+    height: 400px;
+  }
+
+  .blog-card__content {
+    padding: var(--spacing-lg);
+  }
+
+  .blog-card__title {
+    font-size: 18px;
+    line-height: 25.2px;
+  }
+
+  .blog-card__title--dark {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .blog-card__description {
+    font-size: 11px;
+  }
+
+  .blog-card__author-name {
+    font-size: 14px;
+  }
+
+
+  .blog-card__ad-content {
+    min-height: 400px;
+    padding: var(--spacing-lg);
+  }
+
+  .blog-card__ad-text {
+    font-size: 18px;
+    line-height: 25.2px;
+  }
+
+  .blog-card__sponsor {
+    font-size: 12px;
+  }
+
+  .blog-container__load-more-button {
+    font-size: 16px;
+    padding: var(--spacing-lg) var(--spacing-xl);
+  }
+}
+
+/* 접근성 - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .blog-card,
+  .blog-container__tab,
+  .blog-container__load-more-button,
+  .blog-card__footer .btn {
+    transition: none;
+  }
+}

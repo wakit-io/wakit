@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="645" viewBox="0 0 768 645" role="img" aria-label="Cloud error icon with X">
+  <defs>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- back cloud (lighter) -->
+  <g opacity="0.9">
+    <path d="
+      M165 220
+      C120 160, 135 95, 210 85
+      C235 40, 295 20, 345 50
+      C395 25, 455 45, 475 95
+      C535 110, 560 165, 535 215
+      C565 255, 545 310, 495 330
+      L215 330
+      C165 330, 130 300, 130 260
+      C130 235, 145 225, 165 220
+      Z"
+      fill="#eef6ff"/>
+  </g>
+
+  <!-- main cloud -->
+  <path d="
+    M225 255
+    C215 165, 290 105, 380 120
+    C415 70, 505 65, 555 115
+    C625 110, 675 165, 660 235
+    C725 275, 705 365, 625 385
+    L235 385
+    C165 385, 110 335, 120 270
+    C130 220, 170 190, 225 255
+    Z"
+    fill="#cfe0f5"/>
+
+  <!-- blue circle with X -->
+  <g filter="url(#softShadow)">
+    <circle cx="384" cy="440" r="120" fill="#0b6bff"/>
+    <!-- X mark (rounded strokes) -->
+    <g fill="none" stroke="#ffffff" stroke-width="34" stroke-linecap="round">
+      <path d="M330 386 L438 494"/>
+      <path d="M438 386 L330 494"/>
+    </g>
+  </g>
+</svg>

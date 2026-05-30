@@ -1,0 +1,292 @@
+/**
+ * 영화예매-영화상세 | Foundation 토큰 사용
+ */
+@import url('./foundation/color.css');
+@import url('./foundation/spacing.css');
+@import url('./foundation/typography.css');
+
+.movie-detail { padding-bottom: 72px; }
+
+/* 포스터 */
+.movie-detail__poster {
+  width: 100%;
+  aspect-ratio: 390 / 520;
+  max-height: 520px;
+  background: var(--color-bg-tertiary);
+  overflow: hidden;
+}
+.movie-detail__poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 헤드 */
+.movie-detail__head {
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  background: var(--color-bg-primary);
+}
+.movie-detail__title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+.movie-detail__title {
+  font-family: var(--font-family-primary);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+.movie-detail__age {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-inverse);
+  background: var(--color-success);
+  border-radius: 4px;
+}
+.movie-detail__rank,
+.movie-detail__rating {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-xs);
+}
+.movie-detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-md) 0;
+}
+.movie-detail__tag {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-info);
+}
+.movie-detail__desc-short {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-md);
+  line-height: 1.4;
+}
+.movie-detail__desc-long {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* 섹션 공통 */
+.movie-detail__section {
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  background: var(--color-bg-primary);
+  border-top: 1px solid var(--color-border);
+}
+.movie-detail__section-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-lg);
+}
+
+/* 예고편 */
+.movie-detail__trailer-row {
+  display: flex;
+  gap: var(--spacing-lg);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.movie-detail__trailer-item {
+  flex: 0 0 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg);
+  background: var(--color-bg-secondary);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  font-size: 14px;
+  font-weight: 700;
+}
+.movie-detail__trailer-thumb {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--color-info);
+}
+
+/* 관객 통계 */
+.movie-detail__stats { padding-top: var(--spacing-lg); }
+.movie-detail__stat-line {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-md);
+}
+.movie-detail__stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+.movie-detail__stat-item {
+  padding: var(--spacing-md);
+  background: var(--color-bg-secondary);
+  border-radius: 8px;
+}
+.movie-detail__stat-label {
+  display: block;
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  margin-bottom: 4px;
+}
+.movie-detail__stat-value {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-text-primary);
+}
+
+/* 탭 */
+.movie-detail__tabs {
+  display: flex;
+  padding: 0 var(--spacing-lg);
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+}
+.movie-detail__tab {
+  flex-shrink: 0;
+  padding: var(--spacing-lg) var(--spacing-md);
+  font-family: var(--font-family-primary);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-text-tertiary);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.movie-detail__tab.is-active {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-text-primary);
+}
+
+/* 영화정보 패널 */
+.movie-detail__panel {
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  background: var(--color-bg-primary);
+}
+.movie-detail__info-list { margin: 0; }
+.movie-detail__info-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14px;
+}
+.movie-detail__info-row:last-child { border-bottom: none; }
+.movie-detail__info-row dt {
+  color: var(--color-text-tertiary);
+  margin: 0;
+  font-weight: 400;
+}
+.movie-detail__info-row dd {
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* 실관람평 */
+.movie-detail__reviews { border-top: none; }
+.movie-detail__review-summary {
+  margin-bottom: var(--spacing-2xl);
+}
+.movie-detail__review-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-sm);
+}
+.movie-detail__review-title span {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-text-tertiary);
+}
+.movie-detail__review-score {
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+.movie-detail__review-score span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+}
+.movie-detail__review-card {
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.movie-detail__review-card:last-child { border-bottom: none; }
+.movie-detail__review-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-sm);
+}
+.movie-detail__review-author {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+.movie-detail__review-date {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+}
+.movie-detail__review-text {
+  font-size: 14px;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  margin: 0 0 var(--spacing-xs);
+}
+.movie-detail__review-help {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+/* 하단 고정 버튼 */
+.movie-detail__footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-md) var(--spacing-lg) calc(var(--spacing-md) + env(safe-area-inset-bottom));
+  background: var(--color-bg-primary);
+  border-top: 1px solid var(--color-border);
+  z-index: 10;
+}
+.movie-detail__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-text-on-primary);
+  background: var(--color-info);
+  border-radius: 12px;
+  text-decoration: none;
+}

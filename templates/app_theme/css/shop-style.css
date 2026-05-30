@@ -1,0 +1,504 @@
+/* ============================================
+   Shop Style - Base Styles
+   ============================================ */
+
+.shop-style {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-container-md);
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 var(--spacing-container-sm);
+  }
+}
+
+/* ============================================
+   Shop Style - Page Header Section
+   ============================================ */
+
+.shop-style__header-section {
+  background-color: var(--color-bg-primary);
+  padding: var(--spacing-lg) 0;
+}
+
+.shop-style__breadcrumbs {
+  margin-bottom: var(--spacing-md);
+}
+
+.shop-style__breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.shop-style__breadcrumbs-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.shop-style__breadcrumbs-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.shop-style__breadcrumbs-link:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.shop-style__breadcrumbs-link i {
+  font-size: 20px;
+  color: var(--color-text-secondary);
+}
+
+.shop-style__breadcrumbs-separator {
+  font-size: 20px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.shop-style__breadcrumbs-text {
+  display: inline-block;
+}
+
+.shop-style__breadcrumbs-item--current .shop-style__breadcrumbs-text {
+  color: var(--color-text-tertiary);
+  font-weight: 400;
+}
+
+.shop-style__header-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Badge */
+.shop-style__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-badge-bg);
+  border-radius: var(--radius-xl);
+  width: fit-content;
+  height: 24px;
+}
+
+.shop-style__badge i {
+  font-size: 16px;
+  color: var(--color-primary);
+}
+
+.shop-style__badge-text {
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--color-primary);
+}
+
+/* Page Title */
+.shop-style__page-title {
+  font-family: var(--font-family-primary);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 60px;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Sub Title */
+.shop-style__sub-title {
+  font-family: var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33.6px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Description */
+.shop-style__description {
+  font-family: var(--font-family-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32.4px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Tabs Section - Sticky */
+.shop-style__tabs-section {
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 0px;
+}
+
+.shop-style__tabs {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+
+.shop-style__tab {
+  position: relative;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.shop-style__tab:hover {
+  color: var(--color-primary);
+}
+
+.shop-style__tab--active {
+  color: var(--color-primary);
+}
+
+.shop-style__tab--active .shop-style__tab-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+.shop-style__tab-text {
+  display: inline-block;
+}
+
+/* ============================================
+   Shop Style - Content Section
+   ============================================ */
+
+.shop-style__content-section {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-bg-primary);
+}
+
+/* Filter Chips */
+.shop-style__filter-chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-xl);
+}
+
+.shop-style__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 32px;
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  height: 36px;
+}
+
+.shop-style__chip:hover {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border);
+}
+
+.shop-style__chip--active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+
+.shop-style__chip--active:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.shop-style__chip i {
+  font-size: 20px;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.shop-style__chip--active i {
+  color: var(--color-text-on-primary);
+}
+
+.shop-style__chip-text {
+  display: inline-block;
+}
+
+/* Style Cards Grid */
+.shop-style__cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+}
+
+.shop-style__card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.shop-style__card:hover {
+  transform: translateY(-4px);
+  text-decoration: none;
+}
+
+.shop-style__card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 384 / 535;
+  overflow: hidden;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+}
+
+.shop-style__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shop-style__card-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-secondary);
+}
+
+.shop-style__card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: var(--spacing-md);
+}
+
+.shop-style__card-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.shop-style__card-username {
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--color-white);
+}
+
+.shop-style__card-height {
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-white);
+}
+
+.shop-style__card-size {
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-white);
+}
+
+/* ============================================
+   Shop Style - Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .shop-style__header-section {
+    padding: var(--spacing-md) 0;
+  }
+
+  .shop-style__breadcrumbs {
+    display: none;
+  }
+
+  .shop-style__breadcrumbs-link {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .shop-style__breadcrumbs-link i {
+    font-size: 20px;
+  }
+
+  .shop-style__breadcrumbs-separator {
+    font-size: 20px;
+  }
+
+  .shop-style__header-content {
+    gap: var(--spacing-sm);
+  }
+
+  /* Badge */
+  .shop-style__badge {
+    padding: var(--spacing-xs) var(--spacing-xs);
+    border-radius: 16px;
+    height: 24px;
+  }
+
+  .shop-style__badge i {
+    font-size: 16px;
+  }
+
+  .shop-style__badge-text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  /* Page Title */
+  .shop-style__page-title {
+    font-size: 28px;
+    line-height: 35px;
+  }
+
+  /* Sub Title */
+  .shop-style__sub-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  /* Description */
+  .shop-style__description {
+    font-size: 16px;
+    line-height: 28.8px;
+  }
+
+  /* Tabs Section */
+  .shop-style__tabs-section {
+    padding: 0px;
+  }
+
+  .shop-style__tabs {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    min-width: max-content;
+  }
+
+  .shop-style__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .shop-style__tab {
+    padding: var(--spacing-md) var(--spacing-sm);
+    font-size: 14px;
+    line-height: 20px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  /* Content Section */
+  .shop-style__content-section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  /* Filter Chips */
+  .shop-style__filter-chips {
+    margin-bottom: var(--spacing-lg);
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-bottom: var(--spacing-xs);
+  }
+
+  .shop-style__filter-chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .shop-style__chip {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 14px;
+    line-height: 20px;
+    height: 36px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    border-radius: 20px;
+  }
+
+  .shop-style__chip i {
+    font-size: 20px;
+  }
+
+  /* Style Cards Grid */
+  .shop-style__cards-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .shop-style__card-image {
+    border-radius: 12px;
+  }
+
+  .shop-style__card-overlay {
+    padding: var(--spacing-sm);
+  }
+
+  .shop-style__card-username {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .shop-style__card-height,
+  .shop-style__card-size {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}

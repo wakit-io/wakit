@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>이벤트 상세 2</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+<!-- Blog Styles -->
+<link rel="stylesheet" href="css/style.css">
+<!-- Event List 1 Page Styles -->
+<link rel="stylesheet" href="css/event-detail-2.css">
+
+
+<!-- 데스크톱 헤더 -->
+<div data-include="../wakit-components/header.html" data-include-when="web"></div>
+
+<main class="event-detail-2">
+  <!-- Page Header Section -->
+  <section class="event-detail-2__header-section">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <nav class="event-detail-2__breadcrumbs" aria-label="Breadcrumb">
+        <ol class="event-detail-2__breadcrumbs-list">
+          <li class="event-detail-2__breadcrumbs-item">
+            <a href="index.html" class="event-detail-2__breadcrumbs-link">
+              <i class="bi bi-house" aria-hidden="true"></i>
+              <span class="event-detail-2__breadcrumbs-text">홈</span>
+            </a>
+          </li>
+          <li class="event-detail-2__breadcrumbs-item">
+            <i class="bi bi-chevron-right event-detail-2__breadcrumbs-separator" aria-hidden="true"></i>
+            <a href="event-list-1.html" class="event-detail-2__breadcrumbs-link">
+              <span class="event-detail-2__breadcrumbs-text">이벤트</span>
+            </a>
+          </li>
+          <li class="event-detail-2__breadcrumbs-item event-detail-2__breadcrumbs-item--current">
+            <i class="bi bi-chevron-right event-detail-2__breadcrumbs-separator" aria-hidden="true"></i>
+            <span class="event-detail-2__breadcrumbs-text">체계적인 접근</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Event Details Section -->
+  <section class="event-detail-2__content-section">
+    <div class="container">
+
+      <!-- Event Image and Thumbnails -->
+     <div class="event-detail-2__image-section-wrapper">
+        <div class="event-detail-2__image-section">
+          <div class="event-detail-2__main-image">
+            <img id="event-detail-2-main-image" src="https://demo.wakit.org/img/samples/photo-1540575467063-178a50c2df87.png" alt="이미지">
+          </div>
+          <div class="event-detail-2__thumbnails">
+            <div class="event-detail-2__thumbnail" data-main-image="img/samples/photo-1540575467063-178a50c2df87.png">
+              <img src="https://demo.wakit.org/img/samples/photo-1540575467063-178a50c2df87.png" alt="이미지">
+            </div>
+            <div class="event-detail-2__thumbnail" data-main-image="img/samples/photo-1511578314322-379afb476865.png">
+              <img src="https://demo.wakit.org/img/samples/photo-1511578314322-379afb476865.png" alt="이미지">
+            </div>
+            <div class="event-detail-2__thumbnail" data-main-image="img/samples/photo-1460925895917-afdab827c52f.png">
+              <img src="https://demo.wakit.org/img/samples/photo-1460925895917-afdab827c52f.png" alt="이미지">
+            </div>
+            <div class="event-detail-2__thumbnail" data-main-image="img/samples/photo-1551288049-bebda4e38f71.png">
+              <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-detail-2__layout">
+        <!-- Left Column: Event Image and Description -->
+        <div class="event-detail-2__main-content">          
+
+          <!-- Event Info Container -->
+          <div class="event-detail-2__info-container">
+            <h1 class="event-detail-2__event-title">신뢰할 수 있는 동반자</h1>
+            
+            <div class="event-detail-2__info-grid">
+              <!-- Location -->
+              <div class="event-detail-2__info-item">
+                <div class="event-detail-2__info-header">
+                  <i class="bi bi-geo-alt-fill event-detail-2__info-icon" aria-hidden="true"></i>
+                  <h3 class="event-detail-2__info-label">위치</h3>
+                </div>
+                <p class="event-detail-2__info-value">새로운 아이디어와 혁신적인 방법으로 당신의 목표를 달성하는 데 도움을 드립니다.</p>
+              </div>
+
+              <!-- Date and Time -->
+              <div class="event-detail-2__info-item">
+                <div class="event-detail-2__info-header">
+                  <i class="bi bi-calendar-event event-detail-2__info-icon" aria-hidden="true"></i>
+                  <h3 class="event-detail-2__info-label">미래를 향한 도전</h3>
+                </div>
+                <p class="event-detail-2__info-value">2022년 6월 28일 - 7월 2일,<br>동부 일광 절약 시간 기준 오전 10시 - 오후 4시</p>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="event-detail-2__action-buttons">
+              <button type="button" class="event-detail-2__btn event-detail-2__btn--primary btn btn--primary btn--m">
+                <span>참여하기</span>
+              </button>
+              <div class="event-detail-2__attendees-info">
+                <span class="event-detail-2__attendees-count">369명</span>
+                <span class="event-detail-2__attendees-text">참여 중</span>
+              </div>
+              <div class="event-detail-2__action-buttons-row2">
+                <button type="button" class="event-detail-2__btn event-detail-2__btn--secondary btn btn--secondary btn--m">
+                  <i class="bi bi-calendar-plus" aria-hidden="true"></i>
+                  <span>전문적인 지원</span>
+                </button>
+                <button type="button" class="event-detail-2__btn event-detail-2__btn--secondary btn btn--secondary btn--m">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                  <span>혁신적인 방법</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Description Container -->
+          <div class="event-detail-2__description-container">
+            <h2 class="event-detail-2__description-title">성공을 위한 파트너</h2>
+            <h3 class="event-detail-2__description-subtitle">가치 있는 선택</h3>
+            <p class="event-detail-2__description-text">전문적인 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.</p>
+            
+            <div class="event-detail-2__description-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지">
+            </div>
+            
+            <p class="event-detail-2__description-additional">고객 중심의 접근 방식으로 꼭 맞는 서비스를 제안합니다.</p>
+          </div>
+
+          <!-- Host Section -->
+          <div class="event-detail-2__host-section">
+            <h2 class="event-detail-2__host-title">호스트</h2>
+            <div class="event-detail-2__host-list">
+              <div class="event-detail-2__host-item">
+                <div class="event-detail-2__host-avatar">
+                  <img src="https://demo.wakit.org/img/samples/photo-1494790108377-be9c29b29330.png" alt="김철수">
+                  <div class="event-detail-2__host-badge"></div>
+                </div>
+                <div class="event-detail-2__host-info">
+                  <div class="event-detail-2__host-name">김철수</div>
+                  <div class="event-detail-2__host-position">마케팅부장</div>
+                </div>
+              </div>
+              <div class="event-detail-2__host-item">
+                <div class="event-detail-2__host-avatar">
+                  <img src="https://demo.wakit.org/img/samples/photo-1500648767791-00dcc994a43e.png" alt="김철수">
+                  <div class="event-detail-2__host-badge"></div>
+                </div>
+                <div class="event-detail-2__host-info">
+                  <div class="event-detail-2__host-name">김철수</div>
+                  <div class="event-detail-2__host-position">마케팅부장</div>
+                </div>
+              </div>
+              <div class="event-detail-2__host-item">
+                <div class="event-detail-2__host-avatar">
+                  <img src="https://demo.wakit.org/img/samples/photo-1507003211169-0a1dd7228f2d.png" alt="김철수">
+                  <div class="event-detail-2__host-badge"></div>
+                </div>
+                <div class="event-detail-2__host-info">
+                  <div class="event-detail-2__host-name">김철수</div>
+                  <div class="event-detail-2__host-position">마케팅부장</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Statistics Section -->
+          <div class="event-detail-2__statistics-section">
+            <div class="event-detail-2__stat-item">
+              <i class="bi bi-eye event-detail-2__stat-icon" aria-hidden="true"></i>
+              <div class="event-detail-2__stat-content">
+                <div class="event-detail-2__stat-count">125</div>
+                <div class="event-detail-2__stat-label">방문자</div>
+              </div>
+            </div>
+            <div class="event-detail-2__stat-item">
+              <i class="bi bi-person-check event-detail-2__stat-icon" aria-hidden="true"></i>
+              <div class="event-detail-2__stat-content">
+                <div class="event-detail-2__stat-count">356</div>
+                <div class="event-detail-2__stat-label">등록자 수</div>
+              </div>
+            </div>
+            <div class="event-detail-2__stat-item">
+              <i class="bi bi-check-circle event-detail-2__stat-icon" aria-hidden="true"></i>
+              <div class="event-detail-2__stat-content">
+                <div class="event-detail-2__stat-count">350</div>
+                <div class="event-detail-2__stat-label">출석</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Section -->
+          <div class="event-detail-2__faq-section">
+            <h2 class="event-detail-2__faq-title">새로운 시작을 함께해요</h2>
+            <div class="event-detail-2__faq-list">
+              <!-- FAQ Item 1 -->
+              <div class="event-detail-2__faq-item">
+                <div class="event-detail-2__faq-header">
+                  <div class="event-detail-2__faq-header-content">
+                    <h3 class="event-detail-2__faq-question">더 나은 내일을 향해</h3>
+                  </div>
+                  <i class="bi bi-chevron-down event-detail-2__faq-icon" aria-hidden="true"></i>
+                </div>
+                <div class="event-detail-2__faq-content">
+                  <p class="event-detail-2__faq-answer">세미나 자료는 제공됩니다.</p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="event-detail-2__faq-item event-detail-2__faq-item--expanded">
+                <div class="event-detail-2__faq-header">
+                  <div class="event-detail-2__faq-header-content">
+                    <h3 class="event-detail-2__faq-question">변화를 만드는 순간</h3>
+                  </div>
+                  <i class="bi bi-chevron-down event-detail-2__faq-icon" aria-hidden="true"></i>
+                </div>
+                <div class="event-detail-2__faq-content">
+                  <p class="event-detail-2__faq-answer">끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.</p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="event-detail-2__faq-item">
+                <div class="event-detail-2__faq-header">
+                  <div class="event-detail-2__faq-header-content">
+                    <h3 class="event-detail-2__faq-question">성장하는 이야기</h3>
+                  </div>
+                  <i class="bi bi-chevron-down event-detail-2__faq-icon" aria-hidden="true"></i>
+                </div>
+                <div class="event-detail-2__faq-content">
+                  <p class="event-detail-2__faq-answer">효율적인 프로세스와 체계적인 관리로 성공을 지원합니다.</p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="event-detail-2__faq-item">
+                <div class="event-detail-2__faq-header">
+                  <div class="event-detail-2__faq-header-content">
+                    <h3 class="event-detail-2__faq-question">함께하는 여정</h3>
+                  </div>
+                  <i class="bi bi-chevron-down event-detail-2__faq-icon" aria-hidden="true"></i>
+                </div>
+                <div class="event-detail-2__faq-content">
+                  <p class="event-detail-2__faq-answer">창의적인 아이디어와 실행력으로 차별화된 가치를 제공합니다.</p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="event-detail-2__faq-item">
+                <div class="event-detail-2__faq-header">
+                  <div class="event-detail-2__faq-header-content">
+                    <h3 class="event-detail-2__faq-question">도전과 성취의 기록</h3>
+                  </div>
+                  <i class="bi bi-chevron-down event-detail-2__faq-icon" aria-hidden="true"></i>
+                </div>
+                <div class="event-detail-2__faq-content">
+                  <p class="event-detail-2__faq-answer">협업과 소통을 통해 최상의 결과물을 만들어갑니다.</p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 6 -->
+              <div class="event-detail-2__faq-item">
+                <div class="event-detail-2__faq-header">
+                  <div class="event-detail-2__faq-header-content">
+                    <h3 class="event-detail-2__faq-question">무한한 가능성의 시작</h3>
+                  </div>
+                  <i class="bi bi-chevron-down event-detail-2__faq-icon" aria-hidden="true"></i>
+                </div>
+                <div class="event-detail-2__faq-content">
+                  <p class="event-detail-2__faq-answer">지속적인 개선과 혁신으로 발전하는 파트너가 되겠습니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tags Section -->
+          <div class="event-detail-2__tags-section">
+            <h2 class="event-detail-2__tags-title">태그</h2>
+            <div class="event-detail-2__tags-list">
+              <div class="event-detail-2__tag">디자인</div>
+              <div class="event-detail-2__tag">기후</div>
+              <div class="event-detail-2__tag">ESG</div>
+            </div>
+          </div>
+
+          <!-- Share Section -->
+          <div class="event-detail-2__share-section">
+            <h2 class="event-detail-2__share-title">꿈을 향한 첫걸음</h2>
+            <div class="event-detail-2__share-list">
+              <a href="#" class="event-detail-2__share-link" aria-label="Social Media">
+                <i class="bi bi-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="event-detail-2__share-link" aria-label="Photo Sharing">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="event-detail-2__share-link" aria-label="Twitter">
+                <i class="bi bi-twitter-x" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="event-detail-2__share-link" aria-label="LinkedIn">
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="event-detail-2__share-link" aria-label="YouTube">
+                <i class="bi bi-youtube" aria-hidden="true"></i>
+              </a>
+              <button type="button" class="event-detail-2__share-btn">
+                <i class="bi bi-link-45deg" aria-hidden="true"></i>
+                <span>421</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Sidebar -->
+        <aside class="event-detail-2__sidebar">
+          <!-- Organizer Info Container -->
+          <div class="event-detail-2__organizer-section">
+            <h2 class="event-detail-2__organizer-title">주최</h2>
+            <div class="event-detail-2__organizer-info">
+              <div class="event-detail-2__organizer-avatar">
+                <img src="https://demo.wakit.org/img/samples/photo-1494790108377-be9c29b29330.png" alt="이미지">
+                <div class="event-detail-2__organizer-badge"></div>
+              </div>
+              <div class="event-detail-2__organizer-name">크리에이티브랩</div>
+            </div>
+          </div>
+
+          <!-- Location Section -->
+          <div class="event-detail-2__location-section">
+            <h2 class="event-detail-2__location-title">위치</h2>
+            <div class="event-detail-2__map-container">
+              <div class="event-detail-2__map">
+                <iframe 
+                  src="https://www.google.com/maps?q=서울특별시+샘플구+샘플로+123&hl=ko&z=15&output=embed"
+                  width="100%"
+                  height="100%"
+                  style="border:0;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="지도">
+                </iframe>
+                <div class="event-detail-2__map-marker"></div>
+              </div>
+              <p class="event-detail-2__location-address">단순한 서비스를 넘어 성장의 동반자가 되겠습니다.</p>
+            </div>
+          </div>
+
+          <!-- Upcoming Events Section -->
+          <div class="event-detail-2__upcoming-section">
+            <div class="event-detail-2__upcoming-header">
+              <h2 class="event-detail-2__upcoming-title">혁신적인 접근</h2>
+              <a href="event-list-1.html" class="btn btn--ghost btn--m">더 보기</a>
+            </div>
+            
+            <div class="event-detail-2__upcoming-list">
+              <!-- Upcoming Event 1 -->
+              <article class="event-detail-2__upcoming-card">
+                <div class="event-detail-2__upcoming-header-row">
+                  <div class="event-detail-2__upcoming-details">
+                    <h3 class="event-detail-2__upcoming-card-title">창의적인 해결책</h3>
+                    <div class="event-detail-2__upcoming-card-date">2024년 1월 20일 (토)</div>
+                  </div>
+                  <button type="button" class="event-detail-2__upcoming-more-btn" aria-label="더보기">
+                    <i class="bi bi-three-dots" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <p class="event-detail-2__upcoming-attendees">364명이 참석 예정</p>
+                <div class="event-detail-2__upcoming-info">
+                  <div class="event-detail-2__upcoming-info-item">
+                    <i class="bi bi-clock event-detail-2__upcoming-info-icon" aria-hidden="true"></i>
+                    <span>고객 중심 서비스</span>
+                  </div>
+                  <div class="event-detail-2__upcoming-info-item">
+                    <i class="bi bi-geo-alt event-detail-2__upcoming-info-icon" aria-hidden="true"></i>
+                    <span>지속 가능한 성장</span>
+                  </div>
+                  <div class="event-detail-2__upcoming-host">
+                    <span class="event-detail-2__upcoming-host-label">주최</span>
+                    <span class="event-detail-2__upcoming-host-name">맞춤형 솔루션</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Upcoming Event 2 -->
+              <article class="event-detail-2__upcoming-card">
+                <div class="event-detail-2__upcoming-header-row">
+                  <div class="event-detail-2__upcoming-details">
+                    <h3 class="event-detail-2__upcoming-card-title">전문적인 파트너십</h3>
+                    <div class="event-detail-2__upcoming-card-date">2024년 2월 10일 (토)</div>
+                  </div>
+                  <button type="button" class="event-detail-2__upcoming-more-btn" aria-label="더보기">
+                    <i class="bi bi-three-dots" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <p class="event-detail-2__upcoming-attendees">252명이 참석 예정</p>
+                <div class="event-detail-2__upcoming-info">
+                  <div class="event-detail-2__upcoming-info-item">
+                    <i class="bi bi-clock event-detail-2__upcoming-info-icon" aria-hidden="true"></i>
+                    <span>검증된 결과</span>
+                  </div>
+                  <div class="event-detail-2__upcoming-info-item">
+                    <i class="bi bi-geo-alt event-detail-2__upcoming-info-icon" aria-hidden="true"></i>
+                    <span>신속한 대응</span>
+                  </div>
+                  <div class="event-detail-2__upcoming-host">
+                    <span class="event-detail-2__upcoming-host-label">주최</span>
+                    <span class="event-detail-2__upcoming-host-name">세심한 관리</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Upcoming Event 3 -->
+              <article class="event-detail-2__upcoming-card">
+                <div class="event-detail-2__upcoming-header-row">
+                  <div class="event-detail-2__upcoming-details">
+                    <h3 class="event-detail-2__upcoming-card-title">신뢰할 수 있는 동반자</h3>
+                    <div class="event-detail-2__upcoming-card-date">2024년 3월 5일 (화)</div>
+                  </div>
+                  <button type="button" class="event-detail-2__upcoming-more-btn" aria-label="더보기">
+                    <i class="bi bi-three-dots" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <p class="event-detail-2__upcoming-attendees">164명이 참석 예정</p>
+                <div class="event-detail-2__upcoming-info">
+                  <div class="event-detail-2__upcoming-info-item">
+                    <i class="bi bi-clock event-detail-2__upcoming-info-icon" aria-hidden="true"></i>
+                    <span>전문적인 컨설팅</span>
+                  </div>
+                  <div class="event-detail-2__upcoming-info-item">
+                    <i class="bi bi-geo-alt event-detail-2__upcoming-info-icon" aria-hidden="true"></i>
+                    <span>체계적인 분석</span>
+                  </div>
+                  <div class="event-detail-2__upcoming-host">
+                    <span class="event-detail-2__upcoming-host-label">주최</span>
+                    <span class="event-detail-2__upcoming-host-name">효과적인 전략</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- On-Demand Webinars Section -->
+  <section class="event-detail-2__webinar-section">
+    <div class="container">
+      <h2 class="event-detail-2__webinar-title">미래를 향한 도전</h2>
+      
+      <div class="event-detail-2__webinar-grid">
+        <!-- Webinar Card 1 -->
+        <article class="event-detail-2__webinar-card">
+          <a href="views/event-detail-1.html" class="event-detail-2__webinar-link">
+            <div class="event-detail-2__webinar-image-wrapper">
+              <div class="event-detail-2__webinar-image">
+                <img src="https://demo.wakit.org/img/samples/photo-1511578314322-379afb476865.png" alt="이미지">
+                <div class="event-detail-2__webinar-overlay"></div>
+              </div>
+              <span class="badge badge--primary">웨비나</span>
+              <div class="event-detail-2__webinar-speakers">
+                <div class="event-detail-2__webinar-speaker">
+                  <div class="event-detail-2__webinar-speaker-avatar">
+                    <img src="https://demo.wakit.org/img/samples/photo-1494790108377-be9c29b29330.png" alt="김철수">
+                    <div class="event-detail-2__webinar-speaker-badge"></div>
+                  </div>
+                  <div class="event-detail-2__webinar-speaker-info">
+                    <div class="event-detail-2__webinar-speaker-name">김철수</div>
+                    <div class="event-detail-2__webinar-speaker-title">마케팅부장</div>
+                  </div>
+                </div>
+                <div class="event-detail-2__webinar-speaker">
+                  <div class="event-detail-2__webinar-speaker-avatar">
+                    <img src="https://demo.wakit.org/img/samples/photo-1500648767791-00dcc994a43e.png" alt="이영희">
+                    <div class="event-detail-2__webinar-speaker-badge"></div>
+                  </div>
+                  <div class="event-detail-2__webinar-speaker-info">
+                    <div class="event-detail-2__webinar-speaker-name">이영희</div>
+                    <div class="event-detail-2__webinar-speaker-title">프로젝트 매니저</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="event-detail-2__webinar-content">
+              <h3 class="event-detail-2__webinar-card-title">성공을 위한 파트너</h3>
+              <div class="event-detail-2__webinar-date">
+                <span class="event-detail-2__webinar-date-text">안정적인 운영</span>
+                <span class="event-detail-2__webinar-time-text">혁신적인 도구</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Webinar Card 2 -->
+        <article class="event-detail-2__webinar-card">
+          <a href="views/event-detail-1.html" class="event-detail-2__webinar-link">
+            <div class="event-detail-2__webinar-image-wrapper">
+              <div class="event-detail-2__webinar-image">
+                <img src="https://demo.wakit.org/img/samples/photo-1460925895917-afdab827c52f.png" alt="이미지">
+                <div class="event-detail-2__webinar-overlay"></div>
+              </div>
+              <span class="badge badge--primary">웨비나</span>
+              <div class="event-detail-2__webinar-speakers">
+                <div class="event-detail-2__webinar-speaker">
+                  <div class="event-detail-2__webinar-speaker-avatar">
+                    <img src="https://demo.wakit.org/img/samples/photo-1507003211169-0a1dd7228f2d.png" alt="박민수">
+                    <div class="event-detail-2__webinar-speaker-badge"></div>
+                  </div>
+                  <div class="event-detail-2__webinar-speaker-info">
+                    <div class="event-detail-2__webinar-speaker-name">박민수</div>
+                    <div class="event-detail-2__webinar-speaker-title">파트장</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="event-detail-2__webinar-content">
+              <h3 class="event-detail-2__webinar-card-title">가치 있는 선택</h3>
+              <div class="event-detail-2__webinar-date">
+                <span class="event-detail-2__webinar-date-text">효율적인 관리</span>
+                <span class="event-detail-2__webinar-time-text">체계적인 접근</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Webinar Card 3 -->
+        <article class="event-detail-2__webinar-card">
+          <a href="views/event-detail-1.html" class="event-detail-2__webinar-link">
+            <div class="event-detail-2__webinar-image-wrapper">
+              <div class="event-detail-2__webinar-image">
+                <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지">
+                <div class="event-detail-2__webinar-overlay"></div>
+              </div>
+              <span class="badge badge--primary">밋업</span>
+              <div class="event-detail-2__webinar-speakers">
+                <div class="event-detail-2__webinar-speaker">
+                  <div class="event-detail-2__webinar-speaker-avatar">
+                    <img src="https://demo.wakit.org/img/samples/photo-1438761681033-6461ffad8d80.png" alt="정수진">
+                    <div class="event-detail-2__webinar-speaker-badge"></div>
+                  </div>
+                  <div class="event-detail-2__webinar-speaker-info">
+                    <div class="event-detail-2__webinar-speaker-name">정수진</div>
+                    <div class="event-detail-2__webinar-speaker-title">영업부장</div>
+                  </div>
+                </div>
+                <div class="event-detail-2__webinar-speaker">
+                  <div class="event-detail-2__webinar-speaker-avatar">
+                    <img src="https://demo.wakit.org/img/samples/photo-1472099645785-5658abf4ff4e.png" alt="홍길동">
+                    <div class="event-detail-2__webinar-speaker-badge"></div>
+                  </div>
+                  <div class="event-detail-2__webinar-speaker-info">
+                    <div class="event-detail-2__webinar-speaker-name">홍길동</div>
+                    <div class="event-detail-2__webinar-speaker-title">품질관리부장</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="event-detail-2__webinar-content">
+              <h3 class="event-detail-2__webinar-card-title">새로운 시작을 함께해요</h3>
+              <div class="event-detail-2__webinar-date">
+                <span class="event-detail-2__webinar-date-text">전문적인 지원</span>
+                <span class="event-detail-2__webinar-time-text">혁신적인 방법</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<div data-include="../wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/header.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script src="js/event-detail-2.js"></script>
+<script data-spa-ignore>
+  Popup.init();
+</script>
+</html>

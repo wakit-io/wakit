@@ -1,0 +1,50 @@
+.explore-page { background: var(--color-bg-secondary); min-height: 100vh; padding-bottom: 80px; }
+
+.explore-search {
+  padding: 14px 20px; background: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky; top: 0; z-index: 20;
+}
+.explore-search__input {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--color-bg-tertiary); border-radius: 12px;
+  padding: 10px 14px;
+}
+.explore-search__input i { color: var(--color-text-tertiary); }
+.explore-search__input span { font-size: 0.9375rem; color: var(--color-text-tertiary); }
+
+.explore-chips {
+  display: flex; gap: 8px; padding: 12px 20px;
+  background: var(--color-bg-primary); border-bottom: 1px solid var(--color-border);
+  overflow-x: auto; scrollbar-width: none;
+}
+.explore-chips::-webkit-scrollbar { display: none; }
+.explore-chip {
+  flex-shrink: 0; padding: 6px 14px; border-radius: 20px; font-size: 0.8125rem; font-weight: 600;
+  border: 1.5px solid var(--color-border); background: none; color: var(--color-text-secondary); cursor: pointer;
+}
+.explore-chip.is-active { background: #6366f1; border-color: #6366f1; color: #fff; }
+
+.explore-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px; padding: 16px;
+}
+.explore-card {
+  border-radius: 16px; overflow: hidden;
+  background: var(--color-bg-primary); border: 1px solid var(--color-border);
+  text-decoration: none; color: inherit;
+}
+.explore-card__img {
+  width: 100%; aspect-ratio: 1/1;
+  background: var(--color-bg-tertiary);
+  display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
+}
+.explore-card__img--purple { background: linear-gradient(135deg, #eef2ff, #e0e7ff); }
+.explore-card__img--green  { background: linear-gradient(135deg, #ecfdf5, #d1fae5); }
+.explore-card__img--yellow { background: linear-gradient(135deg, #fffbeb, #fef3c7); }
+.explore-card__img--pink   { background: linear-gradient(135deg, #fdf2f8, #fce7f3); }
+.explore-card__img--blue   { background: linear-gradient(135deg, #eff6ff, #dbeafe); }
+.explore-card__img--red    { background: linear-gradient(135deg, #fff1f2, #ffe4e6); }
+.explore-card__body { padding: 10px 12px 12px; }
+.explore-card__title { font-size: 0.875rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 2px; }
+.explore-card__sub { font-size: 0.75rem; color: var(--color-text-tertiary); }

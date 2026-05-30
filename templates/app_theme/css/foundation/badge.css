@@ -1,0 +1,109 @@
+/**
+ * Foundation - Badge
+ * 뱃지 공통 스타일. color.css 변수 사용, 다크 모드는 [data-theme="dark"]에서 자동 대응.
+ *
+ * 사용 예:
+ *   <span class="badge badge--default">기본</span>
+ *   <span class="badge badge--primary">테마</span>
+ *   <span class="badge badge--outline">아웃라인</span>
+ *   <span class="badge badge--success">성공</span>
+ *   <span class="badge badge--s">작은 뱃지</span>
+ */
+
+/* ========== Base ========== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs, 6px);
+  box-sizing: border-box;
+  padding: var(--spacing-xs, 4px) var(--spacing-md, 12px);
+  border-radius: var(--radius-xl, 24px);
+  font-family: var(--font-family-primary);
+  font-size: var(--caption-s-font-size, 12px);
+  font-weight: 400;
+  line-height: var(--caption-s-line-height, 16px);
+  letter-spacing: 0;
+  border: none;
+  white-space: nowrap;
+}
+
+/* 기본(미지정) 시 default 스타일 */
+.badge:not([class*="badge--"]) {
+  background-color: var(--color-badge-bg);
+  color: var(--color-badge-text);
+}
+
+.badge i,
+.badge svg {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== Variant: Default (정보 톤) ========== */
+.badge--default {
+  background-color: var(--color-badge-bg);
+  color: var(--color-badge-text);
+}
+
+/* ========== Variant: Primary (테마 컬러) ========== */
+.badge--primary {
+  background-color: var(--color-badge-primary-bg);
+  color: var(--color-badge-primary-text);
+}
+
+/* ========== Variant: Outline ========== */
+.badge--outline {
+  background-color: transparent;
+  color: var(--color-badge-outline-text);
+  border: 1px solid var(--color-badge-outline-border);
+}
+
+/* ========== Variant: Success ========== */
+.badge--success {
+  background-color: var(--color-badge-success-bg);
+  color: var(--color-badge-success-text);
+}
+
+/* ========== Variant: Error ========== */
+.badge--error {
+  background-color: var(--color-badge-error-bg);
+  color: var(--color-badge-error-text);
+}
+
+/* ========== Variant: Warning ========== */
+.badge--warning {
+  background-color: var(--color-badge-warning-bg);
+  color: var(--color-badge-warning-text);
+}
+
+/* ========== Size: S ========== */
+.badge--s {
+  padding: 2px var(--spacing-sm, 8px);
+  font-size: 11px;
+  line-height: 14px;
+  border-radius: var(--radius-lg, 12px);
+}
+
+.badge--s i,
+.badge--s svg {
+  font-size: 12px;
+  width: 12px;
+  height: 12px;
+}
+
+/* ========== Size: M (기본과 동일, 명시용) ========== */
+.badge--m {
+  padding: var(--spacing-xs, 4px) var(--spacing-md, 12px);
+  font-size: var(--caption-s-font-size, 12px);
+  line-height: var(--caption-s-line-height, 16px);
+}
+
+.badge--m i,
+.badge--m svg {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}

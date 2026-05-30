@@ -1,0 +1,179 @@
+const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const Terser = require('terser');
+const JavaScriptObfuscator = require('javascript-obfuscator');
+
+// Minimal plugin to watch external directories so webpack rebuilds on change
+class WatchExternalFilesPlugin {
+  constructor(paths) { this.paths = paths || []; }
+  apply(compiler) {
+    compiler.hooks.afterCompile.tap('WatchExternalFilesPlugin', (compilation) => {
+      this.paths.forEach((p) => {
+        try { compilation.contextDependencies.add(p); } catch (_) {}
+      });
+    });
+  }
+}
+
+module.exports = (env = {}, argv = {}) => {
+  const template = (env.template || process.env.TEMPLATE || 'blog').toString();
+  const templateSrc = path.resolve(__dirname, `templates/${template}`);
+  const isServe = process.env.WEBPACK_SERVE === 'true' || process.env.WEBPACK_SERVE === '1' || argv.devServer === true;
+
+  return {
+    mode: process.env.NODE_ENV || 'production',
+    entry: path.resolve(__dirname, 'build/noop.js'),
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'noop.js',
+      clean: true,
+    },
+    watchOptions: {
+      aggregateTimeout: 100,
+      ignored: /node_modules/,
+    },
+    plugins: (
+      isServe
+        ? [
+            // Ensure changes in wakit/ and current template trigger reload
+            new WatchExternalFilesPlugin([
+              path.resolve(__dirname, 'wakit'),
+              templateSrc,
+            ]),
+          ]
+        : [
+            new CopyWebpackPlugin({
+              patterns: [
+                // Minify + obfuscate wakit JS and place under the selected template's web/public/wakit/
+                {
+                  from: 'wakit/js/*.js',
+                  to: path.resolve(__dirname, `templates/${template}/web/public/wakit/js/[name][ext]`),
+                  transform: async (content, absoluteFrom) => {
+                    const filename = path.basename(absoluteFrom);
+                    const isEsModule = filename === 'wakit.js';
+
+                    // 1. Terser: dead code elimination + variable mangling
+                    const terserResult = await Terser.minify(content.toString(), {
+                      module: isEsModule,
+                      compress: true,
+                      mangle: true,
+                    });
+                    const minified = terserResult.code || content.toString();
+
+                    // 2. javascript-obfuscator: string encryption + control flow obfuscation
+                    const obfuscated = JavaScriptObfuscator.obfuscate(minified, {
+                      compact: true,
+                      controlFlowFlattening: true,
+                      controlFlowFlatteningThreshold: 0.3,
+                      deadCodeInjection: false,
+                      debugProtection: false,
+                      identifierNamesGenerator: 'hexadecimal',
+                      numbersToExpressions: true,
+                      renameGlobals: false,
+                      rotateStringArray: true,
+                      selfDefending: false,
+                      shuffleStringArray: true,
+                      splitStrings: true,
+                      splitStringsChunkLength: 10,
+                      stringArray: true,
+                      stringArrayCallsTransform: true,
+                      stringArrayEncoding: ['base64'],
+                      stringArrayIndexShift: true,
+                      stringArrayRotate: true,
+                      stringArrayShuffle: true,
+                      stringArrayWrappersCount: 2,
+                      stringArrayWrappersChainedCalls: true,
+                      stringArrayWrappersParametersMaxCount: 4,
+                      stringArrayWrappersType: 'function',
+                      stringArrayThreshold: 0.75,
+                      transformObjectKeys: true,
+                      unicodeEscapeSequence: false,
+                      sourceType: isEsModule ? 'module' : 'script',
+                    });
+                    return obfuscated.getObfuscatedCode();
+                  },
+                },
+                // Copy other wakit assets under the selected template's web/public/wakit/
+                {
+                  from: 'wakit',
+                  to: path.resolve(__dirname, `templates/${template}/web/public/wakit`),
+                  globOptions: { ignore: ['**/js/*.js'] },
+                  noErrorOnMissing: true,
+                },
+                // Copy template files into web/public/app/ and rewrite wakit paths
+                {
+                  from: templateSrc,
+                  to: path.resolve(__dirname, `templates/${template}/web/public/app`),
+                  // Exclude the web/ subfolder itself from being copied into app/
+                  globOptions: { ignore: [`${templateSrc}/web/**`, `${templateSrc}/dist/**`] },
+                  transform: (content, absoluteFrom) => {
+                    if (/\.html?$/i.test(absoluteFrom)) {
+                      const html = content.toString();
+                      // compute relative depth from template root to file dir
+                      const relFromTemplate = path.relative(templateSrc, path.dirname(absoluteFrom));
+                      const depth = relFromTemplate.split(path.sep).filter(Boolean).length;
+                      // +1 for the extra app/ subdirectory prefix
+                      const relPrefix = `${'../'.repeat(depth + 1)}wakit/`;
+                      // replace all variants of wakit prefix regardless of leading quotes
+                      const pattern = /(?:^|[\s=:\(\[\{\"\'`])(\/|\.\/|(?:\.\.\/)+)?wakit\//g;
+                      return html.replace(pattern, (m) => m.replace(/(\/|\.\/|(?:\.\.\/)+)?wakit\//, relPrefix));
+                    }
+                    return content;
+                  },
+                },
+              ],
+            }),
+            new WatchExternalFilesPlugin([
+              path.resolve(__dirname, 'wakit'),
+              templateSrc,
+            ]),
+          ]
+    ),
+    devServer: {
+      static: [
+        // Serve wakit source directly at /wakit during dev
+        { directory: path.resolve(__dirname, 'wakit'), publicPath: '/wakit', watch: true },
+        // Serve template source at /app during dev
+        { directory: templateSrc, publicPath: '/app', watch: true },
+        // Also serve dist as fallback
+        { directory: path.resolve(__dirname, 'dist'), watch: true },
+      ],
+      port: 5173,
+      open: ['/app/app.html'],
+      compress: true,
+      host: '0.0.0.0',
+      allowedHosts: 'all',
+      devMiddleware: { writeToDisk: true },
+      liveReload: true,
+      hot: false,
+      watchFiles: {
+        paths: [
+          path.resolve(__dirname, 'wakit/**/*'),
+          path.resolve(__dirname, 'templates/**/*'),
+          path.resolve(__dirname, 'webpack.config.js'),
+        ],
+        options: { usePolling: true, interval: 300 },
+      },
+      historyApiFallback: {
+        rewrites: [
+          // /app/views/foo -> /app/views/foo.html
+          {
+            from: /^\/app\/views\/([^/?#]+)$/,
+            to: (ctx) => `/app/views/${ctx.match[1]}.html`,
+          },
+          // /app -> /app/app.html
+          {
+            from: /^\/app$/,
+            to: '/app/app.html',
+          },
+        ],
+      },
+      headers: {
+        // allow CORS if needed and ensure correct content types
+        'Access-Control-Allow-Origin': '*',
+      },
+    },
+  };
+};
+
+

@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Portfolio list 2</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- Blog Styles -->
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/portfolio-list-2.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="portfolio-list-2">
+  <!-- Breadcrumbs Header Section -->
+  <section class="portfolio-list-2__breadcrumbs-section">
+    <div class="container">
+      <nav class="portfolio-list-2__breadcrumbs" aria-label="Breadcrumb">
+        <ol class="breadcrumbs">
+          <li class="breadcrumbs__item">
+            <a href="/" class="breadcrumbs__link">
+              <i class="bi bi-house" aria-hidden="true"></i>
+              <span>홈</span>
+            </a>
+          </li>
+          <li class="breadcrumbs__item">
+            <i class="bi bi-chevron-right breadcrumbs__separator" aria-hidden="true"></i>
+            <a href="#" class="breadcrumbs__link">포트폴리오</a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Header Section (제목만) -->
+  <section class="portfolio-list-2__header">
+    <div class="container">
+      <h1 class="portfolio-list-2__title">포트폴리오</h1>
+    </div>
+  </section>
+
+  <!-- 탭 + 그리드: 한 래퍼로 감싸서 sticky containing block이 페이지 전체 높이가 되도록 -->
+  <div class="portfolio-list-2__tabs-and-content">
+    <nav class="portfolio-list-2__tabs" aria-label="Portfolio categories">
+      <div class="portfolio-list-2__tabs-inner container">
+        <button type="button" class="portfolio-list-2__tab portfolio-list-2__tab--active" aria-label="All Works" aria-current="page">All Works</button>
+        <button type="button" class="portfolio-list-2__tab" aria-label="UX/UI">UX/UI</button>
+        <button type="button" class="portfolio-list-2__tab" aria-label="Graphic Design">그래픽 디자인</button>
+        <button type="button" class="portfolio-list-2__tab" aria-label="Brading">브랜딩</button>
+        <button type="button" class="portfolio-list-2__tab" aria-label="Motion Design">모션 디자인</button>
+      </div>
+    </nav>
+
+    <!-- Portfolio Grid Section -->
+    <section class="portfolio-list-2__grid-section">
+    <div class="container">
+      <div class="portfolio-list-2__grid">
+        <!-- Portfolio Item 1 - Tall -->
+        <article class="portfolio-list-2__item portfolio-list-2__item--tall">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-2__item-link">
+            <figure class="portfolio-list-2__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1467232004584-a241de8bcf5d.png" alt="이미지" class="portfolio-list-2__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-2__item-image-placeholder" style="display: none;"></div>
+            </figure>
+          </a>
+        </article>
+
+        <!-- Portfolio Item 2 - Square -->
+        <article class="portfolio-list-2__item portfolio-list-2__item--square">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-2__item-link">
+            <figure class="portfolio-list-2__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1498050108023-c5249f4df085.png" alt="이미지" class="portfolio-list-2__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-2__item-image-placeholder" style="display: none;"></div>
+            </figure>
+          </a>
+        </article>
+
+        <!-- Portfolio Item 3 - Tall -->
+        <article class="portfolio-list-2__item portfolio-list-2__item--tall">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-2__item-link">
+            <figure class="portfolio-list-2__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1551650975-87deedd944c3.png" alt="이미지" class="portfolio-list-2__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-2__item-image-placeholder" style="display: none;"></div>
+            </figure>
+          </a>
+        </article>
+
+        <!-- Portfolio Item 4 - Square -->
+        <article class="portfolio-list-2__item portfolio-list-2__item--square">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-2__item-link">
+            <figure class="portfolio-list-2__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1555066931-4365d14bab8c.png" alt="이미지" class="portfolio-list-2__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-2__item-image-placeholder" style="display: none;"></div>
+            </figure>
+          </a>
+        </article>
+
+        <!-- Portfolio Item 5 - Tall -->
+        <article class="portfolio-list-2__item portfolio-list-2__item--tall">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-2__item-link">
+            <figure class="portfolio-list-2__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지" class="portfolio-list-2__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-2__item-image-placeholder" style="display: none;"></div>
+            </figure>
+          </a>
+        </article>
+
+        <!-- Portfolio Item 6 - Square -->
+        <article class="portfolio-list-2__item portfolio-list-2__item--square">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-2__item-link">
+            <figure class="portfolio-list-2__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1551650975-87deedd944c3.png" alt="이미지" class="portfolio-list-2__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-2__item-image-placeholder" style="display: none;"></div>
+            </figure>
+          </a>
+        </article>
+
+        <!-- Portfolio Item 7 - Tall -->
+        <article class="portfolio-list-2__item portfolio-list-2__item--tall">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-2__item-link">
+            <figure class="portfolio-list-2__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1555066931-4365d14bab8c.png" alt="이미지" class="portfolio-list-2__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-2__item-image-placeholder" style="display: none;"></div>
+            </figure>
+          </a>
+        </article>
+
+        <!-- Portfolio Item 8 - Square -->
+        <article class="portfolio-list-2__item portfolio-list-2__item--square">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-2__item-link">
+            <figure class="portfolio-list-2__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지" class="portfolio-list-2__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-2__item-image-placeholder" style="display: none;"></div>
+            </figure>
+          </a>
+        </article>
+
+        <!-- Portfolio Item 9 - Tall -->
+        <article class="portfolio-list-2__item portfolio-list-2__item--tall">
+          <a href="views/portfolio-detail-1.html" class="portfolio-list-2__item-link">
+            <figure class="portfolio-list-2__item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1467232004584-a241de8bcf5d.png" alt="이미지" class="portfolio-list-2__item-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="portfolio-list-2__item-image-placeholder" style="display: none;"></div>
+            </figure>
+          </a>
+        </article>
+      </div>
+
+      <!-- Load More Button -->
+      <div class="portfolio-list-2__load-more">
+        <button type="button" class="portfolio-list-2__load-more-button btn btn--secondary btn--m">
+          <span>더보기</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /.portfolio-list-2__tabs-and-content -->
+
+  <!-- CTA Banner Section -->
+  <section class="portfolio-list-2__cta">
+    <div class="container">
+      <div class="portfolio-list-2__cta-content">
+        <div class="portfolio-list-2__cta-background">
+          <img src="https://demo.wakit.org/img/samples/photo-1506905925346-21bda4d32df4.png" alt="이미지" class="portfolio-list-2__cta-background-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <div class="portfolio-list-2__cta-background-placeholder" style="display: none;"></div>
+        </div>
+        <div class="portfolio-list-2__cta-text">
+          <h2 class="portfolio-list-2__cta-title">당신의 꿈을<br>현실로 만드세요!</h2>
+          <p class="portfolio-list-2__cta-description">전문가와 함께 당신의 아이디어를 실현해 보세요.<br>맞춤형 솔루션을 제공합니다.</p>
+          <a href="#" class="btn btn--primary btn--m">
+            <span>혁신적인 방법</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script>
+  Popup.init();
+  console.log('home page script executed');
+
+  // Masonry Layout + 더 불러오기
+  (function() {
+    const grid = document.querySelector('.portfolio-list-2__grid');
+    const loadMoreBtn = document.querySelector('.portfolio-list-2__load-more-button');
+    if (!grid) return;
+
+    // 추가 로드용 아이템 데이터 (tall: 384x486, square: 384x384)
+    const MORE_ITEMS = [
+      { type: 'tall', src: 'img/samples/photo-1547658719-da2b51169166.png' },
+      { type: 'square', src: 'img/samples/photo-1517694712202-14dd9538aa97.png' },
+      { type: 'tall', src: 'img/samples/photo-1517180102446-f3ece451e9d8.png' },
+      { type: 'square', src: 'img/samples/photo-1504384308090-c894fdcc538d.png' },
+      { type: 'tall', src: 'img/samples/photo-1522071820081-009f0129c71c.png' },
+      { type: 'square', src: 'img/samples/photo-1523240795612-9a054b0db644.png' }
+    ];
+    let moreItemsIndex = 0;
+
+    function createItemElement(data) {
+      const article = document.createElement('article');
+      article.className = 'portfolio-list-2__item portfolio-list-2__item--' + data.type;
+      article.innerHTML =
+        '<a href="views/portfolio-detail-1.html" class="portfolio-list-2__item-link">' +
+          '<figure class="portfolio-list-2__item-image">' +
+            '<img src="' + data.src + '" alt="이미지" class="portfolio-list-2__item-image-img" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'block\';">' +
+            '<div class="portfolio-list-2__item-image-placeholder" style="display: none;"></div>' +
+          '</figure>' +
+        '</a>';
+      return article;
+    }
+
+    function addMoreItems() {
+      let count = 3;
+      for (let i = 0; i < count; i++) {
+        const data = MORE_ITEMS[moreItemsIndex % MORE_ITEMS.length];
+        moreItemsIndex++;
+        grid.appendChild(createItemElement(data));
+      }
+      // 새 이미지 로드 후 masonry 재계산
+      setTimeout(function() { waitForImages(); }, 0);
+    }
+
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', function() {
+        addMoreItems();
+      });
+    }
+
+    function getColumnCount() {
+      if (window.innerWidth <= 768) return 2;
+      if (window.innerWidth <= 1024) return 2;
+      return 3;
+    }
+
+    function getGap() {
+      return window.innerWidth <= 768 ? 16 : 24; // spacing-md or spacing-lg
+    }
+
+    function initMasonry() {
+      const items = Array.from(grid.querySelectorAll('.portfolio-list-2__item'));
+      if (items.length === 0) return;
+
+      const columnCount = getColumnCount();
+      const gap = getGap();
+      
+      grid.setAttribute('data-columns', columnCount);
+      grid.style.height = 'auto';
+
+      // 각 컬럼의 높이를 추적
+      const columnHeights = new Array(columnCount).fill(0);
+      const itemWidth = `calc((100% - ${gap * (columnCount - 1)}px) / ${columnCount})`;
+
+      // 그리드 너비 계산
+      const gridWidth = grid.offsetWidth;
+      const computedItemWidth = (gridWidth - (gap * (columnCount - 1))) / columnCount;
+
+      items.forEach((item, index) => {
+        // 가장 낮은 컬럼 찾기
+        const shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
+        
+        // 아이템 위치 설정
+        const left = shortestColumnIndex * (100 / columnCount);
+        const leftOffset = shortestColumnIndex * gap;
+        const top = columnHeights[shortestColumnIndex];
+        
+        item.style.left = `calc(${left}% + ${leftOffset}px)`;
+        item.style.top = top + 'px';
+        item.style.width = itemWidth;
+        
+        // 컬럼 높이 업데이트
+        // 먼저 실제 높이를 측정 시도
+        let itemHeight = item.offsetHeight;
+        
+        // 높이가 0이거나 측정되지 않은 경우 aspect-ratio로 계산
+        if (itemHeight === 0 || !itemHeight) {
+          const image = item.querySelector('.portfolio-list-2__item-image-img');
+          
+          if (image && image.complete && image.naturalHeight > 0 && image.naturalWidth > 0) {
+            // 이미지가 로드된 경우 실제 비율 사용
+            const aspectRatio = image.naturalWidth / image.naturalHeight;
+            itemHeight = computedItemWidth / aspectRatio;
+          } else if (item.classList.contains('portfolio-list-2__item--tall')) {
+            // tall 아이템: 384/486 비율
+            itemHeight = computedItemWidth * (486 / 384);
+          } else {
+            // square 아이템: 1:1 비율
+            itemHeight = computedItemWidth;
+          }
+        }
+        
+        columnHeights[shortestColumnIndex] += itemHeight + gap;
+      });
+
+      // 그리드 높이 설정
+      const maxHeight = Math.max(...columnHeights);
+      grid.style.height = maxHeight + 'px';
+    }
+
+    // 이미지 로드 후 재계산
+    function waitForImages() {
+      const images = grid.querySelectorAll('.portfolio-list-2__item-image-img');
+      let loadedCount = 0;
+      const totalImages = images.length;
+
+      if (totalImages === 0) {
+        setTimeout(initMasonry, 100);
+        return;
+      }
+
+      images.forEach(img => {
+        if (img.complete) {
+          loadedCount++;
+        } else {
+          img.addEventListener('load', function() {
+            loadedCount++;
+            if (loadedCount === totalImages) {
+              setTimeout(initMasonry, 100);
+            }
+          }, { once: true });
+        }
+      });
+
+      if (loadedCount === totalImages) {
+        setTimeout(initMasonry, 100);
+      }
+    }
+
+    // 초기 실행
+    waitForImages();
+
+    // 리사이즈 이벤트 핸들러 (디바운스)
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        waitForImages();
+      }, 250);
+    });
+  })();
+</script>
+
+</html>

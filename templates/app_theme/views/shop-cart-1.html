@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>장바구니</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- Blog Styles -->
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/shop-cart-1.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="shop-cart-1">
+  <!-- Page Header Section -->
+  <section class="page-header-section">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs">
+        <ol class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <i class="bi bi-house" aria-hidden="true"></i>
+            <a href="#" class="breadcrumbs__link">홈</a>
+          </li>
+          <li class="breadcrumbs__item breadcrumbs__item--current">
+            <i class="bi bi-chevron-right breadcrumbs__separator" aria-hidden="true"></i>
+            <span class="breadcrumbs__text">장바구니</span>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Page Header Content -->
+      <div class="page-header-content mt-50">
+        <h1 class="page-header-title">장바구니</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Content Section -->
+  <section class="cart-content-section">
+    <div class="container">
+      <div class="cart-content-wrapper">
+        <!-- Left Column: Cart Items -->
+        <div class="cart-items-column">
+          <!-- Delivery Tabs -->
+          <div class="delivery-tabs">
+            <button type="button" class="delivery-tab delivery-tab--active">
+              <div class="delivery-tab__icon">
+                <i class="bi bi-truck"></i>
+              </div>
+              <div class="delivery-tab__content">
+                <span class="delivery-tab__title">배송</span>
+                <span class="delivery-tab__description">일반배송</span>
+              </div>
+            </button>
+            <button type="button" class="delivery-tab">
+              <div class="delivery-tab__icon">
+                <i class="bi bi-shop"></i>
+              </div>
+              <div class="delivery-tab__content">
+                <span class="delivery-tab__title">픽업</span>
+                <span class="delivery-tab__description">매장픽업</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- Delivery Address -->
+          <div class="delivery-address">
+            <div class="delivery-address__content">
+              <div class="delivery-address__header">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                <div class="delivery-address__body">
+                  <span class="delivery-address__title">배송지</span>
+                  <span class="delivery-address__full">서울시 강남구 테헤란로 123, 4층 (우편번호 06134)</span>
+                  <p class="delivery-address__memo">배송 시 수령인 정보와 동일하게 배송됩니다.</p>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="delivery-address__change-btn">변경</button>
+          </div>
+
+          <!-- Cart Table -->
+          <div class="cart-table">
+            <div class="cart-table__header">
+              <div class="cart-table__header-cell cart-table__header-cell--product">
+                <label class="cart-checkbox">
+                  <input type="checkbox" class="cart-checkbox__input" checked>
+                  <span class="cart-checkbox__custom"></span>
+                  <span class="cart-checkbox__text">전체선택</span>
+                </label>
+              </div>
+              <button type="button" class="cart-table__header-delete">선택 삭제</button>
+              <div class="cart-table__header-cell cart-table__header-cell--price">가격</div>
+              <div class="cart-table__header-cell cart-table__header-cell--quantity">수량</div>
+              <div class="cart-table__header-cell cart-table__header-cell--total">합계</div>
+              <div class="cart-table__header-cell cart-table__header-cell--action"></div>
+            </div>
+            <div class="cart-table__body">
+              <!-- Cart Item 1 -->
+              <div class="cart-item">
+                <div class="cart-item__product">
+                  <label class="cart-checkbox">
+                    <input type="checkbox" class="cart-checkbox__input" checked>
+                    <span class="cart-checkbox__custom"></span>
+                  </label>
+                  <img src="https://demo.wakit.org/img/samples/photo-1556228578-0d85b1a4d571.png" alt="퍼프 슬리브 블라우스" class="cart-item__image">
+                  <div class="cart-item__details">
+                    <h3 class="cart-item__name">퍼프 슬리브 블라우스</h3>
+                    <div class="cart-item__option">
+                      <span class="cart-item__option-label">옵션</span>
+                      <span class="cart-item__option-value">아이보리 / M</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-item__price">
+                  <div class="cart-item__price-main">46,700원</div>
+                  <div class="cart-item__price-discount">-2,000원 할인</div>
+                </div>
+                <div class="cart-item__quantity">
+                  <div class="quantity-stepper">
+                    <button type="button" class="quantity-stepper__btn quantity-stepper__btn--decrement">
+                      <i class="bi bi-dash"></i>
+                    </button>
+                    <input type="number" class="quantity-stepper__input" value="1" min="1">
+                    <button type="button" class="quantity-stepper__btn quantity-stepper__btn--increment">
+                      <i class="bi bi-plus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="cart-item__total">46,700원</div>
+                <button type="button" class="cart-item__delete">
+                  <i class="bi bi-x-lg"></i>
+                </button>
+              </div>
+
+              <!-- Cart Item 2 -->
+              <div class="cart-item">
+                <div class="cart-item__product">
+                  <label class="cart-checkbox">
+                    <input type="checkbox" class="cart-checkbox__input" checked>
+                    <span class="cart-checkbox__custom"></span>
+                  </label>
+                  <img src="https://demo.wakit.org/img/samples/photo-1571875257727-256c39da42af.png" alt="클래식 울코트" class="cart-item__image">
+                  <div class="cart-item__details">
+                    <h3 class="cart-item__name">클래식 울코트</h3>
+                    <div class="cart-item__option">
+                      <span class="cart-item__option-label">옵션</span>
+                      <span class="cart-item__option-value">그레이 / L</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-item__price">
+                  <div class="cart-item__price-main">57,800원</div>
+                  <div class="cart-item__price-discount">-2,000원 할인</div>
+                </div>
+                <div class="cart-item__quantity">
+                  <div class="quantity-stepper">
+                    <button type="button" class="quantity-stepper__btn quantity-stepper__btn--decrement">
+                      <i class="bi bi-dash"></i>
+                    </button>
+                    <input type="number" class="quantity-stepper__input" value="1" min="1">
+                    <button type="button" class="quantity-stepper__btn quantity-stepper__btn--increment">
+                      <i class="bi bi-plus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="cart-item__total">57,800원</div>
+                <button type="button" class="cart-item__delete">
+                  <i class="bi bi-x-lg"></i>
+                </button>
+              </div>
+
+              <!-- Cart Item 3 -->
+              <div class="cart-item">
+                <div class="cart-item__product">
+                  <label class="cart-checkbox">
+                    <input type="checkbox" class="cart-checkbox__input" checked>
+                    <span class="cart-checkbox__custom"></span>
+                  </label>
+                  <img src="https://demo.wakit.org/img/samples/photo-1612817288484-6f916006741a.png" alt="플라워 프린트 원피스" class="cart-item__image">
+                  <div class="cart-item__details">
+                    <h3 class="cart-item__name">플라워 프린트 원피스</h3>
+                    <div class="cart-item__option">
+                      <span class="cart-item__option-label">옵션</span>
+                      <span class="cart-item__option-value">핑크 / M</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-item__price">
+                  <div class="cart-item__price-main">31,300원</div>
+                  <div class="cart-item__price-discount">-2,000원 할인</div>
+                </div>
+                <div class="cart-item__quantity">
+                  <div class="quantity-stepper">
+                    <button type="button" class="quantity-stepper__btn quantity-stepper__btn--decrement">
+                      <i class="bi bi-dash"></i>
+                    </button>
+                    <input type="number" class="quantity-stepper__input" value="2" min="1">
+                    <button type="button" class="quantity-stepper__btn quantity-stepper__btn--increment">
+                      <i class="bi bi-plus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="cart-item__total">62,600원</div>
+                <button type="button" class="cart-item__delete">
+                  <i class="bi bi-x-lg"></i>
+                </button>
+              </div>
+
+              <!-- Cart Item 4 -->
+              <div class="cart-item">
+                <div class="cart-item__product">
+                  <label class="cart-checkbox">
+                    <input type="checkbox" class="cart-checkbox__input" checked>
+                    <span class="cart-checkbox__custom"></span>
+                  </label>
+                  <img src="https://demo.wakit.org/img/samples/photo-1620916566398-39f1143ab7be.png" alt="와이드 슬랙스" class="cart-item__image">
+                  <div class="cart-item__details">
+                    <h3 class="cart-item__name">와이드 슬랙스</h3>
+                    <div class="cart-item__option">
+                      <span class="cart-item__option-label">옵션</span>
+                      <span class="cart-item__option-value">네이비 / 28</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-item__price">
+                  <div class="cart-item__price-main">22,000원</div>
+                  <div class="cart-item__price-discount">-2,000원 할인</div>
+                </div>
+                <div class="cart-item__quantity">
+                  <div class="quantity-stepper">
+                    <button type="button" class="quantity-stepper__btn quantity-stepper__btn--decrement">
+                      <i class="bi bi-dash"></i>
+                    </button>
+                    <input type="number" class="quantity-stepper__input" value="2" min="1">
+                    <button type="button" class="quantity-stepper__btn quantity-stepper__btn--increment">
+                      <i class="bi bi-plus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="cart-item__total">44,000원</div>
+                <button type="button" class="cart-item__delete">
+                  <i class="bi bi-x-lg"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cart Notes -->
+          <div class="cart-notes">
+            <ul class="cart-notes__list">
+              <li class="cart-notes__item">장바구니에 최대 200개의 상품을 담을 수 있습니다.</li>
+              <li class="cart-notes__item">장바구니 상품은 최대 90일간 저장됩니다.</li>
+              <li class="cart-notes__item">장바구니에 담긴 상품은 옵션 또는 추가상품 단위로 최대 100개의 상품만 동시 주문할 수 있습니다.</li>
+              <li class="cart-notes__item">가격, 옵션 등 정보가 변경된 경우 주문이 불가할 수 있습니다.</li>
+              <li class="cart-notes__item">일부 상품의 경우 카드 할부기간이 카드사 제공 기간보다 적게 제공될 수 있습니다.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Column: Order Summary (Sticky on PC) -->
+        <div class="order-summary-column">
+          <div class="order-summary">
+            <h2 class="order-summary__title">주문 요약</h2>
+            <div class="order-summary__list">
+              <div class="order-summary__item">
+                <span class="order-summary__label">상품금액</span>
+                <span class="order-summary__value">215,100원</span>
+              </div>
+              <div class="order-summary__item">
+                <span class="order-summary__label">할인</span>
+                <span class="order-summary__value order-summary__value--discount">-4,000원</span>
+              </div>
+              <div class="order-summary__item">
+                <span class="order-summary__label">배송비</span>
+                <span class="order-summary__value">무료</span>
+              </div>
+            </div>
+            <div class="order-summary__alert">
+              <p>3만원 이상 구매 시 배송비가 무료입니다.</p>
+            </div>
+            <div class="order-summary__total">
+              <span class="order-summary__total-label">총 결제금액</span>
+              <span class="order-summary__total-value">211,100원</span>
+            </div>
+            <div class="order-summary__actions">
+              <button type="button" class="order-summary__btn order-summary__btn--secondary">선물하기</button>
+              <button type="button" class="order-summary__btn order-summary__btn--primary">결제 진행하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended Products Section -->
+  <section class="recommended-products-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header__content">
+          <h2 class="section-header__title">이 상품은 어때요?</h2>
+        </div>
+        <div class="carousel-controls">
+          <button type="button" class="carousel-control carousel-control--prev">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <button type="button" class="carousel-control carousel-control--next">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="recommended-products-list">
+        <div class="recommended-products-list__inner">
+        <!-- Recommended Product 1 -->
+        <div class="recommended-product">
+          <img src="https://demo.wakit.org/img/samples/photo-1612817288484-6f916006741a.png" alt="린넨 셔츠" class="recommended-product__image">
+          <div class="recommended-product__details">
+            <div class="recommended-product__price-row">
+              <span class="recommended-product__discount">12%</span>
+              <span class="recommended-product__price">35,200원</span>
+            </div>
+            <h3 class="recommended-product__name">린넨 셔츠</h3>
+            <button type="button" class="recommended-product__add-btn">장바구니 추가</button>
+          </div>
+        </div>
+        <!-- Recommended Product 2 -->
+        <div class="recommended-product">
+          <img src="https://demo.wakit.org/img/samples/photo-1571875257727-256c39da42af.png" alt="트렌치 코트" class="recommended-product__image">
+          <div class="recommended-product__details">
+            <div class="recommended-product__price-row">
+              <span class="recommended-product__discount">33%</span>
+              <span class="recommended-product__price">26,950원</span>
+            </div>
+            <h3 class="recommended-product__name">트렌치 코트</h3>
+            <button type="button" class="recommended-product__add-btn">장바구니 추가</button>
+          </div>
+        </div>
+        <!-- Recommended Product 3 -->
+        <div class="recommended-product">
+          <img src="https://demo.wakit.org/img/samples/photo-1556228578-0d85b1a4d571.png" alt="퍼프 슬리브 블라우스" class="recommended-product__image">
+          <div class="recommended-product__details">
+            <div class="recommended-product__price-row">
+              <span class="recommended-product__discount">21%</span>
+              <span class="recommended-product__price">39,500원</span>
+            </div>
+            <h3 class="recommended-product__name">퍼프 슬리브 블라우스</h3>
+            <button type="button" class="recommended-product__add-btn">장바구니 추가</button>
+          </div>
+        </div>
+        <!-- Recommended Product 4 -->
+        <div class="recommended-product">
+          <img src="https://demo.wakit.org/img/samples/photo-1620916566398-39f1143ab7be.png" alt="와이드 슬랙스" class="recommended-product__image">
+          <div class="recommended-product__details">
+            <div class="recommended-product__price-row">
+              <span class="recommended-product__discount">46%</span>
+              <span class="recommended-product__price">21,600원</span>
+            </div>
+            <h3 class="recommended-product__name">와이드 슬랙스</h3>
+            <button type="button" class="recommended-product__add-btn">장바구니 추가</button>
+          </div>
+        </div>
+        <!-- Recommended Product 5 -->
+        <div class="recommended-product">
+          <img src="https://demo.wakit.org/img/samples/photo-1612817288484-6f916006741a.png" alt="니트 베스트" class="recommended-product__image">
+          <div class="recommended-product__details">
+            <div class="recommended-product__price-row">
+              <span class="recommended-product__discount">30%</span>
+              <span class="recommended-product__price">31,500원</span>
+            </div>
+            <h3 class="recommended-product__name">니트 베스트</h3>
+            <button type="button" class="recommended-product__add-btn">장바구니 추가</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/shop-cart-1.js"></script>
+<script data-spa-ignore>
+  Popup.init();
+</script>
+
+</html>

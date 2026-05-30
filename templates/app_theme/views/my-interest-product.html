@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>마이페이지 관심 상품</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- Blog Styles -->
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+</head>
+<body>
+
+<!-- Foundation Design Tokens -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css"> 
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/my-interest-store.css">
+<link rel="stylesheet" href="css/my-interest-product.css">
+
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+<main class="my-interest-product">
+
+
+  <!-- Tabs Section (모바일에서 상단 가로 스크롤) -->
+  <section class="my-interest-product__tabs-section">
+    <div class="my-interest-product__tabs">
+      <button type="button" class="my-interest-product__tab">
+        <span class="my-interest-product__tab-text">주문관리</span>
+      </button>
+      <button type="button" class="my-interest-product__tab my-interest-product__tab--active">
+        <span class="my-interest-product__tab-text">관심상품</span>
+        <span class="my-interest-product__tab-indicator"></span>
+      </button>
+      <button type="button" class="my-interest-product__tab">
+        <span class="my-interest-product__tab-text">리뷰작성</span>
+      </button>
+      <button type="button" class="my-interest-product__tab">
+        <span class="my-interest-product__tab-text">관심스토어</span>
+      </button>
+      <button type="button" class="my-interest-product__tab">
+        <span class="my-interest-product__tab-text">정산/수익</span>
+      </button>
+      <button type="button" class="my-interest-product__tab">
+        <span class="my-interest-product__tab-text">정기구독</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="my-interest-product__main-section">
+    <div class="container">
+      <div class="my-interest-product__layout">
+        <!-- Sidebar (PC용) -->
+        <aside class="my-interest-product__sidebar">
+          <div class="my-interest-product__sidebar-menu">
+            <div class="my-interest-product__sidebar-menu-title">마이메뉴</div>
+            <div class="my-interest-product__sidebar-menu-list">
+              <a href="my-dashboard.html" class="my-interest-product__sidebar-menu-item">
+                <span>주문관리</span>
+              </a>
+              <a href="my-order-history.html" class="my-interest-product__sidebar-menu-item">
+                <span>주문내역</span>
+              </a>
+              <a href="my-interest-product.html" class="my-interest-product__sidebar-menu-item my-interest-product__sidebar-menu-item--active">
+                <span>관심상품</span>
+              </a>
+              <a href="my-review-write.html" class="my-interest-product__sidebar-menu-item">
+                <span>리뷰작성</span>
+              </a>
+              <a href="my-interest-store.html" class="my-interest-product__sidebar-menu-item">
+                <span>관심스토어</span>
+              </a>
+              <a href="my-received.html" class="my-interest-product__sidebar-menu-item">
+                <span>정산/수익</span>
+              </a>
+              <a href="#" class="my-interest-product__sidebar-menu-item">
+                <span>정기구독</span>
+              </a>
+            </div>
+            <div class="my-interest-product__sidebar-separator"></div>
+            <div class="my-interest-product__sidebar-menu-title">나의 상품</div>
+            <div class="my-interest-product__sidebar-menu-list">
+              <a href="my-dashboard.html" class="my-interest-product__sidebar-menu-item">
+                <span>대시보드</span>
+              </a>
+              <a href="my-selling-product.html" class="my-interest-product__sidebar-menu-item">
+                <span>판매상품</span>
+              </a>
+              <a href="my-received.html" class="my-interest-product__sidebar-menu-item">
+                <span>지급</span>
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="my-interest-product__content">
+          <!-- Breadcrumbs -->
+          <nav class="my-interest-product__breadcrumbs" aria-label="Breadcrumb">
+            <ol class="my-interest-product__breadcrumbs-list">
+              <li class="my-interest-product__breadcrumbs-item">
+                <a href="#" class="my-interest-product__breadcrumbs-link">
+                  <i class="bi bi-house" aria-hidden="true"></i>
+                  <span class="my-interest-product__breadcrumbs-text">홈</span>
+                </a>
+              </li>
+              <li class="my-interest-product__breadcrumbs-item">
+                <i class="bi bi-chevron-right my-interest-product__breadcrumbs-separator" aria-hidden="true"></i>
+                <a href="my-dashboard.html" class="my-interest-product__breadcrumbs-link">
+                  <span class="my-interest-product__breadcrumbs-text">마이페이지</span>
+                </a>
+              </li>
+              <li class="my-interest-product__breadcrumbs-item my-interest-product__breadcrumbs-item--current">
+                <i class="bi bi-chevron-right my-interest-product__breadcrumbs-separator" aria-hidden="true"></i>
+                <span class="my-interest-product__breadcrumbs-text">관심 상품</span>
+              </li>
+            </ol>
+          </nav>
+
+          <!-- Page Title -->
+          <h1 class="my-interest-product__page-title">관심 상품</h1>
+
+          <!-- Search Filter Section -->
+          <div class="my-interest-product__search-filter">
+            <div class="my-interest-product__search-bar">
+              <i class="bi bi-search my-interest-product__search-icon"></i>
+              <input type="text" class="my-interest-product__search-input" placeholder="검색어를 입력해주세요">
+            </div>
+            <button type="button" class="my-interest-product__filter-btn">
+              <i class="bi bi-funnel"></i>
+            </button>
+            <button type="button" class="my-interest-product__filter-btn">
+              <i class="bi bi-list-ul"></i>
+            </button>
+          </div>
+
+          <!-- Product Table -->
+          <div class="my-interest-product__table-wrapper">
+            <table class="my-interest-product__table">
+              <thead class="my-interest-product__table-header">
+                <tr>
+                  <th class="my-interest-product__table-header-cell my-interest-product__table-header-cell--product">
+                    <button type="button" class="my-interest-product__table-sort-btn">
+                      <span>상품명</span>
+                    </button>
+                  </th>
+                  <th class="my-interest-product__table-header-cell my-interest-product__table-header-cell--option-stock">
+                    <button type="button" class="my-interest-product__table-sort-btn">
+                      <span>옵션 / 재고</span>
+                    </button>
+                  </th>
+                  <th class="my-interest-product__table-header-cell">
+                    <button type="button" class="my-interest-product__table-sort-btn">
+                      <span>가격</span>
+                    </button>
+                  </th>
+                  <th class="my-interest-product__table-header-cell my-interest-product__table-header-cell--action"></th>
+                </tr>
+              </thead>
+              <tbody class="my-interest-product__table-body">
+                <!-- Product Row 1 -->
+                <tr class="my-interest-product__table-row">
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--product">
+                    <div class="my-interest-product__product-info">
+                      <div class="my-interest-product__product-image">
+                        <img src="https://demo.wakit.org/img/samples/photo-1571875257727-256c39da42af.png" alt="클래식 울코트">
+                      </div>
+                      <h3 class="my-interest-product__product-name">클래식 울코트</h3>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--option-stock">
+                    <div class="my-interest-product__option-stock-container">
+                      <span class="my-interest-product__product-option">아이보리 / M</span>
+                      <span class="my-interest-product__product-option-separator">/</span>
+                      <span class="my-interest-product__product-stock">재고 12개</span>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell">
+                    <span class="my-interest-product__product-price">129,000원</span>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--action">
+                    <button type="button" class="my-interest-product__delete-btn">
+                      <i class="bi bi-heart-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Product Row 2 -->
+                <tr class="my-interest-product__table-row">
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--product">
+                    <div class="my-interest-product__product-info">
+                      <div class="my-interest-product__product-image">
+                        <img src="https://demo.wakit.org/img/samples/photo-1556228578-0d85b1a4d571.png" alt="퍼프 슬리브 블라우스">
+                      </div>
+                      <h3 class="my-interest-product__product-name">퍼프 슬리브 블라우스</h3>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--option-stock">
+                    <div class="my-interest-product__option-stock-container">
+                      <span class="my-interest-product__product-option">블랙 / S</span>
+                      <span class="my-interest-product__product-option-separator">/</span>
+                      <span class="my-interest-product__product-stock">재고 5개</span>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell">
+                    <span class="my-interest-product__product-price">53,200원</span>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--action">
+                    <button type="button" class="my-interest-product__delete-btn">
+                      <i class="bi bi-heart-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Product Row 3 -->
+                <tr class="my-interest-product__table-row">
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--product">
+                    <div class="my-interest-product__product-info">
+                      <div class="my-interest-product__product-image">
+                        <img src="https://demo.wakit.org/img/samples/photo-1620916566398-39f1143ab7be.png" alt="와이드 슬랙스">
+                      </div>
+                      <h3 class="my-interest-product__product-name">와이드 슬랙스</h3>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--option-stock">
+                    <div class="my-interest-product__option-stock-container">
+                      <span class="my-interest-product__product-option">네이비 / 28</span>
+                      <span class="my-interest-product__product-option-separator">/</span>
+                      <span class="my-interest-product__product-stock">재고 8개</span>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell">
+                    <span class="my-interest-product__product-price">49,500원</span>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--action">
+                    <button type="button" class="my-interest-product__delete-btn">
+                      <i class="bi bi-heart-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Product Row 4 -->
+                <tr class="my-interest-product__table-row">
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--product">
+                    <div class="my-interest-product__product-info">
+                      <div class="my-interest-product__product-image">
+                        <img src="https://demo.wakit.org/img/samples/photo-1551028719-00167b16eac5.png" alt="캐시미어 니트">
+                      </div>
+                      <h3 class="my-interest-product__product-name">캐시미어 니트</h3>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--option-stock">
+                    <div class="my-interest-product__option-stock-container">
+                      <span class="my-interest-product__product-option">그레이 / L</span>
+                      <span class="my-interest-product__product-option-separator">/</span>
+                      <span class="my-interest-product__product-stock">재고 3개</span>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell">
+                    <span class="my-interest-product__product-price">121,600원</span>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--action">
+                    <button type="button" class="my-interest-product__delete-btn">
+                      <i class="bi bi-heart-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Product Row 5 -->
+                <tr class="my-interest-product__table-row">
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--product">
+                    <div class="my-interest-product__product-info">
+                      <div class="my-interest-product__product-image">
+                        <img src="https://demo.wakit.org/img/samples/photo-1612817288484-6f916006741a.png" alt="플라워 프린트 원피스">
+                      </div>
+                      <h3 class="my-interest-product__product-name">플라워 프린트 원피스</h3>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--option-stock">
+                    <div class="my-interest-product__option-stock-container">
+                      <span class="my-interest-product__product-option">핑크 / M</span>
+                      <span class="my-interest-product__product-option-separator">/</span>
+                      <span class="my-interest-product__product-stock">재고 7개</span>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell">
+                    <span class="my-interest-product__product-price">38,900원</span>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--action">
+                    <button type="button" class="my-interest-product__delete-btn">
+                      <i class="bi bi-heart-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Product Row 6 -->
+                <tr class="my-interest-product__table-row">
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--product">
+                    <div class="my-interest-product__product-info">
+                      <div class="my-interest-product__product-image">
+                        <img src="https://demo.wakit.org/img/samples/photo-1591047139829-d91aecb6caea.png" alt="클로그 샌들">
+                      </div>
+                      <h3 class="my-interest-product__product-name">클로그 샌들</h3>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--option-stock">
+                    <div class="my-interest-product__option-stock-container">
+                      <span class="my-interest-product__product-option">베이지 / 240</span>
+                      <span class="my-interest-product__product-option-separator">/</span>
+                      <span class="my-interest-product__product-stock">재고 15개</span>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell">
+                    <span class="my-interest-product__product-price">45,600원</span>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--action">
+                    <button type="button" class="my-interest-product__delete-btn">
+                      <i class="bi bi-heart-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Product Row 7 -->
+                <tr class="my-interest-product__table-row">
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--product">
+                    <div class="my-interest-product__product-info">
+                      <div class="my-interest-product__product-image">
+                        <img src="https://demo.wakit.org/img/samples/photo-1576566588028-4147f3842f27.png" alt="린넨 셔츠">
+                      </div>
+                      <h3 class="my-interest-product__product-name">린넨 셔츠</h3>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--option-stock">
+                    <div class="my-interest-product__option-stock-container">
+                      <span class="my-interest-product__product-option">화이트 / M</span>
+                      <span class="my-interest-product__product-option-separator">/</span>
+                      <span class="my-interest-product__product-stock">재고 20개</span>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell">
+                    <span class="my-interest-product__product-price">26,950원</span>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--action">
+                    <button type="button" class="my-interest-product__delete-btn">
+                      <i class="bi bi-heart-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Product Row 8 -->
+                <tr class="my-interest-product__table-row">
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--product">
+                    <div class="my-interest-product__product-info">
+                      <div class="my-interest-product__product-image">
+                        <img src="https://demo.wakit.org/img/samples/photo-1571945153237-4929e783af4a.png" alt="니트 베스트">
+                      </div>
+                      <h3 class="my-interest-product__product-name">니트 베스트</h3>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--option-stock">
+                    <div class="my-interest-product__option-stock-container">
+                      <span class="my-interest-product__product-option">네이비 / L</span>
+                      <span class="my-interest-product__product-option-separator">/</span>
+                      <span class="my-interest-product__product-stock">재고 4개</span>
+                    </div>
+                  </td>
+                  <td class="my-interest-product__table-cell">
+                    <span class="my-interest-product__product-price">31,500원</span>
+                  </td>
+                  <td class="my-interest-product__table-cell my-interest-product__table-cell--action">
+                    <button type="button" class="my-interest-product__delete-btn">
+                      <i class="bi bi-heart-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script data-spa-ignore>
+  Popup.init();
+  console.log('home page script executed');
+</script>
+
+</html>

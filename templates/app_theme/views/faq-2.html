@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>자주 묻는 질문 2</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+</head>
+<body>
+
+    <!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+  <link rel="stylesheet" href="css/foundation/color.css">
+  <link rel="stylesheet" href="css/foundation/buttons.css">
+  <link rel="stylesheet" href="css/foundation/badge.css">
+  <link rel="stylesheet" href="css/foundation/spacing.css">
+  <link rel="stylesheet" href="css/foundation/typography.css">
+  <link rel="stylesheet" href="css/foundation/effect.css">
+  <link rel="stylesheet" href="css/foundation/layout.css">
+  <link rel="stylesheet" href="css/foundation/icons.css">
+  <link rel="stylesheet" href="css/foundation/graphic.css">
+  <!-- Blog Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- FAQ Page Styles -->
+  <link rel="stylesheet" href="css/faq.css">
+  <link rel="stylesheet" href="css/faq2.css">
+
+<!-- 데스크톱 헤더 -->
+<div data-include="../wakit-components/header.html" data-include-when="web"></div>
+
+<main class="faq-page">
+  <!-- Page Header Section -->
+  <section class="faq-header-section">
+    <div class="faq-header-container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item">
+            <a href="index.html" class="breadcrumb-link">
+              <i class="bi bi-house" aria-hidden="true"></i>
+              <span>홈</span>
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            <span class="breadcrumb-current">고객지원</span>
+          </li>
+          <li class="breadcrumb-item">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            <span class="breadcrumb-current">자주 묻는 질문</span>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Header Content -->
+      <div class="faq-header-content">
+        <h1 class="faq-main-title">자주 묻는 질문</h1>
+        <h2 class="faq-subtitle">자주 묻는 질문에 대한 답변을 확인해주세요</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabs (sticky: 스크롤 컨테이너 직계에 가깝게 main 직계로 배치) -->
+  <div class="faq-tabs-sticky">
+    <div class="faq-header-container">
+      <div class="faq-tabs">
+        <button type="button" class="faq-tab faq-tab--active" data-faq-filter="all">
+          <span>전체</span>
+          <div class="faq-tab-indicator"></div>
+        </button>
+        <button type="button" class="faq-tab" data-faq-filter="서비스 이용">
+          <span>검증된 결과</span>
+          <div class="faq-tab-indicator"></div>
+        </button>
+        <button type="button" class="faq-tab" data-faq-filter="결제 및 요금제">
+          <span>신속한 대응</span>
+          <div class="faq-tab-indicator"></div>
+        </button>
+        <button type="button" class="faq-tab" data-faq-filter="기술 지원">
+          <span>세심한 관리</span>
+          <div class="faq-tab-indicator"></div>
+        </button>
+        <button type="button" class="faq-tab" data-faq-filter="환불">
+          <span>환불</span>
+          <div class="faq-tab-indicator"></div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Grid Section -->
+  <section class="faq-grid-section">
+    <div class="faq-grid-container">
+      <div class="faq-grid">
+        <!-- FAQ Card 1 -->
+        <article class="faq-card">
+          <div class="faq-card-badge">
+            <span>전문적인 컨설팅</span>
+          </div>
+          <h3 class="faq-card-title">변화를 만드는 순간</h3>
+          <p class="faq-card-answer">효율적인 프로세스와 체계적인 관리로 성공을 지원합니다.</p>
+        </article>
+
+        <!-- FAQ Card 2 -->
+        <article class="faq-card">
+          <div class="faq-card-badge">
+            <span>체계적인 분석</span>
+          </div>
+          <h3 class="faq-card-title">성장하는 이야기</h3>
+          <p class="faq-card-answer">창의적인 아이디어와 실행력으로 차별화된 가치를 제공합니다.</p>
+        </article>
+
+        <!-- FAQ Card 3 -->
+        <article class="faq-card">
+          <div class="faq-card-badge">
+            <span>효과적인 전략</span>
+          </div>
+          <h3 class="faq-card-title">함께하는 여정</h3>
+          <p class="faq-card-answer">협업과 소통을 통해 최상의 결과물을 만들어갑니다.</p>
+        </article>
+
+        <!-- FAQ Card 4 -->
+        <article class="faq-card">
+          <div class="faq-card-badge">
+            <span>안정적인 운영</span>
+          </div>
+          <h3 class="faq-card-title">도전과 성취의 기록</h3>
+          <p class="faq-card-answer">지속적인 개선과 혁신으로 발전하는 파트너가 되겠습니다.</p>
+        </article>
+
+        <!-- FAQ Card 5 -->
+        <article class="faq-card">
+          <div class="faq-card-badge">
+            <span>혁신적인 도구</span>
+          </div>
+          <h3 class="faq-card-title">무한한 가능성의 시작</h3>
+          <p class="faq-card-answer">단순한 서비스를 넘어 성장의 동반자가 되겠습니다.</p>
+        </article>
+
+        <!-- FAQ Card 6 -->
+        <article class="faq-card">
+          <div class="faq-card-badge">
+            <span>효율적인 관리</span>
+          </div>
+          <h3 class="faq-card-title">꿈을 향한 첫걸음</h3>
+          <p class="faq-card-answer">데이터 기반의 통찰력으로 현명한 결정을 돕습니다.</p>
+        </article>
+
+        <!-- FAQ Card 7 -->
+        <article class="faq-card">
+          <div class="faq-card-badge">
+            <span>체계적인 접근</span>
+          </div>
+          <h3 class="faq-card-title">혁신적인 접근</h3>
+          <p class="faq-card-answer">체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p>
+        </article>
+
+        <!-- FAQ Card 8 -->
+        <article class="faq-card">
+          <div class="faq-card-badge">
+            <span>전문적인 지원</span>
+          </div>
+          <h3 class="faq-card-title">창의적인 해결책</h3>
+          <p class="faq-card-answer">전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+        </article>
+
+        <!-- FAQ Card 9 -->
+        <article class="faq-card">
+          <div class="faq-card-badge">
+            <span>혁신적인 방법</span>
+          </div>
+          <h3 class="faq-card-title">전문적인 파트너십</h3>
+          <p class="faq-card-answer">새로운 아이디어와 혁신적인 방법으로 당신의 목표를 달성하는 데 도움을 드립니다.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section class="faq-cta-section">
+    <div class="faq-cta-container">
+      <div class="faq-cta-content">
+        <h2 class="faq-cta-title">신뢰할 수 있는 동반자</h2>
+        <p class="faq-cta-subtitle">어떤걸 찾으시나요? (서브 카피)</p>
+        <p class="faq-cta-description">전문적인 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.</p>
+        <a href="#" class="faq-cta-button">
+          <span>지원 문의하기</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<div data-include="../wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/header.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script src="js/faq.js" data-spa-ignore></script>
+<script src="js/faq2.js"></script>
+<script data-spa-ignore>
+  Popup.init();
+  console.log('faq page script executed');
+</script>
+</html>

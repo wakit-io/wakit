@@ -1,0 +1,404 @@
+/* ============================================
+   Shop Magazine - Base Styles
+   ============================================ */
+
+.shop-magazine {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-container-md);
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 var(--spacing-container-sm);
+  }
+}
+
+/* ============================================
+   Shop Magazine - Page Header Section
+   ============================================ */
+
+.shop-magazine__header-section {
+  background-color: var(--color-bg-primary);
+  padding: var(--spacing-lg) 0;
+}
+
+.shop-magazine__breadcrumbs {
+  margin-bottom: var(--spacing-md);
+}
+
+.shop-magazine__breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.shop-magazine__breadcrumbs-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.shop-magazine__breadcrumbs-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.shop-magazine__breadcrumbs-link:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.shop-magazine__breadcrumbs-link i {
+  font-size: 20px;
+  color: var(--color-text-secondary);
+}
+
+.shop-magazine__breadcrumbs-separator {
+  font-size: 20px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.shop-magazine__breadcrumbs-text {
+  display: inline-block;
+}
+
+.shop-magazine__breadcrumbs-item--current .shop-magazine__breadcrumbs-text {
+  color: var(--color-text-tertiary);
+  font-weight: 400;
+}
+
+.shop-magazine__header-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Badge */
+.shop-magazine__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-badge-bg);
+  border-radius: var(--radius-xl);
+  width: fit-content;
+  height: 24px;
+}
+
+.shop-magazine__badge i {
+  font-size: 16px;
+  color: var(--color-primary);
+}
+
+.shop-magazine__badge-text {
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--color-primary);
+}
+
+/* Page Title */
+.shop-magazine__page-title {
+  font-family: var(--font-family-primary);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 60px;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Sub Title */
+.shop-magazine__sub-title {
+  font-family: var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33.6px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Description */
+.shop-magazine__description {
+  font-family: var(--font-family-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32.4px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Tabs Section - Sticky */
+.shop-magazine__tabs-section {
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 0px;
+}
+
+.shop-magazine__tabs {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+
+.shop-magazine__tab {
+  position: relative;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.shop-magazine__tab:hover {
+  color: var(--color-primary);
+}
+
+.shop-magazine__tab--active {
+  color: var(--color-primary);
+}
+
+.shop-magazine__tab--active .shop-magazine__tab-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+.shop-magazine__tab-text {
+  display: inline-block;
+}
+
+/* ============================================
+   Shop Magazine - Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .shop-magazine__header-section {
+    padding: var(--spacing-md) 0;
+  }
+
+  .shop-magazine__breadcrumbs {
+    display: none;
+  }
+
+  .shop-magazine__breadcrumbs-link {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .shop-magazine__breadcrumbs-link i {
+    font-size: 20px;
+  }
+
+  .shop-magazine__breadcrumbs-separator {
+    font-size: 20px;
+  }
+
+  .shop-magazine__header-content {
+    gap: var(--spacing-sm);
+  }
+
+  /* Badge */
+  .shop-magazine__badge {
+    padding: var(--spacing-xs) var(--spacing-xs);
+    border-radius: 16px;
+    height: 24px;
+  }
+
+  .shop-magazine__badge i {
+    font-size: 16px;
+  }
+
+  .shop-magazine__badge-text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  /* Page Title */
+  .shop-magazine__page-title {
+    font-size: 28px;
+    line-height: 35px;
+  }
+
+  /* Sub Title */
+  .shop-magazine__sub-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  /* Description */
+  .shop-magazine__description {
+    font-size: 16px;
+    line-height: 28.8px;
+  }
+
+  /* Tabs Section */
+  .shop-magazine__tabs-section {
+    padding: 0px;
+  }
+
+  .shop-magazine__tabs {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    min-width: max-content;
+  }
+
+  .shop-magazine__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .shop-magazine__tab {
+    padding: var(--spacing-md) var(--spacing-sm);
+    font-size: 14px;
+    line-height: 20px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+}
+
+/* ============================================
+   Shop Magazine - Articles Section
+   ============================================ */
+
+.shop-magazine__articles-section {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-bg-primary);
+}
+
+.shop-magazine__articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+}
+
+.shop-magazine__article-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.shop-magazine__article-item:hover {
+  transform: translateY(-4px);
+}
+
+.shop-magazine__article-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: var(--color-bg-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.shop-magazine__article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shop-magazine__article-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-secondary);
+}
+
+.shop-magazine__article-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.shop-magazine__article-title {
+  font-family: var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33.6px;
+  color: var(--color-text-primary);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.shop-magazine__article-date {
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text-tertiary);
+}
+
+/* ============================================
+   Shop Magazine - Articles Section Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .shop-magazine__articles-section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .shop-magazine__articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .shop-magazine__article-image {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .shop-magazine__article-content {
+    gap: var(--spacing-xs);
+  }
+
+  .shop-magazine__article-title {
+    font-size: 18px;
+    line-height: 25.2px;
+  }
+
+  .shop-magazine__article-date {
+    font-size: 11px;
+    line-height: 16px;
+  }
+}

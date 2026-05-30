@@ -1,0 +1,8 @@
+HYBRID UI FRAMEWORK TEMPLATE - COMMERCIAL LICENSE
+
+Copyright (c) 2026 All rights reserved.
+
+사용 조건:
+- 단일 프로젝트에만 사용 가능
+- 재판매 및 재배포 금지
+- 소스 코드 커스터마이징 가능

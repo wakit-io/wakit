@@ -1,0 +1,250 @@
+/**
+ * Foundation - Buttons
+ * Figma Inline Button / Block Button 스펙 기반 재사용 버튼 에셋
+ * color.css 변수 사용, 템플릿 전역에서 .btn + modifier 조합으로 사용
+ *
+ * 다크 모드: color.css의 [data-theme="dark"]에서 Primary/배경/테두리 변수가 재정의되므로
+ * 별도 스타일 없이 라이트/다크 자동 대응 (html에 data-theme="dark" 적용 시 전환)
+ *
+ * 사용 예:
+ *   <button type="button" class="btn btn--primary btn--l">확인</button>
+ *   <a href="#" class="btn btn--secondary btn--m"><span>텍스트</span><i class="bi bi-chevron-right"></i></a>
+ *   <button type="button" class="btn btn--tertiary btn--s" disabled>취소</button>
+ *   Block(전체 너비): <button class="btn btn--primary btn--l btn--block">텍스트</button>
+ */
+
+/* ========== Base (공통) ========== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm, 8px);
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-family-primary);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.btn i,
+.btn svg {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== Size L (Figma Size=L, 56px) ========== */
+.btn--l {
+  height: 56px;
+  padding: 0 var(--spacing-2xl, 24px);
+  font-size: var(--button-1-font-size, 18px);
+  line-height: var(--button-1-line-height, 24px);
+  letter-spacing: 0;
+}
+
+.btn--l i,
+.btn--l svg {
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+}
+
+/* ========== Size M (Figma Size=M, 44px) ========== */
+.btn--m {
+  height: 44px;
+  padding: 0 var(--spacing-xl, 20px);
+  font-size: var(--button-2-font-size, 16px);
+  line-height: var(--button-2-line-height, 20px);
+  letter-spacing: 0;
+}
+
+.btn--m i,
+.btn--m svg {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+}
+
+/* ========== Size S (Figma Size=S, 36px) ========== */
+.btn--s {
+  height: 36px;
+  padding: 0 var(--spacing-md, 12px);
+  font-size: var(--button-3-font-size, 14px);
+  font-weight: 700;
+  line-height: var(--button-3-line-height, 20px);
+  letter-spacing: 0;
+}
+
+.btn--s i,
+.btn--s svg {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+}
+
+/* ========== Hierarchy: Primary (테마 컬러) ========== */
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn--primary:active {
+  background-color: var(--color-primary-pressed);
+}
+
+.btn--primary:disabled,
+.btn--primary.is-disabled {
+  background-color: var(--color-button-disabled-bg);
+  color: var(--color-button-disabled-text, var(--color-text-tertiary));
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ========== Hierarchy: Secondary (테마 Primary 연한 배경) ========== */
+.btn--secondary {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-primary-lighter);
+}
+
+.btn--secondary:active {
+  background-color: var(--color-primary-lighter);
+  opacity: 0.95;
+}
+
+.btn--secondary:disabled,
+.btn--secondary.is-disabled {
+  background-color: var(--color-button-disabled-bg);
+  color: var(--color-button-disabled-text, var(--color-text-tertiary));
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ========== Hierarchy: Tertiary (Outline, neutral) ========== */
+.btn--tertiary {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.btn--tertiary:hover {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border-dark);
+}
+
+.btn--tertiary:active {
+  background-color: var(--color-bg-tertiary);
+}
+
+.btn--tertiary:disabled,
+.btn--tertiary.is-disabled {
+  background-color: var(--color-button-disabled-bg);
+  border-color: var(--color-border);
+  color: var(--color-button-disabled-text, var(--color-text-tertiary));
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ========== Hierarchy: Ghost ========== */
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+}
+
+.btn--ghost:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.btn--ghost:active {
+  background-color: var(--color-bg-tertiary);
+}
+
+.btn--ghost:disabled,
+.btn--ghost.is-disabled {
+  background-color: transparent;
+  color: var(--color-button-disabled-text, var(--color-text-tertiary));
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ========== Block (전체 너비, Figma Block Button) ========== */
+.btn--block {
+  width: 100%;
+  min-width: 0;
+}
+
+/* ========== Icon Button (Figma Icon-Button, 테마 컬러 적용) ========== */
+.btn--icon {
+  padding: 0;
+  min-width: 0;
+}
+
+.btn--icon.btn--l {
+  width: 56px;
+}
+
+.btn--icon.btn--m {
+  width: 44px;
+}
+
+.btn--icon.btn--s {
+  width: 36px;
+}
+
+/* ========== Loading state (선택 사용) ========== */
+.btn.is-loading {
+  pointer-events: none;
+  position: relative;
+}
+
+.btn.is-loading .btn__text {
+  visibility: hidden;
+}
+
+.btn.is-loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.6s linear infinite;
+}
+
+.btn--l.is-loading::after {
+  width: 24px;
+  height: 24px;
+}
+
+.btn--s.is-loading::after {
+  width: 16px;
+  height: 16px;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

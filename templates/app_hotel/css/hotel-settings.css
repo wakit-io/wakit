@@ -1,0 +1,179 @@
+/**
+ * 숙박 설정 페이지 스타일
+ */
+@import url('./foundation/color.css');
+@import url('./foundation/spacing.css');
+@import url('./foundation/typography.css');
+
+.hotel-settings {
+  background: var(--color-bg-secondary);
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+/* ── 섹션 그룹 ── */
+.settings-group {
+  background: var(--color-bg-primary);
+  margin-bottom: var(--spacing-sm);
+}
+.settings-group__title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-sm);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* ── 테마 선택 카드 ── */
+.settings-theme-section {
+  padding: var(--spacing-lg);
+}
+.settings-theme-options {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+.settings-theme-option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-sm);
+  border: 2px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-bg-primary);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  position: relative;
+}
+.settings-theme-option.is-active {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+.settings-theme-option__preview {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.settings-theme-option--light .settings-theme-option__preview {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+.settings-theme-option--dark .settings-theme-option__preview {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+.settings-theme-option--system .settings-theme-option__preview {
+  background: linear-gradient(135deg, #f8fafc 50%, #1e293b 50%);
+  border: 1px solid var(--color-border);
+}
+.settings-theme-option__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+.settings-theme-option.is-active .settings-theme-option__label {
+  color: var(--color-primary);
+}
+.settings-theme-option__check {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.625rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.settings-theme-option.is-active .settings-theme-option__check {
+  display: flex;
+}
+
+/* ── 일반 설정 행 ── */
+.settings-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+.settings-group__title + .settings-item,
+.settings-group__title + .settings-theme-section {
+  border-top: none;
+}
+.settings-item__left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+.settings-item__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--color-bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+}
+.settings-item__label {
+  font-size: 0.9375rem;
+  color: var(--color-text-primary);
+}
+.settings-item__value {
+  font-size: 0.8125rem;
+  color: var(--color-text-tertiary);
+}
+
+/* ── 토글 스위치 ── */
+.settings-toggle {
+  position: relative;
+  width: 44px;
+  height: 26px;
+  flex-shrink: 0;
+}
+.settings-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+.settings-toggle__track {
+  position: absolute;
+  inset: 0;
+  background: var(--color-bg-tertiary);
+  border-radius: 13px;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.settings-toggle__track::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+.settings-toggle input:checked + .settings-toggle__track {
+  background: var(--color-primary);
+}
+.settings-toggle input:checked + .settings-toggle__track::after {
+  transform: translateX(18px);
+}

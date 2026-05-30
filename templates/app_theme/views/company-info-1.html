@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Company Info 1</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+<!-- Blog Styles -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/company-info-1.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="company-info-1">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-section__background">
+      <div class="hero-section__image-wrapper">
+        <img src="https://demo.wakit.org/img/samples/photo-1661772661721-b16346fe5b0f.png" alt="이미지" class="hero-section__image">
+      </div>
+      <div class="hero-section__dim"></div>
+    </div>
+    
+    <div class="hero-section__container container">
+      <div class="hero-section__content">
+        <h1 class="hero-section__title">성장하는 이야기</h1>
+        <p class="hero-section__description">
+          간단한 정리부터 체계적인 관리까지 한곳에서 지원하는<br>
+          스마트한 관리 도구로 업무 효율을 높이세요
+        </p>
+        <div class="hero-section__store-links">
+          <a href="#">
+            <img src="img/stores/google-play-original.svg" alt="앱마켓A" class="hero-section__store-badge-image">
+          </a>
+          <a href="#">
+            <img src="img/stores/app-store-original.svg" alt="앱마켓B" class="hero-section__store-badge-image">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="statistics-section">
+    <div class="statistics-section__container container">
+      <div class="statistics-section__content">
+        <div class="statistics-section__header">
+          <div>
+            <span class="badge badge--primary">신속한 대응</span>
+          </div>
+          <h2 class="statistics-section__title">많은 분들이<br>경험하고 있어요</h2>
+        </div>
+        <div class="statistics-section__stats">
+          <div class="statistics-section__row">
+            <div class="stat-item">
+              <p class="stat-item__label">누적 다운로드</p>
+              <p class="stat-item__value">400만+</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-item__label">누적 결제</p>
+              <p class="stat-item__value">300억+</p>
+            </div>
+          </div>
+          <div class="statistics-section__row">
+            <div class="stat-item">
+              <p class="stat-item__label">누적 디자인 프로젝트</p>
+              <p class="stat-item__value">25만+</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-item__label">제휴 디자이너</p>
+              <p class="stat-item__value">15,000+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Text Block Section -->
+  <section class="text-block-section">
+    <div class="text-block-section__container container">
+      <div class="text-block-section__content">
+        <div class="text-block-section__badge">
+          <span class="badge badge--primary">세심한 관리</span>
+        </div>
+        <h2 class="text-block-section__title">전문가들과 함께<br>성장하는</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Section 02 -->
+  <section class="feature-section-02">
+    <div class="feature-section-02__container container">
+      <div class="feature-section-02__text-block">
+        <div class="feature-section-02__content">
+          <div>
+            <span class="badge badge--primary">전문적인 컨설팅</span>
+          </div>
+          <h2 class="feature-section-02__title">함께하는 여정</h2>
+          <p class="feature-section-02__description">전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+          <a href="#" class="feature-section-02__button btn btn--tertiary btn--m">
+            <span>체계적인 분석</span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="feature-section-02__image-wrapper">
+        <img src="https://demo.wakit.org/img/samples/photo-1661772661721-b16346fe5b0f.png" alt="이미지" class="feature-section-02__image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Section 03 -->
+  <section class="feature-section-03">
+    <div class="feature-section-03__container container">
+      <div class="feature-section-03__image-wrapper">
+        <img src="https://demo.wakit.org/img/samples/photo-1661772661721-b16346fe5b0f.png" alt="이미지" class="feature-section-03__image">
+      </div>
+      <div class="feature-section-03__text-block">
+        <div class="feature-section-03__content">
+          <div>
+            <span class="badge badge--primary">효과적인 전략</span>
+          </div>
+          <h2 class="feature-section-03__title">도전과 성취의 기록</h2>
+          <p class="feature-section-03__description">새로운 아이디어와 혁신적인 방법으로 당신의 목표를 달성하는 데 도움을 드립니다.</p>
+          <a href="#" class="feature-section-03__button btn btn--ghost btn--m">
+            <span>안정적인 운영</span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Section 04 -->
+  <section class="feature-section-04">
+    <div class="feature-section-04__container container">
+      <div class="feature-section-04__text-block">
+        <div class="feature-section-04__content">
+          <div>
+            <span class="badge badge--primary">혁신적인 도구</span>
+          </div>
+          <h2 class="feature-section-04__title">무한한 가능성의 시작</h2>
+          <p class="feature-section-04__description">전문적인 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.</p>
+          <a href="#" class="feature-section-04__button btn btn--tertiary btn--m">
+            <span>효율적인 관리</span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="feature-section-04__image-wrapper">
+        <img src="https://demo.wakit.org/img/samples/photo-1661772661721-b16346fe5b0f.png" alt="이미지" class="feature-section-04__image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="testimonial-section">
+    <div class="testimonial-section__container container">
+      <div class="testimonial-section__content">
+        <p>고객 중심의 접근 방식으로 꼭 맞는 서비스를 제안합니다.</p>
+        <div class="testimonial-section__logo">
+          <img src="img/brands/Company-logo.svg" alt="Company Logo" class="testimonial-section__logo-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History Section -->
+  <section class="history-section">
+    <div class="history-section__container container">
+      <!-- Text Block -->
+      <div class="history-section__header">
+        <div class="history-section__badge">
+          <span class="badge badge--primary">연혁</span>
+        </div>
+        <h2 class="history-section__title">꿈을 향한 첫걸음</h2>
+        <p class="history-section__description">끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.</p>
+      </div>
+
+      <!-- History Timeline -->
+      <div class="history-section__timeline">
+        <!-- 2024년 4월 -->
+        <div class="history-item">
+          <div class="history-item__indicator">
+            <div class="history-item__dot"></div>
+            <div class="history-item__line"></div>
+          </div>
+          <div class="history-item__content">
+            <div class="history-item__date">
+              <span class="history-item__year">2025년</span>
+              <span class="history-item__month">3월</span>
+            </div>
+            <ul class="history-item__list">
+              <li class="history-item__list-item">샘플서비스 Chat에 라이브톡 기능 추가</li>
+              <li class="history-item__list-item">2023 샘플서비스 기술윤리 보고서 발간</li>
+              <li class="history-item__list-item">등록 프로젝트 수 50만 돌파</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2023년 12월 -->
+        <div class="history-item">
+          <div class="history-item__indicator">
+            <div class="history-item__dot"></div>
+            <div class="history-item__line"></div>
+          </div>
+          <div class="history-item__content">
+            <div class="history-item__date">
+              <span class="history-item__year">2024년</span>
+              <span class="history-item__month">10월</span>
+            </div>
+            <ul class="history-item__list">
+              <li class="history-item__list-item">글로벌 디자인 어워드 수상</li>
+              <li class="history-item__list-item">샘플서비스 Hub 플랫폼 오픈</li>
+              <li class="history-item__list-item">샘플서비스 데이터센터 착공식 개최</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2022년 10월 -->
+        <div class="history-item">
+          <div class="history-item__indicator">
+            <div class="history-item__dot"></div>
+            <div class="history-item__line"></div>
+          </div>
+          <div class="history-item__content">
+            <div class="history-item__date">
+              <span class="history-item__year">2023년</span>
+              <span class="history-item__month">7월</span>
+            </div>
+            <ul class="history-item__list">
+              <li class="history-item__list-item">샘플서비스, 공공분야 전자서명 확대 도입 시범사업자로 선정</li>
+              <li class="history-item__list-item">누적 다운로드 1,000만 돌파</li>
+              <li class="history-item__list-item">샘플서비스, 공공분야 전자서명 확대 도입 시범사업자로 선정</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2021년 7월 -->
+        <div class="history-item">
+          <div class="history-item__indicator">
+            <div class="history-item__dot"></div>
+            <div class="history-item__line"></div>
+          </div>
+          <div class="history-item__content">
+            <div class="history-item__date">
+              <span class="history-item__year">2022년</span>
+              <span class="history-item__month">4월</span>
+            </div>
+            <ul class="history-item__list">
+              <li class="history-item__list-item">글로벌 디자인 어워드 수상</li>
+              <li class="history-item__list-item">샘플서비스 Maps, 지하철역 승강장 간격 및 높이 정보 제공</li>
+              <li class="history-item__list-item">샘플서비스, 공공분야 전자서명 확대 도입 시범사업자로 선정</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2020년 3월 -->
+        <div class="history-item">
+          <div class="history-item__indicator">
+            <div class="history-item__dot"></div>
+            <div class="history-item__line"></div>
+          </div>
+          <div class="history-item__content">
+            <div class="history-item__date">
+              <span class="history-item__year">2021년</span>
+              <span class="history-item__month">1월</span>
+            </div>
+            <ul class="history-item__list">
+              <li class="history-item__list-item">글로벌 디자인 어워드 수상</li>
+              <li class="history-item__list-item">샘플서비스, 첫 글로벌 매장 오픈</li>
+              <li class="history-item__list-item">샘플서비스 데이터센터 착공식 개최</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2019년 5월 -->
+        <div class="history-item">
+          <div class="history-item__indicator">
+            <div class="history-item__dot"></div>
+            <div class="history-item__line"></div>
+          </div>
+          <div class="history-item__content">
+            <div class="history-item__date">
+              <span class="history-item__year">2020년</span>
+              <span class="history-item__month">12월</span>
+            </div>
+            <ul class="history-item__list">
+              <li class="history-item__list-item">샘플서비스, 공공분야 전자서명 확대 도입 시범사업자로 선정</li>
+              <li class="history-item__list-item">샘플서비스 Chat에 라이브톡 기능 추가</li>
+              <li class="history-item__list-item">등록 프로젝트 수 50만 돌파</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos Section -->
+  <section class="client-logos-section">
+    <div class="client-logos-section__container container">
+      <div class="client-logos-section__content">
+        <!-- Text Block -->
+        <div class="client-logos-section__text-block">
+          <div class="client-logos-section__badge">
+          <span class="badge badge--primary">파트너</span>
+          </div>
+          <h2 class="client-logos-section__title">세계적인 투자자들이<br>함께합니다</h2>
+          <p class="client-logos-section__description">
+            수천 개의 스타트업과 조직이 샘플서비스를 활용하여<br>
+            영업팀의 생산성을 높이고 더 많은 기회를 창출하고 있습니다.
+          </p>
+        </div>
+
+        <!-- Logo Cloud -->
+        <div class="client-logos-section__logo-cloud">
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo.svg" alt="Company Logo 1" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo-1.svg" alt="Company Logo 2" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo-2.svg" alt="Company Logo 3" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo-3.svg" alt="Company Logo 4" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo-4.svg" alt="Company Logo 5" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo-5.svg" alt="Company Logo 6" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo-6.svg" alt="Company Logo 7" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo-7.svg" alt="Company Logo 8" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo-8.svg" alt="Company Logo 9" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo-9.svg" alt="Company Logo 10" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo-10.svg" alt="Company Logo 11" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo-11.svg" alt="Company Logo 12" class="client-logos-section__logo-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section class="cta-banner-section">
+    <div class="cta-banner-section__background">
+      <div class="cta-banner-section__image-wrapper">
+        <img src="https://demo.wakit.org/img/samples/photo-1661772661721-b16346fe5b0f.png" alt="이미지" class="cta-banner-section__image">
+      </div>
+      <div class="cta-banner-section__dim"></div>
+    </div>
+    <div class="cta-banner-section__container container">
+      <div class="cta-banner-section__content">
+        <p class="cta-banner-section__subtitle">아직도 비효율적으로 작업하시나요?</p>
+        <h2 class="cta-banner-section__title">더 좋은 결과를 위해<br>지금 바로 시작하세요.</h2>
+        <a href="#" class="cta-banner-section__button btn btn--primary btn--l">
+          <span>지금 바로 시작하기</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script data-spa-ignore>
+  Popup.init();
+  console.log('home page script executed');
+</script>
+
+</html>

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Blog list 7</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+<!-- Blog Styles -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/blog-list-7.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="blog-list-7">
+  <!-- 페이지 헤더 섹션 -->
+  <section class="page-header-section">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <nav class="page-header-section__breadcrumbs" aria-label="Breadcrumb">
+        <ol class="breadcrumbs">
+          <li class="breadcrumbs__item">
+            <a href="/" class="breadcrumbs__link">
+              <i class="bi bi-house" aria-hidden="true"></i>
+              <span>홈</span>
+            </a>
+          </li>
+          <li class="breadcrumbs__item">
+            <i class="bi bi-chevron-right breadcrumbs__separator" aria-hidden="true"></i>
+            <a href="/templates/app_theme/views/blog-list-1.html" class="breadcrumbs__link">블로그</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <i class="bi bi-chevron-right breadcrumbs__separator" aria-hidden="true"></i>
+            <a href="#" class="breadcrumbs__link">Category</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <i class="bi bi-chevron-right breadcrumbs__separator" aria-hidden="true"></i>
+            <span class="breadcrumbs__current">전문적인 컨설팅</span>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- 헤더 콘텐츠 -->
+      <div class="page-header-section__content">
+
+        <!-- 타이틀 영역 -->
+        <div class="page-header-section__titles">
+          <h1 class="page-header-section__title">블로그</h1>
+          <h2 class="page-header-section__subtitle">도전과 성취의 기록</h2>
+          <!-- <p class="page-header-section__description">여기는 디스크립션 영역으로 최대 2줄까지 작성하는 것을 권장합니다.<br>여기는 디스크립션 영역으로 최대 2줄까지 작성하는 것을 권장합니다.</p> -->
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- 블로그 포스트 카드 섹션 -->
+  <section class="blog-post-cards-section">
+    <div class="container no-padding">
+      <div class="blog-post-cards-section__list">
+        <!-- 카드 1 -->
+        <a href="views/blog-detail-1.html" class="blog-post-card">
+          <div class="blog-post-card__image-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1506905925346-21bda4d32df4.png" alt="이미지" class="blog-post-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="blog-post-card__image-placeholder" style="display: none;"></div>
+            <div class="blog-post-card__overlay"></div>
+          </div>
+          <div class="blog-post-card__content">
+            <div class="blog-post-card__date">23년 06월 26일</div>
+            <h3 class="blog-post-card__title">무한한 가능성의 시작</h3>
+          </div>
+        </a>
+
+        <!-- 카드 2 -->
+        <a href="views/blog-detail-1.html" class="blog-post-card">
+          <div class="blog-post-card__image-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1499750310107-5fef28a66643.png" alt="이미지" class="blog-post-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="blog-post-card__image-placeholder" style="display: none;"></div>
+            <div class="blog-post-card__overlay"></div>
+          </div>
+          <div class="blog-post-card__content">
+            <div class="blog-post-card__date">24년 11월 18일</div>
+            <h3 class="blog-post-card__title">꿈을 향한 첫걸음</h3>
+          </div>
+        </a>
+
+        <!-- 카드 3 -->
+        <a href="views/blog-detail-1.html" class="blog-post-card">
+          <div class="blog-post-card__image-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1484480974693-6ca0a78fb36b.png" alt="이미지" class="blog-post-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="blog-post-card__image-placeholder" style="display: none;"></div>
+            <div class="blog-post-card__overlay"></div>
+          </div>
+          <div class="blog-post-card__content">
+            <div class="blog-post-card__date">23년 06월 26일</div>
+            <h3 class="blog-post-card__title">혁신적인 접근</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- 캐러셀 인디케이터 -->
+      <div class="blog-post-cards-section__indicators">
+        <div class="blog-post-cards-section__indicator blog-post-cards-section__indicator--active"></div>
+        <div class="blog-post-cards-section__indicator"></div>
+        <div class="blog-post-cards-section__indicator"></div>
+        <div class="blog-post-cards-section__indicator"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 블로그 아티클 리스트 섹션 -->
+  <section class="blog-articles-section">
+    <div class="container">
+      <div class="blog-articles-section__grid">
+        <!-- 아티클 카드 1 -->
+        <a href="views/blog-detail-1.html" class="blog-article-card">
+          <div class="blog-article-card__image-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1506905925346-21bda4d32df4.png" alt="이미지" class="blog-article-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="blog-article-card__image-placeholder" style="display: none;"></div>
+          </div>
+          <div class="blog-article-card__content">
+            <div class="blog-article-card__badge">영화/드라마</div>
+            <h3 class="blog-article-card__title">창의적인 해결책</h3>
+            <div class="blog-article-card__date">25년 11월 08일</div>
+          </div>
+        </a>
+
+        <!-- 아티클 카드 2 -->
+        <a href="views/blog-detail-1.html" class="blog-article-card">
+          <div class="blog-article-card__image-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1499750310107-5fef28a66643.png" alt="이미지" class="blog-article-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="blog-article-card__image-placeholder" style="display: none;"></div>
+          </div>
+          <div class="blog-article-card__content">
+            <div class="blog-article-card__badge">철학</div>
+            <h3 class="blog-article-card__title">전문적인 파트너십</h3>
+            <div class="blog-article-card__date">24년 09월 03일</div>
+          </div>
+        </a>
+
+        <!-- 아티클 카드 3 -->
+        <a href="views/blog-detail-1.html" class="blog-article-card">
+          <div class="blog-article-card__image-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1484480974693-6ca0a78fb36b.png" alt="이미지" class="blog-article-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="blog-article-card__image-placeholder" style="display: none;"></div>
+          </div>
+          <div class="blog-article-card__content">
+            <div class="blog-article-card__badge">사진</div>
+            <h3 class="blog-article-card__title">신뢰할 수 있는 동반자</h3>
+            <div class="blog-article-card__date">24년 12월 28일</div>
+          </div>
+        </a>
+
+        <!-- 아티클 카드 4 -->
+        <a href="views/blog-detail-1.html" class="blog-article-card">
+          <div class="blog-article-card__image-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1501785888041-af3ef285b470.png" alt="이미지" class="blog-article-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="blog-article-card__image-placeholder" style="display: none;"></div>
+          </div>
+          <div class="blog-article-card__content">
+            <div class="blog-article-card__badge">교육</div>
+            <h3 class="blog-article-card__title">미래를 향한 도전</h3>
+            <div class="blog-article-card__date">24년 07월 26일</div>
+          </div>
+        </a>
+
+        <!-- 아티클 카드 5 -->
+        <a href="views/blog-detail-1.html" class="blog-article-card">
+          <div class="blog-article-card__image-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1469854523086-cc02fe5d8800.png" alt="이미지" class="blog-article-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="blog-article-card__image-placeholder" style="display: none;"></div>
+          </div>
+          <div class="blog-article-card__content">
+            <div class="blog-article-card__badge">음악</div>
+            <h3 class="blog-article-card__title">성공을 위한 파트너</h3>
+            <div class="blog-article-card__date">25년 08월 17일</div>
+          </div>
+        </a>
+
+        <!-- 아티클 카드 6 -->
+        <a href="views/blog-detail-1.html" class="blog-article-card">
+          <div class="blog-article-card__image-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지" class="blog-article-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="blog-article-card__image-placeholder" style="display: none;"></div>
+          </div>
+          <div class="blog-article-card__content">
+            <div class="blog-article-card__badge">운동/피트니스</div>
+            <h3 class="blog-article-card__title">가치 있는 선택</h3>
+            <div class="blog-article-card__date">25년 07월 14일</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- 더 불러오기 버튼 -->
+      <div class="blog-articles-section__load-more">
+        <button type="button" class="btn btn--secondary btn--m blog-articles-section__load-more-button">
+          <span>더보기</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 이메일 구독 섹션 -->
+  <section class="email-subscription-section">
+    <div class="container">
+      <div class="email-subscription-section__content">
+        <h2 class="email-subscription-section__title">새 글이 올라올 때마다<br>이메일로 알려드려요</h2>
+        <form class="email-subscription-section__form">
+          <div class="email-subscription-section__input-wrapper">
+            <input 
+              type="email" 
+              id="email-subscription" 
+              name="email" 
+              class="email-subscription-section__input" 
+              placeholder="이메일을 입력해주세요."
+              aria-label="이메일 주소 입력"
+              required
+            >
+            <button type="submit" class="btn btn--primary btn--m email-subscription-section__button">
+              <span>구독</span>
+            </button>
+          </div>
+          <!-- <p class="email-subscription-section__helper">헬퍼 텍스트 영역</p> -->
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script src="js/blog-list-7.js"></script>
+<script data-spa-ignore>
+  Popup.init();
+  console.log('home page script executed');
+</script>
+
+</html>

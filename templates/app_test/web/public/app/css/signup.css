@@ -1,0 +1,62 @@
+.signup-page {
+  min-height: 100vh; background: var(--color-bg-secondary);
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 24px 20px;
+}
+
+.signup-box {
+  width: 100%; max-width: 400px;
+  background: var(--color-bg-primary); border-radius: 20px;
+  padding: 32px 24px; box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.signup-logo {
+  text-align: center; margin-bottom: 28px;
+}
+.signup-logo__icon {
+  font-size: 2.5rem; display: block; margin-bottom: 8px;
+}
+.signup-logo__title {
+  font-size: 1.375rem; font-weight: 800; color: #6366f1;
+}
+.signup-logo__sub {
+  font-size: 0.875rem; color: var(--color-text-tertiary); margin-top: 4px;
+}
+
+.signup-form { display: flex; flex-direction: column; gap: 14px; }
+
+.signup-field { display: flex; flex-direction: column; gap: 6px; }
+.signup-field__label {
+  font-size: 0.8125rem; font-weight: 600; color: var(--color-text-secondary);
+}
+.signup-field__input {
+  width: 100%; padding: 12px 14px;
+  border: 1.5px solid var(--color-border); border-radius: 12px;
+  font-size: 0.9375rem; color: var(--color-text-primary);
+  background: var(--color-bg-primary); outline: none;
+  transition: border-color 0.15s; box-sizing: border-box;
+}
+.signup-field__input:focus { border-color: #6366f1; }
+.signup-field__input::placeholder { color: var(--color-text-tertiary); }
+
+.signup-btn {
+  width: 100%; padding: 14px;
+  background: #6366f1; color: #fff;
+  border: none; border-radius: 14px;
+  font-size: 1rem; font-weight: 700; cursor: pointer;
+  margin-top: 6px; transition: opacity 0.15s;
+}
+.signup-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.signup-msg {
+  text-align: center; font-size: 0.875rem; margin-top: 12px;
+  min-height: 20px; font-weight: 500;
+}
+.signup-msg--error { color: #ef4444; }
+.signup-msg--success { color: #10b981; }
+
+.signup-footer {
+  text-align: center; margin-top: 20px;
+  font-size: 0.8125rem; color: var(--color-text-tertiary);
+}
+.signup-footer a { color: #6366f1; font-weight: 600; text-decoration: none; }

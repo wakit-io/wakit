@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>App Test</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#6366f1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <link rel="stylesheet" href="/wakit/css/wakit.css">
+  <link rel="stylesheet" href="/wakit/css/styleGuide.css">
+  <link rel="stylesheet" href="/wakit/css/component.css">
+  <link rel="stylesheet" href="/wakit/css/wakit-popup.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script>
+    window.sb = supabase.createClient(
+      'http://127.0.0.1:54321',
+      'sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH'
+    );
+  </script>
+  <!-- 테마 즉시 적용 (FOUC 방지) — wakit은 'blog-theme' 키를 읽으므로 함께 동기화 -->
+  <script>
+    (function() {
+      try {
+        var v = localStorage.getItem('app_test-theme');
+        var dark = v === 'dark' || (!v && matchMedia('(prefers-color-scheme: dark)').matches);
+        // wakit initApp이 'blog-theme' 키로 applyBlogThemeSync()를 호출하므로 동기화 필수
+        localStorage.setItem('blog-theme', dark ? 'dark' : 'light');
+        if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+      } catch(e) {}
+    })();
+  </script>
+</head>
+<body id="root">
+  <script type="module">
+    import Core from "/wakit/js/wakit.js";
+    Core.initApp('./wakitConfig.json');
+    const isLocalDev = ['localhost', '127.0.0.1'].includes(location.hostname);
+    if ('serviceWorker' in navigator && !isLocalDev) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/wakit/service-worker.js');
+      });
+    }
+  </script>
+  <script src="/wakit/js/wakit-popup.js"></script>
+  <script>window.Popup && Popup.init();</script>
+  <script src="./js/theme-toggle.js"></script>
+</body>
+</html>

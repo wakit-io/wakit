@@ -1,0 +1,295 @@
+/* ============================================
+   My Order History - Base Styles
+   ============================================ */
+
+.my-order-history {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+}
+
+/* ============================================
+   My Order History - List
+   ============================================ */
+
+.my-order-history__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.my-order-history__item {
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  transition: background-color 0.2s;
+}
+
+.my-order-history__item:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.my-order-history__item-content {
+  display: flex;
+  gap: var(--spacing-md);
+  flex: 1;
+}
+
+/* ============================================
+   My Order History - Image
+   ============================================ */
+
+.my-order-history__item-image {
+  flex-shrink: 0;
+  width: 148px;
+  height: 110px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-bg-secondary);
+}
+
+.my-order-history__item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================
+   My Order History - Info
+   ============================================ */
+
+.my-order-history__item-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  flex: 1;
+}
+
+.my-order-history__item-date {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+.my-order-history__date-text {
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+.my-order-history__date-label {
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+.my-order-history__item-name {
+  font-family: var(--font-family-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.my-order-history__item-price {
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--color-primary);
+}
+
+.my-order-history__item-brand {
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--color-text-primary);
+}
+
+/* ============================================
+   My Order History - Actions
+   ============================================ */
+
+.my-order-history__item-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
+}
+
+.my-order-history__btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.my-order-history__btn--primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.my-order-history__btn--primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.my-order-history__btn--review {
+  background-color: var(--color-primary-lighter);
+  color: var(--color-primary);
+}
+
+.my-order-history__btn--review:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.my-order-history__btn--secondary {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.my-order-history__btn--secondary:hover {
+  background-color: var(--color-primary-lighter);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.my-order-history__btn-icon {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.my-order-history__btn-icon:hover {
+  background-color: var(--color-primary-lighter);
+  border-color: var(--color-primary);
+}
+
+.my-order-history__btn-icon:hover i {
+  color: var(--color-primary);
+}
+
+.my-order-history__btn-icon i {
+  font-size: 20px;
+  color: var(--color-text-primary);
+}
+
+/* ============================================
+   My Order History - Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .my-order-history__item {
+    flex-direction: column;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    gap: var(--spacing-sm);
+  }
+
+  .my-order-history__item-content {
+    width: 100%;
+    gap: var(--spacing-sm);
+  }
+
+  .my-order-history__item-image {
+    width: 141px;
+    height: 110px;
+  }
+
+  .my-order-history__item-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .my-order-history__item-date {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .my-order-history__date-text {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .my-order-history__date-label {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .my-order-history__item-name {
+    font-size: 16px;
+    line-height: 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .my-order-history__item-price {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .my-order-history__item-brand {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .my-order-history__item-actions {
+    width: 100%;
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+  }
+
+  .my-order-history__btn {
+    flex: 1;
+    min-width: 0;
+    font-size: 12px;
+    line-height: 20px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .my-order-history__btn-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .my-order-history__btn-icon i {
+    font-size: 20px;
+  }
+}

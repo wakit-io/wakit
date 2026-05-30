@@ -1,0 +1,289 @@
+/**
+ * 숙박 검색 페이지 스타일
+ * Figma: 숙박-숙소찾기-리스트뷰 (node: 7326:32175)
+ */
+@import url('./foundation/color.css');
+@import url('./foundation/spacing.css');
+@import url('./foundation/typography.css');
+
+.hotel-search-page {
+  background: var(--color-bg-secondary);
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+/* ── 상단 검색 입력 ── */
+.search-header {
+  background: var(--color-bg-primary);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: var(--color-bg-secondary);
+  border: 1.5px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0.625rem var(--spacing-md);
+  transition: border-color 0.15s;
+}
+.search-input-wrap:focus-within {
+  border-color: var(--color-primary);
+  background: var(--color-bg-primary);
+}
+.search-input-wrap i {
+  color: var(--color-text-tertiary);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.search-input-wrap input {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 0.9375rem;
+  color: var(--color-text-primary);
+  outline: none;
+}
+.search-input-wrap input::placeholder {
+  color: var(--color-text-tertiary);
+}
+.search-input-wrap .search-clear {
+  background: none;
+  border: none;
+  color: var(--color-text-tertiary);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+  display: none;
+  line-height: 1;
+}
+.search-input-wrap.has-value .search-clear { display: block; }
+
+/* ── 날짜/인원 선택 바 ── */
+.search-condition-bar {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.search-condition-bar::-webkit-scrollbar { display: none; }
+.search-condition-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-bg-primary);
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.search-condition-chip.is-set {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  font-weight: 600;
+}
+.search-condition-chip i { font-size: 0.75rem; }
+
+/* ── 필터 바 ── */
+.search-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.search-filter-bar::-webkit-scrollbar { display: none; }
+.search-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.3125rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-bg-primary);
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.search-filter-btn.is-active {
+  background: var(--color-text-primary);
+  border-color: var(--color-text-primary);
+  color: #fff;
+}
+.search-filter-btn i { font-size: 0.6875rem; }
+
+/* ── 결과 헤더 ── */
+.search-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--color-bg-primary);
+  margin-bottom: var(--spacing-sm);
+}
+.search-result-count {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+.search-result-count strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+.search-sort-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ── 숙소 리스트 카드 (가로형) ── */
+.search-result-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: 0 0 var(--spacing-sm);
+}
+.search-card {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--color-bg-primary);
+  text-decoration: none;
+  color: inherit;
+}
+.search-card__img {
+  width: 96px;
+  height: 96px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--color-bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.search-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.search-card__wish {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  line-height: 1;
+  padding: 0;
+}
+.search-card__wish.is-active { color: #ef4444; text-shadow: none; }
+.search-card__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
+.search-card__name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search-card__meta {
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+}
+.search-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.search-card__rating i { color: #f59e0b; font-size: 0.625rem; }
+.search-card__coupon {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.search-card__price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+.search-card__price-unit {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+}
+
+/* ── 빈 상태 ── */
+.search-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem var(--spacing-lg);
+  gap: var(--spacing-md);
+  text-align: center;
+}
+.search-empty__icon {
+  font-size: 3rem;
+  color: var(--color-text-tertiary);
+}
+.search-empty__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+.search-empty__desc {
+  font-size: 0.875rem;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+/* ── 이미지 플레이스홀더 ── */
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg-tertiary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  gap: 4px;
+}
+.img-placeholder i { font-size: 1.25rem; }

@@ -1,0 +1,1434 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Shop main 1</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- Blog Styles -->
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/shop-main-1.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="shop-main-1">
+
+  <!-- Mobile Tabs -->
+  <nav class="shop-main-1__mobile-tabs" aria-label="모바일 탭 메뉴">
+    <ul class="shop-main-1__tabs-list">
+      <li class="shop-main-1__tabs-item shop-main-1__tabs-item--active">
+        <a href="#" class="shop-main-1__tabs-link">홈</a>
+        <span class="shop-main-1__tabs-indicator"></span>
+      </li>
+      <li class="shop-main-1__tabs-item">
+        <a href="#" class="shop-main-1__tabs-link">오늘의 특가</a>
+      </li>
+      <li class="shop-main-1__tabs-item">
+        <a href="#" class="shop-main-1__tabs-link">기획전</a>
+      </li>
+      <li class="shop-main-1__tabs-item">
+        <a href="#" class="shop-main-1__tabs-link">세일</a>
+      </li>
+      <li class="shop-main-1__tabs-item">
+        <a href="#" class="shop-main-1__tabs-link">기프트카드</a>
+      </li>
+      <li class="shop-main-1__tabs-item">
+        <a href="#" class="shop-main-1__tabs-link">멤버십/쿠폰</a>
+      </li>
+      <li class="shop-main-1__tabs-item">
+        <a href="#" class="shop-main-1__tabs-link">이벤트</a>
+      </li>
+      <li class="shop-main-1__tabs-item">
+        <a href="#" class="shop-main-1__tabs-link">콘텐츠</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="shop-main-1__gnb">
+    <div class="shop-main-1__gnb-container">
+      <button class="shop-main-1__gnb-category-button" aria-label="카테고리 메뉴">
+        <i class="bi bi-list" aria-hidden="true"></i>
+        <span>카테고리</span>
+      </button>
+      <nav class="shop-main-1__gnb-menu" aria-label="GNB 메뉴">
+        <ul class="shop-main-1__gnb-menu-list">
+          <li class="shop-main-1__gnb-menu-item">
+            <a href="#" class="shop-main-1__gnb-menu-link">
+              <span>지속 가능한 성장</span>
+            </a>
+          </li>
+          <li class="shop-main-1__gnb-menu-item">
+            <a href="#" class="shop-main-1__gnb-menu-link">
+              <span>신메뉴</span>
+            </a>
+          </li>
+          <li class="shop-main-1__gnb-menu-item">
+            <a href="#" class="shop-main-1__gnb-menu-link">
+              <span>맞춤형 솔루션</span>
+            </a>
+          </li>
+          <li class="shop-main-1__gnb-menu-item">
+            <a href="#" class="shop-main-1__gnb-menu-link">
+              <span>기획전</span>
+            </a>
+          </li>
+          <li class="shop-main-1__gnb-menu-item">
+            <a href="#" class="shop-main-1__gnb-menu-link">
+              <span>세일</span>
+            </a>
+          </li>
+          <li class="shop-main-1__gnb-menu-item">
+            <a href="#" class="shop-main-1__gnb-menu-link">
+              <span>검증된 결과</span>
+            </a>
+          </li>
+          <li class="shop-main-1__gnb-menu-item">
+            <a href="#" class="shop-main-1__gnb-menu-link">
+              <span>신속한 대응</span>
+            </a>
+          </li>
+          <li class="shop-main-1__gnb-menu-item">
+            <a href="#" class="shop-main-1__gnb-menu-link">
+              <span>이벤트</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Carousel Banner Section -->
+  <section class="shop-main-1__carousel">
+    <!-- GNB (Global Navigation Bar) -->
+    
+
+    <!-- Carousel Content -->
+    <div class="shop-main-1__carousel-content">
+      <div class="shop-main-1__carousel-wrapper">
+        <div class="shop-main-1__carousel-slides">
+          <!-- Slide 1 -->
+          <div class="shop-main-1__carousel-slide shop-main-1__carousel-slide--active">
+            <div class="shop-main-1__carousel-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1558655146-364adaf1fcc9.png" alt="이미지" class="shop-main-1__carousel-image-img">
+              <div class="shop-main-1__carousel-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__carousel-item">
+              <div class="shop-main-1__carousel-text-container">
+                <div class="shop-main-1__carousel-text">
+                  <p class="shop-main-1__carousel-brand">모션</p>
+                  <h2 class="shop-main-1__carousel-headline">스페셜 에디션.</h2>
+                  <p class="shop-main-1__carousel-promotion">겨울 윈터 세일</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="shop-main-1__carousel-slide">
+            <div class="shop-main-1__carousel-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지" class="shop-main-1__carousel-image-img">
+              <div class="shop-main-1__carousel-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__carousel-item">
+              <div class="shop-main-1__carousel-text-container">
+                <div class="shop-main-1__carousel-text">
+                  <p class="shop-main-1__carousel-brand">오로라</p>
+                  <h2 class="shop-main-1__carousel-headline">시즌 오프 세일.</h2>
+                  <p class="shop-main-1__carousel-promotion">연말 연시 감사제</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="shop-main-1__carousel-slide">
+            <div class="shop-main-1__carousel-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1467232004584-a241de8bcf5d.png" alt="이미지" class="shop-main-1__carousel-image-img">
+              <div class="shop-main-1__carousel-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__carousel-item">
+              <div class="shop-main-1__carousel-text-container">
+                <div class="shop-main-1__carousel-text">
+                  <p class="shop-main-1__carousel-brand">모던</p>
+                  <h2 class="shop-main-1__carousel-headline">새로운 컬렉션 출시.</h2>
+                  <p class="shop-main-1__carousel-promotion">신규 회원 혜택</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="shop-main-1__carousel-slide">
+            <div class="shop-main-1__carousel-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1555066931-4365d14bab8c.png" alt="이미지" class="shop-main-1__carousel-image-img">
+              <div class="shop-main-1__carousel-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__carousel-item">
+              <div class="shop-main-1__carousel-text-container">
+                <div class="shop-main-1__carousel-text">
+                  <p class="shop-main-1__carousel-brand">네오룩스</p>
+                  <h2 class="shop-main-1__carousel-headline">이번 시즌 베스트.</h2>
+                  <p class="shop-main-1__carousel-promotion">리뷰 이벤트 진행중</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 5 -->
+          <div class="shop-main-1__carousel-slide">
+            <div class="shop-main-1__carousel-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지" class="shop-main-1__carousel-image-img">
+              <div class="shop-main-1__carousel-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__carousel-item">
+              <div class="shop-main-1__carousel-text-container">
+                <div class="shop-main-1__carousel-text">
+                  <p class="shop-main-1__carousel-brand">프리미에르</p>
+                  <h2 class="shop-main-1__carousel-headline">특별한 할인 이벤트.</h2>
+                  <p class="shop-main-1__carousel-promotion">묶음 배송 특가</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel Item Container (공통) -->
+      <div class="shop-main-1__carousel-item-container">
+        <!-- Category Overlay (공통) -->
+        <div class="shop-main-1__carousel-overlay">
+          <nav class="shop-main-1__category-menu" aria-label="카테고리 네비게이션">
+            <ul class="shop-main-1__category-list">
+              <li class="shop-main-1__category-item">
+                <a href="#" class="shop-main-1__category-link">
+                  <span>세심한 관리</span>
+                </a>
+              </li>
+              <li class="shop-main-1__category-item">
+                <a href="#" class="shop-main-1__category-link">
+                  <span>전문적인 컨설팅</span>
+                </a>
+              </li>
+              <li class="shop-main-1__category-item">
+                <a href="#" class="shop-main-1__category-link">
+                  <span>체계적인 분석</span>
+                </a>
+              </li>
+              <li class="shop-main-1__category-item">
+                <a href="#" class="shop-main-1__category-link">
+                  <span>효과적인 전략</span>
+                </a>
+              </li>
+              <li class="shop-main-1__category-item">
+                <a href="#" class="shop-main-1__category-link">
+                  <span>유아복</span>
+                </a>
+              </li>
+              <li class="shop-main-1__category-item">
+                <a href="#" class="shop-main-1__category-link">
+                  <span>아동복</span>
+                </a>
+              </li>
+              <li class="shop-main-1__category-item">
+                <a href="#" class="shop-main-1__category-link">
+                  <span>안정적인 운영</span>
+                </a>
+              </li>
+              <li class="shop-main-1__category-item">
+                <a href="#" class="shop-main-1__category-link">
+                  <span>캐주얼</span>
+                </a>
+              </li>
+              <li class="shop-main-1__category-item">
+                <a href="#" class="shop-main-1__category-link">
+                  <span>혁신적인 도구</span>
+                </a>
+              </li>
+              <li class="shop-main-1__category-item">
+                <a href="#" class="shop-main-1__category-link">
+                  <span>효율적인 관리</span>
+                </a>
+              </li>
+              <li class="shop-main-1__category-item">
+                <a href="#" class="shop-main-1__category-link">
+                  <span>체계적인 접근</span>
+                </a>
+              </li>
+              <li class="shop-main-1__category-item">
+                <a href="#" class="shop-main-1__category-link">
+                  <span>액세서리</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- Carousel Controls (공통) -->
+        <div class="shop-main-1__carousel-controls">
+          <button class="shop-main-1__carousel-button shop-main-1__carousel-button--prev" aria-label="이전 슬라이드">
+            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+          </button>
+          <span class="shop-main-1__carousel-pagination">
+            <span class="shop-main-1__carousel-current">1</span>/<span class="shop-main-1__carousel-total">5</span>
+          </span>
+          <button class="shop-main-1__carousel-button shop-main-1__carousel-button--next" aria-label="다음 슬라이드">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Carousel Indicator -->
+      <div class="shop-main-1__carousel-indicator">
+        <div class="shop-main-1__indicator-item shop-main-1__indicator-item--active" data-slide="0"></div>
+        <div class="shop-main-1__indicator-item" data-slide="1"></div>
+        <div class="shop-main-1__indicator-item" data-slide="2"></div>
+        <div class="shop-main-1__indicator-item" data-slide="3"></div>
+        <div class="shop-main-1__indicator-item" data-slide="4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Section -->
+  <section class="shop-main-1__category-section">
+    <div class="container">
+      <div class="shop-main-1__category-section-header">
+        <div class="shop-main-1__category-section-header-content">
+          <h2 class="shop-main-1__category-section-title">카테고리</h2>
+        </div>
+      </div>
+      <div class="shop-main-1__category-section-list">
+        <a href="views/shop-list-1.html" class="shop-main-1__category-section-item">
+          <div class="shop-main-1__category-section-item-image">
+            <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="겨울신상" class="shop-main-1__category-section-item-img">
+            <div class="shop-main-1__category-section-item-placeholder"></div>
+          </div>
+          <span class="shop-main-1__category-section-item-text">겨울신상</span>
+        </a>
+        <a href="views/shop-list-2.html" class="shop-main-1__category-section-item">
+          <div class="shop-main-1__category-section-item-image">
+            <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="이미지" class="shop-main-1__category-section-item-img">
+            <div class="shop-main-1__category-section-item-placeholder"></div>
+          </div>
+          <span class="shop-main-1__category-section-item-text">전문적인 지원</span>
+        </a>
+        <a href="views/shop-list-3.html" class="shop-main-1__category-section-item">
+          <div class="shop-main-1__category-section-item-image">
+            <img src="https://demo.wakit.org/img/samples/photo-1553062407-98eeb64c6a62.png" alt="이미지" class="shop-main-1__category-section-item-img">
+            <div class="shop-main-1__category-section-item-placeholder"></div>
+          </div>
+          <span class="shop-main-1__category-section-item-text">혁신적인 방법</span>
+        </a>
+        <a href="views/shop-list-4.html" class="shop-main-1__category-section-item">
+          <div class="shop-main-1__category-section-item-image">
+            <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="인기상품" class="shop-main-1__category-section-item-img">
+            <div class="shop-main-1__category-section-item-placeholder"></div>
+          </div>
+          <span class="shop-main-1__category-section-item-text">인기상품</span>
+        </a>
+        <a href="views/shop-list-1.html" class="shop-main-1__category-section-item">
+          <div class="shop-main-1__category-section-item-image">
+            <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="하객룩" class="shop-main-1__category-section-item-img">
+            <div class="shop-main-1__category-section-item-placeholder"></div>
+          </div>
+          <span class="shop-main-1__category-section-item-text">하객룩</span>
+        </a>
+        <a href="views/shop-list-3.html" class="shop-main-1__category-section-item">
+          <div class="shop-main-1__category-section-item-image">
+            <img src="https://demo.wakit.org/img/samples/photo-1553062407-98eeb64c6a62.png" alt="잡화특가" class="shop-main-1__category-section-item-img">
+            <div class="shop-main-1__category-section-item-placeholder"></div>
+          </div>
+          <span class="shop-main-1__category-section-item-text">잡화특가</span>
+        </a>
+        <a href="views/shop-list-4.html" class="shop-main-1__category-section-item">
+          <div class="shop-main-1__category-section-item-image">
+            <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="이미지" class="shop-main-1__category-section-item-img">
+            <div class="shop-main-1__category-section-item-placeholder"></div>
+          </div>
+          <span class="shop-main-1__category-section-item-text">고객 중심 서비스</span>
+        </a>
+        <a href="views/shop-list-1.html" class="shop-main-1__category-section-item">
+          <div class="shop-main-1__category-section-item-image">
+            <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="아울렛" class="shop-main-1__category-section-item-img">
+            <div class="shop-main-1__category-section-item-placeholder"></div>
+          </div>
+          <span class="shop-main-1__category-section-item-text">아울렛</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 최신 상품 섹션 -->
+  <section class="shop-main-1__products-section">
+    <div class="container">
+      <div class="shop-main-1__products-header">
+        <div class="shop-main-1__products-header-content">
+          <h2 class="shop-main-1__products-title">최신 상품</h2>
+          <!-- <p>체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p> -->
+        </div>
+      </div>
+      <div class="shop-main-1__products-grid">
+        <!-- Product 1 -->
+        <article class="shop-main-1__products-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__products-link">
+            <div class="shop-main-1__products-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="이미지" class="shop-main-1__products-image-img">
+              <div class="shop-main-1__products-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__products-info">
+              <div class="shop-main-1__products-text">
+                <h3 class="shop-main-1__products-name">변화를 만드는 순간</h3>
+                <div class="shop-main-1__products-price">
+                  <span class="shop-main-1__products-discount">15%</span>
+                  <span class="shop-main-1__products-amount">24,500</span>
+                  <span class="shop-main-1__products-currency">원</span>
+                </div>
+                <div class="shop-main-1__products-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <span class="shop-main-1__products-rating-score">4.8</span>
+                  <span class="shop-main-1__products-rating-count">맞춤형 솔루션</span>
+                </div>
+              </div>
+              <button class="shop-main-1__products-favorite" aria-label="좋아요">
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="shop-main-1__products-badges">
+              <span class="shop-main-1__products-badge shop-main-1__products-badge--primary badge badge--primary">
+                <span>검증된 결과</span>
+              </span>
+              <span class="shop-main-1__products-badge shop-main-1__products-badge--secondary badge badge--secondary">
+                <span>무료배송</span>
+              </span>
+            </div>
+          </a>
+        </article>
+        <!-- Product 2 -->
+        <article class="shop-main-1__products-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__products-link">
+            <div class="shop-main-1__products-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="이미지" class="shop-main-1__products-image-img">
+              <div class="shop-main-1__products-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__products-info">
+              <div class="shop-main-1__products-text">
+                <h3 class="shop-main-1__products-name">성장하는 이야기</h3>
+                <div class="shop-main-1__products-price">
+                  <span class="shop-main-1__products-discount">20%</span>
+                  <span class="shop-main-1__products-amount">35,000</span>
+                  <span class="shop-main-1__products-currency">원</span>
+                </div>
+                <div class="shop-main-1__products-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <span class="shop-main-1__products-rating-score">4.8</span>
+                  <span class="shop-main-1__products-rating-count">세심한 관리</span>
+                </div>
+              </div>
+              <button class="shop-main-1__products-favorite" aria-label="좋아요">
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="shop-main-1__products-badges">
+            </div>
+          </a>
+        </article>
+        <!-- Product 3 -->
+        <article class="shop-main-1__products-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__products-link">
+            <div class="shop-main-1__products-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1553062407-98eeb64c6a62.png" alt="이미지" class="shop-main-1__products-image-img">
+              <div class="shop-main-1__products-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__products-info">
+              <div class="shop-main-1__products-text">
+                <h3 class="shop-main-1__products-name">함께하는 여정</h3>
+                <div class="shop-main-1__products-price">
+                  <span class="shop-main-1__products-discount">10%</span>
+                  <span class="shop-main-1__products-amount">19,800</span>
+                  <span class="shop-main-1__products-currency">원</span>
+                </div>
+                <div class="shop-main-1__products-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <span class="shop-main-1__products-rating-score">4.8</span>
+                  <span class="shop-main-1__products-rating-count">체계적인 분석</span>
+                </div>
+              </div>
+              <button class="shop-main-1__products-favorite" aria-label="좋아요">
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="shop-main-1__products-badges">
+            </div>
+          </a>
+        </article>
+        <!-- Product 4 -->
+        <article class="shop-main-1__products-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__products-link">
+            <div class="shop-main-1__products-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="스니커즈" class="shop-main-1__products-image-img">
+              <div class="shop-main-1__products-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__products-info">
+              <div class="shop-main-1__products-text">
+                <h3 class="shop-main-1__products-name">도전과 성취의 기록</h3>
+                <div class="shop-main-1__products-price">
+                  <span class="shop-main-1__products-discount">30%</span>
+                  <span class="shop-main-1__products-amount">42,000</span>
+                  <span class="shop-main-1__products-currency">원</span>
+                </div>
+                <div class="shop-main-1__products-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <span class="shop-main-1__products-rating-score">4.8</span>
+                  <span class="shop-main-1__products-rating-count">안정적인 운영</span>
+                </div>
+              </div>
+              <button class="shop-main-1__products-favorite" aria-label="좋아요">
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="shop-main-1__products-badges">
+            </div>
+          </a>
+        </article>
+        <!-- Product 5 -->
+        <article class="shop-main-1__products-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__products-link">
+            <div class="shop-main-1__products-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="원피스" class="shop-main-1__products-image-img">
+              <div class="shop-main-1__products-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__products-info">
+              <div class="shop-main-1__products-text">
+                <h3 class="shop-main-1__products-name">무한한 가능성의 시작</h3>
+                <div class="shop-main-1__products-price">
+                  <span class="shop-main-1__products-discount">25%</span>
+                  <span class="shop-main-1__products-amount">28,900</span>
+                  <span class="shop-main-1__products-currency">원</span>
+                </div>
+                <div class="shop-main-1__products-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <span class="shop-main-1__products-rating-score">4.8</span>
+                  <span class="shop-main-1__products-rating-count">효율적인 관리</span>
+                </div>
+              </div>
+              <button class="shop-main-1__products-favorite" aria-label="좋아요">
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="shop-main-1__products-badges">
+              <span class="shop-main-1__products-badge shop-main-1__products-badge--primary badge badge--primary">
+                <span>체계적인 접근</span>
+              </span>
+              <span class="shop-main-1__products-badge shop-main-1__products-badge--secondary badge badge--secondary">
+                <span>무료배송</span>
+              </span>
+            </div>
+          </a>
+        </article>
+        <!-- Product 6 -->
+        <article class="shop-main-1__products-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__products-link">
+            <div class="shop-main-1__products-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="이미지" class="shop-main-1__products-image-img">
+              <div class="shop-main-1__products-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__products-info">
+              <div class="shop-main-1__products-text">
+                <h3 class="shop-main-1__products-name">꿈을 향한 첫걸음</h3>
+                <div class="shop-main-1__products-price">
+                  <span class="shop-main-1__products-discount">5%</span>
+                  <span class="shop-main-1__products-amount">55,000</span>
+                  <span class="shop-main-1__products-currency">원</span>
+                </div>
+                <div class="shop-main-1__products-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <span class="shop-main-1__products-rating-score">4.8</span>
+                  <span class="shop-main-1__products-rating-count">혁신적인 방법</span>
+                </div>
+              </div>
+              <button class="shop-main-1__products-favorite" aria-label="좋아요">
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="shop-main-1__products-badges">
+            </div>
+          </a>
+        </article>
+        <!-- Product 5 -->
+        <article class="shop-main-1__products-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__products-link">
+            <div class="shop-main-1__products-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="이미지" class="shop-main-1__products-image-img">
+              <div class="shop-main-1__products-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__products-info">
+              <div class="shop-main-1__products-text">
+                <h3 class="shop-main-1__products-name">혁신적인 접근</h3>
+                <div class="shop-main-1__products-price">
+                  <span class="shop-main-1__products-discount">35%</span>
+                  <span class="shop-main-1__products-amount">16,500</span>
+                  <span class="shop-main-1__products-currency">원</span>
+                </div>
+                <div class="shop-main-1__products-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <span class="shop-main-1__products-rating-score">4.8</span>
+                  <span class="shop-main-1__products-rating-count">지속 가능한 성장</span>
+                </div>
+              </div>
+              <button class="shop-main-1__products-favorite" aria-label="좋아요">
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="shop-main-1__products-badges">
+              <span class="shop-main-1__products-badge shop-main-1__products-badge--primary badge badge--primary">
+                <span>맞춤형 솔루션</span>
+              </span>
+              <span class="shop-main-1__products-badge shop-main-1__products-badge--secondary badge badge--secondary">
+                <span>무료배송</span>
+              </span>
+            </div>
+          </a>
+        </article>
+        <!-- Product 6 -->
+        <article class="shop-main-1__products-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__products-link">
+            <div class="shop-main-1__products-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="이미지" class="shop-main-1__products-image-img">
+              <div class="shop-main-1__products-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__products-info">
+              <div class="shop-main-1__products-text">
+                <h3 class="shop-main-1__products-name">창의적인 해결책</h3>
+                <div class="shop-main-1__products-price">
+                  <span class="shop-main-1__products-discount">40%</span>
+                  <span class="shop-main-1__products-amount">39,900</span>
+                  <span class="shop-main-1__products-currency">원</span>
+                </div>
+                <div class="shop-main-1__products-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <span class="shop-main-1__products-rating-score">4.8</span>
+                  <span class="shop-main-1__products-rating-count">신속한 대응</span>
+                </div>
+              </div>
+              <button class="shop-main-1__products-favorite" aria-label="좋아요">
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="shop-main-1__products-badges">
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 신상 업데이트 섹션 -->
+  <section class="shop-main-1__banner-section">
+    <div class="container">
+      <div class="shop-main-1__banner-header">
+        <div class="shop-main-1__banner-header-content">
+          <h2 class="shop-main-1__banner-title">전문적인 파트너십</h2>
+        </div>
+      </div>
+      <div class="shop-main-1__banner-list">
+        <!-- Banner 1 -->
+        <article class="shop-main-1__banner-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__banner-link">
+            <div class="shop-main-1__banner-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="이미지" class="shop-main-1__banner-image-img">
+              <div class="shop-main-1__banner-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__banner-content">
+              <div class="shop-main-1__banner-text">
+                <h3 class="shop-main-1__banner-text-title">기념 특별 이벤트<br>역대급 혜택!</h3>
+                <p class="shop-main-1__banner-text-description">모든 카테고리 15% 추가 할인</p>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Banner 2 -->
+        <article class="shop-main-1__banner-item shop-main-1__banner-item--dark">
+          <a href="views/shop-detail-1.html" class="shop-main-1__banner-link">
+            <div class="shop-main-1__banner-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="이미지" class="shop-main-1__banner-image-img">
+              <div class="shop-main-1__banner-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__banner-content">
+              <div class="shop-main-1__banner-text">
+                <h3 class="shop-main-1__banner-text-title">어느때보다 따듯한 연말,<br>알차게 새해 준비하는 방법</h3>
+                <p class="shop-main-1__banner-text-description">올겨울 필수템</p>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Banner 3 -->
+        <article class="shop-main-1__banner-item shop-main-1__banner-item--dark">
+          <a href="views/shop-detail-1.html" class="shop-main-1__banner-link">
+            <div class="shop-main-1__banner-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1553062407-98eeb64c6a62.png" alt="이미지" class="shop-main-1__banner-image-img">
+              <div class="shop-main-1__banner-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__banner-content">
+              <div class="shop-main-1__banner-text">
+                <h3 class="shop-main-1__banner-text-title">2025 시즌결산<br>스페셜 이벤트</h3>
+                <p class="shop-main-1__banner-text-description">전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+      <!-- Carousel Indicator (Mobile only) -->
+      <div class="shop-main-1__banner-indicator">
+        <span class="shop-main-1__banner-indicator-dot shop-main-1__banner-indicator-dot--active" aria-label="배너 1"></span>
+        <span class="shop-main-1__banner-indicator-dot" aria-label="배너 2"></span>
+        <span class="shop-main-1__banner-indicator-dot" aria-label="배너 3"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 오늘의 특가 섹션 -->
+  <section class="shop-main-1__special-offer-section">
+    <div class="container">
+      <div class="shop-main-1__special-offer-header">
+        <div class="shop-main-1__special-offer-header-content">
+          <h2 class="shop-main-1__special-offer-title">신뢰할 수 있는 동반자</h2>
+        </div>
+        <button class="shop-main-1__special-offer-button btn btn--secondary btn--m" aria-label="전체보기">
+          <span>전체보기</span>
+        </button>
+      </div>
+      <div class="shop-main-1__special-offer-list">
+        <!-- Special Offer Item 1 -->
+        <article class="shop-main-1__special-offer-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__special-offer-link">
+            <div class="shop-main-1__special-offer-image-wrapper">
+              <div class="shop-main-1__special-offer-image">
+                <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="이미지" class="shop-main-1__special-offer-image-img">
+                <div class="shop-main-1__special-offer-image-placeholder"></div>
+              </div>
+              <div class="shop-main-1__special-offer-discount-badge">
+                <span class="shop-main-1__special-offer-discount-text">25%</span>
+              </div>
+            </div>
+            <div class="shop-main-1__special-offer-content">
+              <div class="shop-main-1__special-offer-details">
+                <div class="shop-main-1__special-offer-text">
+                  <h3 class="shop-main-1__special-offer-name">미래를 향한 도전</h3>
+                  <div class="shop-main-1__special-offer-price-wrapper">
+                    <div class="shop-main-1__special-offer-price">
+                      <span class="shop-main-1__special-offer-amount">31,200</span>
+                      <span class="shop-main-1__special-offer-currency">원</span>
+                    </div>
+                  </div>
+                  <div class="shop-main-1__special-offer-rating">
+                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                    <span class="shop-main-1__special-offer-rating-score">4.8</span>
+                    <span class="shop-main-1__special-offer-rating-count">전문적인 컨설팅</span>
+                  </div>
+                  <div class="shop-main-1__special-offer-badges">
+                    <span class="shop-main-1__special-offer-badge shop-main-1__special-offer-badge--primary">
+                      <span>체계적인 분석</span>
+                    </span>
+                    <span class="shop-main-1__special-offer-badge shop-main-1__special-offer-badge--secondary">
+                      <span>무료배송</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="shop-main-1__special-offer-icons">
+                <button class="shop-main-1__special-offer-favorite" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button class="shop-main-1__special-offer-cart" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Special Offer Item 2 -->
+        <article class="shop-main-1__special-offer-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__special-offer-link">
+            <div class="shop-main-1__special-offer-image-wrapper">
+              <div class="shop-main-1__special-offer-image">
+                <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="이미지" class="shop-main-1__special-offer-image-img">
+                <div class="shop-main-1__special-offer-image-placeholder"></div>
+              </div>
+              <div class="shop-main-1__special-offer-discount-badge">
+                <span class="shop-main-1__special-offer-discount-text">30%</span>
+              </div>
+            </div>
+            <div class="shop-main-1__special-offer-content">
+              <div class="shop-main-1__special-offer-details">
+                <div class="shop-main-1__special-offer-text">
+                  <h3 class="shop-main-1__special-offer-name">성공을 위한 파트너</h3>
+                  <div class="shop-main-1__special-offer-price-wrapper">
+                    <div class="shop-main-1__special-offer-price">
+                      <span class="shop-main-1__special-offer-amount">47,500</span>
+                      <span class="shop-main-1__special-offer-currency">원</span>
+                    </div>
+                  </div>
+                  <div class="shop-main-1__special-offer-rating">
+                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                    <span class="shop-main-1__special-offer-rating-score">4.8</span>
+                    <span class="shop-main-1__special-offer-rating-count">안정적인 운영</span>
+                  </div>
+                  <div class="shop-main-1__special-offer-badges">
+                    <span class="shop-main-1__special-offer-badge shop-main-1__special-offer-badge--primary">
+                      <span>혁신적인 도구</span>
+                    </span>
+                    <span class="shop-main-1__special-offer-badge shop-main-1__special-offer-badge--secondary">
+                      <span>무료배송</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="shop-main-1__special-offer-icons">
+                <button class="shop-main-1__special-offer-favorite" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button class="shop-main-1__special-offer-cart" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Special Offer Item 3 -->
+        <article class="shop-main-1__special-offer-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__special-offer-link">
+            <div class="shop-main-1__special-offer-image-wrapper">
+              <div class="shop-main-1__special-offer-image">
+                <img src="https://demo.wakit.org/img/samples/photo-1553062407-98eeb64c6a62.png" alt="이미지" class="shop-main-1__special-offer-image-img">
+                <div class="shop-main-1__special-offer-image-placeholder"></div>
+              </div>
+              <div class="shop-main-1__special-offer-discount-badge">
+                <span class="shop-main-1__special-offer-discount-text">15%</span>
+              </div>
+            </div>
+            <div class="shop-main-1__special-offer-content">
+              <div class="shop-main-1__special-offer-details">
+                <div class="shop-main-1__special-offer-text">
+                  <h3 class="shop-main-1__special-offer-name">가치 있는 선택</h3>
+                  <div class="shop-main-1__special-offer-price-wrapper">
+                    <div class="shop-main-1__special-offer-price">
+                      <span class="shop-main-1__special-offer-amount">22,000</span>
+                      <span class="shop-main-1__special-offer-currency">원</span>
+                    </div>
+                  </div>
+                  <div class="shop-main-1__special-offer-rating">
+                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                    <span class="shop-main-1__special-offer-rating-score">4.8</span>
+                    <span class="shop-main-1__special-offer-rating-count">체계적인 접근</span>
+                  </div>
+                  <div class="shop-main-1__special-offer-badges">
+                    <span class="shop-main-1__special-offer-badge shop-main-1__special-offer-badge--primary">
+                      <span>전문적인 지원</span>
+                    </span>
+                    <span class="shop-main-1__special-offer-badge shop-main-1__special-offer-badge--secondary">
+                      <span>무료배송</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="shop-main-1__special-offer-icons">
+                <button class="shop-main-1__special-offer-favorite" aria-label="좋아요">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <button class="shop-main-1__special-offer-cart" aria-label="장바구니">
+                  <i class="bi bi-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 주목해야 할 브랜드 섹션 -->
+  <section class="shop-main-1__featured-brand-section">
+    <div class="container">
+      <div class="shop-main-1__featured-brand-header">
+        <div class="shop-main-1__featured-brand-header-content">
+          <h2 class="shop-main-1__featured-brand-title">새로운 시작을 함께해요</h2>
+        </div>
+      </div>
+      <div class="shop-main-1__featured-brand-tabs">
+        <button class="shop-main-1__featured-brand-tab shop-main-1__featured-brand-tab--active">글로우</button>
+        <button class="shop-main-1__featured-brand-tab">인테리어</button>
+        <button class="shop-main-1__featured-brand-tab">생활 꿀팁</button>
+        <button class="shop-main-1__featured-brand-tab">라이프스타일</button>
+        <button class="shop-main-1__featured-brand-tab">가구</button>
+      </div>
+      <!-- Carousel (PC) -->
+      <div class="shop-main-1__featured-brand-carousel">
+        <div class="shop-main-1__featured-brand-carousel-wrapper">
+          <div class="shop-main-1__featured-brand-carousel-slides">
+            <div class="shop-main-1__featured-brand-carousel-slide shop-main-1__featured-brand-carousel-slide--active">
+              <div class="shop-main-1__featured-brand-carousel-image">
+                <img src="https://demo.wakit.org/img/samples/photo-1558655146-364adaf1fcc9.png" alt="이미지" class="shop-main-1__featured-brand-carousel-image-img">
+                <div class="shop-main-1__featured-brand-carousel-image-placeholder"></div>
+              </div>
+            </div>
+            <div class="shop-main-1__featured-brand-carousel-slide">
+              <div class="shop-main-1__featured-brand-carousel-image">
+                <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지" class="shop-main-1__featured-brand-carousel-image-img">
+                <div class="shop-main-1__featured-brand-carousel-image-placeholder"></div>
+              </div>
+            </div>
+            <div class="shop-main-1__featured-brand-carousel-slide">
+              <div class="shop-main-1__featured-brand-carousel-image">
+                <img src="https://demo.wakit.org/img/samples/photo-1467232004584-a241de8bcf5d.png" alt="이미지" class="shop-main-1__featured-brand-carousel-image-img">
+                <div class="shop-main-1__featured-brand-carousel-image-placeholder"></div>
+              </div>
+            </div>
+            <div class="shop-main-1__featured-brand-carousel-slide">
+              <div class="shop-main-1__featured-brand-carousel-image">
+                <img src="https://demo.wakit.org/img/samples/photo-1555066931-4365d14bab8c.png" alt="이미지" class="shop-main-1__featured-brand-carousel-image-img">
+                <div class="shop-main-1__featured-brand-carousel-image-placeholder"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="shop-main-1__featured-brand-carousel-button shop-main-1__featured-brand-carousel-button--prev" aria-label="이전 슬라이드">
+          <i class="bi bi-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="shop-main-1__featured-brand-carousel-button shop-main-1__featured-brand-carousel-button--next" aria-label="다음 슬라이드">
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </button>
+        <div class="shop-main-1__featured-brand-carousel-indicator">
+          <span class="shop-main-1__featured-brand-carousel-indicator-dot shop-main-1__featured-brand-carousel-indicator-dot--active" aria-label="슬라이드 1"></span>
+          <span class="shop-main-1__featured-brand-carousel-indicator-dot" aria-label="슬라이드 2"></span>
+          <span class="shop-main-1__featured-brand-carousel-indicator-dot" aria-label="슬라이드 3"></span>
+          <span class="shop-main-1__featured-brand-carousel-indicator-dot" aria-label="슬라이드 4"></span>
+        </div>
+      </div>
+      <!-- Brand List -->
+      <div class="shop-main-1__featured-brand-list">
+        <!-- Brand Item 1 -->
+        <article class="shop-main-1__featured-brand-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__featured-brand-link">
+            <div class="shop-main-1__featured-brand-item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="이미지" class="shop-main-1__featured-brand-item-image-img">
+              <div class="shop-main-1__featured-brand-item-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__featured-brand-item-content">
+              <div class="shop-main-1__featured-brand-item-details">
+                <h3 class="shop-main-1__featured-brand-item-name">더 나은 내일을 향해</h3>
+                <div class="shop-main-1__featured-brand-item-price-wrapper">
+                  <span class="shop-main-1__featured-brand-item-discount">20%</span>
+                  <div class="shop-main-1__featured-brand-item-price">
+                    <span class="shop-main-1__featured-brand-item-amount">59,000</span>
+                    <span class="shop-main-1__featured-brand-item-currency">원</span>
+                  </div>
+                </div>
+              </div>
+              <div class="shop-main-1__featured-brand-item-badges">
+                <span class="shop-main-1__featured-brand-item-badge shop-main-1__featured-brand-item-badge--primary">
+                  <span>슈퍼세일</span>
+                </span>
+                <span class="shop-main-1__featured-brand-item-badge shop-main-1__featured-brand-item-badge--secondary">
+                  <span>오늘배송</span>
+                </span>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Brand Item 2 -->
+        <article class="shop-main-1__featured-brand-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__featured-brand-link">
+            <div class="shop-main-1__featured-brand-item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="이미지" class="shop-main-1__featured-brand-item-image-img">
+              <div class="shop-main-1__featured-brand-item-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__featured-brand-item-content">
+              <div class="shop-main-1__featured-brand-item-details">
+                <h3 class="shop-main-1__featured-brand-item-name">변화를 만드는 순간</h3>
+                <div class="shop-main-1__featured-brand-item-price-wrapper">
+                  <span class="shop-main-1__featured-brand-item-discount">10%</span>
+                  <div class="shop-main-1__featured-brand-item-price">
+                    <span class="shop-main-1__featured-brand-item-amount">18,700</span>
+                    <span class="shop-main-1__featured-brand-item-currency">원</span>
+                  </div>
+                </div>
+              </div>
+              <div class="shop-main-1__featured-brand-item-badges">
+                <span class="shop-main-1__featured-brand-item-badge shop-main-1__featured-brand-item-badge--primary">
+                  <span>슈퍼세일</span>
+                </span>
+                <span class="shop-main-1__featured-brand-item-badge shop-main-1__featured-brand-item-badge--secondary">
+                  <span>오늘배송</span>
+                </span>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Brand Item 3 -->
+        <article class="shop-main-1__featured-brand-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__featured-brand-link">
+            <div class="shop-main-1__featured-brand-item-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1553062407-98eeb64c6a62.png" alt="이미지" class="shop-main-1__featured-brand-item-image-img">
+              <div class="shop-main-1__featured-brand-item-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__featured-brand-item-content">
+              <div class="shop-main-1__featured-brand-item-details">
+                <h3 class="shop-main-1__featured-brand-item-name">성장하는 이야기</h3>
+                <div class="shop-main-1__featured-brand-item-price-wrapper">
+                  <span class="shop-main-1__featured-brand-item-discount">35%</span>
+                  <div class="shop-main-1__featured-brand-item-price">
+                    <span class="shop-main-1__featured-brand-item-amount">44,800</span>
+                    <span class="shop-main-1__featured-brand-item-currency">원</span>
+                  </div>
+                </div>
+              </div>
+              <div class="shop-main-1__featured-brand-item-badges">
+                <span class="shop-main-1__featured-brand-item-badge shop-main-1__featured-brand-item-badge--primary">
+                  <span>슈퍼세일</span>
+                </span>
+                <span class="shop-main-1__featured-brand-item-badge shop-main-1__featured-brand-item-badge--secondary">
+                  <span>오늘배송</span>
+                </span>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collection Section -->
+  <section class="shop-main-1__collection-section">
+    <div class="container">
+      <div class="shop-main-1__collection-list">
+        <!-- Collection Item 1 -->
+        <article class="shop-main-1__collection-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__collection-link">
+            <div class="shop-main-1__collection-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="이미지" class="shop-main-1__collection-image-img">
+              <div class="shop-main-1__collection-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__collection-content">
+              <div class="shop-main-1__collection-text">
+                <h3 class="shop-main-1__collection-title">함께하는 여정</h3>
+                <p class="shop-main-1__collection-description">새로운 아이디어와 혁신적인 방법으로 당신의 목표를 달성하는 데 도움을 드립니다.</p>
+              </div>
+              <div class="shop-main-1__collection-products">
+                <div class="shop-main-1__collection-product">
+                  <div class="shop-main-1__collection-product-image">
+                    <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="상품" class="shop-main-1__collection-product-img">
+                    <div class="shop-main-1__collection-product-placeholder"></div>
+                  </div>
+                  <div class="shop-main-1__collection-product-info">
+                    <p class="shop-main-1__collection-product-brand">비욘드클로젯</p>
+                    <p class="shop-main-1__collection-product-name">미니멀 레더 백 영역으로 최대 1줄</p>
+                    <div class="shop-main-1__collection-product-price">
+                      <span class="shop-main-1__collection-product-discount">15%</span>
+                      <span class="shop-main-1__collection-product-amount">128,000</span>
+                      <span class="shop-main-1__collection-product-currency">원</span>
+                    </div>
+                  </div>
+                  <button class="shop-main-1__collection-product-heart" aria-label="좋아요">
+                    <i class="bi bi-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="shop-main-1__collection-product">
+                  <div class="shop-main-1__collection-product-image">
+                    <img src="https://demo.wakit.org/img/samples/photo-1553062407-98eeb64c6a62.png" alt="상품" class="shop-main-1__collection-product-img">
+                    <div class="shop-main-1__collection-product-placeholder"></div>
+                  </div>
+                  <div class="shop-main-1__collection-product-info">
+                    <p class="shop-main-1__collection-product-brand">기업 또는 스타일리시</p>
+                    <p class="shop-main-1__collection-product-name">캐시미어 니트 영역으로 최대 1줄</p>
+                    <div class="shop-main-1__collection-product-price">
+                      <span class="shop-main-1__collection-product-discount">20%</span>
+                      <span class="shop-main-1__collection-product-amount">79,200</span>
+                      <span class="shop-main-1__collection-product-currency">원</span>
+                    </div>
+                  </div>
+                  <button class="shop-main-1__collection-product-heart" aria-label="좋아요">
+                    <i class="bi bi-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="shop-main-1__collection-product">
+                  <div class="shop-main-1__collection-product-image">
+                    <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="상품" class="shop-main-1__collection-product-img">
+                    <div class="shop-main-1__collection-product-placeholder"></div>
+                  </div>
+                  <div class="shop-main-1__collection-product-info">
+                    <p class="shop-main-1__collection-product-brand">기업 또는 글로우</p>
+                    <p class="shop-main-1__collection-product-name">클린 컷 데님 영역으로 최대 1줄</p>
+                    <div class="shop-main-1__collection-product-price">
+                      <span class="shop-main-1__collection-product-discount">10%</span>
+                      <span class="shop-main-1__collection-product-amount">53,900</span>
+                      <span class="shop-main-1__collection-product-currency">원</span>
+                    </div>
+                  </div>
+                  <button class="shop-main-1__collection-product-heart" aria-label="좋아요">
+                    <i class="bi bi-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Collection Item 2 -->
+        <article class="shop-main-1__collection-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__collection-link">
+            <div class="shop-main-1__collection-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="이미지" class="shop-main-1__collection-image-img">
+              <div class="shop-main-1__collection-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__collection-content">
+              <div class="shop-main-1__collection-text">
+                <h3 class="shop-main-1__collection-title">도전과 성취의 기록</h3>
+                <p class="shop-main-1__collection-description">전문적인 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.</p>
+              </div>
+              <div class="shop-main-1__collection-products">
+                <div class="shop-main-1__collection-product">
+                  <div class="shop-main-1__collection-product-image">
+                    <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="상품" class="shop-main-1__collection-product-img">
+                    <div class="shop-main-1__collection-product-placeholder"></div>
+                  </div>
+                  <div class="shop-main-1__collection-product-info">
+                    <p class="shop-main-1__collection-product-brand">기업 또는 퓨어</p>
+                    <p class="shop-main-1__collection-product-name">클로그 샌들 영역으로 최대 1줄</p>
+                    <div class="shop-main-1__collection-product-price">
+                      <span class="shop-main-1__collection-product-discount">25%</span>
+                      <span class="shop-main-1__collection-product-amount">36,000</span>
+                      <span class="shop-main-1__collection-product-currency">원</span>
+                    </div>
+                  </div>
+                  <button class="shop-main-1__collection-product-heart" aria-label="좋아요">
+                    <i class="bi bi-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="shop-main-1__collection-product">
+                  <div class="shop-main-1__collection-product-image">
+                    <img src="https://demo.wakit.org/img/samples/photo-1553062407-98eeb64c6a62.png" alt="상품" class="shop-main-1__collection-product-img">
+                    <div class="shop-main-1__collection-product-placeholder"></div>
+                  </div>
+                  <div class="shop-main-1__collection-product-info">
+                    <p class="shop-main-1__collection-product-brand">기업 또는 액티브</p>
+                    <p class="shop-main-1__collection-product-name"> 린넨 셔츠 영역으로 최대 1줄</p>
+                    <div class="shop-main-1__collection-product-price">
+                      <span class="shop-main-1__collection-product-discount">30%</span>
+                      <span class="shop-main-1__collection-product-amount">41,300</span>
+                      <span class="shop-main-1__collection-product-currency">원</span>
+                    </div>
+                  </div>
+                  <button class="shop-main-1__collection-product-heart" aria-label="좋아요">
+                    <i class="bi bi-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+        <!-- Collection Item 3 -->
+        <article class="shop-main-1__collection-item">
+          <a href="views/shop-detail-1.html" class="shop-main-1__collection-link">
+            <div class="shop-main-1__collection-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1553062407-98eeb64c6a62.png" alt="이미지" class="shop-main-1__collection-image-img">
+              <div class="shop-main-1__collection-image-placeholder"></div>
+            </div>
+            <div class="shop-main-1__collection-content">
+              <div class="shop-main-1__collection-text">
+                <h3 class="shop-main-1__collection-title">무한한 가능성의 시작</h3>
+                <p class="shop-main-1__collection-description">고객 중심의 접근 방식으로 꼭 맞는 서비스를 제안합니다.</p>
+              </div>
+              <div class="shop-main-1__collection-products">
+                <div class="shop-main-1__collection-product">
+                  <div class="shop-main-1__collection-product-image">
+                    <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="상품" class="shop-main-1__collection-product-img">
+                    <div class="shop-main-1__collection-product-placeholder"></div>
+                  </div>
+                  <div class="shop-main-1__collection-product-info">
+                    <p class="shop-main-1__collection-product-brand">비나제이</p>
+                    <p class="shop-main-1__collection-product-name">끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.</p>
+                    <div class="shop-main-1__collection-product-price">
+                      <span class="shop-main-1__collection-product-discount">5%</span>
+                      <span class="shop-main-1__collection-product-amount">95,000</span>
+                      <span class="shop-main-1__collection-product-currency">원</span>
+                    </div>
+                  </div>
+                  <button class="shop-main-1__collection-product-heart" aria-label="좋아요">
+                    <i class="bi bi-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="shop-main-1__collection-product">
+                  <div class="shop-main-1__collection-product-image">
+                    <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="상품" class="shop-main-1__collection-product-img">
+                    <div class="shop-main-1__collection-product-placeholder"></div>
+                  </div>
+                  <div class="shop-main-1__collection-product-info">
+                    <p class="shop-main-1__collection-product-brand">기업 또는 트렌디</p>
+                    <p class="shop-main-1__collection-product-name">와이드 슬랙스 영역으로 최대 1줄</p>
+                    <div class="shop-main-1__collection-product-price">
+                      <span class="shop-main-1__collection-product-discount">35%</span>
+                      <span class="shop-main-1__collection-product-amount">58,500</span>
+                      <span class="shop-main-1__collection-product-currency">원</span>
+                    </div>
+                  </div>
+                  <button class="shop-main-1__collection-product-heart" aria-label="좋아요">
+                    <i class="bi bi-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="shop-main-1__collection-product">
+                  <div class="shop-main-1__collection-product-image">
+                    <img src="https://demo.wakit.org/img/samples/photo-1445205170230-053b83016050.png" alt="상품" class="shop-main-1__collection-product-img">
+                    <div class="shop-main-1__collection-product-placeholder"></div>
+                  </div>
+                  <div class="shop-main-1__collection-product-info">
+                    <p class="shop-main-1__collection-product-brand">기업 또는 모션</p>
+                    <p class="shop-main-1__collection-product-name">트렌치 코트 영역으로 최대 1줄</p>
+                    <div class="shop-main-1__collection-product-price">
+                      <span class="shop-main-1__collection-product-discount">40%</span>
+                      <span class="shop-main-1__collection-product-amount">129,000</span>
+                      <span class="shop-main-1__collection-product-currency">원</span>
+                    </div>
+                  </div>
+                  <button class="shop-main-1__collection-product-heart" aria-label="좋아요">
+                    <i class="bi bi-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script>
+  Popup.init();
+  console.log('home page script executed');
+
+  // Carousel Functionality
+  (function() {
+    const slides = document.querySelectorAll('.shop-main-1__carousel-slide');
+    const prevButton = document.querySelector('.shop-main-1__carousel-button--prev');
+    const nextButton = document.querySelector('.shop-main-1__carousel-button--next');
+    const currentSpan = document.querySelector('.shop-main-1__carousel-current');
+    const totalSpan = document.querySelector('.shop-main-1__carousel-total');
+    
+    if (!slides.length) return;
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let autoPlayInterval;
+
+    // Update total span
+    if (totalSpan) {
+      totalSpan.textContent = totalSlides;
+    }
+
+    function showSlide(index) {
+      // Remove active class from all slides
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('shop-main-1__carousel-slide--active');
+        } else {
+          slide.classList.remove('shop-main-1__carousel-slide--active');
+        }
+      });
+
+      // Update pagination
+      if (currentSpan) {
+        currentSpan.textContent = index + 1;
+      }
+
+      // Update button states
+      if (prevButton) {
+        prevButton.disabled = index === 0;
+      }
+      if (nextButton) {
+        nextButton.disabled = index === totalSlides - 1;
+      }
+
+      // Update indicator
+      const indicators = document.querySelectorAll('.shop-main-1__indicator-item');
+      indicators.forEach((indicator, i) => {
+        if (i === index) {
+          indicator.classList.add('shop-main-1__indicator-item--active');
+        } else {
+          indicator.classList.remove('shop-main-1__indicator-item--active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+      } else {
+        currentSlide = 0;
+      }
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+      } else {
+        currentSlide = totalSlides - 1;
+      }
+      showSlide(currentSlide);
+    }
+
+    // Button event listeners
+    if (prevButton) {
+      prevButton.addEventListener('click', () => {
+        prevSlide();
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+      });
+    }
+    if (nextButton) {
+      nextButton.addEventListener('click', () => {
+        nextSlide();
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+      });
+    }
+
+    // Indicator event listeners
+    const indicators = document.querySelectorAll('.shop-main-1__indicator-item');
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+        // Reset auto-play
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+      });
+    });
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(nextSlide, 5000);
+    }
+
+    // Pause on hover
+    const carouselContent = document.querySelector('.shop-main-1__carousel-content');
+    if (carouselContent) {
+      carouselContent.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+      });
+      carouselContent.addEventListener('mouseleave', () => {
+        startAutoPlay();
+      });
+    }
+
+    // Initialize
+    showSlide(0);
+    startAutoPlay();
+  })();
+
+  // Featured Brand Carousel Functionality
+  (function() {
+    const carouselSlides = document.querySelectorAll('.shop-main-1__featured-brand-carousel-slide');
+    const prevButton = document.querySelector('.shop-main-1__featured-brand-carousel-button--prev');
+    const nextButton = document.querySelector('.shop-main-1__featured-brand-carousel-button--next');
+    const indicatorDots = document.querySelectorAll('.shop-main-1__featured-brand-carousel-indicator-dot');
+    
+    if (!carouselSlides.length) return;
+
+    let currentSlide = 0;
+    const totalSlides = carouselSlides.length;
+
+    function showSlide(index) {
+      carouselSlides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('shop-main-1__featured-brand-carousel-slide--active');
+        } else {
+          slide.classList.remove('shop-main-1__featured-brand-carousel-slide--active');
+        }
+      });
+
+      indicatorDots.forEach((dot, i) => {
+        if (i === index) {
+          dot.classList.add('shop-main-1__featured-brand-carousel-indicator-dot--active');
+        } else {
+          dot.classList.remove('shop-main-1__featured-brand-carousel-indicator-dot--active');
+        }
+      });
+
+      if (prevButton) {
+        prevButton.disabled = index === 0;
+      }
+      if (nextButton) {
+        nextButton.disabled = index === totalSlides - 1;
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+      } else {
+        currentSlide = 0;
+      }
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+      } else {
+        currentSlide = totalSlides - 1;
+      }
+      showSlide(currentSlide);
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener('click', prevSlide);
+    }
+    if (nextButton) {
+      nextButton.addEventListener('click', nextSlide);
+    }
+
+    indicatorDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+      });
+    });
+
+    // Initialize
+    showSlide(0);
+  })();
+</script>
+
+</html>

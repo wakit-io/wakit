@@ -1,0 +1,1 @@
+const CACHE="hybridui-v1",ASSETS=["./","./manifest.json"];self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE).then(e=>e.addAll(ASSETS)))}),self.addEventListener("activate",e=>{e.waitUntil(self.clients.claim())}),self.addEventListener("fetch",e=>{e.respondWith(caches.match(e.request).then(t=>t||fetch(e.request)))});

@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Portfolio detail 2</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- Blog Styles -->
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/portfolio-detail-2.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="portfolio-detail-2">
+  <!-- Page Header Section -->
+  <header class="portfolio-detail-2__page-header">
+    <div class="container">
+      <nav class="portfolio-detail-2__breadcrumbs" aria-label="Breadcrumb">
+        <ol class="breadcrumbs">
+          <li class="breadcrumbs__item">
+            <a href="/" class="breadcrumbs__link">
+              <i class="bi bi-house" aria-hidden="true"></i>
+              <span>홈</span>
+            </a>
+          </li>
+          <li class="breadcrumbs__item">
+            <i class="bi bi-chevron-right breadcrumbs__separator" aria-hidden="true"></i>
+            <a href="views/portfolio-list-1.html" class="breadcrumbs__link">포트폴리오</a>
+          </li>
+        </ol>
+      </nav>
+      <div class="portfolio-detail-2__header-content">
+        <div>
+          <span class="badge badge--primary portfolio-detail-2__badge-text">콘텐츠</span>
+        </div>
+        <h1 class="portfolio-detail-2__title">성공을 위한 파트너</h1>
+        <div class="portfolio-detail-2__categories">
+          <span class="portfolio-detail-2__category-badge">
+            <span>고객 중심 서비스</span>
+          </span>
+          <span class="portfolio-detail-2__category-badge">
+            <span>지속 가능한 성장</span>
+          </span>
+          <span class="portfolio-detail-2__category-badge">
+            <span>맞춤형 솔루션</span>
+          </span>
+          <span class="portfolio-detail-2__category-badge">
+            <span>검증된 결과</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner Image Section -->
+  <section class="portfolio-detail-2__banner">
+    <div class="portfolio-detail-2__banner-image">
+      <img src="https://demo.wakit.org/img/samples/photo-1558655146-364adaf1fcc9.png" alt="이미지" class="portfolio-detail-2__banner-image-img">
+      <div class="portfolio-detail-2__banner-image-placeholder"></div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="portfolio-detail-2__content">
+    <div class="container">
+      <div class="portfolio-detail-2__content-intro">
+        <div class="portfolio-detail-2__content-description">
+          <p>단순한 서비스를 넘어 성장의 동반자가 되겠습니다.</p>
+          <p>데이터 기반의 통찰력으로 현명한 결정을 돕습니다.</p>
+          <p>체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p>
+        </div>
+        <div class="portfolio-detail-2__content-sidebar">
+          <div class="portfolio-detail-2__content-item">
+            <h3 class="portfolio-detail-2__content-item-title">미션</h3>
+            <p class="portfolio-detail-2__content-item-text">전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+          </div>
+          <div class="portfolio-detail-2__content-item">
+            <h3 class="portfolio-detail-2__content-item-title">솔루션</h3>
+            <p class="portfolio-detail-2__content-item-text">새로운 아이디어와 혁신적인 방법으로 당신의 목표를 달성하는 데 도움을 드립니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Gallery Section 1 -->
+  <section class="portfolio-detail-2__gallery-1">
+    <div class="container">
+      <div class="portfolio-detail-2__gallery-1-grid">
+        <div class="portfolio-detail-2__gallery-1-item portfolio-detail-2__gallery-1-item--large">
+          <img src="https://demo.wakit.org/img/samples/photo-1558655146-364adaf1fcc9.png" alt="이미지" class="portfolio-detail-2__gallery-1-image">
+          <div class="portfolio-detail-2__gallery-1-placeholder"></div>
+        </div>
+        <div class="portfolio-detail-2__gallery-1-group">
+          <div class="portfolio-detail-2__gallery-1-item">
+            <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지" class="portfolio-detail-2__gallery-1-image">
+            <div class="portfolio-detail-2__gallery-1-placeholder"></div>
+          </div>
+          <div class="portfolio-detail-2__gallery-1-item">
+            <img src="https://demo.wakit.org/img/samples/photo-1467232004584-a241de8bcf5d.png" alt="이미지" class="portfolio-detail-2__gallery-1-image">
+            <div class="portfolio-detail-2__gallery-1-placeholder"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Philosophy Section -->
+  <section class="portfolio-detail-2__philosophy">
+    <div class="container">
+      <div class="portfolio-detail-2__philosophy-content">
+        <h3 class="portfolio-detail-2__philosophy-title">가치 있는 선택</h3>
+        <div class="portfolio-detail-2__philosophy-text">
+          <p>전문적인 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.</p>
+          <p>고객 중심의 접근 방식으로 꼭 맞는 서비스를 제안합니다.</p>
+          <p>끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Gallery Section 2 -->
+  <section class="portfolio-detail-2__gallery-2">
+    <div class="container">
+      <div class="portfolio-detail-2__gallery-2-grid">
+        <div class="portfolio-detail-2__gallery-2-item">
+          <img src="https://demo.wakit.org/img/samples/photo-1558655146-364adaf1fcc9.png" alt="이미지" class="portfolio-detail-2__gallery-2-image">
+          <div class="portfolio-detail-2__gallery-2-placeholder"></div>
+        </div>
+        <div class="portfolio-detail-2__gallery-2-item">
+          <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지" class="portfolio-detail-2__gallery-2-image">
+          <div class="portfolio-detail-2__gallery-2-placeholder"></div>
+        </div>
+        <div class="portfolio-detail-2__gallery-2-item">
+          <img src="https://demo.wakit.org/img/samples/photo-1467232004584-a241de8bcf5d.png" alt="이미지" class="portfolio-detail-2__gallery-2-image">
+          <div class="portfolio-detail-2__gallery-2-placeholder"></div>
+        </div>
+        <div class="portfolio-detail-2__gallery-2-item">
+          <img src="https://demo.wakit.org/img/samples/photo-1555066931-4365d14bab8c.png" alt="이미지" class="portfolio-detail-2__gallery-2-image">
+          <div class="portfolio-detail-2__gallery-2-placeholder"></div>
+        </div>
+        <div class="portfolio-detail-2__gallery-2-item">
+          <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지" class="portfolio-detail-2__gallery-2-image">
+          <div class="portfolio-detail-2__gallery-2-placeholder"></div>
+        </div>
+        <div class="portfolio-detail-2__gallery-2-item">
+          <img src="https://demo.wakit.org/img/samples/photo-1467232004584-a241de8bcf5d.png" alt="이미지" class="portfolio-detail-2__gallery-2-image">
+          <div class="portfolio-detail-2__gallery-2-placeholder"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Navigation Section -->
+  <section class="portfolio-detail-2__navigation">
+    <div class="container">
+      <div class="portfolio-detail-2__navigation-content">
+        <a href="#" class="portfolio-detail-2__nav-item portfolio-detail-2__nav-item--prev">
+          <div class="portfolio-detail-2__nav-header">
+            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+            <span class="portfolio-detail-2__nav-title">이전</span>
+          </div>
+        </a>
+        <button type="button" class="portfolio-detail-2__nav-grid" aria-label="Grid view">
+          <i class="bi bi-grid" aria-hidden="true"></i>
+        </button>
+        <a href="#" class="portfolio-detail-2__nav-item portfolio-detail-2__nav-item--next">
+          <div class="portfolio-detail-2__nav-header">
+            <span class="portfolio-detail-2__nav-title">다음</span>
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Projects Section -->
+  <section class="portfolio-detail-2__related">
+    <div class="container">
+      <div class="portfolio-detail-2__related-header">
+        <div class="portfolio-detail-2__related-header-content">
+          <h3 class="portfolio-detail-2__related-title">새로운 시작을 함께해요</h3>
+          <!-- <p>효율적인 프로세스와 체계적인 관리로 성공을 지원합니다.</p> -->
+        </div>
+        <div class="portfolio-detail-2__related-controls">
+          <button type="button" class="portfolio-detail-2__control-button" aria-label="Previous">
+            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="portfolio-detail-2__control-button" aria-label="Next">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="portfolio-detail-2__related-grid">
+        <article class="portfolio-detail-2__related-item">
+          <a href="views/portfolio-detail-2.html" class="portfolio-detail-2__related-link">
+            <div class="portfolio-detail-2__related-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1558655146-364adaf1fcc9.png" alt="이미지" class="portfolio-detail-2__related-image-img">
+              <div class="portfolio-detail-2__related-image-placeholder"></div>
+            </div>
+            <div class="portfolio-detail-2__related-info">
+              <h4 class="portfolio-detail-2__related-item-title">기업 웹사이트 리뉴얼</h4>
+              <p class="portfolio-detail-2__related-item-category">모션</p>
+            </div>
+          </a>
+        </article>
+        <article class="portfolio-detail-2__related-item">
+          <a href="views/portfolio-detail-2.html" class="portfolio-detail-2__related-link">
+            <div class="portfolio-detail-2__related-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지" class="portfolio-detail-2__related-image-img">
+              <div class="portfolio-detail-2__related-image-placeholder"></div>
+            </div>
+            <div class="portfolio-detail-2__related-info">
+              <h4 class="portfolio-detail-2__related-item-title">기업 웹사이트 리뉴얼</h4>
+              <p class="portfolio-detail-2__related-item-category">모션</p>
+            </div>
+          </a>
+        </article>
+        <article class="portfolio-detail-2__related-item">
+          <a href="views/portfolio-detail-2.html" class="portfolio-detail-2__related-link">
+            <div class="portfolio-detail-2__related-image">
+              <img src="https://demo.wakit.org/img/samples/photo-1467232004584-a241de8bcf5d.png" alt="이미지" class="portfolio-detail-2__related-image-img">
+              <div class="portfolio-detail-2__related-image-placeholder"></div>
+            </div>
+            <div class="portfolio-detail-2__related-info">
+              <h4 class="portfolio-detail-2__related-item-title">기업 웹사이트 리뉴얼</h4>
+              <p class="portfolio-detail-2__related-item-category">모션</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="portfolio-detail-2__testimonial">
+    <div class="container">
+      <div class="portfolio-detail-2__testimonial-content">
+        <div class="portfolio-detail-2__testimonial-header">
+          <div class="portfolio-detail-2__testimonial-header-content">
+            <span class="portfolio-detail-2__testimonial-badge">신속한 대응</span>
+            <h3 class="portfolio-detail-2__testimonial-title">고객들이<br>말하는<br>진짜 리뷰</h3>
+          </div>
+          <div class="portfolio-detail-2__testimonial-nav">
+            <button type="button" class="portfolio-detail-2__testimonial-nav-button portfolio-detail-2__testimonial-nav-button--prev" aria-label="Previous">
+              <i class="bi bi-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="portfolio-detail-2__testimonial-nav-button portfolio-detail-2__testimonial-nav-button--next" aria-label="Next">
+              <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <div class="portfolio-detail-2__testimonial-cards">
+          <article class="portfolio-detail-2__testimonial-card">
+            <div class="portfolio-detail-2__testimonial-logo">
+              <img src="img/brands/company-logo-1.svg" alt="Company logo" class="portfolio-detail-2__testimonial-logo-img">
+            </div>
+            <p class="portfolio-detail-2__testimonial-text">창의적인 아이디어와 실행력으로 차별화된 가치를 제공합니다.</p>
+            <div class="portfolio-detail-2__testimonial-author">
+              <div class="portfolio-detail-2__testimonial-avatar">
+                <img src="https://demo.wakit.org/img/samples/photo-1507003211169-0a1dd7228f2d.png" alt="김철수" class="portfolio-detail-2__testimonial-avatar-img">
+                <div class="portfolio-detail-2__testimonial-avatar-placeholder"></div>
+                <span class="portfolio-detail-2__testimonial-avatar-badge"></span>
+              </div>
+              <div class="portfolio-detail-2__testimonial-author-info">
+                <h4 class="portfolio-detail-2__testimonial-author-name">김철수</h4>
+                <p class="portfolio-detail-2__testimonial-author-role">프로젝트 매니저</p>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-detail-2__testimonial-card">
+            <div class="portfolio-detail-2__testimonial-logo">
+              <img src="img/brands/company-logo-1.svg" alt="Company logo" class="portfolio-detail-2__testimonial-logo-img">
+            </div>
+            <p class="portfolio-detail-2__testimonial-text">협업과 소통을 통해 최상의 결과물을 만들어갑니다.</p>
+            <div class="portfolio-detail-2__testimonial-author">
+              <div class="portfolio-detail-2__testimonial-avatar">
+                <img src="https://demo.wakit.org/img/samples/photo-1494790108377-be9c29b29330.png" alt="김철수" class="portfolio-detail-2__testimonial-avatar-img">
+                <div class="portfolio-detail-2__testimonial-avatar-placeholder"></div>
+                <span class="portfolio-detail-2__testimonial-avatar-badge"></span>
+              </div>
+              <div class="portfolio-detail-2__testimonial-author-info">
+                <h4 class="portfolio-detail-2__testimonial-author-name">김철수</h4>
+                <p class="portfolio-detail-2__testimonial-author-role">프로젝트 매니저</p>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-detail-2__testimonial-card">
+            <div class="portfolio-detail-2__testimonial-logo">
+              <img src="img/brands/company-logo-1.svg" alt="Company logo" class="portfolio-detail-2__testimonial-logo-img">
+            </div>
+            <p class="portfolio-detail-2__testimonial-text">지속적인 개선과 혁신으로 발전하는 파트너가 되겠습니다.</p>
+            <div class="portfolio-detail-2__testimonial-author">
+              <div class="portfolio-detail-2__testimonial-avatar">
+                <img src="https://demo.wakit.org/img/samples/photo-1472099645785-5658abf4ff4e.png" alt="김철수" class="portfolio-detail-2__testimonial-avatar-img">
+                <div class="portfolio-detail-2__testimonial-avatar-placeholder"></div>
+                <span class="portfolio-detail-2__testimonial-avatar-badge"></span>
+              </div>
+              <div class="portfolio-detail-2__testimonial-author-info">
+                <h4 class="portfolio-detail-2__testimonial-author-name">김철수</h4>
+                <p class="portfolio-detail-2__testimonial-author-role">프로젝트 매니저</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe Form Section -->
+  <section class="portfolio-detail-2__subscribe">
+    <div class="container">
+      <div class="portfolio-detail-2__subscribe-content">
+        <h3 class="portfolio-detail-2__subscribe-title">더 나은 내일을 향해</h3>
+        <p class="portfolio-detail-2__subscribe-email">sample@example.com</p>
+        <button type="button" class="btn btn--primary btn--m portfolio-detail-2__subscribe-button">
+          <span>문의하기</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script>
+  Popup.init();
+  console.log('home page script executed');
+
+  // Related Projects Carousel
+  (function() {
+    const relatedGrid = document.querySelector('.portfolio-detail-2__related-grid');
+    const prevButton = document.querySelector('.portfolio-detail-2__control-button[aria-label="Previous"]');
+    const nextButton = document.querySelector('.portfolio-detail-2__control-button[aria-label="Next"]');
+
+    if (!relatedGrid || !prevButton || !nextButton) return;
+
+    function getScrollAmount() {
+      // 모바일에서 아이템 너비 확인
+      const isMobile = window.innerWidth <= 768;
+      const firstItem = relatedGrid.querySelector('.portfolio-detail-2__related-item');
+      if (!firstItem) return 0;
+
+      const itemWidth = firstItem.offsetWidth;
+      const gap = parseInt(getComputedStyle(relatedGrid).gap) || 12;
+      const scrollAmount = itemWidth + gap;
+
+      return scrollAmount;
+    }
+
+    function scrollTo(direction) {
+      const scrollAmount = getScrollAmount();
+      const currentScroll = relatedGrid.scrollLeft;
+      const maxScroll = relatedGrid.scrollWidth - relatedGrid.clientWidth;
+
+      let targetScroll;
+      if (direction === 'next') {
+        targetScroll = Math.min(currentScroll + scrollAmount, maxScroll);
+      } else {
+        targetScroll = Math.max(currentScroll - scrollAmount, 0);
+      }
+
+      relatedGrid.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
+      });
+    }
+
+    function updateButtonStates() {
+      const currentScroll = relatedGrid.scrollLeft;
+      const maxScroll = relatedGrid.scrollWidth - relatedGrid.clientWidth;
+
+      // 이전 버튼 활성화/비활성화
+      if (currentScroll <= 0) {
+        prevButton.disabled = true;
+        prevButton.style.opacity = '0.5';
+        prevButton.style.cursor = 'not-allowed';
+      } else {
+        prevButton.disabled = false;
+        prevButton.style.opacity = '1';
+        prevButton.style.cursor = 'pointer';
+      }
+
+      // 다음 버튼 활성화/비활성화
+      if (currentScroll >= maxScroll - 1) {
+        nextButton.disabled = true;
+        nextButton.style.opacity = '0.5';
+        nextButton.style.cursor = 'not-allowed';
+      } else {
+        nextButton.disabled = false;
+        nextButton.style.opacity = '1';
+        nextButton.style.cursor = 'pointer';
+      }
+    }
+
+    // 버튼 클릭 이벤트
+    prevButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (!prevButton.disabled) {
+        scrollTo('prev');
+      }
+    });
+
+    nextButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (!nextButton.disabled) {
+        scrollTo('next');
+      }
+    });
+
+    // 스크롤 이벤트로 버튼 상태 업데이트
+    relatedGrid.addEventListener('scroll', updateButtonStates);
+
+    // 리사이즈 이벤트로 버튼 상태 업데이트
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        updateButtonStates();
+      }, 100);
+    });
+
+    // 초기 버튼 상태 설정
+    updateButtonStates();
+  })();
+
+  // Testimonial Carousel
+  (function() {
+    const testimonialCards = document.querySelector('.portfolio-detail-2__testimonial-cards');
+    const testimonialPrevButton = document.querySelector('.portfolio-detail-2__testimonial-nav-button--prev');
+    const testimonialNextButton = document.querySelector('.portfolio-detail-2__testimonial-nav-button--next');
+
+    if (!testimonialCards || !testimonialPrevButton || !testimonialNextButton) return;
+
+    function getTestimonialScrollAmount() {
+      const firstCard = testimonialCards.querySelector('.portfolio-detail-2__testimonial-card');
+      if (!firstCard) return 0;
+
+      const cardWidth = firstCard.offsetWidth;
+      const gap = parseInt(getComputedStyle(testimonialCards).gap) || 24;
+      const scrollAmount = cardWidth + gap;
+
+      return scrollAmount;
+    }
+
+    function scrollTestimonialTo(direction) {
+      const scrollAmount = getTestimonialScrollAmount();
+      const currentScroll = testimonialCards.scrollLeft;
+      const maxScroll = testimonialCards.scrollWidth - testimonialCards.clientWidth;
+
+      let targetScroll;
+      if (direction === 'next') {
+        targetScroll = Math.min(currentScroll + scrollAmount, maxScroll);
+      } else {
+        targetScroll = Math.max(currentScroll - scrollAmount, 0);
+      }
+
+      testimonialCards.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
+      });
+    }
+
+    function updateTestimonialButtonStates() {
+      const currentScroll = testimonialCards.scrollLeft;
+      const maxScroll = testimonialCards.scrollWidth - testimonialCards.clientWidth;
+
+      // 이전 버튼 활성화/비활성화
+      if (currentScroll <= 0) {
+        testimonialPrevButton.disabled = true;
+      } else {
+        testimonialPrevButton.disabled = false;
+      }
+
+      // 다음 버튼 활성화/비활성화
+      if (currentScroll >= maxScroll - 1) {
+        testimonialNextButton.disabled = true;
+      } else {
+        testimonialNextButton.disabled = false;
+      }
+    }
+
+    // 버튼 클릭 이벤트
+    testimonialPrevButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (!testimonialPrevButton.disabled) {
+        scrollTestimonialTo('prev');
+      }
+    });
+
+    testimonialNextButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (!testimonialNextButton.disabled) {
+        scrollTestimonialTo('next');
+      }
+    });
+
+    // 스크롤 이벤트로 버튼 상태 업데이트
+    testimonialCards.addEventListener('scroll', updateTestimonialButtonStates);
+
+    // 리사이즈 이벤트로 버튼 상태 업데이트
+    let testimonialResizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(testimonialResizeTimer);
+      testimonialResizeTimer = setTimeout(function() {
+        updateTestimonialButtonStates();
+      }, 100);
+    });
+
+    // 초기 버튼 상태 설정
+    updateTestimonialButtonStates();
+  })();
+</script>
+
+</html>

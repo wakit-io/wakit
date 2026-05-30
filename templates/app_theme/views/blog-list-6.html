@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Blog list 6</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+<!-- Blog Styles -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/blog-list-6.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="blog-list-6">
+  <!-- 페이지 헤더 섹션 -->
+  <section class="page-header-section">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <nav class="page-header-section__breadcrumbs" aria-label="Breadcrumb">
+        <ol class="breadcrumbs">
+          <li class="breadcrumbs__item">
+            <a href="/" class="breadcrumbs__link">
+              <i class="bi bi-house" aria-hidden="true"></i>
+              <span>홈</span>
+            </a>
+          </li>
+          <li class="breadcrumbs__item">
+            <i class="bi bi-chevron-right breadcrumbs__separator" aria-hidden="true"></i>
+            <a href="/templates/app_theme/views/blog-list-1.html" class="breadcrumbs__link">블로그</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <i class="bi bi-chevron-right breadcrumbs__separator" aria-hidden="true"></i>
+            <a href="#" class="breadcrumbs__link">Category</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <i class="bi bi-chevron-right breadcrumbs__separator" aria-hidden="true"></i>
+            <span class="breadcrumbs__current">전문적인 컨설팅</span>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- 헤더 콘텐츠 -->
+      <div class="page-header-section__content">
+        <!-- Badge -->
+        <!-- <div class="page-header-section__badge">
+          <span class="page-header-section__badge-text">콘텐츠</span>
+        </div> -->
+
+        <!-- 타이틀 영역 -->
+        <div class="page-header-section__titles">
+          <h1 class="page-header-section__title">블로그</h1>
+          <!-- <h2>무한한 가능성의 시작</h2> -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 블로그 컨테이너 섹션 -->
+  <section class="blog-container-section">
+    <div class="container">
+      <!-- 필터/검색 영역 -->
+      <div class="blog-container-section__filters">
+        <!-- 검색 바 -->
+        <div class="blog-container-section__search">
+          <form class="blog-container-section__search-form" role="search">
+            <label for="blog-container-search" class="visually-hidden">블로그 검색</label>
+            <div class="blog-container-section__search-wrapper">
+              <i class="bi bi-search blog-container-section__search-icon" aria-hidden="true"></i>
+              <input 
+                type="search" 
+                id="blog-container-search" 
+                name="q" 
+                class="blog-container-section__search-input" 
+                placeholder="검색어를 입력해주세요"
+                aria-label="블로그 검색어 입력"
+              >
+            </div>
+          </form>
+        </div>
+
+        <!-- 카테고리 선택 메뉴 -->
+        <div class="blog-container-section__category-select">
+          <button type="button" class="blog-container-section__category-button" aria-label="카테고리 선택">
+            <span class="blog-container-section__category-text">체계적인 분석</span>
+            <i class="bi bi-chevron-down blog-container-section__category-icon" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!-- 뷰 전환 버튼 -->
+        <div class="blog-container-section__view-toggle">
+          <button type="button" class="blog-container-section__view-button blog-container-section__view-button--active" aria-label="리스트 뷰" data-view="list">
+            <i class="bi bi-list-ul" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="blog-container-section__view-button" aria-label="그리드 뷰" data-view="grid">
+            <i class="bi bi-grid-3x3-gap" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 아티클 리스트 -->
+      <div class="blog-container-section__articles">
+        <!-- 아티클 카드 1 -->
+        <article class="blog-article-card">
+          <a href="views/blog-detail-1.html" class="blog-article-card__link">
+            <div class="blog-article-card__image-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1506905925346-21bda4d32df4.png" alt="이미지" class="blog-article-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="blog-article-card__image-placeholder" style="display: none;"></div>
+              <button type="button" class="blog-article-card__bookmark" aria-label="북마크" onclick="event.preventDefault(); event.stopPropagation();">
+                <i class="bi bi-bookmark" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="blog-article-card__content">
+              <div class="blog-article-card__category">
+                <span class="blog-article-card__badge blog-article-card__badge--red">효과적인 전략</span>
+                <span class="blog-article-card__category-text">안정적인 운영</span>
+              </div>
+              <h3 class="blog-article-card__title">꿈을 향한 첫걸음</h3>
+              <p class="blog-article-card__description">데이터 기반의 통찰력으로 현명한 결정을 돕습니다.</p>
+              <div class="blog-article-card__footer">
+                <div class="blog-article-card__author">
+                  <div class="blog-article-card__avatar">
+                    <div class="blog-article-card__avatar-placeholder">
+                      <img src="https://demo.wakit.org/img/samples/photo-1472099645785-5658abf4ff4e.png" alt="이미지" class="blog-article-card__avatar-img">
+                    </div>
+                    <div class="blog-article-card__avatar-badge"></div>
+                  </div>
+                  <div class="blog-article-card__author-info">
+                    <span class="blog-article-card__author-name">김철수</span>
+                    <span class="blog-article-card__time">혁신적인 도구</span>
+                  </div>
+                </div>
+                <div class="blog-article-card__actions">
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-heart" aria-hidden="true"></i>
+                    <span>35</span>
+                  </div>
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-chat" aria-hidden="true"></i>
+                    <span>4</span>
+                  </div>
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-share" aria-hidden="true"></i>
+                    <span>3</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- 아티클 카드 2 -->
+        <article class="blog-article-card">
+          <a href="views/blog-detail-1.html" class="blog-article-card__link">
+            <div class="blog-article-card__image-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1499750310107-5fef28a66643.png" alt="이미지" class="blog-article-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="blog-article-card__image-placeholder" style="display: none;"></div>
+              <button type="button" class="blog-article-card__bookmark" aria-label="북마크" onclick="event.preventDefault(); event.stopPropagation();">
+                <i class="bi bi-bookmark" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="blog-article-card__content">
+              <div class="blog-article-card__category">
+                <span class="blog-article-card__badge blog-article-card__badge--yellow">일상</span>
+                <span class="blog-article-card__category-text">효율적인 관리</span>
+              </div>
+              <h3 class="blog-article-card__title">혁신적인 접근</h3>
+              <p class="blog-article-card__description">체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p>
+              <div class="blog-article-card__footer">
+                <div class="blog-article-card__author">
+                  <div class="blog-article-card__avatar">
+                    <div class="blog-article-card__avatar-placeholder">
+                      <img src="https://demo.wakit.org/img/samples/photo-1472099645785-5658abf4ff4e.png" alt="이미지" class="blog-article-card__avatar-img">
+                    </div>
+                    <div class="blog-article-card__avatar-badge"></div>
+                  </div>
+                  <div class="blog-article-card__author-info">
+                    <span class="blog-article-card__author-name">김철수</span>
+                    <span class="blog-article-card__time">체계적인 접근</span>
+                  </div>
+                </div>
+                <div class="blog-article-card__actions">
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-heart" aria-hidden="true"></i>
+                    <span>35</span>
+                  </div>
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-chat" aria-hidden="true"></i>
+                    <span>4</span>
+                  </div>
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-share" aria-hidden="true"></i>
+                    <span>3</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- 아티클 카드 3 -->
+        <article class="blog-article-card">
+          <a href="views/blog-detail-1.html" class="blog-article-card__link">
+            <div class="blog-article-card__image-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1484480974693-6ca0a78fb36b.png" alt="이미지" class="blog-article-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="blog-article-card__image-placeholder" style="display: none;"></div>
+              <button type="button" class="blog-article-card__bookmark" aria-label="북마크" onclick="event.preventDefault(); event.stopPropagation();">
+                <i class="bi bi-bookmark" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="blog-article-card__content">
+              <div class="blog-article-card__category">
+                <span class="blog-article-card__badge blog-article-card__badge--red">책/문학</span>
+                <span class="blog-article-card__category-text">전문적인 지원</span>
+              </div>
+              <h3 class="blog-article-card__title">창의적인 해결책</h3>
+              <p class="blog-article-card__description">전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+              <div class="blog-article-card__footer">
+                <div class="blog-article-card__author">
+                  <div class="blog-article-card__avatar">
+                    <div class="blog-article-card__avatar-placeholder">
+                      <img src="https://demo.wakit.org/img/samples/photo-1472099645785-5658abf4ff4e.png" alt="이미지" class="blog-article-card__avatar-img">
+                    </div>
+                    <div class="blog-article-card__avatar-badge"></div>
+                  </div>
+                  <div class="blog-article-card__author-info">
+                    <span class="blog-article-card__author-name">김철수</span>
+                    <span class="blog-article-card__time">혁신적인 방법</span>
+                  </div>
+                </div>
+                <div class="blog-article-card__actions">
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-heart" aria-hidden="true"></i>
+                    <span>35</span>
+                  </div>
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-chat" aria-hidden="true"></i>
+                    <span>4</span>
+                  </div>
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-share" aria-hidden="true"></i>
+                    <span>3</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- 아티클 카드 4 -->
+        <article class="blog-article-card">
+          <a href="views/blog-detail-1.html" class="blog-article-card__link">
+            <div class="blog-article-card__image-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1501785888041-af3ef285b470.png" alt="이미지" class="blog-article-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="blog-article-card__image-placeholder" style="display: none;"></div>
+              <button type="button" class="blog-article-card__bookmark" aria-label="북마크" onclick="event.preventDefault(); event.stopPropagation();">
+                <i class="bi bi-bookmark" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="blog-article-card__content">
+              <div class="blog-article-card__category">
+                <span class="blog-article-card__badge blog-article-card__badge--purple">건축</span>
+                <span class="blog-article-card__category-text">고객 중심 서비스</span>
+              </div>
+              <h3 class="blog-article-card__title">전문적인 파트너십</h3>
+              <p class="blog-article-card__description">새로운 아이디어와 혁신적인 방법으로 당신의 목표를 달성하는 데 도움을 드립니다.</p>
+              <div class="blog-article-card__footer">
+                <div class="blog-article-card__author">
+                  <div class="blog-article-card__avatar">
+                    <div class="blog-article-card__avatar-placeholder">
+                      <img src="https://demo.wakit.org/img/samples/photo-1472099645785-5658abf4ff4e.png" alt="이미지" class="blog-article-card__avatar-img">
+                    </div>
+                    <div class="blog-article-card__avatar-badge"></div>
+                  </div>
+                  <div class="blog-article-card__author-info">
+                    <span class="blog-article-card__author-name">김철수</span>
+                    <span class="blog-article-card__time">지속 가능한 성장</span>
+                  </div>
+                </div>
+                <div class="blog-article-card__actions">
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-heart" aria-hidden="true"></i>
+                    <span>35</span>
+                  </div>
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-chat" aria-hidden="true"></i>
+                    <span>4</span>
+                  </div>
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-share" aria-hidden="true"></i>
+                    <span>3</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- 아티클 카드 5 -->
+        <article class="blog-article-card">
+          <a href="views/blog-detail-1.html" class="blog-article-card__link">
+            <div class="blog-article-card__image-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1469854523086-cc02fe5d8800.png" alt="이미지" class="blog-article-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="blog-article-card__image-placeholder" style="display: none;"></div>
+              <button type="button" class="blog-article-card__bookmark" aria-label="북마크" onclick="event.preventDefault(); event.stopPropagation();">
+                <i class="bi bi-bookmark" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="blog-article-card__content">
+              <div class="blog-article-card__category">
+                <span class="blog-article-card__badge blog-article-card__badge--green">비즈니스</span>
+                <span class="blog-article-card__category-text">맞춤형 솔루션</span>
+              </div>
+              <h3 class="blog-article-card__title">신뢰할 수 있는 동반자</h3>
+              <p class="blog-article-card__description">전문적인 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.</p>
+              <div class="blog-article-card__footer">
+                <div class="blog-article-card__author">
+                  <div class="blog-article-card__avatar">
+                    <div class="blog-article-card__avatar-placeholder">
+                      <img src="https://demo.wakit.org/img/samples/photo-1472099645785-5658abf4ff4e.png" alt="이미지" class="blog-article-card__avatar-img">
+                    </div>
+                    <div class="blog-article-card__avatar-badge"></div>
+                  </div>
+                  <div class="blog-article-card__author-info">
+                    <span class="blog-article-card__author-name">김철수</span>
+                    <span class="blog-article-card__time">검증된 결과</span>
+                  </div>
+                </div>
+                <div class="blog-article-card__actions">
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-heart" aria-hidden="true"></i>
+                    <span>35</span>
+                  </div>
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-chat" aria-hidden="true"></i>
+                    <span>4</span>
+                  </div>
+                  <div class="blog-article-card__action-item">
+                    <i class="bi bi-share" aria-hidden="true"></i>
+                    <span>3</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <!-- 더 불러오기 버튼 -->
+      <div class="blog-container-section__load-more">
+        <button type="button" class="btn btn--secondary btn--m blog-container-section__load-more-button">
+          <span>더보기</span>
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script src="js/blog-list-6.js"></script>
+<script data-spa-ignore>
+  Popup.init();
+  console.log('home page script executed');
+</script>
+
+</html>

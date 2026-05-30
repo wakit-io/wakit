@@ -1,0 +1,488 @@
+/* ============================================
+   Shop List Items - 공통 컴포넌트
+   ============================================ */
+
+/* 섹션 변수 정의 - Light Mode (기본) */
+:root {
+  --shop-list-items-bg: #ffffff;
+  --shop-list-items-title-text: #17191a;
+  --shop-list-items-description-text: #464a4d;
+  --shop-list-items-tab-bg: transparent;
+  --shop-list-items-tab-active-bg: var(--color-primary-light);
+  --shop-list-items-tab-active-border: var(--color-primary);
+  --shop-list-items-tab-text: #17191a;
+  --shop-list-items-image-placeholder-bg: #f2f8fc;
+  --shop-list-items-discount-badge-bg: rgba(0, 0, 0, 0.6);
+  --shop-list-items-discount-badge-text: #ffffff;
+  --shop-list-items-points-bg: var(--color-primary);
+  --shop-list-items-points-label-text: #ffffff;
+  --shop-list-items-points-value-text: #ff5100;
+  --shop-list-items-points-text: #ffffff;
+  --shop-list-items-name-text: #17191a;
+  --shop-list-items-discount-text: #17191a;
+  --shop-list-items-price-text: #17191a;
+  --shop-list-items-original-price-text: #464a4d;
+  --shop-list-items-action-text: #17191a;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --shop-list-items-bg: var(--color-bg-primary);
+  --shop-list-items-title-text: var(--color-text-primary);
+  --shop-list-items-description-text: var(--color-text-secondary);
+  --shop-list-items-tab-bg: transparent;
+  --shop-list-items-tab-active-bg: var(--color-primary-light);
+  --shop-list-items-tab-active-border: var(--color-primary);
+  --shop-list-items-tab-text: var(--color-text-primary);
+  --shop-list-items-image-placeholder-bg: var(--color-bg-secondary);
+  --shop-list-items-discount-badge-bg: rgba(0, 0, 0, 0.6);
+  --shop-list-items-discount-badge-text: #ffffff;
+  --shop-list-items-points-bg: var(--color-primary);
+  --shop-list-items-points-label-text: #ffffff;
+  --shop-list-items-points-value-text: #ff5100;
+  --shop-list-items-points-text: #ffffff;
+  --shop-list-items-name-text: var(--color-text-primary);
+  --shop-list-items-discount-text: var(--color-text-primary);
+  --shop-list-items-price-text: var(--color-text-primary);
+  --shop-list-items-original-price-text: var(--color-text-secondary);
+  --shop-list-items-action-text: var(--color-text-primary);
+}
+
+/* 할인율 색상은 테마 컬러 사용 (라이트/다크 모드 모두 동일) */
+
+.shop-list-items__section {
+  width: 100%;
+  padding: var(--spacing-3xl) 0; /* 피그마 디자인: 48px */
+  background-color: var(--shop-list-items-bg);
+}
+
+.shop-list-items__section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.shop-list-items__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xl); /* 피그마 디자인: 24px */
+}
+
+.shop-list-items__header-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs); /* 피그마 디자인: 4px */
+}
+
+.shop-list-items__title {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-weight: 700;
+  font-size: 24px; /* 피그마 디자인: 24px */
+  line-height: 33.6px; /* 피그마 디자인: 33.6px */
+  color: var(--shop-list-items-title-text);
+  margin: 0;
+}
+
+.shop-list-items__description {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-weight: 400;
+  font-size: 16px; /* 피그마 디자인: 16px */
+  line-height: 24px; /* 피그마 디자인: 24px */
+  color: var(--shop-list-items-description-text);
+  margin: 0;
+}
+
+.shop-list-items__tabs {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm); /* 피그마 디자인: 8px */
+}
+
+.shop-list-items__tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md); /* 피그마 디자인: 8px 16px */
+  background-color: var(--shop-list-items-tab-bg);
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg); /* 피그마 디자인: 16px */
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-weight: 700;
+  font-size: 16px; /* 피그마 디자인: 16px */
+  line-height: 20px; /* 피그마 디자인: 20px */
+  color: var(--shop-list-items-tab-text);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.shop-list-items__tab:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.shop-list-items__tab--active {
+  background-color: var(--shop-list-items-tab-active-bg);
+  border-color: var(--shop-list-items-tab-active-border);
+}
+
+.shop-list-items__tab--active:hover {
+  background-color: var(--shop-list-items-tab-active-bg);
+}
+
+.shop-list-items__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 피그마 디자인: 5개 컬럼 */
+  gap: var(--spacing-lg); /* 피그마 디자인: 24px */
+}
+
+.shop-list-items__item {
+  width: 100%;
+}
+
+.shop-list-items__link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.shop-list-items__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 233.6 / 233.6; /* 피그마 디자인: 233.6x233.6 */
+  border-radius: var(--radius-md); /* 피그마 디자인: 8px */
+  overflow: hidden;
+  margin-bottom: var(--spacing-sm); /* 피그마 디자인: 8px */
+  background-color: var(--shop-list-items-image-placeholder-bg);
+}
+
+.shop-list-items__image-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  transform-origin: center center;
+}
+
+.shop-list-items__link:hover .shop-list-items__image-img {
+  transform: scale(1.05);
+}
+
+.shop-list-items__image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--shop-list-items-image-placeholder-bg);
+  display: none;
+}
+
+.shop-list-items__image-img[src=""],
+.shop-list-items__image-img:not([src]) {
+  display: none;
+}
+
+.shop-list-items__image-img[src=""] ~ .shop-list-items__image-placeholder,
+.shop-list-items__image-img:not([src]) ~ .shop-list-items__image-placeholder {
+  display: block;
+}
+
+.shop-list-items__discount-badge {
+  position: absolute;
+  top: var(--spacing-sm); /* 피그마 디자인: 12px */
+  left: var(--spacing-sm); /* 피그마 디자인: 12px */
+  width: 44px; /* 피그마 디자인: 44px */
+  height: 52px; /* 피그마 디자인: 52px */
+  background-color: var(--shop-list-items-discount-badge-bg);
+  border-radius: var(--radius-sm); /* 피그마 디자인: 4px */
+  z-index: 2;
+}
+
+.shop-list-items__points {
+  position: absolute;
+  bottom: var(--spacing-sm); /* 피그마 디자인: 8px */
+  left: var(--spacing-sm); /* 피그마 디자인: 8px */
+  right: var(--spacing-sm); /* 피그마 디자인: 8px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs); /* 피그마 디자인: 4px */
+  padding: var(--spacing-xs) var(--spacing-sm); /* 피그마 디자인: 4px 8px */
+  background-color: var(--shop-list-items-points-bg);
+  border-radius: var(--radius-sm); /* 피그마 디자인: 4px */
+  height: 28px; /* 피그마 디자인: 28px */
+  z-index: 2;
+}
+
+.shop-list-items__points-label {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-weight: 700;
+  font-size: 14px; /* 피그마 디자인: 14px */
+  line-height: 20px; /* 피그마 디자인: 20px */
+  color: var(--shop-list-items-points-label-text);
+}
+
+.shop-list-items__points-value {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-weight: 700;
+  font-size: 14px; /* 피그마 디자인: 14px */
+  line-height: 20px; /* 피그마 디자인: 20px */
+  color: var(--shop-list-items-points-value-text);
+}
+
+.shop-list-items__points-text {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-weight: 700;
+  font-size: 14px; /* 피그마 디자인: 14px */
+  line-height: 20px; /* 피그마 디자인: 20px */
+  color: var(--shop-list-items-points-text);
+}
+
+.shop-list-items__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm); /* 피그마 디자인: 8px */
+}
+
+.shop-list-items__brand {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-weight: 700;
+  font-size: 14px; /* 피그마 디자인: 14px */
+  line-height: 20px; /* 피그마 디자인: 20px */
+  color: var(--shop-list-items-name-text);
+  margin: 0 0 var(--spacing-xxs) 0; /* 피그마 디자인: 4px */
+}
+
+.shop-list-items__name {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-weight: 400;
+  font-size: 14px; /* 피그마 디자인: 14px */
+  line-height: 20px; /* 피그마 디자인: 20px */
+  color: var(--shop-list-items-name-text);
+  margin: 0;
+}
+
+.shop-list-items__price-container {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-xs); /* 피그마 디자인: 4px */
+  flex-wrap: wrap;
+}
+
+.shop-list-items__discount {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-weight: 700;
+  font-size: 16px; /* 피그마 디자인: 16px */
+  line-height: 20px; /* 피그마 디자인: 20px */
+  color: var(--color-primary);
+}
+
+.shop-list-items__price {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-weight: 700;
+  font-size: 16px; /* 피그마 디자인: 16px */
+  line-height: 20px; /* 피그마 디자인: 20px */
+  color: var(--shop-list-items-price-text);
+}
+
+.shop-list-items__currency {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-weight: 400;
+  font-size: 14px; /* 피그마 디자인: 14px */
+  line-height: 20px; /* 피그마 디자인: 20px */
+  color: var(--shop-list-items-price-text);
+}
+
+.shop-list-items__original-price {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-weight: 400;
+  font-size: 12px; /* 피그마 디자인: 12px */
+  line-height: 16px; /* 피그마 디자인: 16px */
+  color: var(--shop-list-items-original-price-text);
+  text-decoration: line-through;
+}
+
+.shop-list-items__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xxs); /* 피그마 디자인: 4px */
+}
+
+.shop-list-items__rating i {
+  font-size: 12px; /* 피그마 디자인: 12px */
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-star);
+}
+
+.shop-list-items__rating-value {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-weight: 700;
+  font-size: 14px; /* 피그마 디자인: 14px */
+  line-height: 20px; /* 피그마 디자인: 20px */
+  color: var(--shop-list-items-name-text);
+}
+
+.shop-list-items__rating-count {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-weight: 700;
+  font-size: 14px; /* 피그마 디자인: 14px */
+  line-height: 20px; /* 피그마 디자인: 20px */
+  color: #757b80; /* 피그마 디자인: #757b80 */
+}
+
+.shop-list-items__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm); /* 피그마 디자인: 8px */
+}
+
+.shop-list-items__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; /* 피그마 디자인: 24px */
+  height: 24px; /* 피그마 디자인: 24px */
+  background: none;
+  border: none;
+  color: var(--shop-list-items-action-text);
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 0;
+}
+
+.shop-list-items__action:hover {
+  color: var(--color-primary);
+}
+
+.shop-list-items__action i {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+/* ============================================
+   Shop List Items - Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  .shop-list-items__section {
+    padding: var(--spacing-xl) 0; /* 피그마 디자인: 20px */
+  }
+
+  .shop-list-items__section .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  .shop-list-items__header {
+    flex-direction: column;
+    gap: var(--spacing-md); /* 피그마 디자인: 12px */
+    margin-bottom: var(--spacing-lg); /* 피그마 디자인: 16px */
+  }
+
+  .shop-list-items__title {
+    font-size: 20px; /* 피그마 디자인: 20px */
+    line-height: 28px; /* 피그마 디자인: 28px */
+  }
+
+  .shop-list-items__description {
+    font-size: 14px; /* 피그마 디자인: 14px */
+    line-height: 24px; /* 피그마 디자인: 24px */
+  }
+
+  .shop-list-items__tabs {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    padding-bottom: var(--spacing-xs);
+    scroll-snap-type: x proximity;
+  }
+
+  .shop-list-items__tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .shop-list-items__tab {
+    padding: var(--spacing-sm) var(--spacing-md); /* 피그마 디자인: 8px 12px */
+    border-radius: var(--radius-md); /* 피그마 디자인: 12px */
+    font-size: 14px; /* 피그마 디자인: 14px */
+    line-height: 20px; /* 피그마 디자인: 20px */
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+
+  .shop-list-items__grid {
+    grid-template-columns: repeat(2, 1fr); /* 피그마 디자인: 2개 컬럼 */
+    gap: var(--spacing-md); /* 피그마 디자인: 12px */
+  }
+
+  .shop-list-items__image {
+    aspect-ratio: 175 / 175; /* 피그마 디자인: 175x175 */
+    margin-bottom: var(--spacing-sm); /* 피그마 디자인: 8px */
+  }
+
+  .shop-list-items__discount-badge {
+    width: 44px; /* 피그마 디자인: 44px */
+    height: 52px; /* 피그마 디자인: 52px */
+  }
+
+  .shop-list-items__points {
+    height: 28px; /* 피그마 디자인: 28px */
+    padding: var(--spacing-xs) var(--spacing-sm); /* 피그마 디자인: 4px 8px */
+  }
+
+  .shop-list-items__points-label {
+    font-size: 12px; /* 피그마 디자인: 12px */
+    line-height: 20px; /* 피그마 디자인: 20px */
+  }
+
+  .shop-list-items__points-value {
+    font-size: 12px; /* 피그마 디자인: 12px */
+    line-height: 20px; /* 피그마 디자인: 20px */
+  }
+
+  .shop-list-items__points-text {
+    font-size: 12px; /* 피그마 디자인: 12px */
+    line-height: 20px; /* 피그마 디자인: 20px */
+  }
+
+  .shop-list-items__name {
+    font-size: 12px; /* 피그마 디자인: 12px */
+    line-height: 20px; /* 피그마 디자인: 20px */
+  }
+
+  .shop-list-items__discount {
+    font-size: 12px; /* 피그마 디자인: 12px */
+    line-height: 20px; /* 피그마 디자인: 20px */
+  }
+
+  .shop-list-items__price {
+    font-size: 14px; /* 피그마 디자인: 14px */
+    line-height: 24px; /* 피그마 디자인: 24px */
+  }
+
+  .shop-list-items__original-price {
+    font-size: 11px; /* 피그마 디자인: 11px */
+    line-height: 16px; /* 피그마 디자인: 16px */
+  }
+}
+
+/* ============================================
+   Reduced Motion Support
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .shop-list-items__image-img,
+  .shop-list-items__tab,
+  .shop-list-items__action {
+    transition: none;
+  }
+}

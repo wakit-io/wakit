@@ -1,0 +1,33 @@
+{
+  "splashDelay": 100,
+  "splashForce": false,
+  "tabbar": { "autoHide": false, "hideThreshold": 14, "displayMode": "always" },
+  "pullToRefresh": {
+    "threshold": 90,
+    "startSlop": 18,
+    "damping": 0.35,
+    "maxPull": 200,
+    "disablePages": ["home"]
+  },
+  "appbarView": true,
+  "theme": {
+    "primaryColor": "#006fff",
+    "font": "Pretendard, system-ui",
+    "isMobile": true
+  },
+  "defaultTab": "home",
+  "tabs": [
+    { "id": "home", "label": "홈", "icon": "fi fi-rr-home", "page": "home" },
+    { "id": "search", "label": "검색", "icon": "fi fi-rr-search", "page": "search" },
+    { "id": "wishlist", "label": "찜", "icon": "fi fi-rr-heart", "page": "wishlist" },
+    { "id": "mypage", "label": "My", "icon": "fi fi-rr-user", "page": "mypage" }
+  ],
+  "routes": [
+    { "path": "home", "file": "../views/home.html", "title": "숙박 홈" },
+    { "path": "search", "file": "../views/search.html", "title": "검색" },
+    { "path": "wishlist", "file": "../views/wishlist.html", "title": "찜" },
+    { "path": "mypage", "file": "../views/mypage.html", "title": "더보기" },
+    { "path": "settings", "file": "../views/settings.html", "title": "설정" },
+    { "path": "hotel-detail", "file": "../views/hotel-detail.html", "title": "숙소 상세" }
+  ]
+}

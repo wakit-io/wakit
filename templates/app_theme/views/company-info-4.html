@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Company Info 4</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+<!-- Blog Styles -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/company-info-4.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="company-info-4">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-section__container">
+      <div class="hero-section__content">
+        <!-- Image -->
+        <div class="hero-section__image-wrapper">
+          <img src="https://demo.wakit.org/img/samples/photo-1497366216548-37526070297c.png" alt="이미지" class="hero-section__image" loading="lazy" />
+          <div class="hero-section__placeholder">
+            <div class="hero-section__placeholder-icon"></div>
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="hero-section__text-content">
+          <div>
+            <span class="badge badge--primary">검증된 결과</span>
+            <h1 class="hero-section__title">변화를 만드는 순간</h1>
+          </div>
+          <p class="hero-section__description">끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos Section -->
+  <section class="client-logos-section">
+    <div class="client-logos-section__container">
+      <div class="client-logos-section__logo-cloud">
+        <div class="client-logos-section__logo-item">
+          <img src="img/brands/Company-logo.svg" alt="Company Logo" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo-item">
+          <img src="img/brands/Company-logo-1.svg" alt="Company Logo" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo-item">
+          <img src="img/brands/Company-logo-2.svg" alt="Company Logo" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo-item">
+          <img src="img/brands/Company-logo-3.svg" alt="Company Logo" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo-item">
+          <img src="img/brands/Company-logo-4.svg" alt="Company Logo" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo-item">
+          <img src="img/brands/Company-logo-5.svg" alt="Company Logo" class="client-logos-section__logo-image">
+        </div>
+        <div class="client-logos-section__logo-item">
+          <img src="img/brands/Company-logo-6.svg" alt="Company Logo" class="client-logos-section__logo-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values Section -->
+  <section class="core-values-section">
+    <div class="core-values-section__container container">
+      <!-- Header -->
+      <div class="core-values-section__header">
+        <div>
+          <span class="badge badge--primary">신속한 대응</span>
+        </div>
+        <h2 class="core-values-section__title">성장하는 이야기</h2>
+        <p class="core-values-section__description">효율적인 프로세스와 체계적인 관리로 성공을 지원합니다.</p>
+      </div>
+
+      <!-- Feature Items -->
+      <div class="core-values-section__items">
+        <div class="core-values-item">
+          <div class="icon-theme icon-theme--lg core-values-item__icon-container" aria-hidden="true">
+            <i class="bi bi-people-fill"></i>
+          </div>
+          <h3>함께하는 여정</h3>
+          <p>창의적인 아이디어와 실행력으로 차별화된 가치를 제공합니다.</p>
+        </div>
+
+        <div class="core-values-item">
+          <div class="icon-theme icon-theme--lg core-values-item__icon-container" aria-hidden="true">
+            <i class="bi bi-briefcase-fill"></i>
+          </div>
+          <h3>도전과 성취의 기록</h3>
+          <p>협업과 소통을 통해 최상의 결과물을 만들어갑니다.</p>
+        </div>
+
+        <div class="core-values-item">
+          <div class="icon-theme icon-theme--lg core-values-item__icon-container" aria-hidden="true">
+            <i class="bi bi-clock-fill"></i>
+          </div>
+          <h3>무한한 가능성의 시작</h3>
+          <p>지속적인 개선과 혁신으로 발전하는 파트너가 되겠습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="team-section__container container">
+      <!-- Text Block -->
+      <div class="team-section__text-block">
+        <div>
+          <span class="badge badge--primary">세심한 관리</span>
+        </div>
+        <h2 class="team-section__title">꿈을 향한 첫걸음</h2>
+        <p class="team-section__description">단순한 서비스를 넘어 성장의 동반자가 되겠습니다.</p>
+      </div>
+
+      <!-- Team Profiles -->
+      <div class="team-section__profiles">
+        <div class="team-profile">
+          <div class="team-profile__avatar-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1507003211169-0a1dd7228f2d.png" alt="김철수" class="team-profile__avatar" loading="lazy" />
+            <div class="team-profile__placeholder">
+              <div class="team-profile__placeholder-icon"></div>
+            </div>
+            <div class="team-profile__badge"></div>
+          </div>
+          <div class="team-profile__info">
+            <h3 class="team-profile__name">김철수</h3>
+            <p class="team-profile__role">Founder & CEO</p>
+          </div>
+        </div>
+
+        <div class="team-profile">
+          <div class="team-profile__avatar-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1494790108377-be9c29b29330.png" alt="이영희" class="team-profile__avatar" loading="lazy" />
+            <div class="team-profile__placeholder">
+              <div class="team-profile__placeholder-icon"></div>
+            </div>
+            <div class="team-profile__badge"></div>
+          </div>
+          <div class="team-profile__info">
+            <h3 class="team-profile__name">이영희</h3>
+            <p class="team-profile__role">기술부장</p>
+          </div>
+        </div>
+
+        <div class="team-profile">
+          <div class="team-profile__avatar-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1438761681033-6461ffad8d80.png" alt="박민수" class="team-profile__avatar" loading="lazy" />
+            <div class="team-profile__placeholder">
+              <div class="team-profile__placeholder-icon"></div>
+            </div>
+            <div class="team-profile__badge"></div>
+          </div>
+          <div class="team-profile__info">
+            <h3 class="team-profile__name">박민수</h3>
+            <p class="team-profile__role">총무부장</p>
+          </div>
+        </div>
+
+        <div class="team-profile">
+          <div class="team-profile__avatar-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1500648767791-00dcc994a43e.png" alt="홍길동" class="team-profile__avatar" loading="lazy" />
+            <div class="team-profile__placeholder">
+              <div class="team-profile__placeholder-icon"></div>
+            </div>
+            <div class="team-profile__badge"></div>
+          </div>
+          <div class="team-profile__info">
+            <h3 class="team-profile__name">홍길동</h3>
+            <p class="team-profile__role">인사부장</p>
+          </div>
+        </div>
+
+        <div class="team-profile">
+          <div class="team-profile__avatar-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1472099645785-5658abf4ff4e.png" alt="김철수" class="team-profile__avatar" loading="lazy" />
+            <div class="team-profile__placeholder">
+              <div class="team-profile__placeholder-icon"></div>
+            </div>
+            <div class="team-profile__badge"></div>
+          </div>
+          <div class="team-profile__info">
+            <h3 class="team-profile__name">김철수</h3>
+            <p class="team-profile__role">시스템부장</p>
+          </div>
+        </div>
+
+        <div class="team-profile">
+          <div class="team-profile__avatar-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1534528741775-53994a69daeb.png" alt="박민수" class="team-profile__avatar" loading="lazy" />
+            <div class="team-profile__placeholder">
+              <div class="team-profile__placeholder-icon"></div>
+            </div>
+            <div class="team-profile__badge"></div>
+          </div>
+          <div class="team-profile__info">
+            <h3 class="team-profile__name">박민수</h3>
+            <p class="team-profile__role">마케팅부장</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values Feature Section -->
+  <section class="core-values-feature-section">
+    <div class="core-values-feature-section__container container">
+      <div class="core-values-feature-section__content">
+        <!-- Label -->
+          <div class="core-values-feature-section__label-wrapper">
+            <span class="badge badge--primary">전문적인 컨설팅</span>
+          </div>
+
+        <!-- Feature Items -->
+        <div class="core-values-feature-section__items">
+          <div class="core-values-feature-item">
+            <h3>혁신적인 접근</h3>
+            <p>데이터 기반의 통찰력으로 현명한 결정을 돕습니다.</p>
+          </div>
+
+          <div class="core-values-feature-item">
+            <h3>창의적인 해결책</h3>
+            <p>체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p>
+          </div>
+
+          <div class="core-values-feature-item">
+            <h3>전문적인 파트너십</h3>
+            <p>전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Section -->
+  <section class="awards-section">
+    <div class="awards-section__container container">
+      <div class="awards-section__content">
+        <!-- Label -->
+          <div class="awards-section__label-wrapper">
+            <span class="badge badge--primary">수상내역</span>
+          </div>
+
+        <!-- Award Items -->
+        <div class="awards-section__items">
+          <div class="award-item">
+            <div class="award-item__image-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1567427017947-545c5f8d16ad.png" alt="이미지" class="award-item__image" loading="lazy" />
+              <div class="award-item__placeholder">
+                <div class="award-item__placeholder-icon"></div>
+              </div>
+            </div>
+            <div class="award-item__info">
+              <h3>신뢰할 수 있는 동반자</h3>
+              <span class="award-item__year">2025</span>
+            </div>
+          </div>
+
+          <div class="award-item">
+            <div class="award-item__image-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1567427017947-545c5f8d16ad.png" alt="이미지" class="award-item__image" loading="lazy" />
+              <div class="award-item__placeholder">
+                <div class="award-item__placeholder-icon"></div>
+              </div>
+            </div>
+            <div class="award-item__info">
+              <h3>미래를 향한 도전</h3>
+              <span class="award-item__year">2025</span>
+            </div>
+          </div>
+
+          <div class="award-item">
+            <div class="award-item__image-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1567427017947-545c5f8d16ad.png" alt="이미지" class="award-item__image" loading="lazy" />
+              <div class="award-item__placeholder">
+                <div class="award-item__placeholder-icon"></div>
+              </div>
+            </div>
+            <div class="award-item__info">
+              <h3>성공을 위한 파트너</h3>
+              <span class="award-item__year">2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="our-story-section">
+    <div class="our-story-section__container container">
+      <div class="our-story-section__content">
+        <!-- Text Block -->
+        <div class="our-story-section__text-block">
+        <div>
+          <span class="badge badge--primary">체계적인 분석</span>
+        </div>
+          <h2 class="our-story-section__title">가치 있는 선택</h2>
+          <p class="our-story-section__description">새로운 아이디어와 혁신적인 방법으로 당신의 목표를 달성하는 데 도움을 드립니다.</p>
+        </div>
+
+        <!-- Image -->
+        <div class="our-story-section__image-wrapper">
+          <img src="https://demo.wakit.org/img/samples/photo-1552664730-d307ca884978.png" alt="이미지" class="our-story-section__image" loading="lazy" />
+          <div class="our-story-section__placeholder">
+            <div class="our-story-section__placeholder-icon"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="testimonial-section">
+    <div class="testimonial-section__container container">
+      <!-- Header -->
+      <div class="testimonial-section__header">
+        <div>
+          <span class="badge badge--primary">텍스트</span>
+        </div>
+        <h2 class="testimonial-section__title">새로운 시작을 함께해요</h2>
+        <p class="testimonial-section__description">전문적인 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.</p>
+      </div>
+
+      <!-- Testimonial Cards -->
+      <div class="testimonial-section__cards">
+        <!-- Row 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-card__logo">
+            <img src="img/brands/Company-logo.svg" alt="Company Logo" class="testimonial-card__logo-image">
+          </div>
+          <p>고객 중심의 접근 방식으로 꼭 맞는 서비스를 제안합니다.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1507003211169-0a1dd7228f2d.png" alt="정수진" class="testimonial-card__avatar" loading="lazy" />
+              <div class="testimonial-card__avatar-placeholder">
+                <div class="testimonial-card__avatar-placeholder-icon"></div>
+              </div>
+              <div class="testimonial-card__avatar-badge"></div>
+            </div>
+            <div class="testimonial-card__author-info">
+              <h3 class="testimonial-card__name">정수진</h3>
+              <p class="testimonial-card__role">프리랜서 디자이너</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__logo">
+            <img src="img/brands/Company-logo-1.svg" alt="Company Logo" class="testimonial-card__logo-image">
+          </div>
+          <p>끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1494790108377-be9c29b29330.png" alt="홍길동" class="testimonial-card__avatar" loading="lazy" />
+              <div class="testimonial-card__avatar-placeholder">
+                <div class="testimonial-card__avatar-placeholder-icon"></div>
+              </div>
+              <div class="testimonial-card__avatar-badge"></div>
+            </div>
+            <div class="testimonial-card__author-info">
+              <h3 class="testimonial-card__name">홍길동</h3>
+              <p class="testimonial-card__role">아트 디렉터</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__logo">
+            <img src="img/brands/Company-logo-2.svg" alt="Company Logo" class="testimonial-card__logo-image">
+          </div>
+          <p>효율적인 프로세스와 체계적인 관리로 성공을 지원합니다.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1438761681033-6461ffad8d80.png" alt="김철수" class="testimonial-card__avatar" loading="lazy" />
+              <div class="testimonial-card__avatar-placeholder">
+                <div class="testimonial-card__avatar-placeholder-icon"></div>
+              </div>
+              <div class="testimonial-card__avatar-badge"></div>
+            </div>
+            <div class="testimonial-card__author-info">
+              <h3 class="testimonial-card__name">김철수</h3>
+              <p class="testimonial-card__role">UX 디자이너</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-card__logo">
+            <img src="img/brands/Company-logo-3.svg" alt="Company Logo" class="testimonial-card__logo-image">
+          </div>
+          <p>창의적인 아이디어와 실행력으로 차별화된 가치를 제공합니다.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1500648767791-00dcc994a43e.png" alt="이영희" class="testimonial-card__avatar" loading="lazy" />
+              <div class="testimonial-card__avatar-placeholder">
+                <div class="testimonial-card__avatar-placeholder-icon"></div>
+              </div>
+              <div class="testimonial-card__avatar-badge"></div>
+            </div>
+            <div class="testimonial-card__author-info">
+              <h3 class="testimonial-card__name">이영희</h3>
+              <p class="testimonial-card__role">그래픽 디자이너</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__logo">
+            <img src="img/brands/Company-logo-4.svg" alt="Company Logo" class="testimonial-card__logo-image">
+          </div>
+          <p>협업과 소통을 통해 최상의 결과물을 만들어갑니다.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1472099645785-5658abf4ff4e.png" alt="박민수" class="testimonial-card__avatar" loading="lazy" />
+              <div class="testimonial-card__avatar-placeholder">
+                <div class="testimonial-card__avatar-placeholder-icon"></div>
+              </div>
+              <div class="testimonial-card__avatar-badge"></div>
+            </div>
+            <div class="testimonial-card__author-info">
+              <h3 class="testimonial-card__name">박민수</h3>
+              <p class="testimonial-card__role">프로젝트 매니저</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__logo">
+            <img src="img/brands/Company-logo-5.svg" alt="Company Logo" class="testimonial-card__logo-image">
+          </div>
+          <p>지속적인 개선과 혁신으로 발전하는 파트너가 되겠습니다.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1534528741775-53994a69daeb.png" alt="정수진" class="testimonial-card__avatar" loading="lazy" />
+              <div class="testimonial-card__avatar-placeholder">
+                <div class="testimonial-card__avatar-placeholder-icon"></div>
+              </div>
+              <div class="testimonial-card__avatar-badge"></div>
+            </div>
+            <div class="testimonial-card__author-info">
+              <h3 class="testimonial-card__name">정수진</h3>
+              <p class="testimonial-card__role">UI 디자이너</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script>
+  // Initialize image load checks for company-info-4 page
+  // Works in both static page and Wakit dynamic view
+  function initCompanyInfo4ImageLoads(container) {
+    if (!container) {
+      // Try to find container: dynamic view active page or document body
+      container = document.querySelector('.dynamic-view.active .page') || document.body;
+    }
+
+    // Hero Image Load Check
+    (function() {
+      const heroSection = container.querySelector('.hero-section');
+      if (!heroSection) return;
+
+      const image = heroSection.querySelector('.hero-section__image');
+      const placeholder = heroSection.querySelector('.hero-section__placeholder');
+      
+      if (!image || !placeholder) return;
+
+      function checkImageLoad() {
+        if (image.complete && image.naturalHeight !== 0) {
+          placeholder.classList.add('hidden');
+        } else {
+          image.addEventListener('load', () => {
+            placeholder.classList.add('hidden');
+          });
+          image.addEventListener('error', () => {
+            placeholder.classList.add('hidden');
+          });
+        }
+      }
+
+      checkImageLoad();
+    })();
+
+    // Team Profile Image Load Check
+    (function() {
+      const teamProfiles = container.querySelectorAll('.team-profile');
+      if (!teamProfiles.length) return;
+
+      teamProfiles.forEach(profile => {
+        const image = profile.querySelector('.team-profile__avatar');
+        const placeholder = profile.querySelector('.team-profile__placeholder');
+        
+        if (!image || !placeholder) return;
+
+        function checkImageLoad() {
+          if (image.complete && image.naturalHeight !== 0) {
+            placeholder.classList.add('hidden');
+          } else {
+            image.addEventListener('load', () => {
+              placeholder.classList.add('hidden');
+            });
+            image.addEventListener('error', () => {
+              placeholder.classList.add('hidden');
+            });
+          }
+        }
+
+        checkImageLoad();
+      });
+    })();
+
+    // Award Image Load Check
+    (function() {
+      const awardItems = container.querySelectorAll('.award-item');
+      if (!awardItems.length) return;
+
+      awardItems.forEach(item => {
+        const image = item.querySelector('.award-item__image');
+        const placeholder = item.querySelector('.award-item__placeholder');
+        
+        if (!image || !placeholder) return;
+
+        function checkImageLoad() {
+          if (image.complete && image.naturalHeight !== 0) {
+            placeholder.classList.add('hidden');
+          } else {
+            image.addEventListener('load', () => {
+              placeholder.classList.add('hidden');
+            });
+            image.addEventListener('error', () => {
+              placeholder.classList.add('hidden');
+            });
+          }
+        }
+
+        checkImageLoad();
+      });
+    })();
+
+    // Our Story Image Load Check
+    (function() {
+      const ourStorySection = container.querySelector('.our-story-section');
+      if (!ourStorySection) return;
+
+      const image = ourStorySection.querySelector('.our-story-section__image');
+      const placeholder = ourStorySection.querySelector('.our-story-section__placeholder');
+      
+      if (!image || !placeholder) return;
+
+      function checkImageLoad() {
+        if (image.complete && image.naturalHeight !== 0) {
+          placeholder.classList.add('hidden');
+        } else {
+          image.addEventListener('load', () => {
+            placeholder.classList.add('hidden');
+          });
+          image.addEventListener('error', () => {
+            placeholder.classList.add('hidden');
+          });
+        }
+      }
+
+      checkImageLoad();
+    })();
+
+    // Testimonial Avatar Image Load Check
+    (function() {
+      const testimonialCards = container.querySelectorAll('.testimonial-card');
+      if (!testimonialCards.length) return;
+
+      testimonialCards.forEach(card => {
+        const image = card.querySelector('.testimonial-card__avatar');
+        const placeholder = card.querySelector('.testimonial-card__avatar-placeholder');
+        
+        if (!image || !placeholder) return;
+
+        function checkImageLoad() {
+          if (image.complete && image.naturalHeight !== 0) {
+            placeholder.classList.add('hidden');
+          } else {
+            image.addEventListener('load', () => {
+              placeholder.classList.add('hidden');
+            });
+            image.addEventListener('error', () => {
+              placeholder.classList.add('hidden');
+            });
+          }
+        }
+
+        checkImageLoad();
+      });
+    })();
+  }
+
+  // Initialize Popup (only once)
+  if (typeof Popup !== 'undefined' && Popup.init) {
+    Popup.init();
+  }
+
+  // Run immediately - works for both static page and dynamic view
+  // When script executes in dynamic view, it's already inside the .page container
+  (function() {
+    // Find the appropriate container
+    // Priority: 1) Active dynamic view page, 2) .company-info-4 element, 3) document.body
+    let container = document.querySelector('.dynamic-view.active .page');
+    
+    if (!container) {
+      // Try to find .company-info-4 element
+      const companyInfo4 = document.querySelector('.company-info-4');
+      if (companyInfo4) {
+        container = companyInfo4;
+      } else {
+        container = document.body;
+      }
+    }
+    
+    initCompanyInfo4ImageLoads(container);
+  })();
+</script>
+
+</html>

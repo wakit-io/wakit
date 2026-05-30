@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Blog detail 2</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- Blog Styles -->
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/blog-detail-2.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="blog-detail-2">
+  <!-- 배너 이미지 섹션 -->
+  <section class="blog-detail-2__banner">
+    <img src="https://demo.wakit.org/img/samples/photo-1506905925346-21bda4d32df4.png" alt="이미지" class="blog-detail-2__banner-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div class="blog-detail-2__banner-placeholder" style="display: none;"></div>
+  </section>
+
+  <!-- Article 섹션 -->
+  <article class="blog-detail-2__article">
+    <div class="container">
+      <!-- 헤더 -->
+      <header class="blog-detail-2__article-header">
+        <!-- 메타데이터 (배지) -->
+        <div class="blog-detail-2__article-metadata">
+          <div class="badge-wrapper blog-detail-2__article-badge">
+            <span class="blog-detail-2__article-badge-text">푸드</span>
+          </div>
+        </div>
+
+        <!-- 제목 -->
+        <h1 class="blog-detail-2__article-title">무한한 가능성의 시작</h1>
+
+        <!-- 푸터 (작성자 및 상호작용) -->
+        <div class="blog-detail-2__article-footer">
+          <!-- 작성자 정보 -->
+          <div class="blog-detail-2__article-author">
+            <div class="blog-detail-2__article-avatar">
+              <img src="https://demo.wakit.org/img/samples/photo-1535713875002-d1d0cf377fde.png" alt="김철수" class="blog-detail-2__article-avatar-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <div class="blog-detail-2__article-avatar-placeholder" style="display: none;"></div>
+              <div class="blog-detail-2__article-avatar-badge" aria-hidden="true"></div>
+            </div>
+            <div class="blog-detail-2__article-author-info">
+              <div class="blog-detail-2__article-author-name">김철수</div>
+              <time class="blog-detail-2__article-time" datetime="2024-01-01">12시간 전</time>
+            </div>
+          </div>
+
+          <!-- 상호작용 버튼 -->
+          <div class="blog-detail-2__article-interactions">
+            <button type="button" class="blog-detail-2__article-interaction" aria-label="좋아요">
+              <i class="bi bi-heart" aria-hidden="true"></i>
+              <span class="blog-detail-2__article-interaction-count">35</span>
+            </button>
+            <button type="button" class="blog-detail-2__article-interaction" aria-label="댓글">
+              <i class="bi bi-chat" aria-hidden="true"></i>
+              <span class="blog-detail-2__article-interaction-count">4</span>
+            </button>
+            <button type="button" class="blog-detail-2__article-interaction" aria-label="공유">
+              <i class="bi bi-share" aria-hidden="true"></i>
+              <span class="blog-detail-2__article-interaction-count">3</span>
+            </button>
+          </div>
+        </div>
+      </header>
+    </div>
+  </article>
+
+  <!-- 메인 콘텐츠 섹션 -->
+  <section class="blog-detail-2__content">
+    <div class="container">
+      <!-- Introduction -->
+      <div class="blog-detail-2__introduction">
+        <p class="blog-detail-2__introduction-text">전문적인 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.</p>
+      </div>
+
+      <!-- Article Content -->
+      <div class="blog-detail-2__article-content">
+        <h2 class="blog-detail-2__content-title">꿈을 향한 첫걸음</h2>
+        <p class="blog-detail-2__content-text">고객 중심의 접근 방식으로 꼭 맞는 서비스를 제안합니다.</p>
+      </div>
+
+      <!-- Image Container (2 images) -->
+      <div class="blog-detail-2__image-container">
+        <figure class="blog-detail-2__image">
+          <img src="https://demo.wakit.org/img/samples/photo-1490645935967-10de6ba17061.png" alt="이미지" class="blog-detail-2__image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <div class="blog-detail-2__image-placeholder" style="display: none;"></div>
+        </figure>
+        <figure class="blog-detail-2__image">
+          <img src="https://demo.wakit.org/img/samples/photo-1504674900247-0877df9cc836.png" alt="이미지" class="blog-detail-2__image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <div class="blog-detail-2__image-placeholder" style="display: none;"></div>
+        </figure>
+      </div>
+
+      <!-- Breakfast Ideas -->
+      <div class="blog-detail-2__breakfast-ideas">
+        <h2 class="blog-detail-2__breakfast-ideas-title">혁신적인 접근</h2>
+        <p class="blog-detail-2__breakfast-ideas-text">그릭 요거트와 과일 단백질이 풍부한 그릭 요거트에 신선한 베리류(블루베리, 라즈베리 등)와 꿀 한 스푼을 추가하세요. 건강한 지방과 비타민이 풍부해 에너지 충전에 탁월합니다.<br><br>아보카도 토스트 통밀빵 위에 잘 익은 아보카도를 얹고, 소금과 후추로 간을 한 후, 삶은 달걀이나 토마토를 곁들여보세요. 간단하지만 포만감과 영양이 훌륭합니다.<br><br>오트밀과 견과류 오트밀에 따뜻한 우유를 부어 만들고, 그 위에 아몬드, 호두, 꿀을 올려보세요. 섬유질이 풍부해 장 건강에도 좋고, 오래도록 에너지를 유지할 수 있습니다.<br><br>스무디 볼(Smoothie Bowl) 바나나, 블루베리, 시금치를 넣은 스무디를 그릇에 담고, 그래놀라, 치아씨드, 그리고 코코넛 플레이크로 토핑하세요. 맛도 좋고 시각적으로도 훌륭한 아침 식사입니다.<br><br>계란과 채소 오믈렛 달걀 두 개에 다진 브로콜리, 파프리카, 양파를 넣고 부드럽게 구워보세요. 단백질과 채소가 듬뿍 들어가 든든한 아침 식사로 완벽합니다.</p>
+      </div>
+
+      <!-- Full Width Image -->
+      <figure class="blog-detail-2__full-image">
+        <img src="https://demo.wakit.org/img/samples/photo-1504674900247-0877df9cc836.png" alt="이미지" class="blog-detail-2__full-image-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="blog-detail-2__full-image-placeholder" style="display: none;"></div>
+      </figure>
+
+      <!-- Testimonials Block -->
+      <figure class="blog-detail-2__testimonial">
+        <blockquote class="blog-detail-2__testimonial-quote">건강한 아침 식사는 몸과 마음에 활력을<br>불어넣는 최고의 투자입니다.</blockquote>
+        <figcaption class="blog-detail-2__testimonial-author">
+          <div class="blog-detail-2__testimonial-avatar">
+            <img src="https://demo.wakit.org/img/samples/photo-1494790108377-be9c29b29330.png" alt="정수진" class="blog-detail-2__testimonial-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="blog-detail-2__testimonial-avatar-placeholder" style="display: none;"></div>
+            <div class="blog-detail-2__testimonial-avatar-badge" aria-hidden="true"></div>
+          </div>
+          <div class="blog-detail-2__testimonial-author-info">
+            <div class="blog-detail-2__testimonial-author-name">정수진</div>
+            <div class="blog-detail-2__testimonial-author-details">
+              <span>체계적인 분석</span>
+              <span>효과적인 전략</span>
+            </div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Conclusion -->
+      <div class="blog-detail-2__conclusion">
+        <h2 class="blog-detail-2__conclusion-title">창의적인 해결책</h2>
+        <p class="blog-detail-2__conclusion-text">끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.</p>
+      </div>
+
+      <!-- Related Tags -->
+      <div class="blog-detail-2__tags">
+        <span class="blog-detail-2__tags-label">안정적인 운영</span>
+        <div class="blog-detail-2__tags-list">
+          <span class="blog-detail-2__tag">
+            <span>#건강</span>
+          </span>
+          <span class="blog-detail-2__tag">
+            <span>#음식</span>
+          </span>
+          <span class="blog-detail-2__tag">
+            <span>혁신적인 도구</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Feedback Prompt -->
+      <div class="blog-detail-2__feedback">
+        <p class="blog-detail-2__feedback-prompt">이 글이 도움이 되었나요?</p>
+        <p class="blog-detail-2__feedback-summary">효율적인 프로세스와 체계적인 관리로 성공을 지원합니다.</p>
+        <div class="blog-detail-2__feedback-buttons">
+          <button type="button" class="blog-detail-2__feedback-button" aria-label="예">
+            <span class="blog-detail-2__feedback-button-icon">
+              <i class="bi bi-hand-thumbs-up" aria-hidden="true"></i>
+            </span>
+            <span>예</span>
+          </button>
+          <button type="button" class="blog-detail-2__feedback-button" aria-label="아니요">
+            <span class="blog-detail-2__feedback-button-icon">
+              <i class="bi bi-hand-thumbs-down" aria-hidden="true"></i>
+            </span>
+            <span>아니요</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Advertisement -->
+      <div class="blog-detail-2__advertisement">
+        <div class="blog-detail-2__ad-banner">
+          <img src="https://demo.wakit.org/img/samples/photo-1611224923853-80b023f02d71.png" alt="광고" class="blog-detail-2__ad-banner-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <div class="blog-detail-2__ad-banner-placeholder" style="display: none;"></div>
+          <div class="blog-detail-2__ad-label">
+            <span class="blog-detail-2__ad-label-text">효율적인 관리</span>
+            <span class="blog-detail-2__ad-label-size">체계적인 접근</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Articles Section -->
+      <section class="blog-detail-2__related-articles">
+        <header class="blog-detail-2__related-articles-header">
+          <div class="blog-detail-2__related-articles-title-wrapper">
+            <h2 class="blog-detail-2__related-articles-title">관련 포스트</h2>
+            <!-- <p>창의적인 아이디어와 실행력으로 차별화된 가치를 제공합니다.</p> -->
+          </div>
+          <div class="blog-detail-2__related-articles-controls">
+            <button type="button" class="blog-detail-2__related-articles-control" aria-label="이전">
+              <i class="bi bi-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="blog-detail-2__related-articles-control" aria-label="다음">
+              <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </header>
+        <div class="blog-detail-2__related-articles-list">
+          <!-- Related Article 1 -->
+          <article class="blog-detail-2__related-article">
+            <a href="views/blog-detail-1.html" class="blog-detail-2__related-article-link">
+              <div class="blog-detail-2__related-article-image-wrapper">
+                <img src="https://demo.wakit.org/img/samples/photo-1490645935967-10de6ba17061.png" alt="이미지" class="blog-detail-2__related-article-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="blog-detail-2__related-article-image-placeholder" style="display: none;"></div>
+                <button type="button" class="blog-detail-2__related-article-bookmark" aria-label="북마크">
+                  <i class="bi bi-bookmark" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="blog-detail-2__related-article-info">
+                <div class="blog-detail-2__related-article-meta">
+                  <span class="blog-detail-2__related-article-badge">
+                    <span>음식</span>
+                  </span>
+                  <time class="blog-detail-2__related-article-date">24년 12월 24일</time>
+                </div>
+                <h3 class="blog-detail-2__related-article-title">신뢰할 수 있는 동반자</h3>
+                <div class="blog-detail-2__related-article-author">
+                  <div class="blog-detail-2__related-article-author-avatar">
+                    <img src="https://demo.wakit.org/img/samples/photo-1535713875002-d1d0cf377fde.png" alt="박민수" class="blog-detail-2__related-article-author-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="blog-detail-2__related-article-author-avatar-placeholder" style="display: none;"></div>
+                    <div class="blog-detail-2__related-article-author-avatar-badge" aria-hidden="true"></div>
+                  </div>
+                  <span class="blog-detail-2__related-article-author-name">박민수</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Related Article 2 -->
+          <article class="blog-detail-2__related-article">
+            <a href="views/blog-detail-1.html" class="blog-detail-2__related-article-link">
+              <div class="blog-detail-2__related-article-image-wrapper">
+                <img src="https://demo.wakit.org/img/samples/photo-1504674900247-0877df9cc836.png" alt="이미지" class="blog-detail-2__related-article-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="blog-detail-2__related-article-image-placeholder" style="display: none;"></div>
+                <button type="button" class="blog-detail-2__related-article-bookmark" aria-label="북마크">
+                  <i class="bi bi-bookmark" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="blog-detail-2__related-article-info">
+                <div class="blog-detail-2__related-article-meta">
+                  <span class="blog-detail-2__related-article-badge">
+                    <span>예술</span>
+                  </span>
+                  <time class="blog-detail-2__related-article-date">24년 09월 15일</time>
+                </div>
+                <h3 class="blog-detail-2__related-article-title">미래를 향한 도전</h3>
+                <div class="blog-detail-2__related-article-author">
+                  <div class="blog-detail-2__related-article-author-avatar">
+                    <img src="https://demo.wakit.org/img/samples/photo-1472099645785-5658abf4ff4e.png" alt="정수진" class="blog-detail-2__related-article-author-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="blog-detail-2__related-article-author-avatar-placeholder" style="display: none;"></div>
+                    <div class="blog-detail-2__related-article-author-avatar-badge" aria-hidden="true"></div>
+                  </div>
+                  <span class="blog-detail-2__related-article-author-name">정수진</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Related Article 3 -->
+          <article class="blog-detail-2__related-article">
+            <a href="views/blog-detail-1.html" class="blog-detail-2__related-article-link">
+              <div class="blog-detail-2__related-article-image-wrapper">
+                <img src="https://demo.wakit.org/img/samples/photo-1551288049-bebda4e38f71.png" alt="이미지" class="blog-detail-2__related-article-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="blog-detail-2__related-article-image-placeholder" style="display: none;"></div>
+                <button type="button" class="blog-detail-2__related-article-bookmark" aria-label="북마크">
+                  <i class="bi bi-bookmark" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="blog-detail-2__related-article-info">
+                <div class="blog-detail-2__related-article-meta">
+                  <span class="blog-detail-2__related-article-badge">
+                    <span>심리학</span>
+                  </span>
+                  <time class="blog-detail-2__related-article-date">23년 07월 21일</time>
+                </div>
+                <h3 class="blog-detail-2__related-article-title">성공을 위한 파트너</h3>
+                <div class="blog-detail-2__related-article-author">
+                  <div class="blog-detail-2__related-article-author-avatar">
+                    <img src="https://demo.wakit.org/img/samples/photo-1438761681033-6461ffad8d80.png" alt="이영희" class="blog-detail-2__related-article-author-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="blog-detail-2__related-article-author-avatar-placeholder" style="display: none;"></div>
+                    <div class="blog-detail-2__related-article-author-avatar-badge" aria-hidden="true"></div>
+                  </div>
+                  <span class="blog-detail-2__related-article-author-name">이영희</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script data-spa-ignore>
+  Popup.init();
+  console.log('home page script executed');
+</script>
+
+</html>

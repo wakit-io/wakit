@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>테마 시스템</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/foundation/color.css">
+  <link rel="stylesheet" href="../css/foundation/spacing.css">
+  <link rel="stylesheet" href="../css/foundation/typography.css">
+  <link rel="stylesheet" href="../css/foundation/buttons.css">
+  <link rel="stylesheet" href="../css/foundation/badge.css">
+  <link rel="stylesheet" href="../css/foundation/icons.css">
+  <script src="../js/theme-init.js"></script>
+  <style>
+    .theme-system-page {
+      margin: 0;
+      min-height: 100vh;
+      background-color: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      font-family: var(--font-family-primary);
+    }
+    .theme-system-page__wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 24px 48px;
+    }
+    .theme-system-page__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .theme-system-page__header-label {
+      font-size: 14px;
+      color: var(--color-text-tertiary);
+      margin-right: 8px;
+    }
+    .theme-system-page__title {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-text-primary);
+    }
+    .theme-system-page__section {
+      margin-bottom: 40px;
+    }
+    .theme-system-page__section--divided {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--color-border);
+    }
+    .theme-system-page__section-title {
+      margin: 0 0 16px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-text-secondary);
+    }
+    .theme-system-page__section-desc {
+      margin: 0 0 16px;
+      font-size: 14px;
+      color: var(--color-text-tertiary);
+    }
+    .theme-system-page__row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .theme-system-page__block-wrap {
+      max-width: 320px;
+      margin-top: 12px;
+    }
+    .theme-system-page__block-wrap .btn + .btn {
+      margin-top: 8px;
+    }
+    .theme-system-page__code {
+      margin: 0;
+      padding: 16px;
+      background: var(--color-bg-secondary);
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--color-text-secondary);
+      overflow-x: auto;
+    }
+    .theme-system-page__code code {
+      font-family: inherit;
+    }
+  </style>
+</head>
+<body class="theme-system-page">
+
+<div class="theme-system-page__wrap">
+  <header class="theme-system-page__header">
+    <h1 class="theme-system-page__title">테마 시스템</h1>
+    <div class="theme-system-page__row">
+      <span class="theme-system-page__header-label">테마</span>
+      <button type="button" class="btn btn--tertiary btn--s" data-theme-option="light">라이트</button>
+      <button type="button" class="btn btn--tertiary btn--s" data-theme-option="dark">다크</button>
+      <button type="button" class="btn btn--tertiary btn--s" data-theme-option="system">시스템</button>
+      <button type="button" class="btn btn--ghost btn--s" data-theme-toggle aria-label="테마 토글">
+        <i class="bi bi-moon-fill" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Primary -->
+  <section class="theme-system-page__section">
+    <h2 class="theme-system-page__section-title">Primary 버튼</h2>
+    <div class="theme-system-page__row">
+      <button type="button" class="btn btn--primary btn--l">확인</button>
+      <button type="button" class="btn btn--primary btn--m">저장</button>
+      <button type="button" class="btn btn--primary btn--s">취소</button>
+    </div>
+    <div class="theme-system-page__row">
+      <button type="button" class="btn btn--primary btn--l" disabled>비활성 L</button>
+      <button type="button" class="btn btn--primary btn--m" disabled>비활성 M</button>
+      <button type="button" class="btn btn--primary btn--s" disabled>비활성 S</button>
+    </div>
+  </section>
+
+  <!-- Primary + 아이콘 -->
+  <section class="theme-system-page__section">
+    <h2 class="theme-system-page__section-title">Primary 버튼 + 아이콘</h2>
+    <div class="theme-system-page__row">
+      <button type="button" class="btn btn--primary btn--l">
+        <i class="bi bi-plus" aria-hidden="true"></i>
+        <span>추가하기</span>
+      </button>
+      <a href="#" class="btn btn--primary btn--m">
+        <span>다음</span>
+        <i class="bi bi-chevron-right" aria-hidden="true"></i>
+      </a>
+      <button type="button" class="btn btn--primary btn--s">
+        <i class="bi bi-download" aria-hidden="true"></i>
+        <span>다운로드</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Secondary -->
+  <section class="theme-system-page__section">
+    <h2 class="theme-system-page__section-title">Secondary 버튼</h2>
+    <div class="theme-system-page__row">
+      <button type="button" class="btn btn--secondary btn--l">확인</button>
+      <button type="button" class="btn btn--secondary btn--m">보기</button>
+      <button type="button" class="btn btn--secondary btn--s">더보기</button>
+    </div>
+    <div class="theme-system-page__row">
+      <button type="button" class="btn btn--secondary btn--m" disabled>비활성</button>
+    </div>
+  </section>
+
+  <!-- Tertiary (Outline) -->
+  <section class="theme-system-page__section">
+    <h2 class="theme-system-page__section-title">Tertiary 버튼 (아웃라인)</h2>
+    <div class="theme-system-page__row">
+      <button type="button" class="btn btn--tertiary btn--l">확인</button>
+      <button type="button" class="btn btn--tertiary btn--m">취소</button>
+      <button type="button" class="btn btn--tertiary btn--s">닫기</button>
+    </div>
+    <div class="theme-system-page__row">
+      <button type="button" class="btn btn--tertiary btn--m" disabled>비활성</button>
+    </div>
+  </section>
+
+  <!-- Ghost -->
+  <section class="theme-system-page__section">
+    <h2 class="theme-system-page__section-title">Ghost 버튼</h2>
+    <div class="theme-system-page__row">
+      <button type="button" class="btn btn--ghost btn--l">확인</button>
+      <button type="button" class="btn btn--ghost btn--m">링크</button>
+      <button type="button" class="btn btn--ghost btn--s">더보기</button>
+    </div>
+    <div class="theme-system-page__row">
+      <button type="button" class="btn btn--ghost btn--m" disabled>비활성</button>
+    </div>
+  </section>
+
+  <!-- Block (전체 너비) -->
+  <section class="theme-system-page__section">
+    <h2 class="theme-system-page__section-title">Block 버튼 (전체 너비)</h2>
+    <div class="theme-system-page__block-wrap">
+      <button type="button" class="btn btn--primary btn--l btn--block">Primary Block</button>
+      <button type="button" class="btn btn--secondary btn--m btn--block">Secondary Block</button>
+    </div>
+  </section>
+
+  <!-- Icon Button (디자인툴 Icon-Button, 테마 컬러) -->
+  <section class="theme-system-page__section theme-system-page__section--divided">
+    <h2 class="theme-system-page__section-title">Icon Button (아이콘 버튼)</h2>
+    <p class="theme-system-page__section-desc">아이콘만 표시하는 버튼입니다. 접근성을 위해 aria-label을 지정하세요.</p>
+    <div class="theme-system-page__row">
+      <button type="button" class="btn btn--primary btn--l btn--icon" aria-label="찜">
+        <i class="bi bi-heart" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn btn--primary btn--m btn--icon" aria-label="공유">
+        <i class="bi bi-share" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn btn--primary btn--s btn--icon" aria-label="더보기">
+        <i class="bi bi-three-dots" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn btn--primary btn--l btn--icon" disabled aria-label="찜 비활성">
+        <i class="bi bi-heart" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="theme-system-page__row">
+      <button type="button" class="btn btn--secondary btn--l btn--icon" aria-label="찜">
+        <i class="bi bi-heart" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn btn--secondary btn--m btn--icon" aria-label="공유">
+        <i class="bi bi-share" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn btn--secondary btn--s btn--icon" aria-label="더보기">
+        <i class="bi bi-three-dots" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn btn--secondary btn--m btn--icon" disabled aria-label="비활성">
+        <i class="bi bi-heart" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="theme-system-page__row">
+      <button type="button" class="btn btn--tertiary btn--l btn--icon" aria-label="찜">
+        <i class="bi bi-heart" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn btn--tertiary btn--m btn--icon" aria-label="공유">
+        <i class="bi bi-share" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn btn--tertiary btn--s btn--icon" aria-label="더보기">
+        <i class="bi bi-three-dots" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="theme-system-page__row">
+      <button type="button" class="btn btn--ghost btn--l btn--icon" aria-label="찜">
+        <i class="bi bi-heart" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn btn--ghost btn--m btn--icon" aria-label="공유">
+        <i class="bi bi-share" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn btn--ghost btn--s btn--icon" aria-label="더보기">
+        <i class="bi bi-three-dots" aria-hidden="true"></i>
+      </button>
+    </div>
+  </section>
+
+    <!-- 사용 예시 코드 -->
+    <section class="theme-system-page__section theme-system-page__section--divided">
+      <h2 class="theme-system-page__section-title">버튼 예시 코드</h2>
+      <pre class="theme-system-page__code"><code>&lt;!-- Primary L --&gt;
+  &lt;button type="button" class="btn btn--primary btn--l"&gt;확인&lt;/button&gt;
+  
+  &lt;!-- Secondary M + 아이콘 --&gt;
+  &lt;a href="#" class="btn btn--secondary btn--m"&gt;
+    &lt;span&gt;다음&lt;/span&gt;
+    &lt;i class="bi bi-chevron-right"&gt;&lt;/i&gt;
+  &lt;/a&gt;
+  
+  &lt;!-- Tertiary S, 비활성 --&gt;
+  &lt;button type="button" class="btn btn--tertiary btn--s" disabled&gt;취소&lt;/button&gt;
+  
+  &lt;!-- Ghost --&gt;
+  &lt;button type="button" class="btn btn--ghost btn--m"&gt;더보기&lt;/button&gt;
+  
+  &lt;!-- Block (전체 너비) --&gt;
+  &lt;button type="button" class="btn btn--primary btn--l btn--block"&gt;제출&lt;/button&gt;
+  
+  &lt;!-- Icon Button (테마 컬러, L/M/S) --&gt;
+  &lt;button type="button" class="btn btn--primary btn--l btn--icon" aria-label="찜"&gt;&lt;i class="bi bi-heart"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;button type="button" class="btn btn--secondary btn--m btn--icon" aria-label="공유"&gt;&lt;i class="bi bi-share"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;button type="button" class="btn btn--ghost btn--s btn--icon" aria-label="더보기"&gt;&lt;i class="bi bi-three-dots"&gt;&lt;/i&gt;&lt;/button&gt;</code></pre>
+    </section>
+    
+
+  <!-- Icon Theme (테마 옅은 색 아이콘) -->
+  <section class="theme-system-page__section theme-system-page__section--divided">
+    <h2 class="theme-system-page__section-title">테마 컬러 아이콘 (icon-theme)</h2>
+    <p class="theme-system-page__section-desc">테마 색상을 적용한 아이콘입니다. 기본 40px, --sm 32px, --lg 48px 크기를 사용할 수 있습니다.</p>
+    <div class="theme-system-page__row">
+      <div class="icon-theme" aria-hidden="true">
+        <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+      </div>
+      <div class="icon-theme" aria-hidden="true">
+        <i class="bi bi-folder-fill" aria-hidden="true"></i>
+      </div>
+      <div class="icon-theme" aria-hidden="true">
+        <i class="bi bi-palette" aria-hidden="true"></i>
+      </div>
+      <div class="icon-theme icon-theme--sm" aria-hidden="true">
+        <i class="bi bi-heart" aria-hidden="true"></i>
+      </div>
+      <div class="icon-theme icon-theme--lg" aria-hidden="true">
+        <i class="bi bi-star-fill" aria-hidden="true"></i>
+      </div>
+    </div>
+    <pre class="theme-system-page__code"><code>&lt;!-- 기본(40px) --&gt;
+&lt;div class="icon-theme"&gt;&lt;i class="bi bi-graph-up-arrow"&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;!-- S(32px) / L(48px) --&gt;
+&lt;div class="icon-theme icon-theme--sm"&gt;&lt;i class="bi bi-heart"&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;div class="icon-theme icon-theme--lg"&gt;&lt;i class="bi bi-star-fill"&gt;&lt;/i&gt;&lt;/div&gt;</code></pre>
+  </section>
+
+  <!-- Badge: Variants -->
+  <section class="theme-system-page__section theme-system-page__section--divided">
+    <h2 class="theme-system-page__section-title">뱃지 (Badge)</h2>
+    <div class="theme-system-page__row">
+      <span class="badge badge--default">기본</span>
+      <span class="badge badge--primary">테마</span>
+      <span class="badge badge--outline">아웃라인</span>
+      <span class="badge badge--success">성공</span>
+      <span class="badge badge--error">오류</span>
+      <span class="badge badge--warning">경고</span>
+    </div>
+    <div class="theme-system-page__row">
+      <span class="badge badge--s badge--default">S</span>
+      <span class="badge badge--s badge--primary">S 테마</span>
+      <span class="badge badge--m badge--primary">M 테마</span>
+    </div>
+    <div class="theme-system-page__row">
+      <span class="badge badge--primary"><i class="bi bi-tag" aria-hidden="true"></i> 라벨</span>
+      <span class="badge badge--default"><i class="bi bi-info-circle" aria-hidden="true"></i> 정보</span>
+    </div>
+  </section>
+
+  <section class="theme-system-page__section">
+    <h2 class="theme-system-page__section-title">뱃지 예시 코드</h2>
+    <pre class="theme-system-page__code"><code>&lt;!-- 기본 / 테마 / 아웃라인 --&gt;
+&lt;span class="badge badge--default"&gt;기본&lt;/span&gt;
+&lt;span class="badge badge--primary"&gt;테마&lt;/span&gt;
+&lt;span class="badge badge--outline"&gt;아웃라인&lt;/span&gt;
+
+&lt;!-- 시맨틱 --&gt;
+&lt;span class="badge badge--success"&gt;성공&lt;/span&gt;
+&lt;span class="badge badge--error"&gt;오류&lt;/span&gt;
+&lt;span class="badge badge--warning"&gt;경고&lt;/span&gt;
+
+&lt;!-- 크기 S --&gt;
+&lt;span class="badge badge--s badge--primary"&gt;S 테마&lt;/span&gt;
+
+&lt;!-- 아이콘 --&gt;
+&lt;span class="badge badge--primary"&gt;&lt;i class="bi bi-tag"&gt;&lt;/i&gt; 라벨&lt;/span&gt;</code></pre>
+  </section>
+</div>
+
+<script src="../js/theme-toggle.js"></script>
+</body>
+</html>

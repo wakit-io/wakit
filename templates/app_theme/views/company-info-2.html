@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Company Info 2</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+<!-- Blog Styles -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/company-info-2.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="company-info-2">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-section__container container">
+      <div class="hero-section__content">
+        
+
+        <!-- Text Content -->
+        <div class="hero-section__text">
+
+            <!-- Breadcrumbs -->
+            <nav class="hero-section__breadcrumbs" aria-label="Breadcrumb">
+            <ol class="breadcrumbs">
+              <li class="breadcrumbs__item">
+                <a href="/templates/app_theme/index.html" class="breadcrumbs__link">
+                  <i class="bi bi-house" aria-hidden="true"></i>
+                  <span>홈</span>
+                </a>
+              </li>
+              <li class="breadcrumbs__item">
+                <span class="breadcrumbs__separator" aria-hidden="true">
+                  <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                </span>
+              </li>
+              <li class="breadcrumbs__item">
+                <span class="breadcrumbs__current">팀 소개</span>
+              </li>
+            </ol>
+          </nav>
+
+          <h1 class="hero-section__title">프로젝트 관리의<br>새로운 기준</h1>
+          <p class="hero-section__description">
+            효율적인 프로세스와 체계적인 관리로 성공을 지원합니다.<br>
+            끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.<br>
+            전문가들의 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.<br>
+            고객 중심의 접근 방식으로 꼭 맞는 서비스를 제안합니다.<br>
+            새로운 아이디어와 혁신적인 방법으로 당신의 목표를 달성하는 데 도움을 드립니다.
+          </p>
+
+          <!-- Statistics -->
+          <div class="hero-section__statistics">
+            <div class="stat-item">
+              <p class="stat-item__value">1,600+</p>
+              <p class="stat-item__label">디자인 전문가</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-item__value">920+</p>
+              <p class="stat-item__label">월 신규 고객</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-item__value">5,000+</p>
+              <p class="stat-item__label">주간 요청 수</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Grid -->
+        <div class="hero-section__images">
+          <div class="hero-section__image-column">
+            <div class="hero-section__image-item">
+              <img src="https://demo.wakit.org/img/samples/photo-1661772661721-b16346fe5b0f.png" alt="이미지" class="hero-section__image">
+            </div>
+            <div class="hero-section__image-item">
+              <img src="https://demo.wakit.org/img/samples/photo-1556740772-1a741367b93e.png" alt="이미지" class="hero-section__image">
+            </div>
+          </div>
+          <div class="hero-section__image-column">
+            <div class="hero-section__image-item">
+              <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="이미지" class="hero-section__image">
+            </div>
+            <div class="hero-section__image-item">
+              <img src="https://demo.wakit.org/img/samples/photo-1556745757-8d76bdb6984b.png" alt="이미지" class="hero-section__image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos Section -->
+  <section class="client-logos-section">
+    <div class="client-logos-section__container container">
+      <div class="client-logos-section__content">
+        <!-- Text Block (Mobile) -->
+        <div class="client-logos-section__text-block">
+          <div class="client-logos-section__badge">
+            <span class="badge badge--primary">파트너</span>
+          </div>
+          <h2>성장하는 이야기</h2>
+          <p class="client-logos-section__description">
+            많은 팀과 조직이 샘플 서비스를 통해<br>
+            업무 효율을 개선하고 새로운 가능성을 발견하고 있습니다.
+          </p>
+        </div>
+
+        <!-- Desktop Text -->
+        <p class="client-logos-section__desktop-text">3,000개 이상의 기업과 함께</p>
+
+        <!-- Logo Cloud -->
+        <div class="client-logos-section__logo-cloud">
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo.svg" alt="Company Logo 1" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo-1.svg" alt="Company Logo 2" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo-2.svg" alt="Company Logo 3" class="client-logos-section__logo-image">
+          </div>
+          <div class="client-logos-section__logo-item">
+            <img src="img/brands/Company-logo-3.svg" alt="Company Logo 4" class="client-logos-section__logo-image">
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Section 03 -->
+  <section class="feature-section-03">
+    <div class="feature-section-03__container container">
+      <div class="feature-section-03__content">
+        <!-- Text Block -->
+        <div class="feature-section-03__text-block">
+          <div>
+            <span class="badge badge--primary">신속한 대응</span>
+          </div>
+          <p>창의적인 아이디어와 실행력으로 차별화된 가치를 제공합니다.</p>
+          <h2 class="feature-section-03__title">디자인 프로세스의<br>새로운 기준을 만듭니다</h2>
+          <!-- <p>협업과 소통을 통해 최상의 결과물을 만들어갑니다.</p> -->
+        </div>
+
+        <!-- Image -->
+        <div class="feature-section-03__image-wrapper">
+          <img src="https://demo.wakit.org/img/samples/photo-1661772661721-b16346fe5b0f.png" alt="이미지" class="feature-section-03__image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Section 04 -->
+  <section class="feature-section-04">
+    <div class="feature-section-04__container container">
+      <div class="feature-section-04__content">
+        <!-- Text Block -->
+        <div class="feature-section-04__text-block">
+          <div>
+            <span class="badge badge--primary">Team</span>
+          </div>
+          <p class="feature-section-04__subtitle">디자인 산업을 바꾸는 솔루션</p>
+          <h2 class="feature-section-04__title">함께하는 여정</h2>
+          <!-- <p class="feature-section-04__description">
+            여기는 디스크립션 영역으로 최대 3줄까지 작성하는 것을 권장합니다.<br>
+            여기는 디스크립션 영역으로 최대 3줄까지 작성하는 것을 권장합니다.<br>
+            여기는 디스크립션 영역으로 최대 3줄까지 작성하는 것을 권장합니다.
+          </p> -->
+        </div>
+
+        <!-- Features Row -->
+        <div class="feature-section-04__features">
+          <!-- Feature 1 -->
+          <div class="feature-section-04__feature">
+            <div class="feature-section-04__feature-image-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1661772661721-b16346fe5b0f.png" alt="이미지" class="feature-section-04__feature-image">
+            </div>
+            <div class="feature-section-04__feature-text">
+              <h3 class="feature-section-04__feature-title">도전과 성취의 기록</h3>
+              <p class="feature-section-04__feature-description">지속적인 개선과 혁신으로 발전하는 파트너가 되겠습니다.</p>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-section-04__feature">
+            <div class="feature-section-04__feature-image-wrapper">
+              <img src="https://demo.wakit.org/img/samples/photo-1556740772-1a741367b93e.png" alt="이미지" class="feature-section-04__feature-image">
+            </div>
+            <div class="feature-section-04__feature-text">
+              <h3 class="feature-section-04__feature-title">무한한 가능성의 시작</h3>
+              <p class="feature-section-04__feature-description">단순한 서비스를 넘어 성장의 동반자가 되겠습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="team-section__container container">
+      <!-- Section Header -->
+      <div class="team-section__header">
+        <div class="team-section__header-content">
+          <h2 class="team-section__title">꿈을 향한 첫걸음</h2>
+          <!-- <p class="team-section__description">데이터 기반의 통찰력으로 현명한 결정을 돕습니다.</p> -->
+        </div>
+        <a href="#" class="btn btn--secondary btn--m">
+          <span>세심한 관리</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <!-- Team Profiles -->
+      <div class="team-section__profiles">
+        <!-- Row 1 -->
+        <div class="team-section__row">
+          <div class="team-profile">
+            <div class="team-profile__avatar">
+              <img src="https://demo.wakit.org/img/samples/photo-1661772661721-b16346fe5b0f.png" alt="김철수" class="team-profile__image">
+              <span class="team-profile__badge"></span>
+            </div>
+            <div class="team-profile__info">
+              <h3 class="team-profile__name">김철수</h3>
+              <p class="team-profile__role">Founder & CEO</p>
+            </div>
+            <div class="team-profile__social">
+              <a href="#" class="team-profile__social-link" aria-label="소셜미디어">
+                <i class="bi bi-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-profile">
+            <div class="team-profile__avatar">
+              <img src="https://demo.wakit.org/img/samples/photo-1556740772-1a741367b93e.png" alt="이영희" class="team-profile__image">
+              <span class="team-profile__badge"></span>
+            </div>
+            <div class="team-profile__info">
+              <h3 class="team-profile__name">이영희</h3>
+              <p class="team-profile__role">기술부장</p>
+            </div>
+            <div class="team-profile__social">
+              <a href="#" class="team-profile__social-link" aria-label="소셜미디어">
+                <i class="bi bi-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-profile">
+            <div class="team-profile__avatar">
+              <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="박민수" class="team-profile__image">
+              <span class="team-profile__badge"></span>
+            </div>
+            <div class="team-profile__info">
+              <h3 class="team-profile__name">박민수</h3>
+              <p class="team-profile__role">총무부장</p>
+            </div>
+            <div class="team-profile__social">
+              <a href="#" class="team-profile__social-link" aria-label="소셜미디어">
+                <i class="bi bi-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-profile">
+            <div class="team-profile__avatar">
+              <img src="https://demo.wakit.org/img/samples/photo-1556745757-8d76bdb6984b.png" alt="정수진" class="team-profile__image">
+              <span class="team-profile__badge"></span>
+            </div>
+            <div class="team-profile__info">
+              <h3 class="team-profile__name">정수진</h3>
+              <p class="team-profile__role">운영부장</p>
+            </div>
+            <div class="team-profile__social">
+              <a href="#" class="team-profile__social-link" aria-label="소셜미디어">
+                <i class="bi bi-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="team-section__row">
+          <div class="team-profile">
+            <div class="team-profile__avatar">
+              <img src="https://demo.wakit.org/img/samples/photo-1661772661721-b16346fe5b0f.png" alt="홍길동" class="team-profile__image">
+              <span class="team-profile__badge"></span>
+            </div>
+            <div class="team-profile__info">
+              <h3 class="team-profile__name">홍길동</h3>
+              <p class="team-profile__role">인사부장</p>
+            </div>
+            <div class="team-profile__social">
+              <a href="#" class="team-profile__social-link" aria-label="소셜미디어">
+                <i class="bi bi-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-profile">
+            <div class="team-profile__avatar">
+              <img src="https://demo.wakit.org/img/samples/photo-1556740772-1a741367b93e.png" alt="김철수" class="team-profile__image">
+              <span class="team-profile__badge"></span>
+            </div>
+            <div class="team-profile__info">
+              <h3 class="team-profile__name">김철수</h3>
+              <p class="team-profile__role">시스템부장</p>
+            </div>
+            <div class="team-profile__social">
+              <a href="#" class="team-profile__social-link" aria-label="소셜미디어">
+                <i class="bi bi-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-profile">
+            <div class="team-profile__avatar">
+              <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="이영희" class="team-profile__image">
+              <span class="team-profile__badge"></span>
+            </div>
+            <div class="team-profile__info">
+              <h3 class="team-profile__name">이영희</h3>
+              <p class="team-profile__role">영업부장</p>
+            </div>
+            <div class="team-profile__social">
+              <a href="#" class="team-profile__social-link" aria-label="소셜미디어">
+                <i class="bi bi-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-profile">
+            <div class="team-profile__avatar">
+              <img src="https://demo.wakit.org/img/samples/photo-1556745757-8d76bdb6984b.png" alt="박민수" class="team-profile__image">
+              <span class="team-profile__badge"></span>
+            </div>
+            <div class="team-profile__info">
+              <h3 class="team-profile__name">박민수</h3>
+              <p class="team-profile__role">마케팅부장</p>
+            </div>
+            <div class="team-profile__social">
+              <a href="#" class="team-profile__social-link" aria-label="소셜미디어">
+                <i class="bi bi-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="team-profile__social-link" aria-label="SNS">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History Section -->
+  <section class="history-section">
+    <div class="history-section__container container">
+      <!-- Text Block -->
+      <div class="history-section__text-block">
+        <div class="history-section__badge">
+          <span class="badge badge--primary">연혁</span>
+        </div>
+        <h2 class="history-section__title">혁신적인 접근</h2>
+        <!-- <p>체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p> -->
+      </div>
+
+      <!-- History Items -->
+      <div class="history-section__items">
+        <!-- History Item 1 -->
+        <div class="history-item">
+          <div class="history-item__image-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1661772661721-b16346fe5b0f.png" alt="이미지" class="history-item__image">
+          </div>
+          <div class="history-item__content">
+            <div class="history-item__header">
+              <p class="history-item__period">2015 ~ 현재</p>
+              <h3 class="history-item__title">창의적인 해결책</h3>
+            </div>
+            <ol class="history-item__list">
+              <li class="history-item__list-item">
+                <span class="history-item__year">2025</span>
+                <span class="history-item__month">6</span>
+                <span class="history-item__text">전문적인 컨설팅</span>
+              </li>
+              <li class="history-item__list-item">
+                <span class="history-item__year">2024</span>
+                <span class="history-item__month">12</span>
+                <span class="history-item__text">체계적인 분석</span>
+              </li>
+              <li class="history-item__list-item">
+                <span class="history-item__year">2022</span>
+                <span class="history-item__month">10</span>
+                <span class="history-item__text">효과적인 전략</span>
+              </li>
+              <li class="history-item__list-item">
+                <span class="history-item__year">2019</span>
+                <span class="history-item__month">1</span>
+                <span class="history-item__text">안정적인 운영</span>
+              </li>
+              <li class="history-item__list-item">
+                <span class="history-item__year">2018</span>
+                <span class="history-item__month">7</span>
+                <span class="history-item__text">혁신적인 도구</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- History Item 2 -->
+        <div class="history-item">
+          <div class="history-item__image-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1556740772-1a741367b93e.png" alt="이미지" class="history-item__image">
+          </div>
+          <div class="history-item__content">
+            <div class="history-item__header">
+              <p class="history-item__period">2006 ~ 2014</p>
+              <h3 class="history-item__title">전문적인 파트너십</h3>
+            </div>
+            <ol class="history-item__list">
+              <li class="history-item__list-item">
+                <span class="history-item__year">2014</span>
+                <span class="history-item__month">8</span>
+                <span class="history-item__text">효율적인 관리</span>
+              </li>
+              <li class="history-item__list-item">
+                <span class="history-item__year">2011</span>
+                <span class="history-item__month">2</span>
+                <span class="history-item__text">체계적인 접근</span>
+              </li>
+              <li class="history-item__list-item">
+                <span class="history-item__year">2010</span>
+                <span class="history-item__month">10</span>
+                <span class="history-item__text">전문적인 지원</span>
+              </li>
+              <li class="history-item__list-item">
+                <span class="history-item__year">2008</span>
+                <span class="history-item__month">9</span>
+                <span class="history-item__text">샘플서비스 Japan 'Super Comics', 전 세계 만화 및 소설 앱 매출 1위 기록</span>
+              </li>
+              <li class="history-item__list-item">
+                <span class="history-item__year">2006</span>
+                <span class="history-item__month">7</span>
+                <span class="history-item__text">혁신적인 방법</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- History Item 3 -->
+        <div class="history-item">
+          <div class="history-item__image-wrapper">
+            <img src="https://demo.wakit.org/img/samples/photo-1441986300917-64674bd600d8.png" alt="이미지" class="history-item__image">
+          </div>
+          <div class="history-item__content">
+            <div class="history-item__header">
+              <p class="history-item__period">1998 ~ 2005</p>
+              <h3 class="history-item__title">신뢰할 수 있는 동반자</h3>
+            </div>
+            <ol class="history-item__list">
+              <li class="history-item__list-item">
+                <span class="history-item__year">2005</span>
+                <span class="history-item__month">11</span>
+                <span class="history-item__text">고객 중심 서비스</span>
+              </li>
+              <li class="history-item__list-item">
+                <span class="history-item__year">2004</span>
+                <span class="history-item__month">6</span>
+                <span class="history-item__text">지속 가능한 성장</span>
+              </li>
+              <li class="history-item__list-item">
+                <span class="history-item__year">2001</span>
+                <span class="history-item__month">10</span>
+                <span class="history-item__text">맞춤형 솔루션</span>
+              </li>
+              <li class="history-item__list-item">
+                <span class="history-item__year">1999</span>
+                <span class="history-item__month">11</span>
+                <span class="history-item__text">검증된 결과</span>
+              </li>
+              <li class="history-item__list-item">
+                <span class="history-item__year">1998</span>
+                <span class="history-item__month">3</span>
+                <span class="history-item__text">신속한 대응</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script data-spa-ignore>
+  Popup.init();
+  console.log('home page script executed');
+</script>
+
+</html>

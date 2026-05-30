@@ -1,0 +1,33 @@
+<div class="page profile-page">
+  <h1>도전과 성취의 기록</h1>
+  <p class="profile-page__desc">프로필 예시 페이지입니다.</p>
+  <a href="views/login.html" class="profile-page__link">로그인</a>
+
+  <section class="profile-page__section" aria-labelledby="profile-theme-heading">
+    <h2>무한한 가능성의 시작</h2>
+    <p>협업과 소통을 통해 최상의 결과물을 만들어갑니다.</p>
+    <div class="theme-selector profile-page__theme-selector" role="group" aria-label="테마 선택">
+      <button type="button" class="theme-selector__button" data-theme-option="light" aria-label="라이트 모드" title="라이트 모드">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <path d="M8 1v2M8 13v2M15 8h-2M3 8H1M13.364 2.636l-1.414 1.414M4.05 11.95l-1.414 1.414M13.364 13.364l-1.414-1.414M4.05 4.05L2.636 2.636" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button type="button" class="theme-selector__button" data-theme-option="system" aria-label="시스템 기본값" title="시스템 기본값">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="3" width="12" height="9" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <path d="M5 12h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M6 12v1M10 12v1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button type="button" class="theme-selector__button" data-theme-option="dark" aria-label="다크 모드" title="다크 모드">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 1C8 1 6 3 6 5.5C6 7.433 7.567 9 9.5 9C11 9 13 7 13 7C13 11.418 9.418 15 5 15C2.239 15 0 12.761 0 10C0 6.582 3.582 3 8 3C8 3 8 1 8 1Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+          <circle cx="12" cy="4" r="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="js/theme-toggle.js"></script>

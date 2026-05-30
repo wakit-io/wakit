@@ -1,0 +1,155 @@
+/**
+ * Foundation - Typography
+ * Figma에서 정의된 타이포그래피 토큰을 CSS 변수로 정의
+ * 기존 styleguide.css의 타이포그래피 변수를 포함
+ */
+
+:root {
+  /* Font Family */
+  --font-family-primary: "Pretendard", Helvetica;
+  --font-family-fallback: Helvetica, Arial, sans-serif;
+  
+  /* Hero */
+  --hero-font-family: var(--font-family-primary);
+  --hero-font-weight: 700;
+  --hero-font-size: 128px;
+  --hero-letter-spacing: 0px;
+  --hero-line-height: 125%;
+  --hero-font-style: normal;
+  
+  /* Headline Large */
+  --headline-l-font-family: var(--font-family-primary);
+  --headline-l-font-weight: 700;
+  --headline-l-font-size: 64px;
+  --headline-l-letter-spacing: 0px;
+  --headline-l-line-height: 125%;
+  --headline-l-font-style: normal;
+  
+  /* Headline Medium */
+  --headline-m-font-family: var(--font-family-primary);
+  --headline-m-font-weight: 700;
+  --headline-m-font-size: 56px;
+  --headline-m-letter-spacing: 0px;
+  --headline-m-line-height: 125%;
+  --headline-m-font-style: normal;
+  
+  /* Headline Small */
+  --headline-s-font-family: var(--font-family-primary);
+  --headline-s-font-weight: 700;
+  --headline-s-font-size: 40px;
+  --headline-s-letter-spacing: 0px;
+  --headline-s-line-height: 125%;
+  --headline-s-font-style: normal;
+  
+  /* Title 1 */
+  --title-1-font-family: var(--font-family-primary);
+  --title-1-font-weight: 700;
+  --title-1-font-size: 36px;
+  --title-1-letter-spacing: 0px;
+  --title-1-line-height: 139.9999976158142%;
+  --title-1-font-style: normal;
+  
+  /* Title 2 */
+  --title-2-font-family: var(--font-family-primary);
+  --title-2-font-weight: 700;
+  --title-2-font-size: 24px;
+  --title-2-letter-spacing: 0px;
+  --title-2-line-height: 139.9999976158142%;
+  --title-2-font-style: normal;
+  
+  /* Title 3 */
+  --title-3-font-family: var(--font-family-primary);
+  --title-3-font-weight: 700;
+  --title-3-font-size: 20px;
+  --title-3-letter-spacing: 0px;
+  --title-3-line-height: 139.9999976158142%;
+  --title-3-font-style: normal;
+  
+  /* Label Large */
+  --label-l-font-family: var(--font-family-primary);
+  --label-l-font-weight: 700;
+  --label-l-font-size: 18px;
+  --label-l-letter-spacing: 0px;
+  --label-l-line-height: 24px;
+  --label-l-font-style: normal;
+  
+  /* Label Medium */
+  --label-m-font-family: var(--font-family-primary);
+  --label-m-font-weight: 700;
+  --label-m-font-size: 16px;
+  --label-m-letter-spacing: 0px;
+  --label-m-line-height: 24px;
+  --label-m-font-style: normal;
+  
+  /* Label Small */
+  --label-s-font-family: var(--font-family-primary);
+  --label-s-font-weight: 500;
+  --label-s-font-size: 14px;
+  --label-s-letter-spacing: 0px;
+  --label-s-line-height: 20px;
+  --label-s-font-style: normal;
+  
+  /* Body 1 */
+  --body-1-font-family: var(--font-family-primary);
+  --body-1-font-weight: 400;
+  --body-1-font-size: 18px;
+  --body-1-letter-spacing: 0px;
+  --body-1-line-height: 179.99999523162842%;
+  --body-1-font-style: normal;
+  
+  /* Body 2 */
+  --body-2-font-family: var(--font-family-primary);
+  --body-2-font-weight: 400;
+  --body-2-font-size: 16px;
+  --body-2-letter-spacing: 0px;
+  --body-2-line-height: 179.99999523162842%;
+  --body-2-font-style: normal;
+  
+  /* Button 1 */
+  --button-1-font-family: var(--font-family-primary);
+  --button-1-font-weight: 700;
+  --button-1-font-size: 18px;
+  --button-1-letter-spacing: 0px;
+  --button-1-line-height: 24px;
+  --button-1-font-style: normal;
+  
+  /* Button 2 */
+  --button-2-font-family: var(--font-family-primary);
+  --button-2-font-weight: 700;
+  --button-2-font-size: 16px;
+  --button-2-letter-spacing: 0px;
+  --button-2-line-height: 20px;
+  --button-2-font-style: normal;
+  
+  /* Button 3 */
+  --button-3-font-family: var(--font-family-primary);
+  --button-3-font-weight: 700;
+  --button-3-font-size: 14px;
+  --button-3-letter-spacing: 0px;
+  --button-3-line-height: 20px;
+  --button-3-font-style: normal;
+  
+  /* Caption Large */
+  --caption-l-font-family: var(--font-family-primary);
+  --caption-l-font-weight: 400;
+  --caption-l-font-size: 16px;
+  --caption-l-letter-spacing: 0px;
+  --caption-l-line-height: 24px;
+  --caption-l-font-style: normal;
+  
+  /* Caption Medium */
+  --caption-m-font-family: var(--font-family-primary);
+  --caption-m-font-weight: 400;
+  --caption-m-font-size: 14px;
+  --caption-m-letter-spacing: 0px;
+  --caption-m-line-height: 20px;
+  --caption-m-font-style: normal;
+  
+  /* Caption Small */
+  --caption-s-font-family: var(--font-family-primary);
+  --caption-s-font-weight: 400;
+  --caption-s-font-size: 12px;
+  --caption-s-letter-spacing: 0px;
+  --caption-s-line-height: 16px;
+  --caption-s-font-style: normal;
+}

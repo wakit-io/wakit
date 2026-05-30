@@ -1,0 +1,24 @@
+/**
+ * Foundation - Design Tokens
+ * Figma Foundation 섹션의 모든 디자인 토큰을 통합
+ * 
+ * 사용법:
+ * @import './foundation/index.css';
+ * 
+ * 또는 개별 모듈 import:
+ * @import './foundation/color.css';
+ * @import './foundation/spacing.css';
+ * @import './foundation/typography.css';
+ * @import './foundation/effect.css';
+ * @import './foundation/layout.css';
+ */
+
+@import './color.css';
+@import './spacing.css';
+@import './typography.css';
+@import './effect.css';
+@import './layout.css';
+@import './icons.css';
+@import './graphic.css';
+@import './buttons.css';
+@import './badge.css';

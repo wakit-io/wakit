@@ -1,0 +1,11 @@
+{
+  "name": "App Test",
+  "short_name": "TestApp",
+  "start_url": "/templates/app_test/app.html",
+  "scope": "/templates/app_test/",
+  "lang": "ko-KR",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "orientation": "portrait"
+}

@@ -1,0 +1,22 @@
+<img src="https://www.xpread.co.kr/images/display/display_mobile_con5_3.jpg" width="100%" alt="test">
+
+<button data-popup-suppress="3">3일 동안 보지 않기</button>
+
+<button data-popup-event="agree" data-popup-payload='{"accepted":true}'>
+    확인
+</button>
+
+<script>
+  console.log('popuptest script executed');
+
+  window.addEventListener('hy:popup', (e) => {
+    const { id, name, payload } = e.detail;
+    if (name === 'agree' && payload?.accepted) {
+      // 네이티브 confirm은 동기 boolean 반환
+      if (window.confirm('확인하시겠습니까?')) {
+        Popup.closeById(id);
+      }
+    }
+  });
+
+</script>

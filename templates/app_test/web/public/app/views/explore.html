@@ -1,0 +1,77 @@
+<!-- 탐색 -->
+<link rel="stylesheet" href="./css/explore.css">
+
+<main class="explore-page">
+
+  <div class="explore-search">
+    <div class="explore-search__input">
+      <i class="bi bi-search"></i>
+      <span>검색어를 입력하세요</span>
+    </div>
+  </div>
+
+  <div class="explore-chips">
+    <button class="explore-chip is-active">전체</button>
+    <button class="explore-chip">디자인</button>
+    <button class="explore-chip">개발</button>
+    <button class="explore-chip">마케팅</button>
+    <button class="explore-chip">비즈니스</button>
+  </div>
+
+  <div class="explore-grid">
+    <a href="#detail" class="explore-card">
+      <div class="explore-card__img explore-card__img--purple">🎨</div>
+      <div class="explore-card__body">
+        <p class="explore-card__title">UI 디자인</p>
+        <p class="explore-card__sub">48개 항목</p>
+      </div>
+    </a>
+    <a href="#detail" class="explore-card">
+      <div class="explore-card__img explore-card__img--blue">⚡</div>
+      <div class="explore-card__body">
+        <p class="explore-card__title">프론트엔드</p>
+        <p class="explore-card__sub">62개 항목</p>
+      </div>
+    </a>
+    <a href="#detail" class="explore-card">
+      <div class="explore-card__img explore-card__img--green">📊</div>
+      <div class="explore-card__body">
+        <p class="explore-card__title">데이터 분석</p>
+        <p class="explore-card__sub">31개 항목</p>
+      </div>
+    </a>
+    <a href="#detail" class="explore-card">
+      <div class="explore-card__img explore-card__img--yellow">🚀</div>
+      <div class="explore-card__body">
+        <p class="explore-card__title">스타트업</p>
+        <p class="explore-card__sub">27개 항목</p>
+      </div>
+    </a>
+    <a href="#detail" class="explore-card">
+      <div class="explore-card__img explore-card__img--pink">💡</div>
+      <div class="explore-card__body">
+        <p class="explore-card__title">아이디어</p>
+        <p class="explore-card__sub">19개 항목</p>
+      </div>
+    </a>
+    <a href="#detail" class="explore-card">
+      <div class="explore-card__img explore-card__img--red">🔥</div>
+      <div class="explore-card__body">
+        <p class="explore-card__title">트렌드</p>
+        <p class="explore-card__sub">44개 항목</p>
+      </div>
+    </a>
+  </div>
+
+</main>
+
+<script>
+(function() {
+  document.querySelectorAll('.explore-chip').forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      document.querySelectorAll('.explore-chip').forEach(function(c) { c.classList.remove('is-active'); });
+      this.classList.add('is-active');
+    });
+  });
+})();
+</script>

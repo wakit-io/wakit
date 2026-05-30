@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Price Plan 2</title>
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <!-- 웹 단독 사용 시 전역 CSS를 넣고 싶다면 아래와 같이 사용 (SPA 주입 시 무시하려면 data-spa-ignore 추가)-->
+  <!-- <link rel="stylesheet" href="../../../wakit/css/base.css" data-spa-ignore /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore >
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css' data-spa-ignore>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css' data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit-popup.css">
+  
+  <!-- 초기 테마 설정 (FOUC 방지) -->
+  <script src="js/theme-init.js" data-spa-ignore></script>
+  
+  <!-- 팝업창 로드 -->
+  <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->
+</head>
+<body>
+
+<!-- Foundation Design Tokens (base 태그로 인해 css/ 경로 사용) -->
+<link rel="stylesheet" href="css/foundation/color.css">
+<link rel="stylesheet" href="css/foundation/buttons.css">
+<link rel="stylesheet" href="css/foundation/badge.css">
+<link rel="stylesheet" href="css/foundation/spacing.css">
+<link rel="stylesheet" href="css/foundation/typography.css">
+<link rel="stylesheet" href="css/foundation/effect.css">
+<link rel="stylesheet" href="css/foundation/layout.css">
+<link rel="stylesheet" href="css/foundation/icons.css">
+<link rel="stylesheet" href="css/foundation/graphic.css">
+<!-- Blog Styles -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Home Page Styles -->
+<link rel="stylesheet" href="css/price-plan-2.css">
+
+<div data-include="wakit-components/header.html" data-include-when="web"></div>
+
+
+<main class="price-plan-2">
+  <!-- Page Header Section -->
+  <section class="page-header-section">
+    <div class="page-header-section__container container">
+      <!-- Breadcrumbs -->
+      <nav class="page-header-section__breadcrumbs" aria-label="Breadcrumb">
+        <ol class="page-header-section__breadcrumb-list">
+          <li class="page-header-section__breadcrumb-item">
+            <a href="#" class="page-header-section__breadcrumb-link">
+              <i class="bi bi-house"></i>
+              <span class="page-header-section__breadcrumb-text">홈</span>
+            </a>
+          </li>
+          <li class="page-header-section__breadcrumb-item">
+            <i class="bi bi-chevron-right page-header-section__breadcrumb-separator"></i>
+            <a href="#" class="page-header-section__breadcrumb-link">
+              <span class="page-header-section__breadcrumb-text">가격</span>
+            </a>
+          </li>
+          <li class="page-header-section__breadcrumb-item">
+            <i class="bi bi-chevron-right page-header-section__breadcrumb-separator"></i>
+            <span class="page-header-section__breadcrumb-text page-header-section__breadcrumb-text--current">콘텐츠</span>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Content -->
+      <div class="page-header-section__content">
+        <h1 class="page-header-section__title">성장하는 이야기</h1>
+        <p class="page-header-section__description">여러분에게 맞는 플랜을 선택해주세요</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Plan Cards Section -->
+  <section class="pricing-plan-cards-section">
+    <div class="pricing-plan-cards-section__container container">
+      <div class="pricing-plan-cards-section__cards">
+        <!-- Starter Card -->
+        <div class="pricing-plan-card">
+          <div class="pricing-plan-card__header">
+            <div class="pricing-plan-card__price-wrapper">
+              <span class="pricing-plan-card__price">9,900원</span>
+              <span class="pricing-plan-card__period">/월</span>
+            </div>
+          </div>
+          <div class="pricing-plan-card__content">
+            <h3 class="pricing-plan-card__title">스타터</h3>
+            <p class="pricing-plan-card__description">지속적인 개선과 혁신으로 발전하는 파트너가 되겠습니다.</p>
+          </div>
+          <button type="button" class="btn btn--secondary btn--m btn--block pricing-plan-card__button">
+            <span class="pricing-plan-card__button-text">시작하기</span>
+          </button>
+        </div>
+
+        <!-- Business Card (Featured) -->
+        <div class="pricing-plan-card pricing-plan-card--featured">
+          <div class="pricing-plan-card__header">
+            <div class="pricing-plan-card__price-wrapper">
+              <span class="pricing-plan-card__price">19,900원</span>
+              <span class="pricing-plan-card__period">/월</span>
+            </div>
+          </div>
+          <div class="pricing-plan-card__content">
+            <div class="pricing-plan-card__title-wrapper">
+              <h3 class="pricing-plan-card__title">비즈니스</h3>
+              <div class="pricing-plan-card__badge">
+                <span class="pricing-plan-card__badge-text">전문적인 컨설팅</span>
+              </div>
+            </div>
+            <p class="pricing-plan-card__description">단순한 서비스를 넘어 성장의 동반자가 되겠습니다.</p>
+          </div>
+          <button type="button" class="btn btn--m btn--block pricing-plan-card__button pricing-plan-card__button--on-featured">
+            <span class="pricing-plan-card__button-text">플러스로 시작하기</span>
+          </button>
+        </div>
+
+        <!-- Enterprise Card -->
+        <div class="pricing-plan-card">
+          <div class="pricing-plan-card__header">
+            <div class="pricing-plan-card__price-wrapper">
+              <span class="pricing-plan-card__price">29,900원</span>
+              <span class="pricing-plan-card__period">/월</span>
+            </div>
+          </div>
+          <div class="pricing-plan-card__content">
+            <h3 class="pricing-plan-card__title">엔터프라이즈</h3>
+            <p>데이터 기반의 통찰력으로 현명한 결정을 돕습니다.</p>
+          </div>
+          <button type="button" class="btn btn--primary btn--m btn--block pricing-plan-card__button">
+            <span class="pricing-plan-card__button-text">시작하기</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Comparison Table Section -->
+  <section class="pricing-comparison-section">
+    <div class="pricing-comparison-section__container container">
+      <!-- Header -->
+      <div class="pricing-comparison-section__header">
+        <h2 class="pricing-comparison-section__title">요금제 비교</h2>
+        <p class="pricing-comparison-section__description">체계적인 접근 방식으로 복잡한 문제를 해결합니다.</p>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="pricing-comparison-table">
+        <!-- Table Header -->
+        <div class="pricing-comparison-table__header">
+          <div class="pricing-comparison-table__header-cell pricing-comparison-table__header-cell--feature">
+            <span class="pricing-comparison-table__header-text">서비스 요금제</span>
+          </div>
+          <div class="pricing-comparison-table__header-cell">
+            <span class="pricing-comparison-table__plan-name">스타터</span>
+            <button type="button" class="btn btn--secondary btn--s pricing-comparison-table__plan-button">14일 무료 체험</button>
+          </div>
+          <div class="pricing-comparison-table__header-cell">
+            <span class="pricing-comparison-table__plan-name">비즈니스</span>
+            <button type="button" class="btn btn--primary btn--s pricing-comparison-table__plan-button">지금 가입하기</button>
+          </div>
+          <div class="pricing-comparison-table__header-cell">
+            <span class="pricing-comparison-table__plan-name">엔터프라이즈</span>
+            <button type="button" class="btn btn--primary btn--s pricing-comparison-table__plan-button">문의하기</button>
+          </div>
+        </div>
+
+        <!-- Table Body -->
+        <div class="pricing-comparison-table__body">
+          <!-- Row: 대역폭 -->
+          <div class="pricing-comparison-table__row pricing-comparison-table__row--highlighted">
+            <div class="pricing-comparison-table__cell pricing-comparison-table__cell--feature">
+              <span class="pricing-comparison-table__feature-name">대역폭</span>
+              <i class="bi bi-question-circle pricing-comparison-table__help-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">1 GB</span>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">체계적인 접근</span>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">전문적인 지원</span>
+            </div>
+          </div>
+
+          <!-- Row: 방문자 -->
+          <div class="pricing-comparison-table__row">
+            <div class="pricing-comparison-table__cell pricing-comparison-table__cell--feature">
+              <span class="pricing-comparison-table__feature-name">방문자</span>
+              <i class="bi bi-question-circle pricing-comparison-table__help-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">혁신적인 방법</span>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">고객 중심 서비스</span>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">지속 가능한 성장</span>
+            </div>
+          </div>
+
+          <!-- Row: 웹 페이지 -->
+          <div class="pricing-comparison-table__row pricing-comparison-table__row--highlighted">
+            <div class="pricing-comparison-table__cell pricing-comparison-table__cell--feature">
+              <span class="pricing-comparison-table__feature-name">맞춤형 솔루션</span>
+              <i class="bi bi-question-circle pricing-comparison-table__help-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">5페이지</span>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">검증된 결과</span>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">신속한 대응</span>
+            </div>
+          </div>
+
+          <!-- Row: 이미지 최적화 -->
+          <div class="pricing-comparison-table__row">
+            <div class="pricing-comparison-table__cell pricing-comparison-table__cell--feature">
+              <span class="pricing-comparison-table__feature-name">세심한 관리</span>
+              <i class="bi bi-question-circle pricing-comparison-table__help-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">3 GB</span>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">전문적인 컨설팅</span>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">체계적인 분석</span>
+            </div>
+          </div>
+
+          <!-- Row: 데이터 / 월 -->
+          <div class="pricing-comparison-table__row pricing-comparison-table__row--highlighted">
+            <div class="pricing-comparison-table__cell pricing-comparison-table__cell--feature">
+              <span class="pricing-comparison-table__feature-name">효과적인 전략</span>
+              <i class="bi bi-question-circle pricing-comparison-table__help-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">5페이지</span>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">안정적인 운영</span>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">무제한</span>
+            </div>
+          </div>
+
+          <!-- Row: 요청 / 월 -->
+          <div class="pricing-comparison-table__row">
+            <div class="pricing-comparison-table__cell pricing-comparison-table__cell--feature">
+              <span class="pricing-comparison-table__feature-name">혁신적인 도구</span>
+              <i class="bi bi-question-circle pricing-comparison-table__help-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">500</span>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">효율적인 관리</span>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <span class="pricing-comparison-table__value">체계적인 접근</span>
+            </div>
+          </div>
+
+          <!-- Row: 서브도메인 -->
+          <div class="pricing-comparison-table__row pricing-comparison-table__row--highlighted">
+            <div class="pricing-comparison-table__cell pricing-comparison-table__cell--feature">
+              <span class="pricing-comparison-table__feature-name">전문적인 지원</span>
+              <i class="bi bi-question-circle pricing-comparison-table__help-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-check-circle-fill pricing-comparison-table__check-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-check-circle-fill pricing-comparison-table__check-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-check-circle-fill pricing-comparison-table__check-icon"></i>
+            </div>
+          </div>
+
+          <!-- Row: SSL 인증서 -->
+          <div class="pricing-comparison-table__row">
+            <div class="pricing-comparison-table__cell pricing-comparison-table__cell--feature">
+              <span class="pricing-comparison-table__feature-name">혁신적인 방법</span>
+              <i class="bi bi-question-circle pricing-comparison-table__help-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-x-circle pricing-comparison-table__close-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-check-circle-fill pricing-comparison-table__check-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-check-circle-fill pricing-comparison-table__check-icon"></i>
+            </div>
+          </div>
+
+          <!-- Row: HTML 비디오 접근 -->
+          <div class="pricing-comparison-table__row pricing-comparison-table__row--highlighted">
+            <div class="pricing-comparison-table__cell pricing-comparison-table__cell--feature">
+              <span class="pricing-comparison-table__feature-name">고객 중심 서비스</span>
+              <i class="bi bi-question-circle pricing-comparison-table__help-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-x-circle pricing-comparison-table__close-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-check-circle-fill pricing-comparison-table__check-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-check-circle-fill pricing-comparison-table__check-icon"></i>
+            </div>
+          </div>
+
+          <!-- Row: 우선 지원 -->
+          <div class="pricing-comparison-table__row">
+            <div class="pricing-comparison-table__cell pricing-comparison-table__cell--feature">
+              <span class="pricing-comparison-table__feature-name">지속 가능한 성장</span>
+              <i class="bi bi-question-circle pricing-comparison-table__help-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-x-circle pricing-comparison-table__close-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-x-circle pricing-comparison-table__close-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-check-circle-fill pricing-comparison-table__check-icon"></i>
+            </div>
+          </div>
+
+          <!-- Row: 분석 -->
+          <div class="pricing-comparison-table__row pricing-comparison-table__row--highlighted">
+            <div class="pricing-comparison-table__cell pricing-comparison-table__cell--feature">
+              <span class="pricing-comparison-table__feature-name">분석</span>
+              <i class="bi bi-question-circle pricing-comparison-table__help-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-x-circle pricing-comparison-table__close-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-x-circle pricing-comparison-table__close-icon"></i>
+            </div>
+            <div class="pricing-comparison-table__cell">
+              <i class="bi bi-check-circle-fill pricing-comparison-table__check-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="faq-section__container container">
+      <!-- Header -->
+      <div class="faq-section__header">
+        <h2 class="faq-section__title">자주 묻는 질문</h2>
+        <p class="faq-section__description">질문에 대한 답을 찾을 수 없나요?</p>
+        <button class="faq-section__button">
+          <span class="faq-section__button-text">맞춤형 솔루션</span>
+        </button>
+      </div>
+
+      <!-- FAQs -->
+      <div class="faq-section__faqs">
+        <!-- Accordion 1 -->
+        <div class="faq-accordion faq-accordion--open" data-accordion>
+          <div class="faq-accordion__header" data-accordion-header>
+            <div class="faq-accordion__header-content">
+              <h3 class="faq-accordion__question">창의적인 해결책</h3>
+            </div>
+            <i class="bi bi-chevron-up faq-accordion__icon"></i>
+          </div>
+          <div class="faq-accordion__content" data-accordion-content>
+            <p class="faq-accordion__answer">네, 가능합니다! 샘플서비스는 모든 사용자에게 14일 무료 체험 기간을 제공합니다. 무료 체험 기간 동안 모든 주요 기능을 제한 없이 사용해 보실 수 있으며, 체험 후에 적합한 요금제를 선택하시면 됩니다.<br><br>무료 체험 중에는 결제 정보가 필요하지 않으며, 언제든지 취소할 수 있습니다. 지금 바로 시작해 보세요!</p>
+          </div>
+        </div>
+
+        <!-- Accordion 2 -->
+        <div class="faq-accordion" data-accordion>
+          <div class="faq-accordion__header" data-accordion-header>
+            <div class="faq-accordion__header-content">
+              <h3 class="faq-accordion__question">전문적인 파트너십</h3>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion__icon"></i>
+          </div>
+          <div class="faq-accordion__content" data-accordion-content>
+            <p>전문가들의 노하우로 검증된 결과를 제공합니다.</p>
+          </div>
+        </div>
+
+        <!-- Accordion 3 -->
+        <div class="faq-accordion" data-accordion>
+          <div class="faq-accordion__header" data-accordion-header>
+            <div class="faq-accordion__header-content">
+              <h3 class="faq-accordion__question">신뢰할 수 있는 동반자</h3>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion__icon"></i>
+          </div>
+          <div class="faq-accordion__content" data-accordion-content>
+            <p>새로운 아이디어와 혁신적인 방법으로 당신의 목표를 달성하는 데 도움을 드립니다.</p>
+          </div>
+        </div>
+
+        <!-- Accordion 4 -->
+        <div class="faq-accordion" data-accordion>
+          <div class="faq-accordion__header" data-accordion-header>
+            <div class="faq-accordion__header-content">
+              <h3 class="faq-accordion__question">미래를 향한 도전</h3>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion__icon"></i>
+          </div>
+          <div class="faq-accordion__content" data-accordion-content>
+            <p>전문적인 노하우와 경험을 바탕으로 최적의 솔루션을 제공합니다.</p>
+          </div>
+        </div>
+
+        <!-- Accordion 5 -->
+        <div class="faq-accordion" data-accordion>
+          <div class="faq-accordion__header" data-accordion-header>
+            <div class="faq-accordion__header-content">
+              <h3 class="faq-accordion__question">성공을 위한 파트너</h3>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion__icon"></i>
+          </div>
+          <div class="faq-accordion__content" data-accordion-content>
+            <p>고객 중심의 접근 방식으로 꼭 맞는 서비스를 제안합니다.</p>
+          </div>
+        </div>
+
+        <!-- Accordion 6 -->
+        <div class="faq-accordion" data-accordion>
+          <div class="faq-accordion__header" data-accordion-header>
+            <div class="faq-accordion__header-content">
+              <h3 class="faq-accordion__question">가치 있는 선택</h3>
+            </div>
+            <i class="bi bi-chevron-down faq-accordion__icon"></i>
+          </div>
+          <div class="faq-accordion__content" data-accordion-content>
+            <p>끊임없는 연구와 개발로 더 나은 결과를 만들어갑니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div data-include="wakit-components/footer.html" data-include-when="web"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script>
+  // Initialize FAQ accordion and other features for price-plan-2 page
+  // Works in both static page and Wakit dynamic view
+  function initPricePlan2(container) {
+    if (!container) {
+      // Try to find container: dynamic view active page or document body
+      container = document.querySelector('.dynamic-view.active .page') || document.body;
+    }
+
+    // Initialize Popup (only once)
+    if (typeof Popup !== 'undefined' && Popup.init) {
+      Popup.init();
+    }
+
+    // FAQ Accordion Toggle
+    (function() {
+      const accordionHeaders = container.querySelectorAll('.faq-accordion__header');
+      if (!accordionHeaders.length) return;
+
+      accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+          const accordion = this.closest('.faq-accordion');
+          const isOpen = accordion.classList.contains('faq-accordion--open');
+          const icon = this.querySelector('.faq-accordion__icon');
+          const content = accordion.querySelector('.faq-accordion__content');
+
+          // Close all accordions within the container
+          container.querySelectorAll('.faq-accordion').forEach(acc => {
+            acc.classList.remove('faq-accordion--open');
+            const accIcon = acc.querySelector('.faq-accordion__icon');
+            const accContent = acc.querySelector('.faq-accordion__content');
+            if (accIcon) {
+              accIcon.classList.remove('bi-chevron-up');
+              accIcon.classList.add('bi-chevron-down');
+            }
+            if (accContent) {
+              accContent.style.maxHeight = null;
+            }
+            acc.querySelector('.faq-accordion__header')?.setAttribute('aria-expanded', 'false');
+          });
+
+          // Toggle clicked accordion
+          if (!isOpen) {
+            accordion.classList.add('faq-accordion--open');
+            if (icon) {
+              icon.classList.remove('bi-chevron-down');
+              icon.classList.add('bi-chevron-up');
+            }
+            if (content) {
+              content.style.maxHeight = content.scrollHeight + 'px';
+            }
+            this.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // Initialize open accordion
+      const openAccordion = container.querySelector('.faq-accordion--open');
+      if (openAccordion) {
+        const content = openAccordion.querySelector('.faq-accordion__content');
+        if (content) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      }
+    })();
+  }
+
+  // Run immediately - works for both static page and dynamic view
+  // When script executes in dynamic view, it's already inside the .page container
+  (function() {
+    // Find the appropriate container
+    // Priority: 1) Active dynamic view page, 2) .price-plan-2 element, 3) document.body
+    let container = document.querySelector('.dynamic-view.active .page');
+    
+    if (!container) {
+      // Try to find .price-plan-2 element
+      const pricePlan2 = document.querySelector('.price-plan-2');
+      if (pricePlan2) {
+        container = pricePlan2;
+      } else {
+        container = document.body;
+      }
+    }
+    
+    initPricePlan2(container);
+  })();
+</script>
+
+</html>

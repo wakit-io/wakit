@@ -1,0 +1,1057 @@
+/* ============================================
+   Community List 2 Page
+   ============================================ */
+
+/* 섹션 변수 정의 - Light Mode (기본) */
+:root {
+  --community-list-2-bg: var(--color-bg-primary);
+  --community-list-2-sidebar-bg: #e3f2fd;
+  --community-list-2-main-bg: var(--color-bg-primary);
+  --community-list-2-header-bg: #fff3e0;
+  --community-list-2-tabs-bg: #f1f8e9;
+  --community-list-2-tabpanel-bg: #fce4ec;
+  --community-list-2-border: var(--color-border);
+  
+  /* Header Variables */
+  --header-bg: var(--color-bg-primary);
+  --header-border: var(--color-border);
+  --search-bar-bg: var(--color-bg-primary);
+  --search-bar-border: var(--color-border);
+  --search-bar-text: var(--color-text-primary);
+  --search-bar-placeholder: var(--color-text-tertiary);
+  --search-icon: var(--color-text-tertiary);
+  --icon-button-bg: var(--color-bg-primary);
+  --icon-button-border: var(--color-border);
+  --icon-button-icon: var(--color-text-primary);
+  --create-button-bg: #edf9ff;
+  --create-button-text: var(--color-info);
+  --create-button-icon: var(--color-info);
+  
+  /* Tabs Variables */
+  --tabs-bg: var(--color-bg-primary);
+  --tabs-sticky-bg: var(--color-bg-primary);
+  --tab-bg: transparent;
+  --tab-active-bg: var(--color-bg-primary);
+  --tab-text: var(--color-text-primary);
+  --tab-active-text: var(--color-text-primary);
+  
+  /* Group Card Variables */
+  --group-card-bg: var(--color-bg-primary);
+  --group-card-border: var(--color-border);
+  --group-card-image-bg: #f2f8fc;
+  --group-card-name-text: var(--color-text-primary);
+  --group-card-type-text: var(--color-text-secondary);
+  --group-card-lock-icon: var(--color-text-secondary);
+  --group-card-stat-count-text: var(--color-text-primary);
+  --group-card-stat-label-text: var(--color-text-secondary);
+  --group-card-stat-divider: #757b80;
+  --group-card-avatar-bg: var(--color-bg-secondary);
+  --group-card-avatar-badge-bg: var(--color-white);
+  --group-card-member-avatar-bg: var(--color-bg-secondary);
+  --group-card-member-avatar-border: var(--color-white);
+  --group-card-join-button-bg: #edf9ff;
+  --group-card-join-button-text: var(--color-info);
+  --group-card-join-button-hover: var(--color-info-hover);
+  
+  /* Sidebar Profile Variables */
+  --sidebar-profile-bg: var(--color-bg-primary);
+  --sidebar-profile-border: var(--color-border);
+  --sidebar-profile-avatar-bg: var(--color-bg-secondary);
+  --sidebar-profile-username-text: var(--color-text-primary);
+  --sidebar-profile-email-text: var(--color-text-tertiary);
+  --sidebar-profile-stat-text: var(--color-text-primary);
+  --sidebar-profile-view-button-text: var(--color-info);
+  --sidebar-profile-view-button-hover: var(--color-info-hover);
+  
+  /* Sidebar Menu Variables */
+  --sidebar-menu-bg: var(--color-bg-primary);
+  --sidebar-menu-border: var(--color-border);
+  --sidebar-menu-category-text: var(--color-text-tertiary);
+  --sidebar-menu-item-text: var(--color-text-primary);
+  --sidebar-menu-item-icon: var(--color-text-primary);
+  --sidebar-menu-item-badge-bg: var(--color-info);
+  --sidebar-menu-item-badge-text: var(--color-white);
+  --sidebar-menu-item-arrow: var(--color-text-primary);
+  --sidebar-menu-submenu-text: var(--color-text-primary);
+  --sidebar-menu-submenu-icon: var(--color-text-primary);
+  --sidebar-menu-submenu-badge-bg: var(--color-info);
+  --sidebar-menu-submenu-badge-text: var(--color-white);
+  --sidebar-menu-submenu-arrow: var(--color-text-primary);
+  --sidebar-menu-separator: var(--color-border);
+}
+
+/* 섹션 변수 정의 - Dark Mode */
+[data-theme="dark"] {
+  --community-list-2-bg: var(--color-bg-dark);
+  --community-list-2-sidebar-bg: #1a237e;
+  --community-list-2-main-bg: var(--color-bg-dark);
+  --community-list-2-header-bg: #3e2723;
+  --community-list-2-tabs-bg: #1b5e20;
+  --community-list-2-tabpanel-bg: #4a148c;
+  --community-list-2-border: var(--color-border-dark);
+  
+  /* Header Variables - Dark Mode */
+  --header-bg: var(--color-bg-primary);
+  --header-border: var(--color-border);
+  --search-bar-bg: var(--color-bg-primary);
+  --search-bar-border: var(--color-border);
+  --search-bar-text: var(--color-text-primary);
+  --search-bar-placeholder: var(--color-text-tertiary);
+  --search-icon: var(--color-text-tertiary);
+  --icon-button-bg: var(--color-bg-primary);
+  --icon-button-border: var(--color-border);
+  --icon-button-icon: var(--color-text-primary);
+  --create-button-bg: #1a3a4a;
+  --create-button-text: var(--color-info);
+  --create-button-icon: var(--color-info);
+  
+  /* Tabs Variables - Dark Mode */
+  --tabs-bg: var(--color-bg-primary);
+  --tabs-sticky-bg: var(--color-bg-primary);
+  --tab-bg: transparent;
+  --tab-active-bg: var(--color-bg-primary);
+  --tab-text: var(--color-text-primary);
+  --tab-active-text: var(--color-text-primary);
+  
+  /* Sidebar Profile Variables - Dark Mode */
+  --sidebar-profile-bg: var(--color-bg-primary);
+  --sidebar-profile-border: var(--color-border);
+  --sidebar-profile-avatar-bg: var(--color-bg-secondary);
+  --sidebar-profile-username-text: var(--color-text-primary);
+  --sidebar-profile-email-text: var(--color-text-tertiary);
+  --sidebar-profile-stat-text: var(--color-text-primary);
+  --sidebar-profile-view-button-text: var(--color-info);
+  --sidebar-profile-view-button-hover: var(--color-info-hover);
+  
+  /* Sidebar Menu Variables - Dark Mode */
+  --sidebar-menu-bg: var(--color-bg-primary);
+  --sidebar-menu-border: var(--color-border);
+  --sidebar-menu-category-text: var(--color-text-tertiary);
+  --sidebar-menu-item-text: var(--color-text-primary);
+  --sidebar-menu-item-icon: var(--color-text-primary);
+  --sidebar-menu-item-badge-bg: var(--color-info);
+  --sidebar-menu-item-badge-text: var(--color-white);
+  --sidebar-menu-item-arrow: var(--color-text-primary);
+  --sidebar-menu-submenu-text: var(--color-text-primary);
+  --sidebar-menu-submenu-icon: var(--color-text-primary);
+  --sidebar-menu-submenu-badge-bg: var(--color-info);
+  --sidebar-menu-submenu-badge-text: var(--color-white);
+  --sidebar-menu-submenu-arrow: var(--color-text-primary);
+  --sidebar-menu-separator: var(--color-border);
+}
+
+/* 다크 모드 변수 */
+[data-theme="dark"] {
+  --community-list-2-bg: var(--color-bg-dark);
+  --community-list-2-sidebar-bg: #1a1c1e;
+  --community-list-2-main-bg: var(--color-bg-dark);
+  --community-list-2-header-bg: #2f3133;
+  --community-list-2-tabs-bg: #2f3133;
+  --community-list-2-tabpanel-bg: #2f3133;
+  --community-list-2-border: #464a4d;
+  
+  /* Group Card Variables - Dark Mode */
+  --group-card-bg: var(--color-bg-dark);
+  --group-card-border: #2f3133;
+  --group-card-image-bg: #2f3133;
+  --group-card-name-text: var(--color-white);
+  --group-card-type-text: #e8eef2;
+  --group-card-lock-icon: #e8eef2;
+  --group-card-stat-count-text: var(--color-white);
+  --group-card-stat-label-text: #e8eef2;
+  --group-card-stat-divider: #464a4d;
+  --group-card-avatar-bg: var(--color-bg-secondary);
+  --group-card-avatar-badge-bg: var(--color-white);
+  --group-card-member-avatar-bg: var(--color-bg-secondary);
+  --group-card-member-avatar-border: var(--color-bg-dark);
+  --group-card-join-button-bg: #edf9ff;
+  --group-card-join-button-text: var(--color-info);
+  --group-card-join-button-hover: var(--color-info-hover);
+}
+
+/* 기본 스타일 */
+.community-list-2 {
+  background-color: var(--community-list-2-bg);
+  min-height: 100vh;
+  padding: var(--spacing-xl) 0;
+}
+
+.community-list-2__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.community-list-2__content {
+  display: grid;
+  gap: var(--spacing-2xl);
+}
+
+/* 메인 콘텐츠 영역 */
+.community-list-2__main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  min-width: 0;
+}
+
+/* 사이드바 영역 */
+.community-list-2__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* ============================================
+   Sidebar Profile Section
+   ============================================ */
+
+.sidebar-profile {
+  width: 100%;
+  background-color: var(--sidebar-profile-bg);
+  border: 1px solid var(--sidebar-profile-border);
+  border-radius: var(--radius-lg);
+}
+
+.sidebar-profile__container {
+  padding: var(--spacing-lg);
+}
+
+.sidebar-profile__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.sidebar-profile__avatar-wrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.sidebar-profile__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background-color: var(--sidebar-profile-avatar-bg);
+}
+
+.sidebar-profile__avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--sidebar-profile-avatar-bg);
+}
+
+.sidebar-profile__avatar-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sidebar-profile__avatar-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-white);
+}
+
+.sidebar-profile__username {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: var(--sidebar-profile-username-text);
+  margin: 0;
+  text-align: center;
+}
+
+.sidebar-profile__email {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: var(--sidebar-profile-email-text);
+  margin: 0;
+  text-align: center;
+}
+
+.sidebar-profile__stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  margin-top: var(--spacing-xs);
+}
+
+.sidebar-profile__stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+}
+
+.sidebar-profile__stat-count {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--sidebar-profile-stat-text);
+  text-align: center;
+}
+
+.sidebar-profile__stat-label {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--sidebar-profile-stat-text);
+  text-align: center;
+}
+
+.sidebar-profile__stat-divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--sidebar-profile-border);
+}
+
+.sidebar-profile__border {
+  width: 100%;
+  height: 1px;
+  background-color: var(--sidebar-profile-border);
+  margin: var(--spacing-md) 0;
+}
+
+.sidebar-profile__view-button {
+  width: 100%;
+  background: none;
+  border: none;
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--sidebar-profile-view-button-text);
+  text-align: center;
+  cursor: pointer;
+  padding: var(--spacing-md) 0;
+  transition: color 0.2s ease;
+}
+
+.sidebar-profile__view-button:hover {
+  color: var(--sidebar-profile-view-button-hover);
+}
+
+/* ============================================
+   Sidebar Menu Section
+   ============================================ */
+
+.sidebar-menu {
+  width: 100%;
+  background-color: var(--sidebar-menu-bg);
+  border: 1px solid var(--sidebar-menu-border);
+  border-radius: var(--radius-lg);
+}
+
+.sidebar-menu__container {
+  padding: var(--spacing-md);
+}
+
+.sidebar-menu__primary {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sidebar-menu__category {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+.sidebar-menu__category-text {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--sidebar-menu-category-text);
+}
+
+.sidebar-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: var(--spacing-xs);
+}
+
+.sidebar-menu__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-menu__item:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.sidebar-menu__item-text {
+  flex: 1;
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: var(--sidebar-menu-item-text);
+}
+
+.sidebar-menu__submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-xs);
+}
+
+.sidebar-menu__submenu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-menu__submenu-item:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.sidebar-menu__submenu-text {
+  flex: 1;
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--sidebar-menu-submenu-text);
+}
+
+.sidebar-menu__separator {
+  width: 100%;
+  height: 1px;
+  background-color: var(--sidebar-menu-separator);
+  margin: var(--spacing-xs) 0;
+}
+
+/* 메인 콘텐츠 영역 */
+.community-list-2__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* 헤더 영역 */
+.community-list-2__header {
+  width: 100%;
+  background-color: var(--header-bg);
+  border: 1px solid var(--header-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+}
+
+.community-list-2__header-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+/* 검색 바 */
+.community-list-2__search-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--search-bar-bg);
+  border: 1px solid var(--search-bar-border);
+  border-radius: var(--radius-md);
+  min-height: 36px;
+  transition: border-color 0.2s ease;
+}
+
+.community-list-2__search-bar:focus-within {
+  border-color: var(--color-info);
+}
+
+.community-list-2__search-icon {
+  font-size: 20px;
+  color: var(--search-icon);
+  flex-shrink: 0;
+}
+
+.community-list-2__search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: var(--search-bar-text);
+  min-width: 0;
+}
+
+.community-list-2__search-input::placeholder {
+  color: var(--search-bar-placeholder);
+}
+
+/* 아이콘 버튼 */
+.community-list-2__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background-color: var(--icon-button-bg);
+  border: 1px solid var(--icon-button-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.community-list-2__icon-button i {
+  font-size: 20px;
+  color: var(--icon-button-icon);
+}
+
+.community-list-2__icon-button:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+/* 그룹 만들기 버튼 */
+.community-list-2__create-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--create-button-bg);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+  min-height: 36px;
+}
+
+.community-list-2__create-button:hover {
+  background-color: var(--color-info-hover);
+  opacity: 0.9;
+  color: var(--color-white);
+}
+
+.community-list-2__create-button:hover .community-list-2__create-text,
+.community-list-2__create-button:hover .community-list-2__create-icon {
+  color: var(--color-white);
+}
+
+.community-list-2__create-icon {
+  font-size: 20px;
+  color: var(--create-button-icon);
+  flex-shrink: 0;
+}
+
+.community-list-2__create-text {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--create-button-text);
+  white-space: nowrap;
+}
+
+.community-list-2__create-arrow {
+  font-size: 16px;
+  color: var(--create-button-icon);
+  flex-shrink: 0;
+}
+
+/* 탭 영역: PC 68px + safe-area, 다이나믹뷰 0 + safe-area, 모바일 56px + safe-area */
+.community-list-2__tabs {
+  width: 100%;
+  background-color: var(--tabs-sticky-bg);
+  position: sticky;
+  top: 68px;
+  z-index: 10;
+  padding: var(--spacing-md);
+  overflow: hidden;
+}
+
+/* Wakit 다이나믹뷰: 상단 헤더 없음 */
+.dynamic-view .community-list-2__tabs {
+  top: 0px;
+}
+
+.community-list-2__tabs-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  overflow-x: auto;
+  padding: 0;
+  /* 스크롤바 숨기기 */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.community-list-2__tabs-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.community-list-2__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  min-height: 44px;
+  background-color: var(--tab-bg);
+  border: none;
+  border-radius: var(--radius-lg);
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--tab-text);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.community-list-2__tab:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.community-list-2__tab--active {
+  background-color: var(--tab-active-bg);
+  color: var(--tab-active-text);
+}
+
+.community-list-2__tab--active:hover {
+  background-color: var(--tab-active-bg);
+}
+
+/* 탭 패널 영역 */
+.community-list-2__tabpanel {
+  padding: 0;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+/* ============================================
+   Group Cards Section
+   ============================================ */
+
+/* 그룹 카드 리스트 */
+.group-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+/* 그룹 카드 행 */
+.group-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+/* 그룹 카드 */
+.group-card {
+  background-color: var(--group-card-bg);
+  border: 1px solid var(--group-card-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.group-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* 그룹 카드 이미지 */
+.group-card__image {
+  width: 100%;
+  height: 88px;
+  background-color: var(--group-card-image-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.group-card__image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--group-card-image-bg);
+}
+
+.group-card__image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 그룹 카드 컨테이너 */
+.group-card__container {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  position: relative;
+}
+
+/* 그룹 카드 이름 */
+.group-card__name {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: var(--body-l-font-size);
+  font-weight: var(--body-l-font-weight);
+  line-height: var(--body-l-line-height);
+  letter-spacing: var(--body-l-letter-spacing);
+  color: var(--group-card-name-text);
+  text-align: center;
+  margin: 0;
+  margin-top: var(--spacing-2xl);
+}
+
+/* 그룹 카드 타입 래퍼 */
+.group-card__type-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.group-card__lock-icon {
+  width: 16px;
+  height: 16px;
+  background-color: var(--group-card-lock-icon);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.group-card__type {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: var(--body-s-font-size);
+  font-weight: var(--body-s-font-weight);
+  line-height: var(--body-s-line-height);
+  letter-spacing: var(--body-s-letter-spacing);
+  color: var(--group-card-type-text);
+}
+
+/* 그룹 카드 통계 */
+.group-card__stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border: 1px solid var(--group-card-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-primary);
+}
+
+.group-card__stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+}
+
+.group-card__stat-count {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: var(--body-l-font-size);
+  font-weight: var(--body-l-font-weight);
+  line-height: var(--body-l-line-height);
+  letter-spacing: var(--body-l-letter-spacing);
+  color: var(--group-card-stat-count-text);
+}
+
+.group-card__stat-label {
+  font-family: var(--font-family-primary), var(--font-family-fallback);
+  font-size: var(--body-xs-font-size);
+  font-weight: var(--body-xs-font-weight);
+  line-height: var(--body-xs-line-height);
+  letter-spacing: var(--body-xs-letter-spacing);
+  color: var(--group-card-stat-label-text);
+}
+
+.group-card__stat-divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--group-card-stat-divider);
+}
+
+/* 그룹 카드 아바타 래퍼 */
+.group-card__avatar-wrapper {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 64px;
+  z-index: 1;
+}
+
+.group-card__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background-color: var(--group-card-avatar-bg);
+  border: 2px solid var(--color-white);
+}
+
+.group-card__avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--group-card-avatar-bg);
+}
+
+.group-card__avatar-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.group-card__avatar-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background-color: var(--group-card-avatar-badge-bg);
+  border: 2px solid var(--color-white);
+}
+
+/* 그룹 카드 멤버 아바타 그룹 */
+.group-card__member-avatars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(-1 * var(--spacing-xs));
+  margin-top: var(--spacing-xs);
+}
+
+.group-card__member-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background-color: var(--group-card-member-avatar-bg);
+  border: 2px solid var(--group-card-member-avatar-border);
+  position: relative;
+}
+
+.group-card__member-avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--group-card-member-avatar-bg);
+}
+
+.group-card__member-avatar-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.group-card__member-avatar:not(:first-child) {
+  margin-left: calc(-1 * var(--spacing-xs));
+}
+
+/* 그룹 카드 푸터 */
+.group-card__footer {
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--group-card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.group-card__footer .btn {
+  /* Foundation .btn--secondary (테마·다크 모드) 사용 */
+}
+
+/* 모바일 스타일 */
+@media (max-width: 767px) {
+  .community-list-2__sidebar {
+    display: none;
+  }
+
+  /* 모바일 sticky: 앱바 높이 56px + safe-area */
+  .community-list-2__tabs {
+    top: calc(68px + env(safe-area-inset-top, 0px));
+  }
+
+  .dynamic-view .community-list-2__tabs {
+    top: 0px;
+  }
+
+  .community-list-2__header-container {
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .community-list-2__search-bar {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .community-list-2__search-input {
+    font-size: 11px;
+  }
+
+  .community-list-2__icon-button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .community-list-2__icon-button i {
+    font-size: 20px;
+  }
+
+  .community-list-2__create-button {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .community-list-2__create-text {
+    font-size: 12px;
+  }
+
+  .community-list-2__create-icon {
+    font-size: 20px;
+  }
+
+  .community-list-2__create-arrow {
+    font-size: 16px;
+  }
+
+  .community-list-2__tab {
+    font-size: 14px;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    min-height: 36px;
+  }
+
+  /* 탭 영역 - 모바일 */
+  .community-list-2__tabs {
+    padding: var(--spacing-sm);
+    margin: 0;
+  }
+
+  .community-list-2__tabs-container {
+    gap: var(--spacing-xs);
+  }
+
+  /* 탭 패널 영역 - 모바일 */
+  .community-list-2__tabpanel {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* 그룹 카드 리스트 - 모바일 */
+  .group-cards-list {
+    gap: var(--spacing-lg);
+  }
+
+  /* Group Cards - Mobile */
+  .group-cards-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .group-card__name {
+    font-size: var(--body-m-font-size);
+  }
+
+  .group-card__type {
+    font-size: var(--body-xs-font-size);
+  }
+
+  .group-card__stat-count {
+    font-size: var(--body-m-font-size);
+  }
+
+  .group-card__stat-label {
+    font-size: 10px;
+  }
+
+}
+
+/* 태블릿 스타일 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .community-list-2__content {
+    grid-template-columns: 1fr;
+  }
+
+  .community-list-2__search-input {
+    font-size: 12px;
+  }
+
+  /* Group Cards - Tablet */
+  .group-cards-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+}
+
+/* 데스크톱 스타일 */
+@media (min-width: 1024px) {
+  .community-list-2__content {
+    grid-template-columns: 282px 1fr;
+  }
+
+  .community-list-2__sidebar {
+    position: sticky;
+    top: 68px;
+    align-self: start;
+    height: fit-content;
+    max-height: calc(100vh - var(--spacing-2xl) - var(--spacing-lg));
+    overflow-y: auto;
+    /* 스크롤바 숨기기 */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  .community-list-2__sidebar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+}

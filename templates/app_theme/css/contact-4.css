@@ -1,0 +1,493 @@
+/**
+ * Contact 4 Page Styles
+ * Figma: 배경 #f2f8fc, 좌(타이틀+문의/채용 카드 2개) / 우(문의 폼)
+ */
+
+.contact-4-page {
+  min-height: 100vh;
+  background: var(--color-bg-secondary);
+}
+
+.contact-4-section {
+  padding: var(--spacing-3xl) 0;
+}
+
+.contact-4-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-container-md);
+}
+
+/* Breadcrumb - Figma: 14px Bold #17191a / Regular #464a4d */
+.contact-4-breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.contact-4-breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.contact-4-breadcrumb-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.contact-4-breadcrumb-link:hover {
+  color: var(--color-primary);
+}
+
+.contact-4-breadcrumb-item .bi-chevron-right {
+  color: var(--color-text-tertiary);
+  font-size: 20px;
+}
+
+.contact-4-breadcrumb-current {
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text-secondary);
+}
+
+/* Row: 좌 480px / 우 680px - Figma */
+.contact-4-row {
+  display: grid;
+  grid-template-columns: 480px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.contact-4-left {
+  max-width: 480px;
+}
+
+/* 타이틀 - Figma: 36px Bold #17191a */
+.contact-4-title {
+  font-family: var(--font-family-primary);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 50.4px;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-xl);
+}
+
+/* 카드 2개 - Figma: 48px 원형 아이콘(흰배경) + 24px 제목 + 16px 설명 + 버튼 #edf9ff */
+.contact-4-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-4-card {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+}
+
+.contact-4-card-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: var(--color-bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-4-card-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-primary);
+}
+
+.contact-4-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-4-card-title {
+  font-family: var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33.6px;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.contact-4-card-desc {
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-md);
+}
+
+/* Foundation 버튼 스타일 조정 */
+.contact-4-card-body .btn {
+  align-self: flex-start;
+  width: auto;
+}
+
+/* 우측 폼 카드 - Figma: white, radius 16, padding 24px */
+.contact-4-form-wrap {
+  background: var(--color-bg-primary);
+  border-radius: 16px;
+  padding: var(--spacing-2xl);
+  min-width: 0;
+}
+
+.contact-4-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.contact-4-input-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.contact-4-input-label {
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--color-text-secondary);
+}
+
+.contact-4-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  height: 44px;
+  padding: 0 var(--spacing-md);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+
+.contact-4-input-wrapper:focus-within {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.contact-4-input-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+}
+
+.contact-4-input-wrapper input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+.contact-4-input-wrapper input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.contact-4-input-helper {
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--color-text-footer-quaternary);
+}
+
+.contact-4-textarea-wrapper {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-bg-primary);
+  transition: border-color 0.2s;
+}
+
+.contact-4-textarea-wrapper:focus-within {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.contact-4-textarea-wrapper textarea {
+  width: 100%;
+  min-height: 84px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text-primary);
+  resize: vertical;
+}
+
+.contact-4-textarea-wrapper textarea::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.contact-4-textarea-count {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.contact-4-textarea-count-current {
+  color: var(--color-text-primary);
+}
+
+.contact-4-textarea-count-max {
+  color: var(--color-text-footer-quaternary);
+}
+
+/* Foundation 버튼 스타일 조정 */
+.contact-4-form .btn {
+  align-self: flex-end;
+  width: auto;
+}
+
+/* ========== Quick CTA Section: 지도 + 오피스 카드 2개 (Figma) ========== */
+.contact-4-quick-cta-section {
+  padding: 40px 0;
+  background: var(--color-bg-primary);
+}
+
+.contact-4-quick-cta-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-container-md);
+}
+
+.contact-4-quick-cta-row {
+  display: grid;
+  grid-template-columns: 680px 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.contact-4-quick-cta-map-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 584px;
+  background: var(--color-bg-secondary);
+}
+
+.contact-4-quick-cta-map {
+  width: 100%;
+  height: 100%;
+  min-height: 584px;
+}
+
+.contact-4-quick-cta-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 584px;
+  border: none;
+  display: block;
+}
+
+.contact-4-quick-cta-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-4-quick-cta-office {
+  background: var(--color-bg-primary);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 280px;
+  box-sizing: border-box;
+}
+
+.contact-4-quick-cta-office-title {
+  font-family: var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33.6px;
+  color: var(--color-text-primary);
+  margin: 0 0 16px;
+}
+
+.contact-4-quick-cta-office-address {
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text-secondary);
+  margin: 0;
+  flex: 1;
+  min-height: 0;
+}
+
+.contact-4-quick-cta-office-address p {
+  margin: 0 0 8px;
+}
+
+.contact-4-quick-cta-office-address p:last-child {
+  margin-bottom: 0;
+}
+
+/* Foundation 버튼 스타일 조정 */
+.contact-4-quick-cta-office .btn {
+  margin-top: auto;
+  align-self: flex-start;
+  width: auto;
+}
+
+/* ========== Responsive (Mobile Figma) ========== */
+@media (max-width: 1024px) {
+  .contact-4-row {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .contact-4-form-wrap {
+    order: 3;
+  }
+
+  .contact-4-quick-cta-row {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .contact-4-quick-cta-map-wrap,
+  .contact-4-quick-cta-map,
+  .contact-4-quick-cta-map iframe {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-4-container {
+    padding: 0 var(--spacing-container-sm);
+  }
+
+  /* 모바일: 브레드크럼 영역 숨김 */
+  .contact-4-breadcrumb {
+    display: none;
+  }
+
+  .contact-4-breadcrumb-link,
+  .contact-4-breadcrumb-current {
+    font-size: 12px;
+  }
+
+  .contact-4-title {
+    font-size: 24px;
+    line-height: 33.6px;
+  }
+
+  .contact-4-card-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .contact-4-card-desc {
+    font-size: 14px;
+  }
+
+  .contact-4-card-body .btn {
+    width: 100%;
+  }
+
+  .contact-4-form-wrap {
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+  }
+
+  .contact-4-input-label {
+    font-size: 12px;
+  }
+
+  .contact-4-input-wrapper input,
+  .contact-4-textarea-wrapper textarea {
+    font-size: 12px;
+  }
+
+  .contact-4-input-helper,
+  .contact-4-textarea-count {
+    font-size: 11px;
+  }
+
+  .contact-4-form .btn {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .contact-4-quick-cta-section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .contact-4-quick-cta-container {
+    padding: 0 var(--spacing-container-sm);
+  }
+
+  .contact-4-quick-cta-map-wrap {
+    border-radius: 12px;
+    min-height: 400px;
+  }
+
+  .contact-4-quick-cta-map,
+  .contact-4-quick-cta-map iframe {
+    min-height: 400px;
+  }
+
+  .contact-4-quick-cta-office {
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    min-height: auto;
+  }
+
+  .contact-4-quick-cta-office-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .contact-4-quick-cta-office-address {
+    font-size: 12px;
+  }
+
+  .contact-4-quick-cta-office .btn {
+    width: 100%;
+  }
+}

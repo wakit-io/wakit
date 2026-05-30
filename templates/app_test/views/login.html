@@ -1,0 +1,76 @@
+<!-- 로그인 -->
+<link rel="stylesheet" href="./css/login.css">
+
+<main class="login-page">
+  <div class="login-box">
+
+    <div class="login-logo">
+      <span class="login-logo__icon">✨</span>
+      <p class="login-logo__title">App Test</p>
+      <p class="login-logo__sub">로그인하여 계속하세요</p>
+    </div>
+
+    <form class="login-form" id="loginForm" novalidate>
+      <div class="login-field">
+        <label class="login-field__label" for="loginEmail">이메일</label>
+        <input class="login-field__input" id="loginEmail" type="email"
+          placeholder="이메일 주소 입력" autocomplete="email" required>
+      </div>
+
+      <div class="login-field">
+        <label class="login-field__label" for="loginPassword">비밀번호</label>
+        <input class="login-field__input" id="loginPassword" type="password"
+          placeholder="비밀번호 입력" autocomplete="current-password" required>
+      </div>
+
+      <button class="login-btn" type="submit" id="loginBtn">로그인</button>
+      <p class="login-msg" id="loginMsg"></p>
+    </form>
+
+    <div class="login-footer">
+      계정이 없으신가요? <a href="#signup">회원가입</a>
+    </div>
+
+  </div>
+</main>
+
+<script>
+(function() {
+  var form = document.getElementById('loginForm');
+  var btn  = document.getElementById('loginBtn');
+  var msg  = document.getElementById('loginMsg');
+
+  function showMsg(text, type) {
+    msg.textContent = text;
+    msg.className = 'login-msg' + (type ? ' login-msg--' + type : '');
+  }
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var email    = document.getElementById('loginEmail').value.trim();
+    var password = document.getElementById('loginPassword').value;
+
+    if (!email || !password) {
+      showMsg('이메일과 비밀번호를 입력해주세요.', 'error'); return;
+    }
+
+    btn.disabled = true;
+    showMsg('처리 중...', '');
+
+    var result = await window.sb.auth.signInWithPassword({
+      email: email,
+      password: password
+    });
+
+    if (result.error) {
+      showMsg('이메일 또는 비밀번호가 올바르지 않습니다.', 'error');
+      btn.disabled = false;
+    } else {
+      showMsg('로그인 성공!', 'success');
+      setTimeout(function() {
+        location.hash = '#profile';
+      }, 800);
+    }
+  });
+})();
+</script>

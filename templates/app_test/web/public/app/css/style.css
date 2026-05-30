@@ -1,0 +1,26 @@
+@import url('./foundation/index.css');
+
+/* ── 앱바 오프캔버스 버튼 숨김 ── */
+#btn-menu-left,
+#btn-menu-right { display: none !important; }
+
+/* ── 공통 ── */
+.img-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  color: var(--color-text-tertiary); gap: 4px;
+}
+.img-placeholder i { font-size: 1.5rem; }
+
+/* ── 다크모드 탭바 오버라이드 ── */
+[data-theme="dark"] .tabbar {
+  background: #1f2937;
+  border-top-color: #374151;
+}
+[data-theme="dark"] .tabbar a {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .tabbar a.active {
+  color: #818cf8;
+}

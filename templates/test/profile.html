@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>Profile • MPA View Transitions Demo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="WAKIT">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0f1115">
+  <meta name="msapplication-TileColor" content="#0f1115">
+  <meta name="msapplication-TileImage" content="favicon.png">
+  <style>
+    :root { color-scheme: light dark; --bg:#0f1115; --card:#151822; --text:#e9eefb; --muted:#aab1c7; --brand:#7aa2ff; }
+    html,body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:980px;margin:0 auto;padding:24px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:0;padding:12px 0 16px;background:linear-gradient(180deg,rgba(15,17,21,.9),rgba(15,17,21,.6));backdrop-filter:blur(6px)}
+    .title{font-weight:800;letter-spacing:.2px}
+    .muted{color:var(--muted);font-size:13px}
+    .card{margin-top:16px;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:20px}
+    a.btn{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none;background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.18)}
+
+    /* 문서 간 전환 활성화 */
+    @view-transition { navigation: auto; }
+
+    /* 이 페이지가 새로 들어올 때: 오른쪽 → 중앙 (항상 적용) */
+    ::view-transition-new(root) {
+      animation: 300ms cubic-bezier(.4,0,.2,1) both slide-in-right;
+    }
+    /* 이 페이지가 나갈 때(뒤로가기): 중앙 → 오른쪽 */
+    ::view-transition-old(root) {
+      animation: 300ms cubic-bezier(.4,0,.2,1) both slide-out-right;
+    }
+
+    /* 순수 슬라이드 (opacity 없음) */
+    @keyframes slide-in-right  { from { transform: translateX(100%); } to { transform: translateX(0); } }
+    @keyframes slide-out-right { from { transform: translateX(0); }    to { transform: translateX(100%); } }
+
+    /* 성능: 큰 고정요소 제외 */
+    header { view-transition-name: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1 class="title" style="view-transition-name: logo">Profile • WAKIT</h1>
+      <div class="muted">MPA (SSR) with View Transitions</div>
+    </header>
+
+    <div class="card">
+      <h2>About</h2>
+      <p class="muted">Home으로 돌아가면 이 화면은 오른쪽으로 빠져나갑니다.</p>
+      <a class="btn" href="javascript:history.back()">← Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>
