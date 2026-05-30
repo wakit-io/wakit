@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>프로필 · App Basic</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/foundation/index.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  <script src="js/theme-init.js" data-spa-ignore></script>
+</head>
+<body>
+
+<!-- Screen-specific CSS: inside body, no data-spa-ignore (applies in web + SPA) -->
+<link rel="stylesheet" href="css/profile.css">
+
+<div data-include="wakit-components/header.html"></div>
+
+<main class="profile-page" role="main">
+  <div class="container">
+
+    <!-- Profile summary card -->
+    <section class="profile-card">
+      <div class="profile-card__avatar">
+        <i class="bi bi-person-fill"></i>
+      </div>
+      <div class="profile-card__info">
+        <h1 class="profile-card__name">홍길동</h1>
+        <p class="profile-card__email">hong@example.com</p>
+      </div>
+      <a href="#" class="profile-card__edit">프로필 편집</a>
+    </section>
+
+    <!-- Stats -->
+    <section class="profile-stats">
+      <a class="profile-stats__item" href="#">
+        <strong class="profile-stats__num">12</strong>
+        <span class="profile-stats__label">예매 내역</span>
+      </a>
+      <a class="profile-stats__item" href="#">
+        <strong class="profile-stats__num">8</strong>
+        <span class="profile-stats__label">찜한 영화</span>
+      </a>
+      <a class="profile-stats__item" href="#">
+        <strong class="profile-stats__num">3</strong>
+        <span class="profile-stats__label">내 리뷰</span>
+      </a>
+    </section>
+
+    <!-- Activity menu -->
+    <section class="profile-section">
+      <h2 class="profile-section__title">내 활동</h2>
+      <nav class="profile-menu">
+        <a class="profile-menu__item" href="#">
+          <i class="bi bi-ticket-perforated profile-menu__icon"></i>
+          <span class="profile-menu__label">내 예매 내역</span>
+          <i class="bi bi-chevron-right profile-menu__arrow"></i>
+        </a>
+        <a class="profile-menu__item" href="#">
+          <i class="bi bi-heart profile-menu__icon"></i>
+          <span class="profile-menu__label">찜한 영화</span>
+          <i class="bi bi-chevron-right profile-menu__arrow"></i>
+        </a>
+        <a class="profile-menu__item" href="#">
+          <i class="bi bi-chat-square-text profile-menu__icon"></i>
+          <span class="profile-menu__label">내 리뷰</span>
+          <i class="bi bi-chevron-right profile-menu__arrow"></i>
+        </a>
+      </nav>
+    </section>
+
+    <!-- Settings menu -->
+    <section class="profile-section">
+      <h2 class="profile-section__title">설정</h2>
+      <nav class="profile-menu">
+        <a class="profile-menu__item" href="#">
+          <i class="bi bi-credit-card profile-menu__icon"></i>
+          <span class="profile-menu__label">결제 수단</span>
+          <i class="bi bi-chevron-right profile-menu__arrow"></i>
+        </a>
+        <a class="profile-menu__item" href="#">
+          <i class="bi bi-bell profile-menu__icon"></i>
+          <span class="profile-menu__label">알림 설정</span>
+          <i class="bi bi-chevron-right profile-menu__arrow"></i>
+        </a>
+        <a class="profile-menu__item" href="#">
+          <i class="bi bi-headset profile-menu__icon"></i>
+          <span class="profile-menu__label">고객센터</span>
+          <i class="bi bi-chevron-right profile-menu__arrow"></i>
+        </a>
+      </nav>
+    </section>
+
+    <!-- Account actions -->
+    <section class="profile-account">
+      <a href="views/login.html" class="profile-account__logout">로그아웃</a>
+      <a href="#" class="profile-account__withdraw">회원 탈퇴</a>
+    </section>
+
+  </div>
+</main>
+
+<div data-include="wakit-components/footer.html"></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/header.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script data-spa-ignore>if (typeof Popup !== 'undefined') Popup.init();</script>
+</html>

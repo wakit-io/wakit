@@ -349,7 +349,7 @@ The content of each screen (tab/route). Per-screen CSS is declared with a `<link
 
 **Rules**
 - `role="main"` is recommended on the screen's root element.
-- Declare screen-specific CSS with `<link rel="stylesheet" href="./css/[screen-name].css">`. The core automatically removes that CSS when the dynamic view is closed.
+- Declare screen-specific CSS with `<link rel="stylesheet" href="./css/[screen-name].css">`, but place it **inside `<body>` without `data-spa-ignore`** (see 6.2 below). The core automatically removes that CSS when the dynamic view is closed.
 - `href="#[path]"` links are handled as either a tab switch or entry into a dynamic view.
 - Write `<script>` without `data-spa-ignore` — it runs every time the view loads. If it should run only once, add the `data-once` attribute.
 
@@ -375,6 +375,32 @@ templates/my-template/
 ```
 
 The same rule applies to all resource paths inside the view, including images and JS.
+
+### ⚠️ 6.2 Screen-specific CSS goes inside `<body>`, without `data-spa-ignore`
+
+A screen (view)-specific CSS `<link>` must be declared **inside `<body>`, not in `<head>`, and without `data-spa-ignore`**. This is what makes the styles apply in both web and mobile (SPA) modes.
+
+```html
+<head>
+  <!-- Shared resources: head + data-spa-ignore (app.html already loads them, so avoid duplicates) -->
+  <link rel="stylesheet" href="css/foundation/index.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+</head>
+<body>
+  <!-- ✅ Screen-specific CSS: inside body, no data-spa-ignore -->
+  <link rel="stylesheet" href="css/login.css">
+
+  <div data-include="wakit-components/header.html"></div>
+  <main class="login-page"> ... </main>
+</body>
+```
+
+**Why**
+- A `link`/`style` carrying `data-spa-ignore` is **removed** during SPA injection (see [03-bridge-and-attributes.md](./03-bridge-and-attributes.md)). So putting screen-specific CSS in `<head>` with `data-spa-ignore` means **the screen's styles are dropped in mobile/SPA and the layout breaks.**
+- Placed inside `<body>` without `data-spa-ignore`, instead:
+  - **Web (Bridge) mode** — applied as an ordinary stylesheet
+  - **Mobile (SPA) mode** — when the view is injected as a dynamic view, the core lifts this `<link>` into the head and applies it (tagged for the dynamic view), then **removes it automatically when the view closes** (CSS isolation, see [04-wakit-css.md](./04-wakit-css.md))
+- In short: **shared CSS = `<head>` + `data-spa-ignore`**, **screen-specific CSS = `<body>` + no `data-spa-ignore`**.
 
 ---
 

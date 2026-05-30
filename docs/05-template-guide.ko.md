@@ -349,7 +349,7 @@ WAKIT 코어가 초기화 시 자동으로 fetch해 셸에 삽입하는 HTML 조
 
 **규칙**
 - 화면 최상위 요소에 `role="main"` 권장.
-- 화면 전용 CSS는 `<link rel="stylesheet" href="./css/[화면명].css">` 로 선언. 코어가 다이나믹 뷰 닫힐 때 자동으로 해당 CSS를 제거합니다.
+- 화면 전용 CSS는 `<link rel="stylesheet" href="./css/[화면명].css">` 로 선언하되, **`<body>` 안에 `data-spa-ignore` 없이** 넣습니다(아래 6.2 참고). 코어가 다이나믹 뷰 닫힐 때 자동으로 해당 CSS를 제거합니다.
 - `href="#[path]"` 링크는 탭 전환 또는 다이나믹 뷰 진입으로 처리됩니다.
 - `data-spa-ignore` 없이 `<script>` 작성 — 뷰가 로드될 때마다 실행됩니다. 한 번만 실행해야 한다면 `data-once` 속성을 추가합니다.
 
@@ -375,6 +375,32 @@ templates/my-template/
 ```
 
 이미지, JS 등 뷰 내부의 모든 리소스 경로도 동일한 규칙이 적용됩니다.
+
+### ⚠️ 6.2 화면 전용 CSS는 `<body>` 안에, `data-spa-ignore` 없이
+
+화면(뷰) 전용 CSS의 `<link>`는 **`<head>`가 아니라 `<body>` 안에**, 그리고 **`data-spa-ignore` 없이** 선언해야 합니다. 그래야 웹과 모바일(SPA) 양쪽에서 스타일이 적용됩니다.
+
+```html
+<head>
+  <!-- 공용 리소스: head + data-spa-ignore (app.html이 이미 로드하므로 중복 방지) -->
+  <link rel="stylesheet" href="css/foundation/index.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+</head>
+<body>
+  <!-- ✅ 화면 전용 CSS: body 안, data-spa-ignore 없음 -->
+  <link rel="stylesheet" href="css/login.css">
+
+  <div data-include="wakit-components/header.html"></div>
+  <main class="login-page"> ... </main>
+</body>
+```
+
+**이유**
+- `data-spa-ignore`가 붙은 `link`/`style`은 SPA 주입 시 **제거**됩니다([03-bridge-and-attributes.ko.md](./03-bridge-and-attributes.ko.md) 참고). 따라서 화면 전용 CSS를 `<head>`에 `data-spa-ignore`로 넣으면 **모바일/SPA에서 그 화면 스타일이 빠져 깨집니다.**
+- 반대로 `<body>` 안에 `data-spa-ignore` 없이 두면:
+  - **웹(Bridge) 모드** — 일반 스타일시트로 그대로 적용
+  - **모바일(SPA) 모드** — 뷰가 다이나믹 뷰로 주입될 때 코어가 이 `<link>`를 head로 올려 적용하고(다이나믹 뷰용으로 태깅), **뷰가 닫히면 자동 제거**(CSS 격리, [04-wakit-css.ko.md](./04-wakit-css.ko.md) 참고)
+- 정리: **공용 CSS = `<head>` + `data-spa-ignore`**, **화면 전용 CSS = `<body>` + `data-spa-ignore` 없음**.
 
 ---
 

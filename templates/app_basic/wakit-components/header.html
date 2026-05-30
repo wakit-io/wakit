@@ -1,7 +1,7 @@
 <!-- Web Header (wakit-components) — common top navbar: brand · nav menu · actions.
-     The menu is data-driven: the brand, links and CTA are rendered from
-     wakitConfig.json's `webNav` (web mode uses direct file links, not #routes).
-     Markup below holds fallback defaults shown before the config loads.
+     The brand and nav links are data-driven from wakitConfig.json's `webNav`
+     (web mode uses direct file links, not #routes). The right-side auth actions
+     (Profile / Login) are FIXED here, not config-driven.
      Uses foundation color tokens so dark mode ([data-theme="dark"]) works automatically. -->
 <header class="site-header" data-site-header role="banner">
   <div class="site-header__inner container">
@@ -20,7 +20,12 @@
       <button class="site-header__icon" data-theme-toggle aria-label="테마 전환">
         <i class="bi bi-moon-fill"></i>
       </button>
-      <a href="index.html" class="site-header__cta" style="display:none">시작하기</a>
+      <!-- Fixed auth actions (not driven by webNav). Point href to your real pages. -->
+      <a href="views/profile.html" class="site-header__profile">
+        <i class="bi bi-person-circle"></i>
+        <span>프로필</span>
+      </a>
+      <a href="views/login.html" class="site-header__cta">로그인</a>
       <button class="site-header__toggle" data-nav-toggle aria-label="메뉴 열기" aria-expanded="false" aria-controls="siteNav">
         <i class="bi bi-list"></i>
       </button>
@@ -29,142 +34,7 @@
   </div>
 </header>
 
-<style>
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: var(--color-bg-primary, #fff);
-    border-bottom: 1px solid var(--color-border, #e8eef2);
-    padding-top: env(safe-area-inset-top);
-  }
-  .site-header__inner {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    height: 60px;
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  /* Brand */
-  .site-header__brand {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: var(--color-text-primary, #17191a);
-    font-weight: 700;
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-  .site-header__logo { color: var(--logo-color, #2563eb); font-size: 20px; }
-
-  /* Nav */
-  .site-header__nav {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    margin-left: 8px;
-    flex: 1;
-  }
-  .site-header__link {
-    padding: 8px 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--color-text-secondary, #464a4d);
-    transition: background .15s ease, color .15s ease;
-  }
-  .site-header__link:hover {
-    color: var(--color-text-primary, #17191a);
-    background: var(--color-bg-secondary, #f2f8fc);
-  }
-  .site-header__link.is-active {
-    color: var(--color-primary, #3b82f6);
-    background: var(--color-primary-light, #eff6ff);
-  }
-
-  /* Actions */
-  .site-header__actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-  }
-  .site-header__icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    border: none;
-    border-radius: 8px;
-    background: transparent;
-    color: var(--color-text-primary, #17191a);
-    font-size: 18px;
-    cursor: pointer;
-    transition: background .15s ease;
-  }
-  .site-header__icon:hover { background: var(--color-bg-secondary, #f2f8fc); }
-  .site-header__cta {
-    padding: 9px 16px;
-    border-radius: 8px;
-    background: var(--color-primary, #3b82f6);
-    color: var(--color-text-on-primary, #fff);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    white-space: nowrap;
-    transition: background .15s ease;
-  }
-  .site-header__cta:hover { background: var(--color-primary-hover, #2563eb); }
-
-  /* Hamburger (hidden on desktop) */
-  .site-header__toggle {
-    display: none;
-    width: 38px;
-    height: 38px;
-    border: none;
-    border-radius: 8px;
-    background: transparent;
-    color: var(--color-text-primary, #17191a);
-    font-size: 22px;
-    cursor: pointer;
-  }
-
-  /* Responsive: collapse nav into a dropdown under 768px */
-  @media (max-width: 768px) {
-    .site-header__toggle { display: inline-flex; align-items: center; justify-content: center; }
-    .site-header__cta { display: none; }
-    .site-header__nav {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 2px;
-      margin: 0;
-      padding: 8px 12px 12px;
-      background: var(--color-bg-primary, #fff);
-      border-bottom: 1px solid var(--color-border, #e8eef2);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, .06);
-      transform: translateY(-8px);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .18s ease, transform .18s ease;
-    }
-    .site-header__nav.is-open {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .site-header__link { padding: 12px; font-size: 16px; }
-  }
-</style>
+<!-- Styles: css/components/header.css (imported by css/style.css) -->
 
 <script>
   // Web header: render the menu from wakitConfig.webNav + hamburger toggle.
@@ -190,7 +60,7 @@
           toggle.setAttribute('aria-expanded', 'false');
         }
       });
-    }
+    } 
 
     // --- Single nav data source. Swap this one function to go server-driven later. ---
     function getNavData() {
@@ -231,17 +101,7 @@
           return '<a href="' + esc(it.href) + '" class="site-header__link' + active + '">' + esc(it.label) + '</a>';
         }).join('');
       }
-      // CTA (optional; hidden unless configured)
-      var cta = header.querySelector('.site-header__cta');
-      if (cta) {
-        if (webNav.cta && webNav.cta.label) {
-          cta.textContent = webNav.cta.label;
-          cta.setAttribute('href', webNav.cta.href || '#');
-          cta.style.display = '';
-        } else {
-          cta.style.display = 'none';
-        }
-      }
+      // Note: Profile / Login actions are fixed in the markup, not rendered here.
     }
 
     getNavData().then(render);
