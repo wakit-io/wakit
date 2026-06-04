@@ -2208,6 +2208,9 @@ const Core = (() => {
     // iOS: drag the glass slider (active tab) to move/activate another tab
     initTabbarDrag(tabbar);
 
+    // Chromium only: enable real liquid-glass refraction (SVG displacement on the backdrop)
+    ensureLiquidGlassRefraction();
+
     // set current active tab's icon state after tabbar creation
     const currentActiveTab = qs('.view.active:not(.dynamic-view)');
     if (currentActiveTab) {
@@ -2216,6 +2219,35 @@ const Core = (() => {
         activateTab(currentTab);
       }
     }
+  }
+
+  // Real liquid-glass refraction works only on Chromium (Blink): backdrop-filter with an
+  // SVG feDisplacementMap. WebKit/iOS Safari can't do it, so we inject the filter and flip
+  // on the .wakit-glass-refract gate ONLY when the engine is Chromium. iOS then keeps the
+  // blur + specular glass as its fallback.
+  function ensureLiquidGlassRefraction() {
+    try {
+      const uaData = navigator.userAgentData;
+      const ua = navigator.userAgent || '';
+      const isApple = /iPhone|iPad|iPod/i.test(ua) || /FxiOS|CriOS|EdgiOS/i.test(ua); // iOS는 모든 브라우저가 WebKit → 제외
+      const isChromium = !isApple && (
+        (uaData && Array.isArray(uaData.brands) && uaData.brands.some(b => /Chromium|Google Chrome/i.test(b.brand)))
+        || (!!window.chrome && /\bChrome\//.test(ua))
+      );
+      if (!isChromium) return;
+      document.documentElement.classList.add('wakit-glass-refract');
+      if (document.getElementById('wakit-liquid-glass')) return;
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('aria-hidden', 'true');
+      svg.style.cssText = 'position:absolute;width:0;height:0;overflow:hidden;pointer-events:none';
+      svg.innerHTML =
+        '<filter id="wakit-liquid-glass" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">'
+        + '<feTurbulence type="fractalNoise" baseFrequency="0.010 0.014" numOctaves="2" seed="11" result="noise"/>'
+        + '<feGaussianBlur in="noise" stdDeviation="1.2" result="smooth"/>'
+        + '<feDisplacementMap in="SourceGraphic" in2="smooth" scale="16" xChannelSelector="R" yChannelSelector="G"/>'
+        + '</filter>';
+      (document.body || document.documentElement).appendChild(svg);
+    } catch (_) { /* noop */ }
   }
 
   // iOS: grab the glass slider to drag it along with the finger; on release, snap to and activate the nearest tab
@@ -2258,20 +2290,25 @@ const Core = (() => {
 
     tabbar.addEventListener('pointerdown', (e) => {
       const a = e.target.closest && e.target.closest('a[href^="#"]');
-      if (!a || !a.classList.contains('active')) return; // start only on the active slider
+      if (!a) return; // start from any tab (active or not)
       armed = true; dragging = false;
       startX = e.clientX;
       lastHoverIdx = -1;
       measure();
-      tabbar.classList.add('tabbar-grab'); // grab → scale up the glass
+      // Pressing the active tab scales in place (press feedback); a non-active tab
+      // scales once dragging starts, at the finger position.
+      if (a.classList.contains('active')) tabbar.classList.add('tabbar-grab');
       try { tabbar.setPointerCapture(e.pointerId); } catch (_) { /* noop */ }
     });
 
     tabbar.addEventListener('pointermove', (e) => {
       if (!armed) return;
       if (!dragging && Math.abs(e.clientX - startX) < THRESHOLD) return;
-      dragging = true;
-      tabbar.classList.add('tabbar-dragging');
+      if (!dragging) {
+        dragging = true;
+        // start dragging: follow instantly + scale up (even when grabbed from a non-active tab)
+        tabbar.classList.add('tabbar-dragging', 'tabbar-grab');
+      }
       e.preventDefault();
       const rect = tabbar.getBoundingClientRect();
       const x = clamp((e.clientX - rect.left - 5) - tabWidth / 2);

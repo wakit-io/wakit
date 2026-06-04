@@ -181,6 +181,14 @@ a:focus, a:active, a:hover{
   color: #ffffff !important;
 }
 
+/* Real refraction — Chromium(Blink) only. WebKit/iOS doesn't support an SVG filter
+   on backdrop-filter, so it's gated by the .wakit-glass-refract class that wakit.js
+   adds only on Chromium (iOS falls back to the blur + specular glass above).
+   Lower blur here so the displacement (the "liquid" bending) stays visible. */
+.wakit-glass-refract.ios .tabbar::before {
+  backdrop-filter: blur(10px) saturate(180%) brightness(108%) url(#wakit-liquid-glass);
+}
+
 .tabbar a .icon span{font-size:18px}
 .tabbar a span{font-size:10px}
 .tabbar.hide{transform:translateY(100%)}
