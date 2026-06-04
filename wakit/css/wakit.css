@@ -113,7 +113,10 @@ a:focus, a:active, a:hover{
 .ios .tabbar a{height:55px; padding:0 0px;}
 .tabbar a.active{color:var(--primary-color); font-weight:600}
 
-/* iOS 26 스타일: 글래스 배경 슬라이더 */
+/* iOS 26 style: liquid-glass background slider.
+   Refraction (SVG feDisplacementMap) is unsupported in WebKit → on iOS we lift the
+   glass feel with specular highlights + directional tint + saturation/brightness
+   adjustments (looks even better in Chrome). */
 .ios .tabbar::before {
   content: '';
   position: absolute;
@@ -121,11 +124,18 @@ a:focus, a:active, a:hover{
   left: 5px;
   height: calc(100% - 10px);
   width: calc((100% - 10px) / var(--tab-count, 4));
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(30px) saturate(200%);
-  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  /* Directional sheen tint */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.28));
+  backdrop-filter: blur(24px) saturate(180%) brightness(108%) contrast(102%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%) brightness(108%) contrast(102%);
   border-radius: 50px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Specular highlights (Fresnel) — edge light + faint warm/cool tint + outer shadow */
+  box-shadow:
+    inset 1px 1px 1px rgba(255, 255, 255, 0.75),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.30),
+    inset 6px 6px 14px rgba(150, 190, 255, 0.12),
+    inset -6px -8px 16px rgba(255, 248, 214, 0.12),
+    0 4px 16px rgba(0, 0, 0, 0.14);
   transform: translateX(var(--glass-slider-x, 0px));
   transition: transform 0.35s cubic-bezier(0.4, 0.0, 0.2, 1);
   z-index: 0;
@@ -138,11 +148,37 @@ a:focus, a:active, a:hover{
 }
 
 .ios .tabbar a.active{
-  color:var(--primary-color); 
-  font-weight:600; 
+  color:var(--primary-color);
+  font-weight:600;
   background: transparent;
   border-radius: 50px;
   transition: color 0.2s ease;
+}
+
+/* Glass slider drag: grab the active tab and move it */
+.ios .tabbar { touch-action: none; }            /* prevent page scroll while dragging horizontally */
+.ios .tabbar a.active { cursor: grab; }
+.ios .tabbar.tabbar-dragging { cursor: grabbing; }
+.ios .tabbar.tabbar-dragging::before { transition: none; } /* follow instantly while dragging */
+/* On grab, scale up only the glass (::before) — the icon lives on the <a> layer, so its size stays. Removing the class restores it */
+.ios .tabbar.tabbar-grab::before { transform: translateX(var(--glass-slider-x, 0px)) scale(1.22); }
+
+/* Dark mode: tone the glass slider down so it doesn't blow out too bright.
+   .ios and [data-theme="dark"] both sit on <html>, so select with a compound (no space). */
+[data-theme="dark"].ios .tabbar::before {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06));
+  box-shadow:
+    inset 1px 1px 1px rgba(255, 255, 255, 0.22),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.08),
+    inset 6px 6px 16px rgba(150, 190, 255, 0.10),
+    0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* Dark mode: make the active tab's icon and label white (legibility over the dark glass) */
+[data-theme="dark"].ios .tabbar a.active,
+[data-theme="dark"].ios .tabbar a.active .icon,
+[data-theme="dark"].ios .tabbar a.active .icon span {
+  color: #ffffff !important;
 }
 
 .tabbar a .icon span{font-size:18px}

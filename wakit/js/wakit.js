@@ -2204,7 +2204,10 @@ const Core = (() => {
 
       showTab(page, { updateHash: false });
     });
-    
+
+    // iOS: drag the glass slider (active tab) to move/activate another tab
+    initTabbarDrag(tabbar);
+
     // set current active tab's icon state after tabbar creation
     const currentActiveTab = qs('.view.active:not(.dynamic-view)');
     if (currentActiveTab) {
@@ -2213,6 +2216,112 @@ const Core = (() => {
         activateTab(currentTab);
       }
     }
+  }
+
+  // iOS: grab the glass slider to drag it along with the finger; on release, snap to and activate the nearest tab
+  function initTabbarDrag(tabbar) {
+    if (!tabbar || getShellDeviceType() !== 'ios') return;
+    if (tabbar.dataset.dragBound === '1') return;
+    tabbar.dataset.dragBound = '1';
+
+    const THRESHOLD = 6; // must move at least this far to count as a drag (vs a tap)
+    let armed = false, dragging = false, suppressClick = false, lastHoverIdx = -1;
+    let startX = 0, tabWidth = 0, maxX = 0, tabs = [];
+
+    function measure() {
+      tabs = qsa('a', tabbar);
+      const n = tabs.length || 1;
+      tabWidth = (tabbar.offsetWidth - 10) / n; // minus padding 5px*2
+      maxX = (n - 1) * tabWidth;
+    }
+    const clamp = (v) => Math.max(0, Math.min(maxX, v));
+
+    // While dragging, mark the tab the slider passes over as active in real time (incl. filled icon). The view switches only on release.
+    function setActiveHighlight(idx) {
+      tabs.forEach((a, i) => {
+        const on = i === idx;
+        a.classList.toggle('active', on);
+        const iconSpan = a.querySelector('.icon span');
+        if (!iconSpan) return;
+        if (on) {
+          const c = iconSpan.className;
+          if (c.includes('fi-rr-')) {
+            iconSpan.className = c.replace('fi-rr-', 'fi-sr-');
+            iconSpan.setAttribute('data-original-class', c);
+          }
+        } else if (iconSpan.hasAttribute('data-original-class')) {
+          iconSpan.className = iconSpan.getAttribute('data-original-class');
+          iconSpan.removeAttribute('data-original-class');
+        }
+      });
+    }
+
+    tabbar.addEventListener('pointerdown', (e) => {
+      const a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a || !a.classList.contains('active')) return; // start only on the active slider
+      armed = true; dragging = false;
+      startX = e.clientX;
+      lastHoverIdx = -1;
+      measure();
+      tabbar.classList.add('tabbar-grab'); // grab → scale up the glass
+      try { tabbar.setPointerCapture(e.pointerId); } catch (_) { /* noop */ }
+    });
+
+    tabbar.addEventListener('pointermove', (e) => {
+      if (!armed) return;
+      if (!dragging && Math.abs(e.clientX - startX) < THRESHOLD) return;
+      dragging = true;
+      tabbar.classList.add('tabbar-dragging');
+      e.preventDefault();
+      const rect = tabbar.getBoundingClientRect();
+      const x = clamp((e.clientX - rect.left - 5) - tabWidth / 2);
+      tabbar.style.setProperty('--glass-slider-x', `${x}px`);
+
+      // highlight the tab the slider passes over in real time + a light haptic when crossing a tab
+      const hoverIdx = Math.max(0, Math.min(tabs.length - 1, Math.round(x / tabWidth)));
+      if (hoverIdx !== lastHoverIdx) {
+        lastHoverIdx = hoverIdx;
+        setActiveHighlight(hoverIdx);
+        triggerHapticFeedback(5);
+      }
+    });
+
+    function finish(e) {
+      if (!armed) return;
+      armed = false;
+      try { tabbar.releasePointerCapture(e.pointerId); } catch (_) { /* noop */ }
+      tabbar.classList.remove('tabbar-grab', 'tabbar-dragging'); // release → back to original size
+      if (!dragging) return; // plain tap → leave it to the existing click handler
+      dragging = false;
+
+      const curX = parseFloat(getComputedStyle(tabbar).getPropertyValue('--glass-slider-x')) || 0;
+      const idx = Math.max(0, Math.min(tabs.length - 1, Math.round(curX / tabWidth)));
+      const target = tabs[idx];
+      const page = target ? (target.getAttribute('href') || '').replace('#', '') : '';
+
+      // suppress the click that fires right after a drag (already handled via showTab)
+      suppressClick = true;
+      setTimeout(() => { suppressClick = false; }, 400);
+
+      const currentActive = qs('.view.active:not(.dynamic-view)');
+      const currentPage = currentActive
+        ? (appConfig.tabs || []).find(t => viewIdOf(t.page) === currentActive.id)?.page
+        : null;
+
+      if (page && page !== currentPage) {
+        triggerHapticFeedback(10);
+        showTab(page, { updateHash: false }); // activate + switch view + snap slider
+      } else {
+        activateTab(currentPage || page); // released on the same tab → snap slider back into place
+      }
+    }
+    tabbar.addEventListener('pointerup', finish);
+    tabbar.addEventListener('pointercancel', finish);
+
+    // ignore the click right after a drag ends (blocked in the capture phase)
+    tabbar.addEventListener('click', (e) => {
+      if (suppressClick) { suppressClick = false; e.stopPropagation(); e.preventDefault(); }
+    }, true);
   }
 
   function activateTab(page) {
