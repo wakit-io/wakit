@@ -1095,15 +1095,8 @@ const Core = (() => {
 
         // replace if theme component has dynamic view header
         (async () => {
-          if (!THEME_BASE) return;
-          try {
-            const url = new URL('wakit-components/appheader.html', THEME_BASE).href;
-            const res = await fetch(url, { credentials: 'same-origin' });
-            if (res.ok) {
-              const html = await res.text();
-              if (html && html.trim()) header.innerHTML = html;
-            }
-          } catch (_) { /* noop */ }
+          const html = await fetchComponentHtml('appheader.html');
+          if (html) header.innerHTML = html;
         })();
 
         mv.appendChild(header);
@@ -1801,14 +1794,7 @@ const Core = (() => {
   async function showSplashIfAvailable(force = false) {
     if (shouldSkipAppChromeUnlessPwa()) return;
     if (!MOBILE_MODE && !force) return;
-    let html = '';
-    if (THEME_BASE) {
-      try {
-        const url = new URL('wakit-components/splash.html', THEME_BASE).href;
-        const res = await fetch(url, { credentials: 'same-origin' });
-        if (res.ok) html = await res.text();
-      } catch (_) { /* noop */ }
-    }
+    let html = (await fetchComponentHtml('splash.html')) || '';
     if (!html && !force) return;
     if (!html) {
       html = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#fff;z-index:10000"><div class="spinner" style="width:36px;height:36px;border-radius:50%;border:3px solid rgba(0,0,0,.15);border-top-color:rgba(0,0,0,.6);animation:spin .8s linear infinite"></div></div>';
@@ -1858,16 +1844,30 @@ const Core = (() => {
     setTimeout(hideSplash, wait);
   }
 
+  // Load a wakit-components/{name} HTML. If it's not under wakit-components/, fall back to
+  // the parent folder (theme root)/{name}. Returns trimmed HTML, or null if neither exists.
+  async function fetchComponentHtml(name) {
+    if (!THEME_BASE) return null;
+    const candidates = ['wakit-components/' + name, name]; // 1) wakit-components/  2) parent folder
+    for (const path of candidates) {
+      try {
+        const res = await fetch(new URL(path, THEME_BASE).href, { credentials: 'same-origin' }).catch(() => null);
+        if (res && res.ok) {
+          const html = await res.text();
+          if (html && html.trim()) return html;
+        }
+      } catch (_) { /* noop */ }
+    }
+    return null;
+  }
+
   async function hydrateAppbarFromTheme() {
     if (!MOBILE_MODE) return; // appbar is mobile only
     const appbar = qs('.appbar');
     if (!appbar || !THEME_BASE) return;
     try {
-      const url = new URL('wakit-components/appbar.html', THEME_BASE).href;
-      const res = await fetch(url, { credentials: 'same-origin' });
-      if (!res.ok) return; // silently ignore
-      const html = await res.text();
-      if (html && html.trim()) {
+      const html = await fetchComponentHtml('appbar.html');
+      if (html) {
         // completely replace existing appbar
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = html;
@@ -1892,15 +1892,8 @@ const Core = (() => {
     if (!MOBILE_MODE || ONBOARDING_SHOWN) return false;
     // allow disabling via meta
     try { if (document.querySelector('meta[name="hybrid:disable-onboarding"]')) return false; } catch (_) { /* noop */ }
-    let html = '';
-    if (THEME_BASE) {
-      try {
-        const url = new URL('wakit-components/onboarding.html', THEME_BASE).href;
-        const res = await fetch(url, { credentials: 'same-origin' });
-        if (res.ok) html = await res.text();
-      } catch (_) { /* ignore missing onboarding */ }
-    }
-    if (!html || !html.trim()) return false;
+    const html = await fetchComponentHtml('onboarding.html');
+    if (!html) return false;
     let el = qs('#onboarding-overlay');
     if (!el) {
       el = document.createElement('div');
@@ -1934,15 +1927,8 @@ const Core = (() => {
     if (!MOBILE_MODE || INTRO_SHOWN) return false;
     // allow disabling via meta
     try { if (document.querySelector('meta[name="hybrid:disable-intro"]')) return false; } catch (_) { /* noop */ }
-    let html = '';
-    if (THEME_BASE) {
-      try {
-        const url = new URL('wakit-components/intro.html', THEME_BASE).href;
-        const res = await fetch(url, { credentials: 'same-origin' });
-        if (res.ok) html = await res.text();
-      } catch (_) { /* ignore missing intro */ }
-    }
-    if (!html || !html.trim()) return false;
+    const html = await fetchComponentHtml('intro.html');
+    if (!html) return false;
     let el = qs('#intro-overlay');
     if (!el) {
       el = document.createElement('div');
@@ -1987,29 +1973,13 @@ const Core = (() => {
     const right = qs('#offcanvas-right');
     if (!THEME_BASE) return;
 
-    const tryLoad = async (url) => {
-      try {
-        const res = await fetch(url, { credentials: 'same-origin' });
-        if (!res.ok) return null;
-        return await res.text();
-      } catch (_) {
-        return null;
-      }
-    };
-
     if (left) {
-      const leftUrl = new URL('wakit-components/offcanvas-left.html', THEME_BASE).href;
-      const html = await tryLoad(leftUrl);
-      if (typeof html === 'string' && html.trim()) {
-        left.innerHTML = html;
-      }
+      const html = await fetchComponentHtml('offcanvas-left.html');
+      if (html) left.innerHTML = html;
     }
     if (right) {
-      const rightUrl = new URL('wakit-components/offcanvas-right.html', THEME_BASE).href;
-      const html = await tryLoad(rightUrl);
-      if (typeof html === 'string' && html.trim()) {
-        right.innerHTML = html;
-      }
+      const html = await fetchComponentHtml('offcanvas-right.html');
+      if (html) right.innerHTML = html;
     }
   }
 
@@ -2019,13 +1989,8 @@ const Core = (() => {
     const tabbar = qs('#tabbar');
     if (!tabbar || !THEME_BASE) return;
     try {
-      const url = new URL('wakit-components/tabbar.html', THEME_BASE).href;
-      // catch fetch errors (network errors, 404, etc.) and return null
-      const res = await fetch(url, { credentials: 'same-origin' }).catch(() => null);
-      
-      if (!res || !res.ok) return; // silently ignore if fetch failed or response not ok
-      const html = await res.text();
-      if (html && html.trim()) {
+      const html = await fetchComponentHtml('tabbar.html');
+      if (html) {
         // completely replace existing appbar
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = html;
