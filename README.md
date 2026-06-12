@@ -204,6 +204,7 @@ Detailed guides live in [`docs/`](./docs):
 5. `05-template-guide.md` — building a template
 6. `06-design-guide.md` — design guidelines
 7. `07-backend-integration.md` — backend integration & agent guide
+8. `08-web-and-mobile.md` — one codebase → web on PC + app on mobile (rules)
 
 ---
 

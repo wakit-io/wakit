@@ -18,6 +18,7 @@ configuration.
 | [05-template-guide.md](./05-template-guide.md) | Building a new template (folder structure, file roles, checklist) |
 | [06-design-guide.md](./06-design-guide.md) | Design guidelines |
 | [07-backend-integration.md](./07-backend-integration.md) | Backend integration & agent guide (integration seams, rules, delivery context) |
+| [08-web-and-mobile.md](./08-web-and-mobile.md) | One codebase → proper website on PC + native-style app on mobile (rules) |
 
 ## Quick reference
 

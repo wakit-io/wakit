@@ -202,6 +202,7 @@ window.sb = supabase.createClient(
 5. `05-template-guide.md` — 템플릿 만들기
 6. `06-design-guide.md` — 디자인 가이드라인
 7. `07-backend-integration.md` — 백엔드 연동 & 에이전트 가이드
+8. `08-web-and-mobile.md` — 한 코드 → PC는 웹 / 모바일은 앱 (규칙)
 
 ---
 
