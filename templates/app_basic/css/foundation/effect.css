@@ -1,6 +1,6 @@
 /**
  * Foundation - Effect
- * Figma에서 정의된 그림자 및 효과 토큰을 CSS 변수로 정의
+ * Shadow and effect tokens defined in Figma, exposed as CSS variables
  */
 
 :root {

@@ -1,13 +1,13 @@
 /**
  * Foundation - Badge
- * 뱃지 공통 스타일. color.css 변수 사용, 다크 모드는 [data-theme="dark"]에서 자동 대응.
+ * Shared badge styles. Uses color.css variables; dark mode handled automatically via [data-theme="dark"].
  *
- * 사용 예:
- *   <span class="badge badge--default">기본</span>
- *   <span class="badge badge--primary">테마</span>
- *   <span class="badge badge--outline">아웃라인</span>
- *   <span class="badge badge--success">성공</span>
- *   <span class="badge badge--s">작은 뱃지</span>
+ * Examples:
+ *   <span class="badge badge--default">Default</span>
+ *   <span class="badge badge--primary">Theme</span>
+ *   <span class="badge badge--outline">Outline</span>
+ *   <span class="badge badge--success">Success</span>
+ *   <span class="badge badge--s">Small badge</span>
  */
 
 /* ========== Base ========== */
@@ -28,7 +28,7 @@
   white-space: nowrap;
 }
 
-/* 기본(미지정) 시 default 스타일 */
+/* Default style when unspecified */
 .badge:not([class*="badge--"]) {
   background-color: var(--color-badge-bg);
   color: var(--color-badge-text);
@@ -42,13 +42,13 @@
   justify-content: center;
 }
 
-/* ========== Variant: Default (정보 톤) ========== */
+/* ========== Variant: Default (info tone) ========== */
 .badge--default {
   background-color: var(--color-badge-bg);
   color: var(--color-badge-text);
 }
 
-/* ========== Variant: Primary (테마 컬러) ========== */
+/* ========== Variant: Primary (theme color) ========== */
 .badge--primary {
   background-color: var(--color-badge-primary-bg);
   color: var(--color-badge-primary-text);
@@ -94,7 +94,7 @@
   height: 12px;
 }
 
-/* ========== Size: M (기본과 동일, 명시용) ========== */
+/* ========== Size: M (same as default, for explicit use) ========== */
 .badge--m {
   padding: var(--spacing-xs, 4px) var(--spacing-md, 12px);
   font-size: var(--caption-s-font-size, 12px);

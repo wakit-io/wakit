@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
-  <title>회원가입 · App Basic</title>
+  <title>Sign up · App Basic</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="msapplication-tap-highlight" content="no">
@@ -28,36 +28,36 @@
 <main class="signup-page" role="main">
   <div class="signup-card">
 
-    <h1 class="signup-title">회원가입</h1>
-    <p class="signup-subtitle">몇 가지만 입력하면 바로 시작할 수 있어요.</p>
+    <h1 class="signup-title">Sign up</h1>
+    <p class="signup-subtitle">Just a few details to get started.</p>
 
     <form class="signup-form" onsubmit="return false;">
       <label class="signup-field">
-        <span class="signup-field__label">이름</span>
-        <input type="text" class="signup-field__input" placeholder="홍길동" autocomplete="name" required>
+        <span class="signup-field__label">Name</span>
+        <input type="text" class="signup-field__input" placeholder="John Doe" autocomplete="name" required>
       </label>
       <label class="signup-field">
-        <span class="signup-field__label">이메일</span>
+        <span class="signup-field__label">Email</span>
         <input type="email" class="signup-field__input" placeholder="you@example.com" autocomplete="email" required>
       </label>
       <label class="signup-field">
-        <span class="signup-field__label">비밀번호</span>
-        <input type="password" class="signup-field__input" placeholder="8자 이상 입력" autocomplete="new-password" required>
+        <span class="signup-field__label">Password</span>
+        <input type="password" class="signup-field__input" placeholder="At least 8 characters" autocomplete="new-password" required>
       </label>
       <label class="signup-field">
-        <span class="signup-field__label">비밀번호 확인</span>
-        <input type="password" class="signup-field__input" placeholder="비밀번호를 다시 입력" autocomplete="new-password" required>
+        <span class="signup-field__label">Confirm password</span>
+        <input type="password" class="signup-field__input" placeholder="Re-enter your password" autocomplete="new-password" required>
       </label>
 
       <label class="signup-agree">
         <input type="checkbox" required>
-        <span><a href="#">이용약관</a> 및 <a href="#">개인정보처리방침</a>에 동의합니다.</span>
+        <span>I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</span>
       </label>
 
-      <button type="submit" class="signup-submit">회원가입</button>
+      <button type="submit" class="signup-submit">Sign up</button>
     </form>
 
-    <p class="signup-login">이미 계정이 있으신가요? <a href="views/login.html">로그인</a></p>
+    <p class="signup-login">Already have an account? <a href="views/login.html">Login</a></p>
 
   </div>
 </main>

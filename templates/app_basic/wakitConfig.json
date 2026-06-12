@@ -1,7 +1,7 @@
 {
   "splashDelay": 100,
   "splashForce": false,
-  "tabbar": { "autoHide": false, "hideThreshold": 14, "displayMode": "web" },
+  "tabbar": { "autoHide": false, "hideThreshold": 14, "displayMode": "always" },
   "pullToRefresh": {
     "threshold": 90,
     "startSlop": 18,
@@ -10,32 +10,27 @@
   },
   "appbarView": true,
   "theme": {
-    "primaryColor": "#006fff",
+    "primaryColor": "#3b82f6",
     "font": "Pretendard, system-ui",
-    "isMobile": true
+    "isMobile": false
   },
-  "defaultTab": "movie-home",
+  "defaultTab": "home",
   "tabs": [
-    { "id": "movie-home", "label": "홈", "icon": "fi fi-sr-home", "page": "movie-home" },
-    { "id": "movie-store", "label": "스토어", "icon": "fi fi-sr-shopping-bag", "page": "movie-store" },
-    { "id": "movie-booking", "label": "예매", "icon": "fi fi-sr-ticket", "page": "movie-booking" },
-    { "id": "movie-more", "label": "My", "icon": "fi fi-sr-user", "page": "movie-more" }
+    { "id": "home", "label": "Home", "icon": "fi fi-rr-home", "page": "home" },
+    { "id": "list", "label": "List", "icon": "fi fi-rr-apps", "page": "list" },
+    { "id": "profile", "label": "My", "icon": "fi fi-rr-user", "page": "profile" }
   ],
   "routes": [
     { "path": "home", "file": "../views/home.html", "title": "App Basic" },
-    { "path": "movie-home", "file": "../views/movie-home.html", "title": "영화 홈" },
-    { "path": "movie-store", "file": "../views/movie-store.html", "title": "스토어" },
-    { "path": "movie-booking", "file": "../views/movie-booking.html", "title": "예매" },
-    { "path": "movie-more", "file": "../views/movie-more.html", "title": "My" },
-    { "path": "movie-detail", "file": "../views/movie-detail.html", "title": "영화 상세" }
+    { "path": "list", "file": "../views/list.html", "title": "List" },
+    { "path": "detail", "file": "../views/detail.html", "title": "Detail" },
+    { "path": "profile", "file": "../views/profile.html", "title": "My" }
   ],
   "webNav": {
     "brand": { "label": "App Basic", "logo": "✦", "href": "index.html" },
     "items": [
-      { "label": "상세", "href": "views/detail.html" },
-      { "label": "영화 홈", "href": "views/movie-home.html" },
-      { "label": "스토어", "href": "views/movie-store.html" },
-      { "label": "예매", "href": "views/movie-booking.html" }
+      { "label": "Home", "href": "index.html" },
+      { "label": "List", "href": "views/list.html" }
     ]
   }
 }

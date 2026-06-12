@@ -1,12 +1,12 @@
 /**
  * Foundation - Icons
- * Figma에서 정의된 아이콘 토큰을 CSS 변수로 정의
- * 
- * Figma의 Icons 스타일과 동일한 값으로 업데이트 필요
+ * Icon tokens defined in Figma, exposed as CSS variables
+ *
+ * Needs to be kept in sync with the Icons styles in Figma
  */
 
 :root {
-  /* Icon Sizes (Layout에서도 정의됨, 여기서는 아이콘 전용) */
+  /* Icon Sizes (also defined in Layout; icon-specific here) */
   --icon-size-xs: 16px;
   --icon-size-sm: 20px;
   --icon-size-md: 24px;
@@ -24,7 +24,7 @@
   --icon-stroke-width-normal: 1.5px;
   --icon-stroke-width-bold: 2px;
   
-  /* Icon Spacing (아이콘과 텍스트 사이 간격) */
+  /* Icon Spacing (gap between icon and text) */
   --icon-gap-xs: 4px;
   --icon-gap-sm: 8px;
   --icon-gap-md: 12px;
@@ -32,9 +32,9 @@
 }
 
 /**
- * Icon Theme (테마 옅은 색 아이콘 영역)
- * 배경: --color-icon-theme-bg(primary-light), 아이콘: --color-icon-theme-icon(primary)
- * 사용: <div class="icon-theme"><i class="bi bi-graph-up-arrow"></i></div>
+ * Icon Theme (light-themed icon area)
+ * Background: --color-icon-theme-bg (primary-light), Icon: --color-icon-theme-icon (primary)
+ * Usage: <div class="icon-theme"><i class="bi bi-graph-up-arrow"></i></div>
  */
 .icon-theme {
   display: inline-flex;

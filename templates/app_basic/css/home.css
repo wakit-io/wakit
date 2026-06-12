@@ -1,0 +1,149 @@
+/**
+ * Home (landing) — responsive: mobile app feel ↔ desktop website.
+ * Uses foundation tokens; media queries (not mode classes) so it works in web + SPA.
+ */
+
+.home-page { padding-bottom: 40px; }
+
+/* Buttons (self-contained, token-based) */
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background .15s ease, border-color .15s ease;
+}
+.home-btn--primary { background: var(--color-primary); color: var(--color-text-on-primary); }
+.home-btn--primary:hover { background: var(--color-primary-hover); }
+.home-btn--ghost {
+  background: transparent;
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+.home-btn--ghost:hover { background: var(--color-bg-secondary); }
+
+/* Hero */
+.home-hero {
+  background:
+    radial-gradient(120% 100% at 50% 0%, var(--color-primary-light) 0%, transparent 60%),
+    var(--color-bg-primary);
+  text-align: center;
+}
+.home-hero__inner { padding: 36px 20px 32px; }
+.home-hero__badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.home-hero__title {
+  margin: 0 0 12px;
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+.home-hero__desc {
+  margin: 0 auto 24px;
+  max-width: 560px;
+  color: var(--color-text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.home-hero__actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+/* Sections */
+.home-section { padding-top: 36px; }
+.home-section__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.home-section__title {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+.home-section__head .home-section__title { margin: 0; }
+.home-section__more {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Features grid */
+.home-features { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.feature-card {
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-bg-primary);
+}
+.feature-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+.feature-card__title { margin: 0 0 6px; font-size: 16px; font-weight: 700; color: var(--color-text-primary); }
+.feature-card__desc { margin: 0; font-size: 14px; line-height: 1.55; color: var(--color-text-secondary); }
+
+/* Preview list */
+.home-preview { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.preview-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-bg-primary);
+  text-decoration: none;
+  transition: background .15s ease;
+}
+.preview-card:hover { background: var(--color-bg-secondary); }
+.preview-card__thumb {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-tertiary);
+  font-size: 22px;
+}
+.preview-card__title { margin: 0 0 2px; font-size: 15px; font-weight: 600; color: var(--color-text-primary); }
+.preview-card__meta { margin: 0; font-size: 13px; color: var(--color-text-tertiary); }
+
+/* ===== Desktop / tablet: a proper website layout ===== */
+@media (min-width: 768px) {
+  .home-hero__inner { padding: 80px 20px 64px; }
+  .home-hero__title { font-size: 48px; }
+  .home-hero__desc { font-size: 17px; }
+  .home-section { padding-top: 56px; }
+  .home-features { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .home-preview { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .preview-card { flex-direction: column; align-items: stretch; text-align: left; }
+  .preview-card__thumb { width: 100%; height: 140px; }
+}

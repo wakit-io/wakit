@@ -1,4 +1,4 @@
-/* App Basic 공통 */
+/* App Basic shared */
 
 /* Component styles — @import must precede the rules below (CSS ordering) */
 @import './components/header.css';

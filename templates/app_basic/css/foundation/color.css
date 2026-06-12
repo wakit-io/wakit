@@ -1,21 +1,21 @@
 /**
  * Foundation - Color
- * Figma에서 정의된 색상 토큰을 CSS 변수로 정의
- * Figma의 Color 스타일과 동일한 값으로 유지
+ * Color tokens defined in Figma, exposed as CSS variables
+ * Kept in sync with the Color styles in Figma
  *
- * 테마 컬러 시스템 (라이트/다크 공통)
- * - Primary: 메인 브랜드/CTA (버튼 Primary, 링크 등)
- * - primary / primary-hover / primary-pressed: 기본·호버·누름
- * - primary-light / primary-lighter: Secondary 버튼·뱃지 배경용 연한 톤
- * - text-on-primary: Primary 배경 위 텍스트
- * - [data-theme="dark"] 에서 동일 이름 변수로 다크 값 재정의
+ * Theme color system (shared across light/dark)
+ * - Primary: main brand/CTA (primary buttons, links, etc.)
+ * - primary / primary-hover / primary-pressed: default, hover, pressed
+ * - primary-light / primary-lighter: light tones for secondary button/badge backgrounds
+ * - text-on-primary: text on a primary background
+ * - [data-theme="dark"] redefines the same variable names with dark values
  */
 
 :root {
 
   --logo-color: #2563eb;
 
-  /* Primary Colors (테마 컬러 – 버튼/CTA/브랜드에 사용) */
+  /* Primary Colors (theme color – used for buttons/CTA/brand) */
   --color-primary: #3b82f6;
   --color-primary-hover: #2563eb;
   --color-primary-pressed: #1d4ed8;
@@ -69,14 +69,14 @@
   --color-info: #006fff;
   --color-info-hover: #0052cc;
   
-  /* Figma Export Border (개발용) */
+  /* Figma Export Border (for development) */
   --color-figma-border: #9747ff;
   
   /* Additional Colors for Dark Mode Support */
   --color-card-hover-shadow: rgba(0, 0, 0, 0.08);
   --color-card-hover-border: #d0d9e0;
   
-  /* Badge (뱃지 공통 – 다크 모드는 [data-theme="dark"]에서 재정의) */
+  /* Badge (shared badge tokens – dark mode redefined in [data-theme="dark"]) */
   --color-badge-bg: #edf9ff;
   --color-badge-text: #006fff;
   --color-badge-primary-bg: var(--color-primary-light);
@@ -90,16 +90,16 @@
   --color-badge-warning-bg: #fff4e6;
   --color-badge-warning-text: var(--color-warning);
   
-  /* Button (테마 파생 – Primary/Secondary는 위 Primary 컬러 사용) */
+  /* Button (theme-derived – Primary/Secondary use the Primary colors above) */
   --color-button-disabled-bg: #e8eef2;
   --color-button-disabled-text: var(--color-text-tertiary);
 
-  /* Icon Theme (아이콘 영역 – 배경 옅은 테마, 아이콘 테마 컬러) */
+  /* Icon Theme (icon area – light background theme, themed icon color) */
   --color-icon-theme-bg: var(--color-primary-light);
   --color-icon-theme-icon: var(--color-primary);
 }
 
-/* html 배경 (라이트/다크 모두 --color-bg-primary 따라감) */
+/* html background (follows --color-bg-primary in both light/dark) */
 html {
   background-color: var(--color-bg-primary);
 }
@@ -109,7 +109,7 @@ html {
 
   --logo-color: #60a5fa;
 
-  /* Primary Colors (다크 테마 – 버튼/CTA/브랜드에 사용) */
+  /* Primary Colors (dark theme – used for buttons/CTA/brand) */
   --color-primary: #60a5fa;
   --color-primary-hover: #3b82f6;
   --color-primary-pressed: #2563eb;
@@ -170,7 +170,7 @@ html {
   --color-card-hover-shadow: rgba(255, 255, 255, 0.1);
   --color-card-hover-border: #3a3a3a;
   
-  /* Badge (다크 테마) */
+  /* Badge (dark theme) */
   --color-badge-bg: #1a3a5a;
   --color-badge-text: #4da6ff;
   --color-badge-primary-bg: var(--color-primary-light);
@@ -184,7 +184,7 @@ html {
   --color-badge-warning-bg: rgba(255, 165, 0, 0.2);
   --color-badge-warning-text: var(--color-warning);
   
-  /* Button (다크 테마 – Primary/Secondary는 위 Primary 컬러 사용) */
+  /* Button (dark theme – Primary/Secondary use the Primary colors above) */
   --color-button-disabled-bg: var(--color-bg-tertiary);
   --color-button-disabled-text: var(--color-text-tertiary);
 }

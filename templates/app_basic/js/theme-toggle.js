@@ -43,7 +43,7 @@
       const icon = button.querySelector('i');
       if (icon) {
         icon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-        button.setAttribute('aria-label', theme === 'dark' ? '라이트 모드' : '다크 모드');
+        button.setAttribute('aria-label', theme === 'dark' ? 'Light mode' : 'Dark mode');
       }
     });
   }

@@ -89,6 +89,7 @@ The engine already hides/shows the tab bar and app bar per mode — you only add
 
 ## 5. Common mistakes
 
+- **`app.html` not loading `css/foundation/index.css`** → every `--color-*` is undefined in SPA → **colors vanish on mobile** (web still works because `index.html` loads the tokens). The shell must load the tokens.
 - Leaving `isMobile: true` → PC looks like a stretched app, not a website.
 - A mobile-only layout stretched full-width on desktop (no media queries) → looks broken on PC.
 - Hardcoding colors instead of tokens → dark mode breaks.

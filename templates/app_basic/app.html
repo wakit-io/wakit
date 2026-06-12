@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
@@ -18,8 +18,10 @@
   <link rel="stylesheet" href="/wakit/css/styleGuide.css">
   <link rel="stylesheet" href="/wakit/css/component.css">
   <link rel="stylesheet" href="/wakit/css/wakit-popup.css">
+  <!-- Design tokens (color/spacing/typography). SPA views mark token links as data-spa-ignore, so the shell must load them for colors to apply -->
+  <link rel="stylesheet" href="./css/foundation/index.css">
   <link rel="stylesheet" href="./css/style.css">
-  <!-- 다크/라이트 초기값 (FOUC 방지, 웹 템플릿과 동일 키 blog-theme) -->
+  <!-- Dark/light initial value (prevents FOUC, same key as web template: blog-theme) -->
   <script src="./js/theme-init.js"></script>
   <!-- Auto popup for SPA: meta must be in the shell head (not in injected pages) -->
   <!-- <meta name="popup:auto-url" content="wakit-popups/popuptest.html"> -->

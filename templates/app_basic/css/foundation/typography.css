@@ -1,7 +1,7 @@
 /**
  * Foundation - Typography
- * Figma에서 정의된 타이포그래피 토큰을 CSS 변수로 정의
- * 기존 styleguide.css의 타이포그래피 변수를 포함
+ * Typography tokens defined in Figma, exposed as CSS variables
+ * Includes the typography variables from the existing styleguide.css
  */
 
 :root {

@@ -109,6 +109,9 @@ It loads the WAKIT core (`wakit.js`) as an ES module and calls `Core.initApp()`.
 </html>
 ```
 
+> ### 🔒 MUST — `app.html` loads the design tokens
+> `app.html` **must** load `./css/foundation/index.css` (the `--color-*` / spacing / type tokens). In SPA mode the views' own token `<link>` carries `data-spa-ignore` and is stripped, so **only the shell provides the tokens**. Omit this line and every `--color-*` becomes undefined → **all colors disappear on mobile** (the page still works on the web because `index.html` loads the tokens itself). Do not hardcode colors in view CSS — use the tokens; no per-view `@import` of foundation is needed.
+
 ### 2.2 index.html — Web Entry Point (SSR / Static Server)
 
 Used when accessed from a regular web browser. It loads `wakit-bridge.js`, which handles `data-include` partial processing, base injection, and so on.

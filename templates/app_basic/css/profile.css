@@ -170,3 +170,32 @@
   color: var(--color-text-tertiary);
 }
 .profile-account__withdraw:hover { color: var(--color-error); }
+
+/* Theme settings — segmented control (system / light / dark) */
+.theme-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.theme-options__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .15s ease, color .15s ease, background .15s ease;
+}
+.theme-options__item i { font-size: 20px; }
+.theme-options__item:hover { background: var(--color-bg-secondary); }
+.theme-options__item.is-active {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+}

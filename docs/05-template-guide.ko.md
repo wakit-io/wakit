@@ -109,6 +109,9 @@ WAKIT 코어(`wakit.js`)를 ES 모듈로 로드하고 `Core.initApp()`을 호출
 </html>
 ```
 
+> ### 🔒 필수 — `app.html`이 디자인 토큰을 로드
+> `app.html`은 **반드시** `./css/foundation/index.css`(색·간격·타이포 `--color-*` 토큰)를 로드해야 합니다. SPA에서는 뷰의 토큰 `<link>`가 `data-spa-ignore`라 제거되므로 **셸(app.html)만 토큰을 공급**합니다. 이 줄을 빼면 `--color-*`가 전부 미정의 → **모바일에서 색이 전부 사라집니다**(웹은 `index.html`이 토큰을 직접 로드해서 정상). 뷰 CSS에서 색은 하드코딩하지 말고 토큰을 쓰며, 뷰별 foundation `@import`는 불필요합니다.
+
 ### 2.2 index.html — 웹 진입점 (SSR·정적 서버)
 
 일반 웹 브라우저 접근 시 사용됩니다. `wakit-bridge.js`를 로드해 `data-include` 파셜 처리·base 주입 등을 담당합니다.

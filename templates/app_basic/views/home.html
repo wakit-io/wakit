@@ -1,19 +1,72 @@
-<main class="app-basic-home" role="main">
-  <section class="app-basic-home__hero">
-    <div class="container">
-      <h1 class="app-basic-home__title">App Basic</h1>
-      <p class="app-basic-home__desc">모바일 앱 첫 화면입니다. 여기서 화면을 확장해 나가면 됩니다.</p>
-    <a href="views/detail.html" class="btn btn--primary btn--l">Detail</a>
-    <a href="views/movie-home.html" class="btn btn--primary btn--l">Movie Home</a>
+<!-- Home (landing) | embedded in index.html + SPA home route -->
+<link rel="stylesheet" href="css/home.css">
+
+<main class="home-page" role="main">
+
+  <!-- Hero -->
+  <section class="home-hero">
+    <div class="container home-hero__inner">
+      <span class="home-hero__badge">WAKIT Starter</span>
+      <h1 class="home-hero__title">Build once,<br>for Web · PWA · App</h1>
+      <p class="home-hero__desc">Like a website on the web, like a native app on mobile.<br>A starter template that delivers both experiences from the same code.</p>
+      <div class="home-hero__actions">
+        <a href="views/list.html" class="home-btn home-btn--primary">Explore</a>
+        <a href="views/signup.html" class="home-btn home-btn--ghost">Get started</a>
+      </div>
     </div>
   </section>
-</main>
 
-<style>
-  .app-basic-home__btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
-  }
-</style>
+  <!-- Features -->
+  <section class="home-section container">
+    <h2 class="home-section__title">Key features</h2>
+    <div class="home-features">
+      <article class="feature-card">
+        <span class="feature-card__icon"><i class="bi bi-phone"></i></span>
+        <h3 class="feature-card__title">One codebase</h3>
+        <p class="feature-card__desc">Deliver Web · PWA · mobile app from a single set of HTML/CSS/JS.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card__icon"><i class="bi bi-magic"></i></span>
+        <h3 class="feature-card__title">Native feel</h3>
+        <p class="feature-card__desc">On mobile, screen transitions, swipe-back, and pull-to-refresh behave like a native app.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card__icon"><i class="bi bi-moon-stars"></i></span>
+        <h3 class="feature-card__title">Built-in themes</h3>
+        <p class="feature-card__desc">CSS token-based light/dark modes come out of the box.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Recent preview -->
+  <section class="home-section container">
+    <div class="home-section__head">
+      <h2 class="home-section__title">Recent</h2>
+      <a href="views/list.html" class="home-section__more">More <i class="bi bi-chevron-right"></i></a>
+    </div>
+    <div class="home-preview">
+      <a href="views/detail.html" class="preview-card">
+        <span class="preview-card__thumb"><i class="bi bi-image"></i></span>
+        <div class="preview-card__body">
+          <h3 class="preview-card__title">Sample item 1</h3>
+          <p class="preview-card__meta">Category · 2 min ago</p>
+        </div>
+      </a>
+      <a href="views/detail.html" class="preview-card">
+        <span class="preview-card__thumb"><i class="bi bi-image"></i></span>
+        <div class="preview-card__body">
+          <h3 class="preview-card__title">Sample item 2</h3>
+          <p class="preview-card__meta">Category · 1 hour ago</p>
+        </div>
+      </a>
+      <a href="views/detail.html" class="preview-card">
+        <span class="preview-card__thumb"><i class="bi bi-image"></i></span>
+        <div class="preview-card__body">
+          <h3 class="preview-card__title">Sample item 3</h3>
+          <p class="preview-card__meta">Category · Yesterday</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</main>

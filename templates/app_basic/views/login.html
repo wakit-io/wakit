@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
-  <title>로그인 · App Basic</title>
+  <title>Login · App Basic</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="msapplication-tap-highlight" content="no">
@@ -28,44 +28,44 @@
 <main class="login-page" role="main">
   <div class="login-card">
 
-    <h1 class="login-title">로그인</h1>
-    <p class="login-subtitle">계정에 로그인하고 예매를 이어가세요.</p>
+    <h1 class="login-title">Login</h1>
+    <p class="login-subtitle">Sign in to continue.</p>
 
     <form class="login-form" onsubmit="return false;">
       <label class="login-field">
-        <span class="login-field__label">이메일</span>
+        <span class="login-field__label">Email</span>
         <input type="email" class="login-field__input" placeholder="you@example.com" autocomplete="email" required>
       </label>
       <label class="login-field">
-        <span class="login-field__label">비밀번호</span>
+        <span class="login-field__label">Password</span>
         <input type="password" class="login-field__input" placeholder="••••••••" autocomplete="current-password" required>
       </label>
 
       <div class="login-options">
         <label class="login-remember">
-          <input type="checkbox"> <span>로그인 유지</span>
+          <input type="checkbox"> <span>Keep me signed in</span>
         </label>
-        <a href="#" class="login-forgot">비밀번호 찾기</a>
+        <a href="#" class="login-forgot">Forgot password</a>
       </div>
 
-      <button type="submit" class="login-submit">로그인</button>
+      <button type="submit" class="login-submit">Login</button>
     </form>
 
-    <div class="login-divider"><span>또는</span></div>
+    <div class="login-divider"><span>or</span></div>
 
     <div class="login-social">
       <a href="#" class="login-social__btn login-social__btn--naver">
-        <span class="login-social__mark">N</span> 네이버로 계속하기
+        <span class="login-social__mark">N</span> Continue with Naver
       </a>
       <a href="#" class="login-social__btn login-social__btn--kakao">
-        <i class="bi bi-chat-fill"></i> 카카오로 계속하기
+        <i class="bi bi-chat-fill"></i> Continue with Kakao
       </a>
       <a href="#" class="login-social__btn login-social__btn--google">
-        <i class="bi bi-google"></i> Google로 계속하기
+        <i class="bi bi-google"></i> Continue with Google
       </a>
     </div>
 
-    <p class="login-signup">계정이 없으신가요? <a href="views/signup.html">회원가입</a></p>
+    <p class="login-signup">Don't have an account? <a href="views/signup.html">Sign up</a></p>
 
   </div>
 </main>

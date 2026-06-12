@@ -1,6 +1,6 @@
 /**
- * 초기 테마 설정 스크립트 (App Basic)
- * 모든 페이지의 <head>에 포함하여 FOUC 방지
+ * Initial theme setup script (App Basic)
+ * Include in the <head> of every page to prevent FOUC
  */
 (function() {
   'use strict';
@@ -39,6 +39,6 @@
       document.documentElement.removeAttribute(THEME_ATTRIBUTE);
     }
   } catch(e) {
-    console.warn('테마 초기화 실패:', e);
+    console.warn('Theme initialization failed:', e);
   }
 })();

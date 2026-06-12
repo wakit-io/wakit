@@ -1,17 +1,17 @@
 /**
  * Scroll to Top Button
- * 페이지 상단으로 스크롤하는 버튼 기능
+ * Button that scrolls to the top of the page
  */
 
 (function() {
   'use strict';
 
-  const SCROLL_THRESHOLD = 300; // 버튼이 나타날 스크롤 위치 (px)
+  const SCROLL_THRESHOLD = 300; // Scroll position at which the button appears (px)
   let scrollButton = null;
   let isInitialized = false;
 
   /**
-   * 스크롤 버튼 요소 찾기
+   * Find the scroll button element
    */
   function findScrollButton() {
     scrollButton = document.getElementById('scroll-to-top');
@@ -19,7 +19,7 @@
   }
 
   /**
-   * 스크롤 버튼이 로드될 때까지 대기
+   * Wait until the scroll button is loaded
    */
   function waitForButton(callback, maxAttempts = 50) {
     let attempts = 0;
@@ -37,7 +37,7 @@
   }
 
   /**
-   * 버튼 표시/숨김 토글
+   * Toggle button visibility
    */
   function toggleButtonVisibility() {
     if (!scrollButton) return;
@@ -52,7 +52,7 @@
   }
 
   /**
-   * 페이지 상단으로 스크롤
+   * Scroll to the top of the page
    */
   function scrollToTop() {
     window.scrollTo({
@@ -62,19 +62,19 @@
   }
 
   /**
-   * 이벤트 리스너 등록
+   * Attach event listeners
    */
   function attachEventListeners() {
     if (isInitialized || !scrollButton) return;
     isInitialized = true;
 
-    // 버튼 클릭 이벤트
+    // Button click event
     scrollButton.addEventListener('click', function(e) {
       e.preventDefault();
       scrollToTop();
     });
 
-    // 스크롤 이벤트 (throttle 적용)
+    // Scroll event (throttled)
     let ticking = false;
     window.addEventListener('scroll', function() {
       if (!ticking) {
@@ -86,12 +86,12 @@
       }
     });
 
-    // 초기 상태 확인
+    // Check initial state
     toggleButtonVisibility();
   }
 
   /**
-   * 초기화
+   * Initialize
    */
   function init() {
     if (!scrollButton) return;
@@ -99,7 +99,7 @@
   }
 
   /**
-   * 메인 초기화 함수
+   * Main initialization function
    */
   function mainInit() {
     waitForButton(function() {
@@ -107,18 +107,18 @@
     });
   }
 
-  // MutationObserver로 버튼 추가 감지
+  // Detect button insertion with MutationObserver
   const observer = new MutationObserver(function(mutations) {
     if (!isInitialized && findScrollButton()) {
       init();
     }
   });
 
-  // DOM 로드 완료 시 초기화
+  // Initialize when the DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       mainInit();
-      // body 감시 시작
+      // Start observing body
       if (document.body) {
         observer.observe(document.body, {
           childList: true,
@@ -136,7 +136,7 @@
     }
   }
 
-  // 추가로 window load 이벤트도 대기 (동적 로드 대비)
+  // Also wait for the window load event (for dynamic loading)
   window.addEventListener('load', function() {
     if (!isInitialized) {
       mainInit();

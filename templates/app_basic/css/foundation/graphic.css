@@ -1,8 +1,8 @@
 /**
  * Foundation - Graphic
- * Figma에서 정의된 그래픽 요소 토큰을 CSS 변수로 정의
- * 
- * Figma의 Graphic 스타일과 동일한 값으로 업데이트 필요
+ * Graphic element tokens defined in Figma, exposed as CSS variables
+ *
+ * Needs to be kept in sync with the Graphic styles in Figma
  */
 
 :root {

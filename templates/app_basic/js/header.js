@@ -1,6 +1,6 @@
 /**
  * Blog Header Navigation
- * 모바일 햄버거 메뉴 토글 기능
+ * Mobile hamburger menu toggle
  */
 
 (function() {
@@ -10,7 +10,7 @@
   let isInitialized = false;
 
   /**
-   * 헤더 요소 초기화
+   * Initialize header elements
    */
   function initElements() {
     header = document.querySelector('.blog-header');
@@ -25,7 +25,7 @@
   }
 
   /**
-   * 헤더가 로드될 때까지 대기
+   * Wait until the header is loaded
    */
   function waitForHeader(callback, maxAttempts = 50) {
     let attempts = 0;
@@ -45,7 +45,7 @@
   }
 
   /**
-   * 메뉴 열기
+   * Open menu
    */
   function openMenu() {
     if (!toggle || !hamburger || !panel) return;
@@ -61,7 +61,7 @@
   }
 
   /**
-   * 메뉴 닫기
+   * Close menu
    */
   function closeMenu() {
     if (!toggle || !hamburger || !panel) return;
@@ -79,7 +79,7 @@
   }
 
   /**
-   * 메뉴 토글
+   * Toggle menu
    */
   function toggleMenu() {
     if (!toggle) return;
@@ -92,20 +92,20 @@
   }
 
   /**
-   * 이벤트 리스너 등록
+   * Attach event listeners
    */
   function attachEventListeners() {
     if (isInitialized || !toggle || !hamburger || !panel) return;
     isInitialized = true;
 
-    // 햄버거 버튼 클릭 이벤트
+    // Hamburger button click event
     hamburger.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
       toggleMenu();
     });
 
-    // 체크박스 변경 이벤트
+    // Checkbox change event
     toggle.addEventListener('change', function() {
       if (this.checked) {
         openMenu();
@@ -114,14 +114,14 @@
       }
     });
 
-    // 메뉴 외부 클릭 시 닫기
+    // Close menu when clicking outside
     document.addEventListener('click', function(e) {
       if (toggle && toggle.checked && header && !header.contains(e.target)) {
         closeMenu();
       }
     });
 
-    // ESC 키로 메뉴 닫기
+    // Close menu with ESC key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && toggle && toggle.checked) {
         closeMenu();
@@ -129,7 +129,7 @@
       }
     });
 
-    // 메뉴 아이템 클릭 시 메뉴 닫기 (모바일)
+    // Close menu when a menu item is clicked (mobile)
     menuItems.forEach(item => {
       item.addEventListener('click', function(e) {
         if (window.innerWidth <= 992) {
@@ -140,7 +140,7 @@
       });
     });
 
-    // 윈도우 리사이즈 시 처리
+    // Handle window resize
     let resizeTimer;
     window.addEventListener('resize', function() {
       clearTimeout(resizeTimer);
@@ -156,7 +156,7 @@
   }
 
   /**
-   * 초기화
+   * Initialize
    */
   function init() {
     if (!panel) return;
@@ -169,7 +169,7 @@
   }
 
   /**
-   * 메인 초기화 함수
+   * Main initialization function
    */
   function mainInit() {
     waitForHeader(function() {
@@ -177,18 +177,18 @@
     });
   }
 
-  // MutationObserver로 헤더 추가 감지
+  // Detect header insertion with MutationObserver
   const observer = new MutationObserver(function(mutations) {
     if (!isInitialized && initElements()) {
       init();
     }
   });
 
-  // DOM 로드 완료 시 초기화
+  // Initialize when the DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       mainInit();
-      // body 감시 시작
+      // Start observing body
       observer.observe(document.body, {
         childList: true,
         subtree: true
@@ -202,7 +202,7 @@
     });
   }
 
-  // 추가로 window load 이벤트도 대기 (동적 로드 대비)
+  // Also wait for the window load event (for dynamic loading)
   window.addEventListener('load', function() {
     if (!isInitialized) {
       mainInit();
