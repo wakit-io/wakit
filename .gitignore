@@ -9,10 +9,19 @@ templates/*/dist/
 # Astro build cache
 templates/*/web/.astro/
 
+# === Templates: version ONLY the canonical app_basic / app_astro ===
+# Any other template under templates/ (test/scratch templates) is ignored,
+# so it won't be committed or pushed to GitHub.
+templates/*
+!templates/app_basic/
+!templates/app_astro/
+# ...but still ignore build artifacts inside the canonical templates
+templates/*/web/node_modules/
+templates/*/dist/
+templates/*/web/.astro/
+
 # OS/editor noise (optional but helpful)
 .DS_Store
 Thumbs.db
 .vscode/
 *.log
-
-
