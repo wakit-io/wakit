@@ -681,11 +681,42 @@ dist/
 ### 9.4 배포
 `dist/` 폴더를 그대로 Netlify, Vercel, 웹호스팅에 업로드
 
-### 9.5 새 템플릿 생성 시
+### 9.5 새 프로젝트 시작 (`create:template`)
+
+세 가지 베이스 중 하나에서 새 템플릿을 스캐폴드 — **복사 + 리브랜딩 + (`web/`) `npm install` + package.json 스크립트 등록**을 한 줄로.
+
 ```bash
+# 대화형 (베이스도 물어봄)
 npm run create:template
+
+# 비대화: 이름 + 베이스
+npm run create:template -- app_shop --base app_sveltekit --color "#3b82f6"
+npm run create:template -- app_blog --base app_astro --no-db
+npm run create:template -- app_lite --base app_basic
 ```
-→ `web/` 폴더(Astro)도 자동 생성 + `npm install` 실행
+
+| `--base` | web 레이어 | 용도 |
+|----------|-----------|------|
+| `app_basic` *(기본)* | 없음 (순수 HTML/CSS/JS) | 최대 이식성 |
+| `app_astro` | Astro | 콘텐츠 / SEO 사이트 |
+| `app_sveltekit` | SvelteKit | 앱형 라우팅 + 단일 소스 콘텐츠 |
+
+플래그: `--base <tpl>`, `--color <hex>`, `--no-db`(Supabase 스키마/버킷 건너뜀). 생략하면 프롬프트로 물어보고, 이름 **과** `--base`를 함께 주면 완전 비대화로 실행됨.
+
+자동으로 처리하는 것:
+- 베이스 복사(빌드 산출물 제외, 바이너리는 그대로 복사) + **리브랜딩**: 슬러그(`app_sveltekit`→`app_shop`), BEM 클래스 접두사, 디스플레이명(`"App SvelteKit"`→`"App Shop"`).
+- `theme.primaryColor` 설정 + `dev:` / `build:` / `package:<name>` 스크립트 등록.
+- 베이스에 `web/` 레이어가 있으면 그 안에서 `npm install` 실행.
+- `--no-db`가 아니면 Supabase 스키마 + 스토리지 버킷 + 마이그레이션 생성.
+
+이후 개발 시작:
+```bash
+# web 레이어 베이스 — web dev 서버가 /app·/wakit 까지 서빙:
+cd templates/<name>/web && npm run dev
+# 순수 베이스:
+npm run dev:<name>      # http://localhost:5173/app/app.html
+```
+web 레이어 dev 포트·단일 소스 패턴은 [09-web-layer.ko.md](./09-web-layer.ko.md) 참고.
 
 ---
 

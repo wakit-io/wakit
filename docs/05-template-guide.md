@@ -681,11 +681,42 @@ dist/
 ### 9.4 Deployment
 Upload the `dist/` folder as-is to Netlify, Vercel, or web hosting.
 
-### 9.5 When Creating a New Template
+### 9.5 Starting a New Project (`create:template`)
+
+Scaffold a new template from any of the three bases — **copy + rebrand + (`web/`) `npm install` + package.json scripts**, in one command.
+
 ```bash
+# Interactive (also asks which base)
 npm run create:template
+
+# Non-interactive: name + base
+npm run create:template -- app_shop --base app_sveltekit --color "#3b82f6"
+npm run create:template -- app_blog --base app_astro --no-db
+npm run create:template -- app_lite --base app_basic
 ```
-→ also auto-generates the `web/` folder (Astro) and runs `npm install`
+
+| `--base` | Web layer | Use |
+|----------|-----------|-----|
+| `app_basic` *(default)* | none (pure HTML/CSS/JS) | max portability |
+| `app_astro` | Astro | content / SEO sites |
+| `app_sveltekit` | SvelteKit | app-like routing + single-source content |
+
+Flags: `--base <tpl>`, `--color <hex>`, `--no-db` (skip the Supabase schema/bucket). Omit any and you'll be prompted; pass name **and** `--base` to run fully non-interactively.
+
+What it does automatically:
+- Copies the base (skips build artifacts; binaries copied verbatim) and **rebrands** the slug (`app_sveltekit`→`app_shop`), BEM class prefixes, and the display name (`"App SvelteKit"`→`"App Shop"`).
+- Sets `theme.primaryColor` and registers `dev:` / `build:` / `package:<name>` scripts.
+- If the base has a `web/` layer, runs `npm install` inside it.
+- Unless `--no-db`, creates a Supabase schema + storage bucket + migration.
+
+Then start developing:
+```bash
+# web-layer base — the web dev server also serves /app and /wakit:
+cd templates/<name>/web && npm run dev
+# pure base:
+npm run dev:<name>      # http://localhost:5173/app/app.html
+```
+See [09-web-layer.md](./09-web-layer.md) for the web-layer dev ports and single-source pattern.
 
 ---
 
