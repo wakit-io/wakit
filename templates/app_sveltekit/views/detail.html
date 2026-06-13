@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Detail · App Basic</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/foundation/index.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  <script src="js/theme-init.js" data-spa-ignore></script>
+</head>
+<body>
+
+<div data-include="wakit-components/header.html" data-spa-ignore></div>
+
+<!-- Screen-specific CSS: inside body, no data-spa-ignore -->
+<link rel="stylesheet" href="css/detail.css">
+
+<main class="detail-page container" role="main">
+
+  <article class="detail">
+    <!-- Cover -->
+    <div class="detail__cover"><i class="bi bi-image"></i></div>
+
+    <div class="detail__main">
+      <div class="detail__content">
+        <div class="detail__tags">
+          <span class="detail__tag">Category</span>
+          <span class="detail__tag">Tag</span>
+        </div>
+        <h1 class="detail__title">Sample item title</h1>
+        <div class="detail__meta">
+          <span><i class="bi bi-person-circle"></i> Author</span>
+          <span><i class="bi bi-clock"></i> 2 min ago</span>
+          <span><i class="bi bi-eye"></i> 1,204</span>
+        </div>
+
+        <p class="detail__lead">A lead paragraph that sums up the item in a single sentence. This is the detail screen you reached from the list.</p>
+        <p class="detail__body">The main content goes here. Compose text, images, tables, and other content freely. On mobile it's a single column; on desktop the body and side info sit side by side.</p>
+        <p class="detail__body">This is the second paragraph. Add as many sections as you need to expand the detail page.</p>
+      </div>
+
+      <!-- Side info (desktop) -->
+      <aside class="detail__aside">
+        <div class="detail__card">
+          <h2 class="detail__card-title">Info</h2>
+          <dl class="detail__info">
+            <div><dt>Date</dt><dd>2026.06.12</dd></div>
+            <div><dt>Category</dt><dd>Sample</dd></div>
+            <div><dt>Status</dt><dd>Public</dd></div>
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+</main>
+
+<!-- Sticky action bar -->
+<div class="detail-actionbar">
+  <div class="container detail-actionbar__inner">
+    <button type="button" class="detail-actionbar__icon" aria-label="Like"><i class="bi bi-heart"></i></button>
+    <button type="button" class="detail-actionbar__icon" aria-label="Share"><i class="bi bi-share"></i></button>
+    <a href="#" class="detail-actionbar__cta">Apply</a>
+  </div>
+</div>
+
+<div data-include="wakit-components/footer.html" data-spa-ignore></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/header.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script data-spa-ignore>if (typeof Popup !== 'undefined') Popup.init();</script>
+</html>

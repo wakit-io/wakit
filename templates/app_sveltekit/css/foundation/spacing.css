@@ -1,0 +1,34 @@
+/**
+ * Foundation - Spacing
+ * Spacing tokens defined in Figma, exposed as CSS variables
+ * 4px-based grid system
+ */
+
+:root {
+  /* Base Spacing Unit */
+  --spacing-base: 4px;
+  
+  /* Spacing Scale */
+  --spacing-xs: 4px;    /* 1x */
+  --spacing-sm: 8px;    /* 2x */
+  --spacing-md: 12px;   /* 3x */
+  --spacing-lg: 16px;   /* 4x */
+  --spacing-xl: 20px;   /* 5x */
+  --spacing-2xl: 24px;  /* 6x */
+  --spacing-3xl: 48px;  /* 12x */
+  
+  /* Component Specific Spacing */
+  --spacing-button-padding-sm: 8px 12px;
+  --spacing-button-padding-md: 12px;
+  --spacing-button-padding-lg: 16px 24px;
+  --spacing-button-gap: 4px;
+  
+  /* Container Spacing */
+  --spacing-container-sm: 16px;
+  --spacing-container-md: 24px;
+  --spacing-container-lg: 48px;
+  
+  /* Section Spacing */
+  --spacing-section-gap: 20px;
+  --spacing-section-padding: 24px;
+}

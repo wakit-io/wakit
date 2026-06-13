@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Sign up · App Basic</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/foundation/index.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  <script src="js/theme-init.js" data-spa-ignore></script>
+</head>
+<body>
+
+<!-- Screen-specific CSS: inside body, no data-spa-ignore (applies in web + SPA) -->
+<link rel="stylesheet" href="css/signup.css">
+
+<div data-include="wakit-components/header.html" data-spa-ignore></div>
+
+<main class="signup-page" role="main">
+  <div class="signup-card">
+
+    <h1 class="signup-title">Sign up</h1>
+    <p class="signup-subtitle">Just a few details to get started.</p>
+
+    <form class="signup-form" onsubmit="return false;">
+      <label class="signup-field">
+        <span class="signup-field__label">Name</span>
+        <input type="text" class="signup-field__input" placeholder="John Doe" autocomplete="name" required>
+      </label>
+      <label class="signup-field">
+        <span class="signup-field__label">Email</span>
+        <input type="email" class="signup-field__input" placeholder="you@example.com" autocomplete="email" required>
+      </label>
+      <label class="signup-field">
+        <span class="signup-field__label">Password</span>
+        <input type="password" class="signup-field__input" placeholder="At least 8 characters" autocomplete="new-password" required>
+      </label>
+      <label class="signup-field">
+        <span class="signup-field__label">Confirm password</span>
+        <input type="password" class="signup-field__input" placeholder="Re-enter your password" autocomplete="new-password" required>
+      </label>
+
+      <label class="signup-agree">
+        <input type="checkbox" required>
+        <span>I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</span>
+      </label>
+
+      <button type="submit" class="signup-submit">Sign up</button>
+    </form>
+
+    <p class="signup-login">Already have an account? <a href="views/login.html">Login</a></p>
+
+  </div>
+</main>
+
+<div data-include="wakit-components/footer.html" data-spa-ignore></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/header.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script data-spa-ignore>if (typeof Popup !== 'undefined') Popup.init();</script>
+</html>

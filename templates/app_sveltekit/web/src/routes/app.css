@@ -1,0 +1,84 @@
+/* Web chrome (nav/footer/body) — web-only (data-spa-ignore, not injected into the app).
+   Dark/light keyed on [data-theme="dark"], same attribute the shared theme scripts set. */
+:root {
+  --primary: #3b82f6;
+  --text: #0f172a;
+  --text-secondary: #64748b;
+  --bg: #ffffff;
+  --border: #e2e8f0;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+}
+[data-theme="dark"] {
+  --primary: #60a5fa;
+  --text: #e5e7eb;
+  --text-secondary: #94a3b8;
+  --bg: #0b1220;
+  --border: #233048;
+  --nav-bg: rgba(11, 18, 32, 0.8);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Pretendard, system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--nav-bg);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.nav__logo { font-weight: 800; font-size: 1.05rem; }
+.nav__links { display: flex; gap: 18px; margin-left: auto; }
+.nav__links a { color: var(--text-secondary); font-weight: 600; }
+.nav__links a:hover { color: var(--text); }
+.nav__theme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+}
+.nav__theme:hover { border-color: var(--primary); color: var(--primary); }
+.nav__cta {
+  padding: 8px 18px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.foot {
+  border-top: 1px solid var(--border);
+  margin-top: 80px;
+}
+.foot__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px 24px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}

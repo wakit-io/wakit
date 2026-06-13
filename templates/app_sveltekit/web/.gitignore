@@ -1,0 +1,21 @@
+# SvelteKit
+.svelte-kit/
+# build output (goes to ../dist)
+../dist/
+# webpack fills these (do not commit generated assets)
+public/app/
+public/wakit/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+
+# env
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store

@@ -1,0 +1,37 @@
+{
+  "splashDelay": 100,
+  "splashForce": false,
+  "tabbar": { "autoHide": false, "hideThreshold": 14, "displayMode": "always" },
+  "pullToRefresh": {
+    "threshold": 90,
+    "startSlop": 18,
+    "damping": 0.35,
+    "maxPull": 200
+  },
+  "appbarView": true,
+  "theme": {
+    "primaryColor": "#3b82f6",
+    "font": "Pretendard, system-ui",
+    "isMobile": false
+  },
+  "defaultTab": "home",
+  "tabs": [
+    { "id": "home", "label": "Home", "icon": "fi fi-rr-home", "page": "home" },
+    { "id": "list", "label": "List", "icon": "fi fi-rr-apps", "page": "list" },
+    { "id": "profile", "label": "My", "icon": "fi fi-rr-user", "page": "profile" }
+  ],
+  "routes": [
+    { "path": "home", "file": "../../", "title": "App SvelteKit" },
+    { "path": "list", "file": "../../board/", "title": "Board" },
+    { "path": "detail", "file": "../../board/1/", "title": "Post" },
+    { "path": "profile", "file": "../../profile/", "title": "My" }
+  ],
+  "webNav": {
+    "brand": { "label": "App SvelteKit", "logo": "✦", "href": "/" },
+    "items": [
+      { "label": "Home", "href": "/" },
+      { "label": "Board", "href": "/board/" },
+      { "label": "Profile", "href": "/profile/" }
+    ]
+  }
+}

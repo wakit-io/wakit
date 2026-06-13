@@ -1,0 +1,175 @@
+/**
+ * Login page (views/login.html)
+ * Uses foundation color tokens so light/dark themes apply automatically.
+ * Social buttons keep their fixed brand colors in both themes.
+ */
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px 60px;
+  min-height: 60vh;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-title {
+  margin: 0 0 4px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-text-primary);
+}
+.login-subtitle {
+  margin: 0 0 28px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.login-field__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+.login-field__input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-size: 15px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.login-field__input::placeholder { color: var(--color-text-tertiary); }
+.login-field__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+/* Options row */
+.login-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+.login-remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+.login-remember input { accent-color: var(--color-primary); }
+.login-forgot {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+.login-forgot:hover { text-decoration: underline; }
+
+/* Submit */
+.login-submit {
+  margin-top: 4px;
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.login-submit:hover { background: var(--color-primary-hover); }
+
+/* Divider */
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  color: var(--color-text-tertiary);
+  font-size: 13px;
+}
+.login-divider::before,
+.login-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* Social buttons (fixed brand colors) */
+.login-social {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.login-social__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: filter .15s ease, background .15s ease;
+}
+.login-social__btn:hover { filter: brightness(0.97); }
+.login-social__btn i { font-size: 16px; }
+.login-social__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: #fff;
+  color: #03c75a;
+  font-weight: 800;
+  font-size: 12px;
+}
+.login-social__btn--naver { background: #03c75a; color: #fff; }
+.login-social__btn--kakao { background: #fee500; color: #191600; }
+.login-social__btn--google {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+/* Sign up */
+.login-signup {
+  margin: 24px 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+.login-signup a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.login-signup a:hover { text-decoration: underline; }

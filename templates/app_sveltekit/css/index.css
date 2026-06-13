@@ -1,0 +1,24 @@
+/**
+ * Foundation - Design Tokens
+ * Consolidates all design tokens from the Figma Foundation section
+ *
+ * Usage:
+ * @import './foundation/index.css';
+ *
+ * Or import individual modules:
+ * @import './foundation/color.css';
+ * @import './foundation/spacing.css';
+ * @import './foundation/typography.css';
+ * @import './foundation/effect.css';
+ * @import './foundation/layout.css';
+ */
+
+@import './color.css';
+@import './spacing.css';
+@import './typography.css';
+@import './effect.css';
+@import './layout.css';
+@import './icons.css';
+@import './graphic.css';
+@import './buttons.css';
+@import './badge.css';

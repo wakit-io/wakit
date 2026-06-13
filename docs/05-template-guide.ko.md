@@ -631,6 +631,10 @@ document.addEventListener('click', function(e) {
 
 ## 9. 빌드 & 배포 구조
 
+> 아래 `web/` 레이어는 **Astro**(`app_astro`) 기준입니다. 레이어는 교체 가능 — **SvelteKit**
+> (`app_sveltekit`)도 동일하게 동작하며, 웹·앱이 공유하는 **단일 소스 콘텐츠**까지 지원합니다.
+> [09-web-layer.ko.md](./09-web-layer.ko.md) 참고.
+
 ### 9.1 프로젝트 구조
 각 템플릿은 독립적인 프로젝트입니다.
 

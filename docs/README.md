@@ -19,6 +19,7 @@ configuration.
 | [06-design-guide.md](./06-design-guide.md) | Design guidelines |
 | [07-backend-integration.md](./07-backend-integration.md) | Backend integration & agent guide (integration seams, rules, delivery context) |
 | [08-web-and-mobile.md](./08-web-and-mobile.md) | One codebase → proper website on PC + native-style app on mobile (rules) |
+| [09-web-layer.md](./09-web-layer.md) | Web framework layer (Astro/SvelteKit) — app_sveltekit setup, single-source content |
 
 ## Quick reference
 

@@ -1,0 +1,201 @@
+/**
+ * Profile page (views/profile.html)
+ * Uses foundation color tokens so light/dark themes apply automatically.
+ */
+
+.profile-page {
+  padding: 20px 0 40px;
+  min-height: 60vh;
+}
+.profile-page .container {
+  max-width: 720px;
+}
+
+/* Summary card */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-bg-primary);
+}
+.profile-card__avatar {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 32px;
+}
+.profile-card__info { flex: 1; min-width: 0; }
+.profile-card__name {
+  margin: 0 0 2px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+.profile-card__email {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.profile-card__edit {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  transition: background .15s ease, border-color .15s ease;
+}
+.profile-card__edit:hover {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-primary);
+}
+
+/* Stats */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-bg-primary);
+  overflow: hidden;
+}
+.profile-stats__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 18px 8px;
+  text-decoration: none;
+  transition: background .15s ease;
+}
+.profile-stats__item + .profile-stats__item {
+  border-left: 1px solid var(--color-border);
+}
+.profile-stats__item:hover { background: var(--color-bg-secondary); }
+.profile-stats__num {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+.profile-stats__label {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+/* Menu sections */
+.profile-section { margin-top: 24px; }
+.profile-section__title {
+  margin: 0 0 8px;
+  padding: 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+}
+.profile-menu {
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-bg-primary);
+  overflow: hidden;
+}
+.profile-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  transition: background .15s ease;
+}
+.profile-menu__item + .profile-menu__item {
+  border-top: 1px solid var(--color-border);
+}
+.profile-menu__item:hover { background: var(--color-bg-secondary); }
+.profile-menu__icon {
+  font-size: 20px;
+  color: var(--color-primary);
+  width: 24px;
+  text-align: center;
+}
+.profile-menu__label {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 500;
+}
+.profile-menu__arrow {
+  font-size: 14px;
+  color: var(--color-text-tertiary);
+}
+
+/* Account actions */
+.profile-account {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.profile-account__logout {
+  width: 100%;
+  max-width: 320px;
+  padding: 13px;
+  text-align: center;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-bg-primary);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  transition: background .15s ease;
+}
+.profile-account__logout:hover { background: var(--color-bg-secondary); }
+.profile-account__withdraw {
+  font-size: 13px;
+  text-decoration: underline;
+  color: var(--color-text-tertiary);
+}
+.profile-account__withdraw:hover { color: var(--color-error); }
+
+/* Theme settings — segmented control (system / light / dark) */
+.theme-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.theme-options__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .15s ease, color .15s ease, background .15s ease;
+}
+.theme-options__item i { font-size: 20px; }
+.theme-options__item:hover { background: var(--color-bg-secondary); }
+.theme-options__item.is-active {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+}

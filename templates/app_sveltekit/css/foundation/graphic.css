@@ -1,0 +1,27 @@
+/**
+ * Foundation - Graphic
+ * Graphic element tokens defined in Figma, exposed as CSS variables
+ *
+ * Needs to be kept in sync with the Graphic styles in Figma
+ */
+
+:root {
+  /* Graphic Element Sizes */
+  --graphic-size-xs: 16px;
+  --graphic-size-sm: 24px;
+  --graphic-size-md: 32px;
+  --graphic-size-lg: 48px;
+  --graphic-size-xl: 64px;
+  --graphic-size-2xl: 96px;
+  
+  /* Graphic Border Radius */
+  --graphic-radius-sm: var(--radius-sm);
+  --graphic-radius-md: var(--radius-md);
+  --graphic-radius-lg: var(--radius-lg);
+  --graphic-radius-full: var(--radius-full);
+  
+  /* Graphic Opacity */
+  --graphic-opacity-default: 1;
+  --graphic-opacity-hover: 0.9;
+  --graphic-opacity-disabled: 0.5;
+}

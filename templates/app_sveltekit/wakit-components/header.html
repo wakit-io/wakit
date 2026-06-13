@@ -1,0 +1,109 @@
+<!-- Web Header (wakit-components) — common top navbar: brand · nav menu · actions.
+     The brand and nav links are data-driven from wakitConfig.json's `webNav`
+     (web mode uses direct file links, not #routes). The right-side auth actions
+     (Profile / Login) are FIXED here, not config-driven.
+     Uses foundation color tokens so dark mode ([data-theme="dark"]) works automatically. -->
+<header class="site-header" data-site-header role="banner">
+  <div class="site-header__inner container">
+
+    <!-- Brand / Logo (overridden by webNav.brand) -->
+    <a href="index.html" class="site-header__brand">
+      <span class="site-header__logo">✦</span>
+      <span class="site-header__name">App Basic</span>
+    </a>
+
+    <!-- Primary navigation (rendered from webNav.items) -->
+    <nav class="site-header__nav" id="siteNav" aria-label="Main menu"></nav>
+
+    <!-- Right-side actions -->
+    <div class="site-header__actions">
+      <button class="site-header__icon" data-theme-toggle aria-label="Toggle theme">
+        <i class="bi bi-moon-fill"></i>
+      </button>
+      <!-- Fixed auth actions (not driven by webNav). Point href to your real pages. -->
+      <a href="views/profile.html" class="site-header__profile">
+        <i class="bi bi-person-circle"></i>
+        <span>Profile</span>
+      </a>
+      <a href="views/login.html" class="site-header__cta">Login</a>
+      <button class="site-header__toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Styles: css/components/header.css (imported by css/style.css) -->
+
+<script>
+  // Web header: render the menu from wakitConfig.webNav + hamburger toggle.
+  // Plain <script> (module scripts are unstable in wakit views).
+  (function () {
+    var header = document.querySelector('[data-site-header]');
+    if (!header || header.dataset.bound === '1') return;
+    header.dataset.bound = '1';
+
+    var nav = header.querySelector('#siteNav');
+    var toggle = header.querySelector('[data-nav-toggle]');
+
+    // --- Hamburger (works regardless of menu data) ---
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      // Close the menu after choosing an item
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('.site-header__link')) {
+          nav.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    } 
+
+    // --- Single nav data source. Swap this one function to go server-driven later. ---
+    function getNavData() {
+      return fetch('wakitConfig.json', { credentials: 'same-origin' })
+        .then(function (r) { return r.ok ? r.json() : {}; })
+        .then(function (cfg) { return (cfg && cfg.webNav) || {}; })
+        .catch(function () { return {}; });
+    }
+
+    // Treat "/", "/index.html" as the same page when highlighting the active link.
+    function normPath(p) { return p.replace(/index\.html$/, '').replace(/\/+$/, '') || '/'; }
+    function isCurrent(href) {
+      var a = document.createElement('a'); a.href = href;
+      return normPath(a.pathname) === normPath(location.pathname);
+    }
+    function esc(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function render(webNav) {
+      // Brand (optional override)
+      if (webNav.brand) {
+        var brand = header.querySelector('.site-header__brand');
+        if (brand) {
+          if (webNav.brand.href) brand.setAttribute('href', webNav.brand.href);
+          var logoEl = brand.querySelector('.site-header__logo');
+          var nameEl = brand.querySelector('.site-header__name');
+          if (logoEl && webNav.brand.logo != null) logoEl.textContent = webNav.brand.logo;
+          if (nameEl && webNav.brand.label != null) nameEl.textContent = webNav.brand.label;
+        }
+      }
+      // Menu links from webNav.items (file hrefs in web mode)
+      var items = Array.isArray(webNav.items) ? webNav.items : [];
+      if (nav) {
+        nav.innerHTML = items.map(function (it) {
+          var active = isCurrent(it.href) ? ' is-active' : '';
+          return '<a href="' + esc(it.href) + '" class="site-header__link' + active + '">' + esc(it.label) + '</a>';
+        }).join('');
+      }
+      // Note: Profile / Login actions are fixed in the markup, not rendered here.
+    }
+
+    getNavData().then(render);
+  })();
+</script>

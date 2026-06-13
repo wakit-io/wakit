@@ -631,6 +631,10 @@ In a view that has a toggle switch (`#themeSwitch`), read the current theme stat
 
 ## 9. Build & Deployment Structure
 
+> The `web/` layer below uses **Astro** (`app_astro`). The layer is pluggable — **SvelteKit**
+> (`app_sveltekit`) works the same way and additionally supports **single-source content**
+> shared between web and app. See [09-web-layer.md](./09-web-layer.md).
+
 ### 9.1 Project Structure
 Each template is an independent project.
 

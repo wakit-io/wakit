@@ -1,0 +1,176 @@
+/* ============================================================
+   WAKIT shared content styles (single source for web + app)
+
+   Loaded by BOTH:
+     - the SvelteKit web shell      → web/src/app.html  (<head>)
+     - the wakit app SPA shell      → app.html          (<head>)
+
+   Why: when the app fetches a SvelteKit page it injects only the
+   <body> content (the <head> is dropped). So any styling that must
+   survive into the app CANNOT live in Svelte scoped <style> (those
+   become <head> <link>s). Put shared-content styles here, with plain
+   unscoped classes, and both shells load this one file.
+   ============================================================ */
+
+/* Light defaults + dark overrides keyed on [data-theme="dark"] (same attribute
+   wakit's theme-init/theme-toggle set, key 'blog-theme'). So shared content goes
+   dark/light correctly on BOTH the web shell and inside the app. */
+:root {
+  --sc-primary: #3b82f6;
+  --sc-primary-soft: rgba(59, 130, 246, 0.12);
+  --sc-bg: #ffffff;
+  --sc-surface: #ffffff;
+  --sc-hover: #f1f5f9;
+  --sc-text: #0f172a;
+  --sc-muted: #64748b;
+  --sc-faint: #94a3b8;
+  --sc-border: #e2e8f0;
+  --sc-error: #ef4444;
+  --sc-radius: 14px;
+}
+[data-theme="dark"] {
+  --sc-primary: #60a5fa;
+  --sc-primary-soft: rgba(96, 165, 250, 0.16);
+  --sc-bg: #0b1220;
+  --sc-surface: #131c2e;
+  --sc-hover: #1c2840;
+  --sc-text: #e5e7eb;
+  --sc-muted: #94a3b8;
+  --sc-faint: #6b7a90;
+  --sc-border: #233048;
+  --sc-error: #f87171;
+}
+
+/* ---- board list ---- */
+.board { max-width: 760px; margin: 0 auto; padding: 60px 24px; }
+.board__head h1 { font-size: 2rem; font-weight: 800; margin: 0 0 6px; color: var(--sc-text); }
+.board__head p { color: var(--sc-muted); margin: 0 0 28px; }
+.board__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.board__item a {
+  display: block;
+  padding: 18px 20px;
+  border: 1px solid var(--sc-border);
+  border-radius: var(--sc-radius);
+  text-decoration: none;
+  color: inherit;
+}
+.board__item a:hover { border-color: var(--sc-primary); }
+.board__item h2 { font-size: 1.05rem; margin: 0 0 4px; color: var(--sc-text); }
+.board__item span { color: var(--sc-muted); font-size: 0.9rem; }
+
+/* ---- post detail ---- */
+.post { max-width: 680px; margin: 0 auto; padding: 60px 24px; }
+.post__back { color: var(--sc-muted); font-weight: 600; text-decoration: none; }
+.post h1 { font-size: 2rem; font-weight: 800; margin: 18px 0 14px; color: var(--sc-text); }
+.post p { color: var(--sc-muted); line-height: 1.8; font-size: 1.05rem; }
+
+/* ---- home (main) ---- */
+.home-hero { max-width: 760px; margin: 0 auto; padding: 72px 24px 36px; text-align: center; }
+.home-hero__title { font-size: 2.4rem; font-weight: 800; line-height: 1.2; margin: 14px 0 16px; color: var(--sc-text); }
+.home-hero__desc { font-size: 1.08rem; color: var(--sc-muted); margin: 0 0 28px; }
+.home-hero__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.home-btn { padding: 13px 28px; border-radius: 12px; font-weight: 700; text-decoration: none; }
+.home-btn--primary { background: var(--sc-primary); color: #fff; }
+.home-btn--ghost { background: transparent; color: var(--sc-text); border: 1px solid var(--sc-border); }
+
+.home-cards {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 8px 24px 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.home-card { border: 1px solid var(--sc-border); border-radius: 16px; padding: 22px; }
+.home-card h3 { margin: 0 0 8px; font-size: 1.05rem; color: var(--sc-text); }
+.home-card p { margin: 0; color: var(--sc-muted); font-size: 0.95rem; line-height: 1.6; }
+.home-card code { background: rgba(100, 116, 139, 0.12); padding: 1px 6px; border-radius: 6px; font-size: 0.85em; }
+
+/* ---- tiny source badge so you can SEE it's the shared content ---- */
+.sc-badge {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--sc-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* ============================================================
+   profile (single source) — ported from app_basic css/profile.css,
+   mapped onto --sc-* tokens so light/dark work on web + app.
+   ============================================================ */
+.profile-page { padding: 20px 0 40px; min-height: 60vh; }
+.profile-page .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+.profile-card {
+  display: flex; align-items: center; gap: 16px; padding: 20px;
+  border: 1px solid var(--sc-border); border-radius: 16px; background: var(--sc-surface);
+}
+.profile-card__avatar {
+  flex-shrink: 0; width: 64px; height: 64px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--sc-primary-soft); color: var(--sc-primary); font-size: 32px;
+}
+.profile-card__info { flex: 1; min-width: 0; }
+.profile-card__name { margin: 0 0 2px; font-size: 18px; font-weight: 700; color: var(--sc-text); }
+.profile-card__email {
+  margin: 0; font-size: 14px; color: var(--sc-muted);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.profile-card__edit {
+  flex-shrink: 0; padding: 8px 14px; border: 1px solid var(--sc-border); border-radius: 999px;
+  font-size: 13px; font-weight: 600; text-decoration: none; color: var(--sc-text);
+  transition: background .15s ease, border-color .15s ease;
+}
+.profile-card__edit:hover { background: var(--sc-hover); border-color: var(--sc-primary); }
+
+.profile-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 16px;
+  border: 1px solid var(--sc-border); border-radius: 16px; background: var(--sc-surface); overflow: hidden;
+}
+.profile-stats__item {
+  display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 18px 8px;
+  text-decoration: none; transition: background .15s ease;
+}
+.profile-stats__item + .profile-stats__item { border-left: 1px solid var(--sc-border); }
+.profile-stats__item:hover { background: var(--sc-hover); }
+.profile-stats__num { font-size: 20px; font-weight: 700; color: var(--sc-text); }
+.profile-stats__label { font-size: 13px; color: var(--sc-muted); }
+
+.profile-section { margin-top: 24px; }
+.profile-section__title { margin: 0 0 8px; padding: 0 4px; font-size: 13px; font-weight: 600; color: var(--sc-faint); }
+.profile-menu { border: 1px solid var(--sc-border); border-radius: 16px; background: var(--sc-surface); overflow: hidden; }
+.profile-menu__item {
+  display: flex; align-items: center; gap: 14px; padding: 16px;
+  text-decoration: none; color: var(--sc-text); transition: background .15s ease;
+}
+.profile-menu__item + .profile-menu__item { border-top: 1px solid var(--sc-border); }
+.profile-menu__item:hover { background: var(--sc-hover); }
+.profile-menu__icon { font-size: 20px; color: var(--sc-primary); width: 24px; text-align: center; }
+.profile-menu__label { flex: 1; font-size: 15px; font-weight: 500; }
+.profile-menu__arrow { font-size: 14px; color: var(--sc-faint); }
+
+.profile-account { margin-top: 28px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.profile-account__logout {
+  width: 100%; max-width: 320px; padding: 13px; text-align: center;
+  border: 1px solid var(--sc-border); border-radius: 12px; background: var(--sc-surface);
+  font-size: 15px; font-weight: 600; text-decoration: none; color: var(--sc-text); transition: background .15s ease;
+}
+.profile-account__logout:hover { background: var(--sc-hover); }
+.profile-account__withdraw { font-size: 13px; text-decoration: underline; color: var(--sc-faint); }
+.profile-account__withdraw:hover { color: var(--sc-error); }
+
+/* theme settings — segmented control (system / light / dark) */
+.theme-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.theme-options__item {
+  display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 14px 8px;
+  border: 1px solid var(--sc-border); border-radius: 12px; background: var(--sc-surface);
+  color: var(--sc-muted); font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: border-color .15s ease, color .15s ease, background .15s ease;
+}
+.theme-options__item i { font-size: 20px; }
+.theme-options__item:hover { background: var(--sc-hover); }
+.theme-options__item.is-active { border-color: var(--sc-primary); color: var(--sc-primary); background: var(--sc-primary-soft); }
