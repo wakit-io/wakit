@@ -20,6 +20,7 @@ configuration.
 | [07-backend-integration.md](./07-backend-integration.md) | Backend integration & agent guide (integration seams, rules, delivery context) |
 | [08-web-and-mobile.md](./08-web-and-mobile.md) | One codebase → proper website on PC + native-style app on mobile (rules) |
 | [09-web-layer.md](./09-web-layer.md) | Web framework layer (Astro/SvelteKit) — app_sveltekit setup, single-source content |
+| [10-wakit-native-app.md](./10-wakit-native-app.md) | 🔒 Hard rules for a dynamic wakit native app (views + window.sb); why csr framework pages don't render in the app shell |
 
 ## Quick reference
 

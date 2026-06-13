@@ -705,32 +705,35 @@ Flags: `--base <tpl>`, `--color <hex>`, `--no-db` (skip the Supabase schema/buck
 
 What it does automatically:
 - Copies the base (skips build artifacts; binaries copied verbatim) and **rebrands** the slug (`app_sveltekit`→`app_shop`), BEM class prefixes, and the display name (`"App SvelteKit"`→`"App Shop"`).
-- Sets `theme.primaryColor` and registers `dev:` / `build:` / `package:<name>` scripts.
+- Sets `theme.primaryColor`.
 - If the base has a `web/` layer, runs `npm install` inside it.
 - Unless `--no-db`, creates a Supabase schema + storage bucket + migration.
+
+> **No `package.json` edits.** New templates are NOT registered as `dev:`/`build:` scripts — run any template with the generic runner `scripts/wakit.js` (see §10). So `package.json` never gets polluted and there's nothing to manage/remove.
 
 Then start developing:
 ```bash
 # web-layer base — the web dev server also serves /app and /wakit:
-cd templates/<name>/web && npm run dev
+node scripts/wakit.js web <name>
 # pure base:
-npm run dev:<name>      # http://localhost:5173/app/app.html
+node scripts/wakit.js dev <name>      # http://localhost:5173/app/app.html
 ```
 See [09-web-layer.md](./09-web-layer.md) for the web-layer dev ports and single-source pattern.
 
 ---
 
-## 10. Running the Dev Server
+## 10. Running the Dev Server (any template)
 
+Use the generic runner — no per-template `package.json` scripts needed:
 ```bash
-# wakit app development (webpack dev server)
-npm run dev:app_astro        # http://localhost:5173/app/app.html
-
-# Astro web layer development
-npm run web:dev             # http://localhost:4321
-# or directly
-cd templates/app_astro/web && npm run dev
+node scripts/wakit.js web <name>      # web-layer dev server (serves /app and /wakit too)
+node scripts/wakit.js dev <name>      # wakit app dev server (webpack)
+node scripts/wakit.js build <name>    # build → templates/<name>/dist
+node scripts/wakit.js package <name>  # delivery ZIP
+node scripts/wakit.js list            # list templates
+# npm alias: npm run wakit -- web <name>
 ```
+The canonical templates also keep shortcut scripts (`npm run dev:app_astro`, `npm run build:app_sveltekit`, `npm run web:dev`).
 
 ---
 

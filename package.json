@@ -19,7 +19,8 @@
     "create:cms": "node scripts/create-cms-project.js",
     "create:template": "node scripts/create-template.js",
     "scaffold:template": "node scripts/scaffold-template.js",
-    "delete:template": "node scripts/delete-template.js"
+    "delete:template": "node scripts/delete-template.js",
+    "wakit": "node scripts/wakit.js"
   },
   "devDependencies": {
     "cheerio": "^1.1.0",

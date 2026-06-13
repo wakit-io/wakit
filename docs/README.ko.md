@@ -17,6 +17,7 @@
 | [07-backend-integration.ko.md](./07-backend-integration.ko.md) | 백엔드 연동 & 에이전트 가이드 (연동 seam, 규칙, 배포 컨텍스트) |
 | [08-web-and-mobile.ko.md](./08-web-and-mobile.ko.md) | 한 코드 → PC는 웹사이트 / 모바일은 네이티브풍 앱 (규칙) |
 | [09-web-layer.ko.md](./09-web-layer.ko.md) | 웹 프레임워크 레이어 (Astro/SvelteKit) — app_sveltekit 세팅, 단일 소스 콘텐츠 |
+| [10-wakit-native-app.ko.md](./10-wakit-native-app.ko.md) | 🔒 동적 wakit 네이티브 앱 강력 규칙 (뷰 + window.sb); csr 프레임워크 페이지가 앱 셸에서 안 뜨는 이유 |
 
 ## 빠른 참조
 

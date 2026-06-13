@@ -190,14 +190,8 @@ async function main() {
     }
     console.log(`✅ 템플릿 생성 완료: templates/${name}/ (base: ${base})`);
 
-    // package.json 스크립트 자동 추가
-    const pkgPath = path.join(ROOT, 'package.json');
-    const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
-    pkg.scripts[`dev:${name}`] = `webpack serve --mode development --env template=${name}`;
-    pkg.scripts[`build:${name}`] = `node scripts/build-template.js ${name}`;
-    pkg.scripts[`package:${name}`] = `TEMPLATE=${name} node scripts/package-template.js`;
-    fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
-    console.log(`✅ package.json 스크립트 추가: dev:${name}, build:${name}, package:${name}`);
+    // package.json 은 건드리지 않는다. 모든 템플릿은 제네릭 러너(scripts/wakit.js)로 실행.
+    //   → 새 템플릿마다 dev:/build:/package: 스크립트를 추가/삭제할 필요가 없다.
 
     // web/ 레이어가 있으면 의존성 설치
     const webDir = path.join(templateDir, 'web');
@@ -221,16 +215,16 @@ async function main() {
       console.log(`📄 마이그레이션 파일: ${path.relative(ROOT, migPath)}`);
     }
 
-    console.log(`\n🎉 완료!`);
+    console.log(`\n🎉 완료! (package.json 변경 없음 — 제네릭 러너로 실행)`);
     if (hasWeb) {
       console.log(`   웹+앱 개발 (web 레이어 서버가 /app·/wakit 까지 서빙):`);
-      console.log(`     cd templates/${name}/web && npm run dev`);
-      console.log(`   앱만 (webpack):  npm run dev:${name}`);
+      console.log(`     node scripts/wakit.js web ${name}`);
+      console.log(`   앱만 (webpack):  node scripts/wakit.js dev ${name}`);
     } else {
-      console.log(`   개발 서버:  npm run dev:${name}`);
-      console.log(`   접속:       http://localhost:5173/app/app.html`);
+      console.log(`   개발 서버:  node scripts/wakit.js dev ${name}   (→ http://localhost:5173/app/app.html)`);
     }
-    console.log(`   빌드:       npm run build:${name}\n`);
+    console.log(`   빌드:       node scripts/wakit.js build ${name}`);
+    console.log(`   패키징:     node scripts/wakit.js package ${name}\n`);
   } finally {
     rl.close();
   }

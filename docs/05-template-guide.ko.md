@@ -705,32 +705,35 @@ npm run create:template -- app_lite --base app_basic
 
 자동으로 처리하는 것:
 - 베이스 복사(빌드 산출물 제외, 바이너리는 그대로 복사) + **리브랜딩**: 슬러그(`app_sveltekit`→`app_shop`), BEM 클래스 접두사, 디스플레이명(`"App SvelteKit"`→`"App Shop"`).
-- `theme.primaryColor` 설정 + `dev:` / `build:` / `package:<name>` 스크립트 등록.
+- `theme.primaryColor` 설정.
 - 베이스에 `web/` 레이어가 있으면 그 안에서 `npm install` 실행.
 - `--no-db`가 아니면 Supabase 스키마 + 스토리지 버킷 + 마이그레이션 생성.
+
+> **`package.json`은 건드리지 않음.** 새 템플릿을 `dev:`/`build:` 스크립트로 등록하지 않고, **제네릭 러너 `scripts/wakit.js`**로 실행한다(§10). 그래서 package.json이 더러워지지 않고, 관리/삭제할 것도 없다.
 
 이후 개발 시작:
 ```bash
 # web 레이어 베이스 — web dev 서버가 /app·/wakit 까지 서빙:
-cd templates/<name>/web && npm run dev
+node scripts/wakit.js web <name>
 # 순수 베이스:
-npm run dev:<name>      # http://localhost:5173/app/app.html
+node scripts/wakit.js dev <name>      # http://localhost:5173/app/app.html
 ```
 web 레이어 dev 포트·단일 소스 패턴은 [09-web-layer.ko.md](./09-web-layer.ko.md) 참고.
 
 ---
 
-## 10. 개발 서버 실행
+## 10. 개발 서버 실행 (모든 템플릿)
 
+제네릭 러너 사용 — per-template `package.json` 스크립트 불필요:
 ```bash
-# wakit 앱 개발 (webpack dev server)
-npm run dev:app_astro        # http://localhost:5173/app/app.html
-
-# Astro 웹 레이어 개발
-npm run web:dev             # http://localhost:4321
-# 또는 직접
-cd templates/app_astro/web && npm run dev
+node scripts/wakit.js web <name>      # web 레이어 dev 서버 (/app·/wakit 도 서빙)
+node scripts/wakit.js dev <name>      # wakit 앱 dev 서버 (webpack)
+node scripts/wakit.js build <name>    # 빌드 → templates/<name>/dist
+node scripts/wakit.js package <name>  # 배포 ZIP
+node scripts/wakit.js list            # 템플릿 목록
+# npm 별칭: npm run wakit -- web <name>
 ```
+캐논 템플릿은 단축 스크립트도 유지(`npm run dev:app_astro`, `npm run build:app_sveltekit`, `npm run web:dev`).
 
 ---
 
