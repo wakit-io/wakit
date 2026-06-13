@@ -132,6 +132,12 @@ module.exports = async (env = {}, argv = {}) => {
                   globOptions: { ignore: ['**/js/*.js'] },
                   noErrorOnMissing: true,
                 },
+                // Service worker at the dist ROOT → scope "/" (controls /app, /wakit, web pages)
+                {
+                  from: 'wakit/service-worker.js',
+                  to: path.join(outRoot, 'service-worker.js'),
+                  noErrorOnMissing: true,
+                },
                 // Copy template files into web/public/app/ and rewrite wakit paths
                 {
                   from: templateSrc,

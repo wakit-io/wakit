@@ -24,6 +24,7 @@ templates/*/web/.astro/
 templates/*/web/.svelte-kit/
 templates/*/web/public/app/
 templates/*/web/public/wakit/
+templates/*/web/public/service-worker.js
 
 # OS/editor noise (optional but helpful)
 .DS_Store
