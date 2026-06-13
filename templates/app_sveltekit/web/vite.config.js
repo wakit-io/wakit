@@ -62,6 +62,7 @@ const devServeAppWakit = {
 export default defineConfig({
   // 전용 포트: webpack dev 서버(템플릿 기본 5173~)와 절대 겹치지 않게 분리.
   // 둘 다 /app·/wakit 를 서빙하므로 포트가 섞이면 다른 템플릿이 떠 혼란이 생김.
-  server: { port: 5180, strictPort: false },
+  // host:true → 0.0.0.0 바인딩(실기기/LAN 접속), allowedHosts:true → 커스텀 도메인(wakit.local 등) 허용.
+  server: { host: true, port: 5180, strictPort: false, allowedHosts: true },
   plugins: [devServeAppWakit, sveltekit()]
 });

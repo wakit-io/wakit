@@ -52,7 +52,11 @@ export default defineConfig({
   // /board/ style URLs so the wakit app can fetch the same path in dev and build
   trailingSlash: 'always',
   build: { format: 'directory' },
+  // host:true → 0.0.0.0 바인딩(실기기/LAN 접속)
+  server: { host: true },
   vite: {
+    // allowedHosts:true → 커스텀 도메인(wakit.local 등) 허용
+    server: { allowedHosts: true },
     plugins: [{
       name: 'dev-serve-app-wakit',
       configureServer(server) {
