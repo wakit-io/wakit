@@ -4,29 +4,47 @@ import '../styles/global.css';
 interface Props {
   title?: string;
 }
-const { title = 'App Test' } = Astro.props;
+const { title = 'App Astro' } = Astro.props;
 ---
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+  <!-- shared content styles (single source for web + app) -->
+  <link rel="stylesheet" href="/app-shared.css" />
+  <!-- theme: same script the app uses (key 'blog-theme', sets [data-theme]); prevents FOUC -->
+  <script is:inline src="/app/js/theme-init.js"></script>
 </head>
 <body>
-  <nav class="nav">
+  <!-- Web chrome: data-spa-ignore → stripped when the wakit app fetches this page -->
+  <nav class="nav" data-spa-ignore>
     <div class="nav__inner">
-      <a href="/" class="nav__logo">App Test</a>
+      <a href="/" class="nav__logo">App Astro</a>
       <div class="nav__links">
-        <a href="/board">게시판</a>
-        <a href="/guestbook">방명록</a>
+        <a href="/">Home</a>
+        <a href="/board/">Board</a>
+        <a href="/profile/">Profile</a>
       </div>
-      <a href="/app/app.html" class="nav__cta">앱 열기</a>
+      <button type="button" class="nav__theme" data-theme-toggle aria-label="Toggle theme"><i class="bi bi-moon-fill"></i></button>
+      <a href="/app/app.html" class="nav__cta">Open app</a>
     </div>
   </nav>
 
   <slot />
+
+  <footer class="foot" data-spa-ignore>
+    <div class="foot__inner">
+      <span>WAKIT · web (Astro) + app (wakit.js)</span>
+    </div>
+  </footer>
+
+  <!-- theme toggle delegation — same script as the app. data-spa-ignore so the app
+       (which has its own copy) strips it when it fetches this page. -->
+  <script is:inline src="/app/js/theme-toggle.js" data-spa-ignore></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 /**
  * Foundation - Spacing
- * Figma에서 정의된 간격 토큰을 CSS 변수로 정의
- * 4px 기준 그리드 시스템
+ * Spacing tokens defined in Figma, exposed as CSS variables
+ * 4px-based grid system
  */
 
 :root {

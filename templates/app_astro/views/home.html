@@ -1,97 +1,69 @@
-<!-- 홈 -->
-<link rel="stylesheet" href="./css/home.css">
+<!-- Home (landing) | embedded in index.html + SPA home route -->
+<link rel="stylesheet" href="css/home.css">
 
-<main class="home-page">
+<main class="home-page" role="main">
 
-  <!-- 상단 바 -->
-  <div class="home-topbar">
-    <span class="home-topbar__logo">✦ TestApp</span>
-    <div class="home-topbar__actions">
-      <button class="home-topbar__btn" data-theme-toggle aria-label="테마 전환"><i class="bi bi-moon-fill"></i></button>
-      <button class="home-topbar__btn" aria-label="알림"><i class="bi bi-bell"></i></button>
-    </div>
-  </div>
-
-  <!-- 배너 -->
-  <div class="home-banner">
-    <p class="home-banner__label">wakit hybrid framework</p>
-    <p class="home-banner__title">모바일 앱 개발,<br>이제 하루면 충분합니다</p>
-    <button class="home-banner__btn" onclick="location.hash='#explore'">
-      탐색하기 <i class="bi bi-arrow-right"></i>
-    </button>
-  </div>
-
-  <!-- 추천 카드 -->
-  <section class="home-section">
-    <div class="home-section__head">
-      <span class="home-section__title">추천 콘텐츠</span>
-      <a href="#explore" class="home-section__more">더보기 ›</a>
-    </div>
-    <div class="home-card-scroll">
-      <a href="#detail" class="home-card">
-        <div class="home-card__img">🎨</div>
-        <div class="home-card__body">
-          <p class="home-card__title">디자인 시스템</p>
-          <p class="home-card__sub">UI 컴포넌트</p>
-        </div>
-      </a>
-      <a href="#detail" class="home-card">
-        <div class="home-card__img">⚡</div>
-        <div class="home-card__body">
-          <p class="home-card__title">빠른 개발</p>
-          <p class="home-card__sub">wakit 프레임워크</p>
-        </div>
-      </a>
-      <a href="#detail" class="home-card">
-        <div class="home-card__img">📱</div>
-        <div class="home-card__body">
-          <p class="home-card__title">하이브리드 앱</p>
-          <p class="home-card__sub">네이티브 경험</p>
-        </div>
-      </a>
-      <a href="#detail" class="home-card">
-        <div class="home-card__img">🌙</div>
-        <div class="home-card__body">
-          <p class="home-card__title">다크 모드</p>
-          <p class="home-card__sub">테마 시스템</p>
-        </div>
-      </a>
+  <!-- Hero -->
+  <section class="home-hero">
+    <div class="container home-hero__inner">
+      <span class="home-hero__badge">WAKIT Starter</span>
+      <h1 class="home-hero__title">A website on the web,<br>a native app on mobile</h1>
+      <p class="home-hero__desc">One set of HTML/CSS/JS becomes a site, an installable PWA, and an app.<br>Pure static output — no framework runtime, no backend lock-in.</p>
+      <div class="home-hero__actions">
+        <a href="views/list.html" class="home-btn home-btn--primary">Explore</a>
+        <a href="views/signup.html" class="home-btn home-btn--ghost">Get started</a>
+      </div>
     </div>
   </section>
 
-  <!-- 최근 목록 -->
-  <section class="home-section">
-    <div class="home-section__head">
-      <span class="home-section__title">최근 항목</span>
+  <!-- Features -->
+  <section class="home-section container">
+    <h2 class="home-section__title">Key features</h2>
+    <div class="home-features">
+      <article class="feature-card">
+        <span class="feature-card__icon"><i class="bi bi-phone"></i></span>
+        <h3 class="feature-card__title">One codebase</h3>
+        <p class="feature-card__desc">Web · PWA · native-style app from a single set of HTML/CSS/JS — no duplicate frontends.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card__icon"><i class="bi bi-box-seam"></i></span>
+        <h3 class="feature-card__title">Pure &amp; portable</h3>
+        <p class="feature-card__desc">No framework runtime, no backend dependency. Ships as plain static files — host anywhere, wire any backend in later.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card__icon"><i class="bi bi-magic"></i></span>
+        <h3 class="feature-card__title">Native feel</h3>
+        <p class="feature-card__desc">On mobile, screen transitions, swipe-back, pull-to-refresh and built-in light/dark themes feel like a real app.</p>
+      </article>
     </div>
-    <div class="home-list">
-      <a href="#detail" class="home-list-item">
-        <div class="home-list-item__img">🚀</div>
-        <div class="home-list-item__info">
-          <p class="home-list-item__title">wakit SPA 라우팅</p>
-          <p class="home-list-item__sub">해시 기반 · 전환 애니메이션</p>
-        </div>
-        <span class="home-list-item__badge">NEW</span>
-      </a>
-      <a href="#detail" class="home-list-item">
-        <div class="home-list-item__img">💾</div>
-        <div class="home-list-item__info">
-          <p class="home-list-item__title">LRU 메모리 관리</p>
-          <p class="home-list-item__sub">탭 warm/cold dormancy</p>
-        </div>
-      </a>
-      <a href="#detail" class="home-list-item">
-        <div class="home-list-item__img">🎯</div>
-        <div class="home-list-item__info">
-          <p class="home-list-item__title">Pull to Refresh</p>
-          <p class="home-list-item__sub">네이티브 제스처 지원</p>
+  </section>
+
+  <!-- Recent preview -->
+  <section class="home-section container">
+    <div class="home-section__head">
+      <h2 class="home-section__title">Recent</h2>
+      <a href="views/list.html" class="home-section__more">More <i class="bi bi-chevron-right"></i></a>
+    </div>
+    <div class="home-preview">
+      <a href="views/detail.html" class="preview-card">
+        <span class="preview-card__thumb"><i class="bi bi-image"></i></span>
+        <div class="preview-card__body">
+          <h3 class="preview-card__title">Sample item 1</h3>
+          <p class="preview-card__meta">Category · 2 min ago</p>
         </div>
       </a>
-      <a href="#detail" class="home-list-item">
-        <div class="home-list-item__img">🔒</div>
-        <div class="home-list-item__info">
-          <p class="home-list-item__title">보안 기능</p>
-          <p class="home-list-item__sub">크로스오리진 제한</p>
+      <a href="views/detail.html" class="preview-card">
+        <span class="preview-card__thumb"><i class="bi bi-image"></i></span>
+        <div class="preview-card__body">
+          <h3 class="preview-card__title">Sample item 2</h3>
+          <p class="preview-card__meta">Category · 1 hour ago</p>
+        </div>
+      </a>
+      <a href="views/detail.html" class="preview-card">
+        <span class="preview-card__thumb"><i class="bi bi-image"></i></span>
+        <div class="preview-card__body">
+          <h3 class="preview-card__title">Sample item 3</h3>
+          <p class="preview-card__meta">Category · Yesterday</p>
         </div>
       </a>
     </div>

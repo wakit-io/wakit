@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
-  <title>App Test</title>
+  <title>App Astro</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="msapplication-tap-highlight" content="no">
@@ -16,7 +16,12 @@
   <link rel="stylesheet" href="/wakit/css/styleGuide.css">
   <link rel="stylesheet" href="/wakit/css/component.css">
   <link rel="stylesheet" href="/wakit/css/wakit-popup.css">
+  <!-- Design tokens (color/spacing/typography). SPA views mark token links as data-spa-ignore, so the shell must load them for colors to apply -->
+  <link rel="stylesheet" href="./css/foundation/index.css">
   <link rel="stylesheet" href="./css/style.css">
+  <!-- shared content styles: same file the Astro web shell loads, so Astro pages
+       fetched into the app render identically (injected pages drop their own <head>) -->
+  <link rel="stylesheet" href="/app-shared.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
   <script>
     window.sb = supabase.createClient(
@@ -24,18 +29,8 @@
       'sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH'
     );
   </script>
-  <!-- 테마 즉시 적용 (FOUC 방지) — wakit은 'blog-theme' 키를 읽으므로 함께 동기화 -->
-  <script>
-    (function() {
-      try {
-        var v = localStorage.getItem('app_astro-theme');
-        var dark = v === 'dark' || (!v && matchMedia('(prefers-color-scheme: dark)').matches);
-        // wakit initApp이 'blog-theme' 키로 applyBlogThemeSync()를 호출하므로 동기화 필수
-        localStorage.setItem('blog-theme', dark ? 'dark' : 'light');
-        if (dark) document.documentElement.setAttribute('data-theme', 'dark');
-      } catch(e) {}
-    })();
-  </script>
+  <!-- Dark/light initial value (prevents FOUC, same key as web shell: blog-theme) -->
+  <script src="./js/theme-init.js"></script>
 </head>
 <body id="root">
   <script type="module">

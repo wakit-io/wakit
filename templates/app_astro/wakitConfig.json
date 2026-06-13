@@ -1,34 +1,37 @@
 {
   "splashDelay": 100,
   "splashForce": false,
-  "tabbar": { "autoHide": false, "hideThreshold": 14, "displayMode": "web" },
+  "tabbar": { "autoHide": false, "hideThreshold": 14, "displayMode": "always" },
   "pullToRefresh": {
     "threshold": 90,
     "startSlop": 18,
     "damping": 0.35,
-    "maxPull": 200,
-    "disablePages": ["home"]
+    "maxPull": 200
   },
-  "appbarView": false,
+  "appbarView": true,
   "theme": {
-    "primaryColor": "#6366f1",
+    "primaryColor": "#3b82f6",
     "font": "Pretendard, system-ui",
-    "isMobile": true
+    "isMobile": false
   },
   "defaultTab": "home",
   "tabs": [
-    { "id": "home",    "label": "홈",   "icon": "fi fi-rr-home",   "page": "home" },
-    { "id": "explore", "label": "탐색", "icon": "fi fi-rr-search", "page": "explore" },
-    { "id": "notify",  "label": "알림", "icon": "fi fi-rr-bell",   "page": "notify" },
-    { "id": "profile", "label": "프로필","icon": "fi fi-rr-user",  "page": "profile" }
+    { "id": "home", "label": "Home", "icon": "fi fi-rr-home", "page": "home" },
+    { "id": "list", "label": "List", "icon": "fi fi-rr-apps", "page": "list" },
+    { "id": "profile", "label": "My", "icon": "fi fi-rr-user", "page": "profile" }
   ],
   "routes": [
-    { "path": "home",    "file": "../views/home.html",          "title": "홈" },
-    { "path": "explore", "file": "../views/explore.html",       "title": "탐색" },
-    { "path": "notify",  "file": "../views/notifications.html", "title": "알림" },
-    { "path": "profile", "file": "../views/profile.html",       "title": "프로필" },
-    { "path": "detail",  "file": "../views/detail.html",        "title": "상세" },
-    { "path": "signup",  "file": "../views/signup.html",        "title": "회원가입" },
-    { "path": "login",   "file": "../views/login.html",         "title": "로그인" }
-  ]
+    { "path": "home", "file": "../../", "title": "App Astro" },
+    { "path": "list", "file": "../../board/", "title": "Board" },
+    { "path": "detail", "file": "../../board/1/", "title": "Post" },
+    { "path": "profile", "file": "../../profile/", "title": "My" }
+  ],
+  "webNav": {
+    "brand": { "label": "App Astro", "logo": "✦", "href": "/" },
+    "items": [
+      { "label": "Home", "href": "/" },
+      { "label": "Board", "href": "/board/" },
+      { "label": "Profile", "href": "/profile/" }
+    ]
+  }
 }

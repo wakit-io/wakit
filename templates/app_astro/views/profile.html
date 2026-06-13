@@ -1,154 +1,139 @@
-<!-- 프로필 -->
-<link rel="stylesheet" href="./css/profile.css">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Profile · App Basic</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/foundation/index.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  <script src="js/theme-init.js" data-spa-ignore></script>
+</head>
+<body>
 
-<main class="profile-page">
+<!-- Screen-specific CSS: inside body, no data-spa-ignore (applies in web + SPA) -->
+<link rel="stylesheet" href="css/profile.css">
 
-  <div class="profile-header">
-    <span class="profile-header__title">프로필</span>
-    <button class="profile-header__btn"><i class="bi bi-gear"></i></button>
+<div data-include="wakit-components/header.html" data-spa-ignore></div>
+
+<main class="profile-page" role="main">
+  <div class="container">
+
+    <!-- Profile summary card -->
+    <section class="profile-card">
+      <div class="profile-card__avatar">
+        <i class="bi bi-person-fill"></i>
+      </div>
+      <div class="profile-card__info">
+        <h1 class="profile-card__name">John Doe</h1>
+        <p class="profile-card__email">hong@example.com</p>
+      </div>
+      <a href="#" class="profile-card__edit">Edit profile</a>
+    </section>
+
+    <!-- Stats -->
+    <section class="profile-stats">
+      <a class="profile-stats__item" href="#">
+        <strong class="profile-stats__num">12</strong>
+        <span class="profile-stats__label">Activity</span>
+      </a>
+      <a class="profile-stats__item" href="#">
+        <strong class="profile-stats__num">8</strong>
+        <span class="profile-stats__label">Saved</span>
+      </a>
+      <a class="profile-stats__item" href="#">
+        <strong class="profile-stats__num">3</strong>
+        <span class="profile-stats__label">Alerts</span>
+      </a>
+    </section>
+
+    <!-- Activity menu -->
+    <section class="profile-section">
+      <h2 class="profile-section__title">My activity</h2>
+      <nav class="profile-menu">
+        <a class="profile-menu__item" href="#">
+          <i class="bi bi-clock-history profile-menu__icon"></i>
+          <span class="profile-menu__label">Recently viewed</span>
+          <i class="bi bi-chevron-right profile-menu__arrow"></i>
+        </a>
+        <a class="profile-menu__item" href="#">
+          <i class="bi bi-bookmark profile-menu__icon"></i>
+          <span class="profile-menu__label">Saved items</span>
+          <i class="bi bi-chevron-right profile-menu__arrow"></i>
+        </a>
+        <a class="profile-menu__item" href="#">
+          <i class="bi bi-chat-square-text profile-menu__icon"></i>
+          <span class="profile-menu__label">My comments</span>
+          <i class="bi bi-chevron-right profile-menu__arrow"></i>
+        </a>
+      </nav>
+    </section>
+
+    <!-- Theme setting -->
+    <section class="profile-section">
+      <h2 class="profile-section__title">Theme</h2>
+      <div class="theme-options" role="radiogroup" aria-label="Theme">
+        <button type="button" class="theme-options__item" data-theme-option="system" role="radio" aria-checked="false">
+          <i class="bi bi-circle-half"></i>
+          <span>System</span>
+        </button>
+        <button type="button" class="theme-options__item" data-theme-option="light" role="radio" aria-checked="false">
+          <i class="bi bi-sun"></i>
+          <span>Light</span>
+        </button>
+        <button type="button" class="theme-options__item" data-theme-option="dark" role="radio" aria-checked="false">
+          <i class="bi bi-moon-stars"></i>
+          <span>Dark</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Settings menu -->
+    <section class="profile-section">
+      <h2 class="profile-section__title">Settings</h2>
+      <nav class="profile-menu">
+        <a class="profile-menu__item" href="#">
+          <i class="bi bi-person-gear profile-menu__icon"></i>
+          <span class="profile-menu__label">Account</span>
+          <i class="bi bi-chevron-right profile-menu__arrow"></i>
+        </a>
+        <a class="profile-menu__item" href="#">
+          <i class="bi bi-bell profile-menu__icon"></i>
+          <span class="profile-menu__label">Notifications</span>
+          <i class="bi bi-chevron-right profile-menu__arrow"></i>
+        </a>
+        <a class="profile-menu__item" href="#">
+          <i class="bi bi-headset profile-menu__icon"></i>
+          <span class="profile-menu__label">Support</span>
+          <i class="bi bi-chevron-right profile-menu__arrow"></i>
+        </a>
+      </nav>
+    </section>
+
+    <!-- Account actions -->
+    <section class="profile-account">
+      <a href="views/login.html" class="profile-account__logout">Log out</a>
+      <a href="#" class="profile-account__withdraw">Delete account</a>
+    </section>
+
   </div>
-
-  <!-- 비로그인 상태 -->
-  <div id="guestCard" class="profile-guest" style="display:none">
-    <div class="profile-guest__icon">👤</div>
-    <p class="profile-guest__title">로그인이 필요합니다</p>
-    <p class="profile-guest__sub">회원가입 또는 로그인 후 이용해주세요</p>
-    <a class="profile-guest__btn" href="#signup">회원가입</a>
-    <a class="profile-guest__btn profile-guest__btn--outline" href="#login">로그인</a>
-  </div>
-
-  <!-- 로그인 상태 -->
-  <div id="userCard" class="profile-card" style="display:none">
-    <div class="profile-card__avatar">😊</div>
-    <div class="profile-card__info">
-      <p class="profile-card__name" id="profileName">-</p>
-      <p class="profile-card__email" id="profileEmail">-</p>
-      <button class="profile-card__edit"><i class="bi bi-pencil"></i> 프로필 편집</button>
-    </div>
-  </div>
-
-  <div class="profile-stats">
-    <div class="profile-stat">
-      <p class="profile-stat__num">12</p>
-      <p class="profile-stat__label">저장됨</p>
-    </div>
-    <div class="profile-stat">
-      <p class="profile-stat__num">48</p>
-      <p class="profile-stat__label">팔로잉</p>
-    </div>
-    <div class="profile-stat">
-      <p class="profile-stat__num">256</p>
-      <p class="profile-stat__label">팔로워</p>
-    </div>
-  </div>
-
-  <div class="profile-menu-group">
-    <p class="profile-menu-label">계정</p>
-    <div class="profile-menu-item">
-      <div class="profile-menu-item__left">
-        <div class="profile-menu-item__icon profile-menu-item__icon--purple">🔔</div>
-        <span class="profile-menu-item__label">알림 설정</span>
-      </div>
-      <div class="profile-menu-item__right">
-        <span class="profile-menu-item__badge">2</span>
-        <i class="bi bi-chevron-right"></i>
-      </div>
-    </div>
-    <div class="profile-menu-item">
-      <div class="profile-menu-item__left">
-        <div class="profile-menu-item__icon profile-menu-item__icon--green">🔒</div>
-        <span class="profile-menu-item__label">개인정보 보호</span>
-      </div>
-      <div class="profile-menu-item__right"><i class="bi bi-chevron-right"></i></div>
-    </div>
-    <div class="profile-menu-item">
-      <div class="profile-menu-item__left">
-        <div class="profile-menu-item__icon profile-menu-item__icon--yellow">💳</div>
-        <span class="profile-menu-item__label">구독 관리</span>
-      </div>
-      <div class="profile-menu-item__right"><i class="bi bi-chevron-right"></i></div>
-    </div>
-  </div>
-
-  <div class="profile-menu-group">
-    <p class="profile-menu-label">환경설정</p>
-    <div class="profile-theme-toggle">
-      <span class="profile-menu-item__label">다크 모드</span>
-      <button class="profile-theme-switch" id="themeSwitch" aria-label="다크모드 전환"></button>
-    </div>
-    <div class="profile-menu-item">
-      <div class="profile-menu-item__left">
-        <div class="profile-menu-item__icon profile-menu-item__icon--purple">🌐</div>
-        <span class="profile-menu-item__label">언어 설정</span>
-      </div>
-      <div class="profile-menu-item__right">
-        <span style="font-size:0.8125rem;color:var(--color-text-tertiary)">한국어</span>
-        <i class="bi bi-chevron-right"></i>
-      </div>
-    </div>
-  </div>
-
-  <div class="profile-menu-group">
-    <p class="profile-menu-label">앱 정보</p>
-    <div class="profile-menu-item">
-      <div class="profile-menu-item__left">
-        <div class="profile-menu-item__icon profile-menu-item__icon--green">📋</div>
-        <span class="profile-menu-item__label">이용약관</span>
-      </div>
-      <div class="profile-menu-item__right"><i class="bi bi-chevron-right"></i></div>
-    </div>
-    <div class="profile-menu-item">
-      <div class="profile-menu-item__left">
-        <div class="profile-menu-item__icon profile-menu-item__icon--yellow">✨</div>
-        <span class="profile-menu-item__label">버전 정보</span>
-      </div>
-      <div class="profile-menu-item__right">
-        <span style="font-size:0.8125rem;color:var(--color-text-tertiary)">v1.0.0</span>
-      </div>
-    </div>
-    <div class="profile-menu-item" id="menuLogout" style="border-bottom:none;display:none">
-      <div class="profile-menu-item__left">
-        <div class="profile-menu-item__icon profile-menu-item__icon--red">🚪</div>
-        <span class="profile-menu-item__label" style="color:#ef4444">로그아웃</span>
-      </div>
-    </div>
-  </div>
-
 </main>
 
-<script>
-(function() {
-  var sw = document.getElementById('themeSwitch');
-  if (sw) {
-    sw.classList.toggle('is-dark', document.documentElement.getAttribute('data-theme') === 'dark');
-  }
-})();
+<div data-include="wakit-components/footer.html" data-spa-ignore></div>
 
-(async function() {
-  // 비로그인 상태 기본 표시
-  document.getElementById('guestCard').style.display = '';
-  document.getElementById('userCard').style.display  = 'none';
-  document.getElementById('menuLogout').style.display = 'none';
-
-  if (!window.sb) return;
-
-  try {
-    var result = await window.sb.auth.getUser();
-    var user = result.data && result.data.user;
-
-    if (user) {
-      document.getElementById('guestCard').style.display = 'none';
-      document.getElementById('userCard').style.display  = '';
-      document.getElementById('menuLogout').style.display = '';
-      document.getElementById('profileName').textContent  =
-        (user.user_metadata && user.user_metadata.username) || user.email.split('@')[0];
-      document.getElementById('profileEmail').textContent = user.email;
-    }
-
-    document.getElementById('menuLogout').addEventListener('click', async function() {
-      await window.sb.auth.signOut();
-      location.reload();
-    });
-  } catch(e) {}
-})();
-</script>
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/header.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script data-spa-ignore>if (typeof Popup !== 'undefined') Popup.init();</script>
+</html>

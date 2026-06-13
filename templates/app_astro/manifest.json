@@ -1,11 +1,10 @@
 {
-  "name": "App Test",
-  "short_name": "TestApp",
-  "start_url": "/templates/app_astro/app.html",
-  "scope": "/templates/app_astro/",
+  "name": "App Basic",
+  "short_name": "App Basic",
+  "start_url": "app.html",
   "lang": "ko-KR",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#6366f1",
+  "theme_color": "#ffffff",
   "orientation": "portrait"
 }

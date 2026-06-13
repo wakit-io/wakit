@@ -1,0 +1,78 @@
+/**
+ * Foundation - Icons
+ * Icon tokens defined in Figma, exposed as CSS variables
+ *
+ * Needs to be kept in sync with the Icons styles in Figma
+ */
+
+:root {
+  /* Icon Sizes (also defined in Layout; icon-specific here) */
+  --icon-size-xs: 16px;
+  --icon-size-sm: 20px;
+  --icon-size-md: 24px;
+  --icon-size-lg: 32px;
+  --icon-size-xl: 48px;
+  
+  /* Icon Colors */
+  --icon-color-primary: var(--color-primary);
+  --icon-color-secondary: var(--color-text-secondary);
+  --icon-color-tertiary: var(--color-text-tertiary);
+  --icon-color-inverse: var(--color-white);
+  
+  /* Icon Stroke Width */
+  --icon-stroke-width-thin: 1px;
+  --icon-stroke-width-normal: 1.5px;
+  --icon-stroke-width-bold: 2px;
+  
+  /* Icon Spacing (gap between icon and text) */
+  --icon-gap-xs: 4px;
+  --icon-gap-sm: 8px;
+  --icon-gap-md: 12px;
+  --icon-gap-lg: 16px;
+}
+
+/**
+ * Icon Theme (light-themed icon area)
+ * Background: --color-icon-theme-bg (primary-light), Icon: --color-icon-theme-icon (primary)
+ * Usage: <div class="icon-theme"><i class="bi bi-graph-up-arrow"></i></div>
+ */
+.icon-theme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: var(--color-icon-theme-bg);
+  color: var(--color-icon-theme-icon);
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+}
+
+.icon-theme i,
+.icon-theme svg {
+  font-size: var(--icon-size-md, 24px);
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-theme--sm {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-theme--sm i,
+.icon-theme--sm svg {
+  font-size: var(--icon-size-sm, 20px);
+}
+
+.icon-theme--lg {
+  width: 48px;
+  height: 48px;
+}
+
+.icon-theme--lg i,
+.icon-theme--lg svg {
+  font-size: var(--icon-size-lg, 32px);
+}

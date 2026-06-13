@@ -1,0 +1,165 @@
+/**
+ * Web Header component (wakit-components/header.html)
+ * Uses foundation color tokens so dark mode ([data-theme="dark"]) works automatically.
+ * Loaded globally via @import in css/style.css.
+ */
+
+/* The header is injected inside its data-include <div> wrapper. Without this,
+   position:sticky would only stick within that wrapper's box (= header height)
+   and scroll away immediately. display:contents removes the wrapper's box so the
+   header sticks relative to the page instead. */
+[data-include="wakit-components/header.html"] { display: contents; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-bg-primary, #fff);
+  border-bottom: 1px solid var(--color-border, #e8eef2);
+  padding-top: env(safe-area-inset-top);
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 60px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Brand */
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--color-text-primary, #17191a);
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.site-header__logo { color: var(--logo-color, #2563eb); font-size: 20px; }
+
+/* Nav */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  flex: 1;
+}
+.site-header__link {
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-secondary, #464a4d);
+  transition: background .15s ease, color .15s ease;
+}
+.site-header__link:hover {
+  color: var(--color-text-primary, #17191a);
+  background: var(--color-bg-secondary, #f2f8fc);
+}
+.site-header__link.is-active {
+  color: var(--color-primary, #3b82f6);
+  background: var(--color-primary-light, #eff6ff);
+}
+
+/* Actions */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.site-header__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text-primary, #17191a);
+  font-size: 18px;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.site-header__icon:hover { background: var(--color-bg-secondary, #f2f8fc); }
+.site-header__cta {
+  padding: 9px 16px;
+  border-radius: 8px;
+  background: var(--color-primary, #3b82f6);
+  color: var(--color-text-on-primary, #fff);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background .15s ease;
+}
+.site-header__cta:hover { background: var(--color-primary-hover, #2563eb); }
+
+/* Profile (fixed action) */
+.site-header__profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--color-text-primary, #17191a);
+  transition: background .15s ease;
+}
+.site-header__profile i { font-size: 18px; }
+.site-header__profile:hover { background: var(--color-bg-secondary, #f2f8fc); }
+
+/* Hamburger (hidden on desktop) */
+.site-header__toggle {
+  display: none;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text-primary, #17191a);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Responsive: collapse nav into a dropdown under 768px */
+@media (max-width: 768px) {
+  .site-header__toggle { display: inline-flex; align-items: center; justify-content: center; }
+  /* Keep Login visible on mobile; show Profile as icon only to save space */
+  .site-header__profile span { display: none; }
+  .site-header__profile { padding: 7px; }
+  .site-header__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    margin: 0;
+    padding: 8px 12px 12px;
+    background: var(--color-bg-primary, #fff);
+    border-bottom: 1px solid var(--color-border, #e8eef2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .06);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .18s ease, transform .18s ease;
+  }
+  .site-header__nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .site-header__link { padding: 12px; font-size: 16px; }
+}

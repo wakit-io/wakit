@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>List · App Basic</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/foundation/index.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  <script src="js/theme-init.js" data-spa-ignore></script>
+</head>
+<body>
+
+<div data-include="wakit-components/header.html" data-spa-ignore></div>
+
+<!-- Screen-specific CSS: inside body, no data-spa-ignore -->
+<link rel="stylesheet" href="css/list.css">
+
+<main class="list-page container" role="main">
+
+  <header class="list-head">
+    <h1 class="list-head__title">List</h1>
+    <p class="list-head__desc">Sample items. Tap a card to open its detail.</p>
+  </header>
+
+  <!-- Filter chips -->
+  <nav class="list-filter" role="tablist" aria-label="Filter">
+    <button type="button" class="list-filter__chip is-active" role="tab">All</button>
+    <button type="button" class="list-filter__chip" role="tab">Latest</button>
+    <button type="button" class="list-filter__chip" role="tab">Popular</button>
+    <button type="button" class="list-filter__chip" role="tab">Recommended</button>
+  </nav>
+
+  <!-- Card grid -->
+  <div class="list-grid">
+    <a href="views/detail.html" class="item-card">
+      <span class="item-card__thumb"><i class="bi bi-image"></i><span class="item-card__badge">NEW</span></span>
+      <div class="item-card__body">
+        <h2 class="item-card__title">Sample item 1</h2>
+        <p class="item-card__desc">A short description goes here. Up to about two lines are shown.</p>
+        <p class="item-card__meta">Category · 2 min ago</p>
+      </div>
+    </a>
+    <a href="views/detail.html" class="item-card">
+      <span class="item-card__thumb"><i class="bi bi-image"></i></span>
+      <div class="item-card__body">
+        <h2 class="item-card__title">Sample item 2</h2>
+        <p class="item-card__desc">A short description goes here. Up to about two lines are shown.</p>
+        <p class="item-card__meta">Category · 1 hour ago</p>
+      </div>
+    </a>
+    <a href="views/detail.html" class="item-card">
+      <span class="item-card__thumb"><i class="bi bi-image"></i></span>
+      <div class="item-card__body">
+        <h2 class="item-card__title">Sample item 3</h2>
+        <p class="item-card__desc">A short description goes here. Up to about two lines are shown.</p>
+        <p class="item-card__meta">Category · Yesterday</p>
+      </div>
+    </a>
+    <a href="views/detail.html" class="item-card">
+      <span class="item-card__thumb"><i class="bi bi-image"></i></span>
+      <div class="item-card__body">
+        <h2 class="item-card__title">Sample item 4</h2>
+        <p class="item-card__desc">A short description goes here. Up to about two lines are shown.</p>
+        <p class="item-card__meta">Category · 2 days ago</p>
+      </div>
+    </a>
+    <a href="views/detail.html" class="item-card">
+      <span class="item-card__thumb"><i class="bi bi-image"></i></span>
+      <div class="item-card__body">
+        <h2 class="item-card__title">Sample item 5</h2>
+        <p class="item-card__desc">A short description goes here. Up to about two lines are shown.</p>
+        <p class="item-card__meta">Category · 3 days ago</p>
+      </div>
+    </a>
+    <a href="views/detail.html" class="item-card">
+      <span class="item-card__thumb"><i class="bi bi-image"></i></span>
+      <div class="item-card__body">
+        <h2 class="item-card__title">Sample item 6</h2>
+        <p class="item-card__desc">A short description goes here. Up to about two lines are shown.</p>
+        <p class="item-card__meta">Category · 1 week ago</p>
+      </div>
+    </a>
+  </div>
+
+</main>
+
+<div data-include="wakit-components/footer.html" data-spa-ignore></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/header.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script data-spa-ignore>if (typeof Popup !== 'undefined') Popup.init();</script>
+</html>

@@ -1,36 +1,121 @@
+/**
+ * Theme Toggle (App Basic)
+ */
 (function() {
-  var KEY = 'app_astro-theme';
-  var WAKIT_KEY = 'blog-theme'; // wakit이 initApp 시 읽는 키 — 반드시 동기화 필요
+  'use strict';
+  const THEME_STORAGE_KEY = 'blog-theme'; // must match wakit.js engine key (applyBlogThemeSync)
+  const THEME_ATTRIBUTE = 'data-theme';
+  const DEFAULT_THEME = 'system';
 
-  function isDark() {
-    return document.documentElement.getAttribute('data-theme') === 'dark';
+  function getSystemTheme() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+    return 'light';
   }
 
-  function applyDark(dark) {
-    var val = dark ? 'dark' : 'light';
-    // 우리 키 저장
-    localStorage.setItem(KEY, val);
-    // wakit applyBlogThemeSync가 읽는 키도 함께 저장
-    localStorage.setItem(WAKIT_KEY, val);
-    // DOM 적용
-    if (dark) document.documentElement.setAttribute('data-theme', 'dark');
-    else document.documentElement.removeAttribute('data-theme');
-    // 프로필 스위치 UI 동기화
-    var sw = document.getElementById('themeSwitch');
-    if (sw) sw.classList.toggle('is-dark', dark);
+  function getCurrentTheme() {
+    try {
+      const stored = localStorage.getItem(THEME_STORAGE_KEY);
+      if (stored === 'dark' || stored === 'light') return stored;
+      if (stored === 'system') return getSystemTheme();
+    } catch (e) {}
+    return getSystemTheme();
   }
 
-  // 홈 토글 버튼 (data-theme-toggle)
-  document.addEventListener('click', function(e) {
-    var btn = e.target && e.target.closest('[data-theme-toggle]');
-    if (!btn) return;
-    applyDark(!isDark());
-  });
+  function getCurrentThemeOption() {
+    try {
+      const stored = localStorage.getItem(THEME_STORAGE_KEY);
+      if (stored === 'dark' || stored === 'light' || stored === 'system') return stored;
+    } catch (e) {}
+    return DEFAULT_THEME;
+  }
 
-  // 프로필 스위치 (#themeSwitch)
-  document.addEventListener('click', function(e) {
-    var sw = e.target && e.target.closest('#themeSwitch');
-    if (!sw) return;
-    applyDark(!isDark());
-  });
+  function setTheme(themeOption) {
+    let actualTheme = themeOption === 'system' ? getSystemTheme() : (themeOption === 'dark' ? 'dark' : 'light');
+    if (actualTheme === 'dark') document.documentElement.setAttribute(THEME_ATTRIBUTE, 'dark');
+    else document.documentElement.removeAttribute(THEME_ATTRIBUTE);
+    try { localStorage.setItem(THEME_STORAGE_KEY, themeOption); } catch (e) {}
+    document.dispatchEvent(new CustomEvent('themechange', { detail: { theme: actualTheme, option: themeOption } }));
+    return actualTheme;
+  }
+
+  function updateThemeButton(theme) {
+    document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+      const icon = button.querySelector('i');
+      if (icon) {
+        icon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+        button.setAttribute('aria-label', theme === 'dark' ? 'Light mode' : 'Dark mode');
+      }
+    });
+  }
+
+  function updateButton(theme) {
+    updateThemeButton(theme);
+  }
+
+  // Highlight the active option in any [data-theme-option] segmented control
+  // (values: system | light | dark).
+  function updateThemeOptions(option) {
+    document.querySelectorAll('[data-theme-option]').forEach(el => {
+      const active = el.getAttribute('data-theme-option') === option;
+      el.classList.toggle('is-active', active);
+      el.setAttribute('aria-checked', active ? 'true' : 'false');
+    });
+  }
+
+  // Sync every theme UI (toggle icon + option segments) to the current state.
+  function syncUI() {
+    updateButton(getCurrentTheme());
+    updateThemeOptions(getCurrentThemeOption());
+  }
+
+  // Event delegation: a single listener on the document handles the toggle even
+  // when the button is injected later via data-include (async fetch). Attaching
+  // per-button on load misses buttons that don't exist yet.
+  let delegatedBound = false;
+  function attachDelegatedListener() {
+    if (delegatedBound) return;
+    delegatedBound = true;
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest) return;
+      // Segmented control: pick a specific option (system | light | dark)
+      const opt = e.target.closest('[data-theme-option]');
+      if (opt) {
+        e.preventDefault();
+        setTheme(opt.getAttribute('data-theme-option'));
+        syncUI();
+        return;
+      }
+      // Icon toggle: flip dark <-> light
+      const button = e.target.closest('[data-theme-toggle]');
+      if (!button) return;
+      e.preventDefault();
+      const newOption = getCurrentThemeOption() === 'dark' ? 'light' : 'dark';
+      setTheme(newOption);
+      syncUI();
+    });
+  }
+
+  // Sync the icon whenever new nodes (e.g. the included header) appear.
+  // Observes childList only, so updateButton's attribute changes don't re-trigger it.
+  function observeIncludes() {
+    if (!window.MutationObserver || !document.body) return;
+    const observer = new MutationObserver(function() {
+      syncUI();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  function init() {
+    setTheme(getCurrentThemeOption());
+    syncUI();
+    attachDelegatedListener();
+    observeIncludes();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  window.addEventListener('load', function() { syncUI(); });
 })();

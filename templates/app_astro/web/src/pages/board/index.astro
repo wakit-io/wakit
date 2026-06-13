@@ -1,9 +1,31 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+// Build-time data. Swap for Supabase (window.sb / astro:env) or fetch('/api/...').
+const posts = [
+  { id: 1, title: 'WAKIT 1.0 released', meta: 'Notice · 2 min ago' },
+  { id: 2, title: 'How the dual router works', meta: 'Guide · 1 hour ago' },
+  { id: 3, title: 'Shipping web + app from one template', meta: 'Story · Yesterday' },
+];
 ---
-<Layout title="게시판">
-  <main class="container" style="padding-top:48px; padding-bottom:80px;">
-    <h2 style="font-size:1.5rem; font-weight:800; margin-bottom:24px;">게시판</h2>
-    <p style="color:var(--text-secondary);">게시판 준비 중입니다.</p>
-  </main>
+<Layout title="Board — App Astro">
+  <!-- Shared content (styles via /app-shared.css). Renders on web + app alike. -->
+  <section class="board">
+    <header class="board__head">
+      <span class="sc-badge">Single source · Astro</span>
+      <h1>Board</h1>
+      <p>This exact markup renders on the web and inside the app.</p>
+    </header>
+
+    <ul class="board__list">
+      {posts.map((post) => (
+        <li class="board__item">
+          <a href={`/board/${post.id}/`}>
+            <h2>{post.title}</h2>
+            <span>{post.meta}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
 </Layout>

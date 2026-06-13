@@ -20,10 +20,10 @@ templates/*
 templates/*/web/node_modules/
 templates/*/dist/
 templates/*/web/.astro/
-# SvelteKit build cache + webpack-generated static assets
+# SvelteKit build cache + webpack-generated static assets (web layer output)
 templates/*/web/.svelte-kit/
-templates/app_sveltekit/web/public/app/
-templates/app_sveltekit/web/public/wakit/
+templates/*/web/public/app/
+templates/*/web/public/wakit/
 
 # OS/editor noise (optional but helpful)
 .DS_Store

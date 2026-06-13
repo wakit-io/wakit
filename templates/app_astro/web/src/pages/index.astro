@@ -1,20 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="App Test - 홈">
-  <main>
-    <section style="text-align:center; padding: 100px 24px 60px;">
-      <h1 style="font-size:2.5rem; font-weight:800; margin-bottom:16px;">
-        App Test
-      </h1>
-      <p style="font-size:1.125rem; color:var(--text-secondary); margin-bottom:36px;">
-        모바일 앱처럼 동작하는 웹 서비스
-      </p>
-      <a href="/app/app.html" style="
-        display:inline-block; padding:14px 36px;
-        background:var(--primary); color:#fff;
-        border-radius:12px; font-size:1rem; font-weight:700;
-      ">앱 시작하기</a>
-    </section>
-  </main>
+<Layout title="App Astro — Home">
+  <!-- Home (main) — single source. Renders on the web at / and inside the wakit
+       app (Home tab). Styled by /app-shared.css. -->
+  <section class="home-hero">
+    <span class="sc-badge">Single source · Astro</span>
+    <h1 class="home-hero__title">Web pages by Astro,<br>app by wakit.js</h1>
+    <p class="home-hero__desc">
+      The web layer is Astro (prerendered to pure static HTML, zero JS by default),
+      while the mobile app runs on the wakit engine. One template, two routers — no collision.
+    </p>
+    <div class="home-hero__actions">
+      <a href="/board/" class="home-btn home-btn--primary">Explore web routes</a>
+      <a href="/app/app.html" class="home-btn home-btn--ghost">Open the app</a>
+    </div>
+  </section>
+
+  <section class="home-cards">
+    <article class="home-card">
+      <h3>Astro web</h3>
+      <p>Pages under <code>src/pages</code>, prerendered to static HTML. Astro ships <strong>zero JS</strong> by default.</p>
+    </article>
+    <article class="home-card">
+      <h3>wakit app</h3>
+      <p>Hash-routed SPA shell at <code>/app/app.html</code> with native transitions, tabbar and themes.</p>
+    </article>
+    <article class="home-card">
+      <h3>Shared content</h3>
+      <p>This page is authored once and renders on the web and inside the app alike.</p>
+    </article>
+  </section>
 </Layout>

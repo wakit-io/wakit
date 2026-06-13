@@ -27,7 +27,7 @@
     { "path": "profile", "file": "../views/profile.html", "title": "My" }
   ],
   "webNav": {
-    "brand": { "label": "App Basic", "logo": "✦", "href": "index.html" },
+    "brand": { "label": "App Basic", "href": "index.html" },
     "items": [
       { "label": "Home", "href": "index.html" },
       { "label": "List", "href": "views/list.html" }

@@ -49,6 +49,9 @@ function serveDir(baseDir, exclude) {
 export default defineConfig({
   compressHTML: false,
   outDir: '../dist',
+  // /board/ style URLs so the wakit app can fetch the same path in dev and build
+  trailingSlash: 'always',
+  build: { format: 'directory' },
   vite: {
     plugins: [{
       name: 'dev-serve-app-wakit',

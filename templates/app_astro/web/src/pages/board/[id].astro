@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Prerender one static page per post id.
+// (POSTS lives inside getStaticPaths — Astro hoists this function and runs it in
+//  isolation, so it can't see frontmatter consts declared outside it.)
+export function getStaticPaths() {
+  const POSTS: Record<string, { title: string; body: string }> = {
+    '1': { title: 'WAKIT 1.0 released', body: 'The first stable release of the hybrid web + app template engine.' },
+    '2': { title: 'How the dual router works', body: 'Astro owns web routing; wakit.js owns the app shell. They never collide.' },
+    '3': { title: 'Shipping web + app from one template', body: 'Build once, deliver a static site and a native-feeling app together.' },
+  };
+  return Object.entries(POSTS).map(([id, post]) => ({ params: { id }, props: post }));
+}
+
+const { title, body } = Astro.props;
+---
+<Layout title={`${title} — App Astro`}>
+  <!-- Shared content (styles via /app-shared.css). Renders on web + app alike. -->
+  <article class="post">
+    <a class="post__back" href="/board/">← Board</a>
+    <span class="sc-badge">Single source · Astro</span>
+    <h1>{title}</h1>
+    <p>{body}</p>
+  </article>
+</Layout>

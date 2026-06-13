@@ -1,57 +1,85 @@
-<!-- 상세 페이지 -->
-<link rel="stylesheet" href="./css/detail.css">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Detail · App Basic</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <script src="../../../wakit/js/wakit-bridge.js" data-spa-ignore></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/wakit.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/styleGuide.css" data-spa-ignore>
+  <link rel="stylesheet" href="../../../wakit/css/component.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/foundation/index.css" data-spa-ignore>
+  <link rel="stylesheet" href="css/style.css" data-spa-ignore>
+  <script src="js/theme-init.js" data-spa-ignore></script>
+</head>
+<body>
 
-<main class="detail-page">
+<div data-include="wakit-components/header.html" data-spa-ignore></div>
 
-  <div class="detail-hero">
-    ✦
-    <button class="detail-hero__back" onclick="history.back()"><i class="bi bi-arrow-left"></i></button>
-    <span class="detail-hero__badge">NEW</span>
-  </div>
+<!-- Screen-specific CSS: inside body, no data-spa-ignore -->
+<link rel="stylesheet" href="css/detail.css">
 
-  <div class="detail-body">
-    <p class="detail-body__category">wakit framework</p>
-    <h1 class="detail-body__title">하이브리드 앱의 새로운 기준</h1>
-    <div class="detail-body__meta">
-      <span class="detail-body__tag"><i class="bi bi-clock"></i> 5분 읽기</span>
-      <span class="detail-body__tag"><i class="bi bi-eye"></i> 1,204회</span>
-      <span class="detail-body__tag"><i class="bi bi-heart"></i> 48</span>
+<main class="detail-page container" role="main">
+
+  <article class="detail">
+    <!-- Cover -->
+    <div class="detail__cover"><i class="bi bi-image"></i></div>
+
+    <div class="detail__main">
+      <div class="detail__content">
+        <div class="detail__tags">
+          <span class="detail__tag">Category</span>
+          <span class="detail__tag">Tag</span>
+        </div>
+        <h1 class="detail__title">Sample item title</h1>
+        <div class="detail__meta">
+          <span><i class="bi bi-person-circle"></i> Author</span>
+          <span><i class="bi bi-clock"></i> 2 min ago</span>
+          <span><i class="bi bi-eye"></i> 1,204</span>
+        </div>
+
+        <p class="detail__lead">A lead paragraph that sums up the item in a single sentence. This is the detail screen you reached from the list.</p>
+        <p class="detail__body">The main content goes here. Compose text, images, tables, and other content freely. On mobile it's a single column; on desktop the body and side info sit side by side.</p>
+        <p class="detail__body">This is the second paragraph. Add as many sections as you need to expand the detail page.</p>
+      </div>
+
+      <!-- Side info (desktop) -->
+      <aside class="detail__aside">
+        <div class="detail__card">
+          <h2 class="detail__card-title">Info</h2>
+          <dl class="detail__info">
+            <div><dt>Date</dt><dd>2026.06.12</dd></div>
+            <div><dt>Category</dt><dd>Sample</dd></div>
+            <div><dt>Status</dt><dd>Public</dd></div>
+          </dl>
+        </div>
+      </aside>
     </div>
-    <p class="detail-body__desc">
-      wakit은 웹 기술만으로 네이티브 앱과 동일한 사용자 경험을 제공하는 하이브리드 프레임워크입니다.
-      LRU 기반 메모리 관리, iOS 엣지 스와이프, Pull to Refresh 등 네이티브 앱의 핵심 기능을
-      순수 JavaScript로 구현했습니다.<br><br>
-      Supabase와 같은 BaaS를 연동하면 실제 서비스로 빠르게 출시할 수 있으며,
-      Capacitor를 통해 앱스토어 배포까지 가능합니다.
-    </p>
-    <button class="detail-body__btn"><i class="bi bi-bookmark-fill"></i> 저장하기</button>
-  </div>
-
-  <div class="detail-related">
-    <p class="detail-related__title">관련 항목</p>
-    <div class="detail-related-list">
-      <a href="#detail" class="detail-related-item">
-        <div class="detail-related-item__icon">⚡</div>
-        <div>
-          <p class="detail-related-item__title">SPA 라우팅 시스템</p>
-          <p class="detail-related-item__sub">해시 기반 내비게이션</p>
-        </div>
-      </a>
-      <a href="#detail" class="detail-related-item">
-        <div class="detail-related-item__icon">💾</div>
-        <div>
-          <p class="detail-related-item__title">메모리 최적화</p>
-          <p class="detail-related-item__sub">LRU · warm/cold dormancy</p>
-        </div>
-      </a>
-      <a href="#detail" class="detail-related-item">
-        <div class="detail-related-item__icon">🎨</div>
-        <div>
-          <p class="detail-related-item__title">테마 시스템</p>
-          <p class="detail-related-item__sub">다크/라이트 모드 지원</p>
-        </div>
-      </a>
-    </div>
-  </div>
+  </article>
 
 </main>
+
+<!-- Sticky action bar -->
+<div class="detail-actionbar">
+  <div class="container detail-actionbar__inner">
+    <button type="button" class="detail-actionbar__icon" aria-label="Like"><i class="bi bi-heart"></i></button>
+    <button type="button" class="detail-actionbar__icon" aria-label="Share"><i class="bi bi-share"></i></button>
+    <a href="#" class="detail-actionbar__cta">Apply</a>
+  </div>
+</div>
+
+<div data-include="wakit-components/footer.html" data-spa-ignore></div>
+
+</body>
+<script src="../../../wakit/js/wakit-popup.js" data-spa-ignore></script>
+<script src="js/theme-toggle.js" data-spa-ignore></script>
+<script src="js/header.js" data-spa-ignore></script>
+<script src="js/scroll-to-top.js" data-spa-ignore></script>
+<script data-spa-ignore>if (typeof Popup !== 'undefined') Popup.init();</script>
+</html>
