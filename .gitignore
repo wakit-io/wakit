@@ -32,6 +32,14 @@ templates/*/web/public/service-worker.js
 # Supabase 로컬 config — 템플릿마다 api.schemas 등이 누적되므로 커밋 제외
 supabase/config.toml
 
+# Supabase 이메일 템플릿(app_bookpress 로컬 설정 — config.toml 이 참조) 커밋 제외
+supabase/templates/
+
+# Auth provider env (구글 OAuth 등) — 실제 키 파일 + 로컬 전용 예시까지 커밋 제외
+supabase/google-oauth.env
+supabase/google-oauth.env.example
+*.env.local
+
 # 기획/플랜 문서 (로컬 작업용, 커밋 제외)
 /APP_PLAN.md
 
