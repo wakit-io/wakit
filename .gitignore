@@ -48,3 +48,6 @@ supabase/google-oauth.env.example
 Thumbs.db
 .vscode/
 *.log
+
+# Local Netlify folder
+.netlify
